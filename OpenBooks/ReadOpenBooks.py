@@ -27,6 +27,9 @@ import sys
 import os
 import time
 import json
+import signal
+import atexit
+import threading
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 import logging
@@ -102,6 +105,36 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+# Global shutdown flag
+_shutdown_requested = False
+
+def signal_handler(signum, frame):
+    """Handle shutdown signals gracefully."""
+    global _shutdown_requested
+    _shutdown_requested = True
+    print(f"\n🚪 Received shutdown signal ({signum}). Gracefully exiting ReadOpenBooks...")
+    sys.exit(0)
+
+def cleanup_on_exit():
+    """Cleanup function called on exit."""
+    print("🧹 Cleaning up ReadOpenBooks resources...")
+
+# Register signal handlers and exit cleanup
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
+atexit.register(cleanup_on_exit)
+
+def force_app_shutdown():
+    """Force shutdown of the Streamlit application and close browser."""
+    def shutdown_after_delay():
+        time.sleep(2)  # Give time for UI updates
+        print("🚪 Force shutting down ReadOpenBooks...")
+        os._exit(0)  # Force exit
+    
+    # Start shutdown in a separate thread
+    shutdown_thread = threading.Thread(target=shutdown_after_delay, daemon=True)
+    shutdown_thread.start()
 
 def initialize_config() -> Optional[OpenBooksConfig]:
     """Initialize OpenBooks configuration."""
@@ -201,7 +234,7 @@ def display_system_status():
     if st.sidebar.button("🚪 Exit Application", type="secondary", help="Gracefully shut down the ReadOpenBooks application"):
         st.sidebar.success("✅ Shutting down ReadOpenBooks...")
         st.sidebar.markdown("**Application stopped successfully.**")
-        st.sidebar.markdown("You can close this browser tab.")
+        st.sidebar.markdown("Browser tab will close automatically.")
         
         # Display goodbye message in main area
         st.markdown("## 👋 Thank you for using ReadOpenBooks!")
@@ -212,16 +245,124 @@ def display_system_status():
         
         st.markdown("---")
         st.markdown("**The application has been gracefully shut down.**")
-        st.markdown("You can safely close this browser tab now.")
+        st.markdown("This browser tab will close automatically in 3 seconds...")
+        
+        # Enhanced JavaScript to close browser tab and shutdown app
+        st.markdown(f"""
+        <script>
+        // Show countdown with visual feedback
+        let countdown = 3;
+        let countdownElement = document.createElement('div');
+        countdownElement.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            z-index: 9999;
+            text-align: center;
+        `;
+        countdownElement.innerHTML = `
+            <div>🚪 Shutting down ReadOpenBooks</div>
+            <div style="margin-top: 10px; font-size: 24px;" id="countdown">3</div>
+            <div style="margin-top: 10px; font-size: 14px;">Browser tab will close automatically</div>
+        `;
+        document.body.appendChild(countdownElement);
+        
+        const countdownInterval = setInterval(() => {{
+            countdown--;
+            document.getElementById('countdown').textContent = countdown;
+            
+            if (countdown <= 0) {{
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = `
+                    <div>✅ ReadOpenBooks shut down successfully</div>
+                    <div style="margin-top: 10px;">Closing browser tab...</div>
+                `;
+                
+                // Multiple attempts to close/navigate away
+                setTimeout(() => {{
+                    // Method 1: Try window.close()
+                    window.close();
+                    
+                    // Method 2: If still here, try to navigate away
+                    setTimeout(() => {{
+                        if (!window.closed) {{
+                            window.location.href = 'about:blank';
+                        }}
+                    }}, 500);
+                    
+                    // Method 3: Last resort - replace with minimal page
+                    setTimeout(() => {{
+                        if (!window.closed) {{
+                            document.open();
+                            document.write(`
+                                <html>
+                                <head><title>ReadOpenBooks - Closed</title></head>
+                                <body style="display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-family:Arial,sans-serif;background:#f0f0f0;">
+                                    <div style="text-align:center;">
+                                        <h2>✅ ReadOpenBooks has been shut down</h2>
+                                        <p>You can safely close this browser tab now.</p>
+                                        <button onclick="window.close()" style="padding:10px 20px;background:#ff4b4b;color:white;border:none;border-radius:5px;cursor:pointer;">Close Tab</button>
+                                    </div>
+                                </body>
+                                </html>
+                            `);
+                            document.close();
+                        }}
+                    }}, 1000);
+                }}, 500);
+            }}
+        }}, 1000);
+        
+        // Try to signal the Streamlit server to shutdown
+        fetch('/shutdown', {{method: 'POST'}}).catch(() => {{
+            // Try alternative shutdown endpoints
+            fetch('/_stcore/shutdown', {{method: 'POST'}}).catch(() => {{
+                console.log('Server shutdown signal sent (may not be supported)');
+            }});
+        }});
+        </script>
+        """, unsafe_allow_html=True)
+        
+        # Force shutdown the application after showing the message
+        force_app_shutdown()
         
         # Stop the Streamlit app
         st.stop()
 
 def main():
     """Main Streamlit application."""
+    # Add keyboard shortcut for quick exit (Ctrl+Q)
+    st.markdown("""
+    <script>
+    document.addEventListener('keydown', function(event) {
+        // Check for Ctrl+Q (or Cmd+Q on Mac)
+        if ((event.ctrlKey || event.metaKey) && event.key === 'q') {
+            event.preventDefault();
+            if (confirm('🚪 Are you sure you want to exit ReadOpenBooks?')) {
+                // Trigger the exit process
+                window.location.reload();
+                setTimeout(() => {
+                    const exitButton = document.querySelector('[data-testid="baseButton-secondary"]');
+                    if (exitButton && exitButton.textContent.includes('Exit Application')) {
+                        exitButton.click();
+                    }
+                }, 1000);
+            }
+        }
+    });
+    </script>
+    """, unsafe_allow_html=True)
+    
     # Header
     st.markdown('<h1 class="main-header">📚 ReadOpenBooks</h1>', unsafe_allow_html=True)
     st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">OpenStax Textbook Reader & Validator with Zero Contamination Protection</p>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align: center; font-size: 0.9rem; color: #888;"><kbd>Ctrl+Q</kbd> for quick exit</p>', unsafe_allow_html=True)
     
     # Display system status in sidebar
     display_system_status()
