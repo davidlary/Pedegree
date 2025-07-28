@@ -1,0 +1,57 @@
+batch_size: 20
+books_dir: Books
+cache_dir: cache
+clone_depth: null
+cnx_user_books_org: cnx-user-books
+config_dir: config
+disciplines:
+- Biology
+- Business
+- Chemistry
+- Economics
+- Engineering
+- Mathematics
+- Music
+- Physics
+- Psychology
+- Sociology
+- Statistics
+docs_dir: docs
+educational_levels:
+- HighSchool
+- University
+- Graduate
+enable_git_cloning: true
+enable_parallel_processing: true
+enable_pdf_processing: true
+enable_search_indexing: true
+enable_text_extraction: true
+extracted_content_dir: Books/Specialized/Archives/extracted
+git_lfs_enabled: true
+github_api_base_url: https://api.github.com
+github_base_url: https://github.com
+github_ssh_base_url: git@github.com
+max_book_size_mb: 500.0
+max_clone_workers: 6
+max_discovery_workers: 8
+max_processing_workers: 12
+max_retries: 3
+max_workers: 20
+metadata_dir: metadata
+min_book_size_mb: 1.0
+openstax_base_url: https://openstax.org
+professional_dir: Books/Professional
+project_root: /Users/davidlary/Dropbox/Environments/Code/OpenBooks
+request_delay_seconds: 2.0
+scripts_dir: scripts
+search_index_dir: metadata/search_index
+source_priority:
+  existing_collection: 1
+  git_repositories: 2
+  pdf_downloads: 4
+  structured_formats: 3
+specialized_dir: Books/Specialized
+tests_dir: tests
+textbooks_dir: Books/Textbooks
+timeout_seconds: 30
+use_ssh_for_git: true

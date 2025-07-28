@@ -1,0 +1,777 @@
+{
+  "metadata": {
+    "generated_at": "2025-06-19T09:28:20.314992",
+    "generator": "OpenBooks v0.1.0",
+    "total_books": 54,
+    "total_size_mb": 16095.999379577637
+  },
+  "collections": {
+    "pdfs": [
+      {
+        "name": "m16020_DotPlot_download",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle/media/m16020_DotPlot_download.pdf",
+        "size_mb": 0.01,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "9a522b3eb55a7803"
+      },
+      {
+        "name": "FormulaSheet",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle/media/FormulaSheet.pdf",
+        "size_mb": 0.12,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "841dca10811fa0ce"
+      },
+      {
+        "name": "CONNEX150033_Ch24",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Economics/University/osbooks-principles-economics-bundle/media/CONNEX150033_Ch24.pdf",
+        "size_mb": 6.8,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "e1f011088251e723"
+      },
+      {
+        "name": "dog_ear-protector",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/dog_ear-protector.pdf",
+        "size_mb": 0.04,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "23c76821dd120374"
+      },
+      {
+        "name": "velvet-patent",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/velvet-patent.pdf",
+        "size_mb": 0.18,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "16d4ae9174bef6ec"
+      },
+      {
+        "name": "wiper-patent",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/wiper-patent.pdf",
+        "size_mb": 0.04,
+        "subject": "Other",
+        "type": "PDF",
+        "hash": "00b010af5c077bc7"
+      }
+    ],
+    "git_repositories": [
+      {
+        "name": "osbooks-principles-of-management-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/german/Business/University/osbooks-principles-of-management-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:55:35.044481"
+      },
+      {
+        "name": "osbooks-college-success-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Sociology/University/osbooks-college-success-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T11:55:56.735517"
+      },
+      {
+        "name": "osbooks-writing-guide",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Art/University/osbooks-writing-guide",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:57:22.553674"
+      },
+      {
+        "name": "osbooks-organic-chemistry",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Chemistry/University/osbooks-organic-chemistry",
+        "subject": "Chemistry",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:29:28.621032"
+      },
+      {
+        "name": "osbooks-chemistry-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Chemistry/University/osbooks-chemistry-bundle",
+        "subject": "Chemistry",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:29:20.648383"
+      },
+      {
+        "name": "osbooks-psychology",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Psychology/University/osbooks-psychology",
+        "subject": "Psychology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:30:18.986364"
+      },
+      {
+        "name": "osbooks-business-ethics",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-business-ethics",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:57:21.860753"
+      },
+      {
+        "name": "osbooks-principles-accounting-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-accounting-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:56.556814"
+      },
+      {
+        "name": "osbooks-entrepreneurship",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-entrepreneurship",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:17.258677"
+      },
+      {
+        "name": "osbooks-business-law",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-business-law",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-16T08:51:21.795444"
+      },
+      {
+        "name": "osbooks-principles-finance",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-finance",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:54:51.091985"
+      },
+      {
+        "name": "osbooks-principles-marketing",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-marketing",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:54:49.862154"
+      },
+      {
+        "name": "osbooks-introductory-statistics-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle",
+        "subject": "Statistics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:57:04.489897"
+      },
+      {
+        "name": "osbooks-contemporary-mathematics",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-contemporary-mathematics",
+        "subject": "Mathematics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:54.603404"
+      },
+      {
+        "name": "osbooks-statistics",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-statistics",
+        "subject": "Statistics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:18.210328"
+      },
+      {
+        "name": "osbooks-calculus-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-calculus-bundle",
+        "subject": "Mathematics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:57:14.393277"
+      },
+      {
+        "name": "osbooks-american-government",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Political science/University/osbooks-american-government",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:55:18.929760"
+      },
+      {
+        "name": "osbooks-workplace-software-skills",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Computer science/University/osbooks-workplace-software-skills",
+        "subject": "Computer Science",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:29:57.744256"
+      },
+      {
+        "name": "osbooks-nursing-external-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Medicine/University/osbooks-nursing-external-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:47:01.018707"
+      },
+      {
+        "name": "osbooks-world-history",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/History/University/osbooks-world-history",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:57:09.972150"
+      },
+      {
+        "name": "osbooks-us-history",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/History/University/osbooks-us-history",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:05.103950"
+      },
+      {
+        "name": "osbooks-principles-economics-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Economics/University/osbooks-principles-economics-bundle",
+        "subject": "Economics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:29:46.161644"
+      },
+      {
+        "name": "osbooks-astronomy",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-astronomy",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:43:02.165428"
+      },
+      {
+        "name": "osbooks-college-physics-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-college-physics-bundle",
+        "subject": "Physics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T08:09:15.361794"
+      },
+      {
+        "name": "osbooks-university-physics-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-university-physics-bundle",
+        "subject": "Physics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T08:09:22.357420"
+      },
+      {
+        "name": "osbooks-physics",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/HighSchool/osbooks-physics",
+        "subject": "Physics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T08:09:15.363786"
+      },
+      {
+        "name": "osbooks-life-liberty-and-pursuit-happiness",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-life-liberty-and-pursuit-happiness",
+        "subject": "Biology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:23.965567"
+      },
+      {
+        "name": "osbooks-microbiology",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-microbiology",
+        "subject": "Biology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:07.541031"
+      },
+      {
+        "name": "osbooks-biology-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-biology-bundle",
+        "subject": "Biology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:47:24.228408"
+      },
+      {
+        "name": "osbooks-anatomy-physiology",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-anatomy-physiology",
+        "subject": "Biology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:04.145009"
+      },
+      {
+        "name": "osbooks-psychologia",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Psychology/University/osbooks-psychologia",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:55:57.083593"
+      },
+      {
+        "name": "osbooks-mikroekonomia",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Economics/University/osbooks-mikroekonomia",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:09.615775"
+      },
+      {
+        "name": "osbooks-makroekonomia",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Economics/University/osbooks-makroekonomia",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:55:44.868079"
+      },
+      {
+        "name": "osbooks-fizyka-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Physics/University/osbooks-fizyka-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:54:49.124354"
+      },
+      {
+        "name": "osbooks-introduction-anthropology",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Anthropology/University/osbooks-introduction-anthropology",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T11:32:01.928928"
+      },
+      {
+        "name": "osbooks-introduction-sociology",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Sociology/University/osbooks-introduction-sociology",
+        "subject": "Sociology",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:55:50.762933"
+      },
+      {
+        "name": "osbooks-introduction-intellectual-property",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:27.923862"
+      },
+      {
+        "name": "osbooks-introduction-business",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-business",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:52.441677"
+      },
+      {
+        "name": "osbooks-introduction-political-science",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Political science/University/osbooks-introduction-political-science",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:55:18.928301"
+      },
+      {
+        "name": "osbooks-introduction-philosophy",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Philosophy/University/osbooks-introduction-philosophy",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:54:43.615543"
+      },
+      {
+        "name": "osbooks-introduction-python-programming",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Computer science/University/osbooks-introduction-python-programming",
+        "subject": "Computer Science",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-16T08:56:22.716431"
+      },
+      {
+        "name": "osbooks-quimica-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Chemistry/University/osbooks-quimica-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:55:28.045641"
+      },
+      {
+        "name": "osbooks-introduccion-estadistica-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-introduccion-estadistica-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:57:15.708225"
+      },
+      {
+        "name": "osbooks-college-algebra-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-college-algebra-bundle",
+        "subject": "Mathematics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-16T09:09:57.925011"
+      },
+      {
+        "name": "osbooks-precalculo",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-precalculo",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:56:22.521124"
+      },
+      {
+        "name": "osbooks-calculo-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-calculo-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:57:14.391419"
+      },
+      {
+        "name": "osbooks-prealgebra-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/HighSchool/osbooks-prealgebra-bundle",
+        "subject": "Mathematics",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T07:49:40.377787"
+      },
+      {
+        "name": "osbooks-fisica-universitaria-bundle",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Physics/University/osbooks-fisica-universitaria-bundle",
+        "subject": "Other",
+        "type": "OpenStax Book",
+        "last_modified": "2025-06-13T10:47:38.107424"
+      }
+    ],
+    "other_formats": []
+  },
+  "subjects": {
+    "Other": [
+      {
+        "name": "m16020_DotPlot_download",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle/media/m16020_DotPlot_download.pdf"
+      },
+      {
+        "name": "FormulaSheet",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle/media/FormulaSheet.pdf"
+      },
+      {
+        "name": "CONNEX150033_Ch24",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Economics/University/osbooks-principles-economics-bundle/media/CONNEX150033_Ch24.pdf"
+      },
+      {
+        "name": "dog_ear-protector",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/dog_ear-protector.pdf"
+      },
+      {
+        "name": "velvet-patent",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/velvet-patent.pdf"
+      },
+      {
+        "name": "wiper-patent",
+        "type": "PDF",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property/media/wiper-patent.pdf"
+      },
+      {
+        "name": "osbooks-principles-of-management-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/german/Business/University/osbooks-principles-of-management-bundle"
+      },
+      {
+        "name": "osbooks-college-success-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Sociology/University/osbooks-college-success-bundle"
+      },
+      {
+        "name": "osbooks-writing-guide",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Art/University/osbooks-writing-guide"
+      },
+      {
+        "name": "osbooks-business-ethics",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-business-ethics"
+      },
+      {
+        "name": "osbooks-principles-accounting-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-accounting-bundle"
+      },
+      {
+        "name": "osbooks-entrepreneurship",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-entrepreneurship"
+      },
+      {
+        "name": "osbooks-business-law",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-business-law"
+      },
+      {
+        "name": "osbooks-principles-finance",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-finance"
+      },
+      {
+        "name": "osbooks-principles-marketing",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Business/University/osbooks-principles-marketing"
+      },
+      {
+        "name": "osbooks-american-government",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Political science/University/osbooks-american-government"
+      },
+      {
+        "name": "osbooks-nursing-external-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Medicine/University/osbooks-nursing-external-bundle"
+      },
+      {
+        "name": "osbooks-world-history",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/History/University/osbooks-world-history"
+      },
+      {
+        "name": "osbooks-us-history",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/History/University/osbooks-us-history"
+      },
+      {
+        "name": "osbooks-astronomy",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-astronomy"
+      },
+      {
+        "name": "osbooks-psychologia",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Psychology/University/osbooks-psychologia"
+      },
+      {
+        "name": "osbooks-mikroekonomia",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Economics/University/osbooks-mikroekonomia"
+      },
+      {
+        "name": "osbooks-makroekonomia",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Economics/University/osbooks-makroekonomia"
+      },
+      {
+        "name": "osbooks-fizyka-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/polish/Physics/University/osbooks-fizyka-bundle"
+      },
+      {
+        "name": "osbooks-introduction-anthropology",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Anthropology/University/osbooks-introduction-anthropology"
+      },
+      {
+        "name": "osbooks-introduction-intellectual-property",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-intellectual-property"
+      },
+      {
+        "name": "osbooks-introduction-business",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Business/University/osbooks-introduction-business"
+      },
+      {
+        "name": "osbooks-introduction-political-science",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Political science/University/osbooks-introduction-political-science"
+      },
+      {
+        "name": "osbooks-introduction-philosophy",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Philosophy/University/osbooks-introduction-philosophy"
+      },
+      {
+        "name": "osbooks-quimica-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Chemistry/University/osbooks-quimica-bundle"
+      },
+      {
+        "name": "osbooks-introduccion-estadistica-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-introduccion-estadistica-bundle"
+      },
+      {
+        "name": "osbooks-precalculo",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-precalculo"
+      },
+      {
+        "name": "osbooks-calculo-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-calculo-bundle"
+      },
+      {
+        "name": "osbooks-fisica-universitaria-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Physics/University/osbooks-fisica-universitaria-bundle"
+      }
+    ],
+    "Chemistry": [
+      {
+        "name": "osbooks-organic-chemistry",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Chemistry/University/osbooks-organic-chemistry"
+      },
+      {
+        "name": "osbooks-chemistry-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Chemistry/University/osbooks-chemistry-bundle"
+      }
+    ],
+    "Psychology": [
+      {
+        "name": "osbooks-psychology",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Psychology/University/osbooks-psychology"
+      }
+    ],
+    "Statistics": [
+      {
+        "name": "osbooks-introductory-statistics-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-introductory-statistics-bundle"
+      },
+      {
+        "name": "osbooks-statistics",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-statistics"
+      }
+    ],
+    "Mathematics": [
+      {
+        "name": "osbooks-contemporary-mathematics",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-contemporary-mathematics"
+      },
+      {
+        "name": "osbooks-calculus-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Mathematics/University/osbooks-calculus-bundle"
+      },
+      {
+        "name": "osbooks-college-algebra-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/University/osbooks-college-algebra-bundle"
+      },
+      {
+        "name": "osbooks-prealgebra-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/spanish/Mathematics/HighSchool/osbooks-prealgebra-bundle"
+      }
+    ],
+    "Computer Science": [
+      {
+        "name": "osbooks-workplace-software-skills",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Computer science/University/osbooks-workplace-software-skills"
+      },
+      {
+        "name": "osbooks-introduction-python-programming",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Computer science/University/osbooks-introduction-python-programming"
+      }
+    ],
+    "Economics": [
+      {
+        "name": "osbooks-principles-economics-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Economics/University/osbooks-principles-economics-bundle"
+      }
+    ],
+    "Physics": [
+      {
+        "name": "osbooks-college-physics-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-college-physics-bundle"
+      },
+      {
+        "name": "osbooks-university-physics-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/University/osbooks-university-physics-bundle"
+      },
+      {
+        "name": "osbooks-physics",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Physics/HighSchool/osbooks-physics"
+      }
+    ],
+    "Biology": [
+      {
+        "name": "osbooks-life-liberty-and-pursuit-happiness",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-life-liberty-and-pursuit-happiness"
+      },
+      {
+        "name": "osbooks-microbiology",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-microbiology"
+      },
+      {
+        "name": "osbooks-biology-bundle",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-biology-bundle"
+      },
+      {
+        "name": "osbooks-anatomy-physiology",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/english/Biology/University/osbooks-anatomy-physiology"
+      }
+    ],
+    "Sociology": [
+      {
+        "name": "osbooks-introduction-sociology",
+        "type": "OpenStax Book",
+        "path": "/Users/davidlary/Dropbox/Environments/Code/OpenBooks/Books/french/Sociology/University/osbooks-introduction-sociology"
+      }
+    ]
+  },
+  "known_repositories": [
+    {
+      "name": "University Physics Volume 1",
+      "repo": "cnxbook-university-physics-volume-1",
+      "org": "cnx-user-books",
+      "subject": "Physics"
+    },
+    {
+      "name": "University Physics Volume 2",
+      "repo": "cnxbook-university-physics-volume-2",
+      "org": "cnx-user-books",
+      "subject": "Physics"
+    },
+    {
+      "name": "University Physics Volume 3",
+      "repo": "cnxbook-university-physics-volume-3",
+      "org": "cnx-user-books",
+      "subject": "Physics"
+    },
+    {
+      "name": "Anatomy & Physiology",
+      "repo": "osbooks-anatomy-physiology",
+      "org": "cnx-user-books",
+      "subject": "Biology"
+    },
+    {
+      "name": "Biology Bundle",
+      "repo": "osbooks-biology-bundle",
+      "org": "cnx-user-books",
+      "subject": "Biology"
+    },
+    {
+      "name": "Introduction to Sociology",
+      "repo": "osbooks-introduction-sociology",
+      "org": "cnx-user-books",
+      "subject": "Sociology"
+    },
+    {
+      "name": "College Physics Bundle",
+      "repo": "osbooks-college-physics-bundle",
+      "org": "cnx-user-books",
+      "subject": "Physics"
+    },
+    {
+      "name": "Principles of Economics Bundle",
+      "repo": "osbooks-principles-economics-bundle",
+      "org": "cnx-user-books",
+      "subject": "Economics"
+    },
+    {
+      "name": "Prealgebra Bundle",
+      "repo": "osbooks-prealgebra-bundle",
+      "org": "cnx-user-books",
+      "subject": "Mathematics"
+    },
+    {
+      "name": "Introductory Statistics Bundle",
+      "repo": "osbooks-introductory-statistics-bundle",
+      "org": "cnx-user-books",
+      "subject": "Statistics"
+    },
+    {
+      "name": "Chemistry Bundle",
+      "repo": "osbooks-chemistry-bundle",
+      "org": "cnx-user-books",
+      "subject": "Chemistry"
+    },
+    {
+      "name": "Microbiology",
+      "repo": "osbooks-microbiology",
+      "org": "cnx-user-books",
+      "subject": "Biology"
+    },
+    {
+      "name": "Organic Chemistry",
+      "repo": "osbooks-organic-chemistry",
+      "org": "cnx-user-books",
+      "subject": "Chemistry"
+    },
+    {
+      "name": "Psychology",
+      "repo": "osbooks-psychology",
+      "org": "cnx-user-books",
+      "subject": "Psychology"
+    }
+  ]
+}

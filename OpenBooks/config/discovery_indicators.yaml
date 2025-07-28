@@ -1,0 +1,185 @@
+# Discovery Indicators Configuration
+# This file contains all indicators used for book discovery and classification
+
+# Strong indicators that almost guarantee educational content
+strong_indicators:
+  - osbooks
+  - cnxbook
+  - textbook
+  - openstax
+
+# Subject-based indicators for educational content
+subject_indicators:
+  - physics
+  - biology
+  - chemistry
+  - mathematics
+  - calculus
+  - statistics
+  - psychology
+  - sociology
+  - economics
+  - business
+  - anatomy
+  - physiology
+  - microbiology
+  - organic
+  - college
+  - prealgebra
+  - algebra
+  - geometry
+  - trigonometry
+  - precalculus
+  - accounting
+  - finance
+  - management
+  - marketing
+  - entrepreneurship
+  - philosophy
+  - history
+  - anthropology
+  - government
+  - american
+  - astronomy
+  - concepts
+  - introductory
+  - principles
+  - elementary
+  - intermediate
+  - high-school
+  - university
+  - nursing
+  # Multi-language subject indicators
+  - medicina
+  - fizyka
+  - quimica
+  - economia
+  - makroekonomia
+  - mikroekonomia
+  - psychologia
+  - sociologia
+  - filosofia
+  - historia
+
+# Educational content indicators
+educational_indicators:
+  - book
+  - course
+  - curriculum
+  - education
+  - learning
+  - study
+  - academic
+  - school
+  - college
+  - university
+  - student
+
+# Exclusion indicators (repositories to skip)
+exclude_indicators:
+  # Website and infrastructure
+  - website
+  - api
+  - tool
+  - script
+  - admin
+  - dashboard
+  - backend
+  - frontend
+  - server
+  - client
+  - app
+  - cli
+  - test
+  - demo
+  - example
+  - template
+  - config
+  - docker
+  - infrastructure
+  - deployment
+  - ci
+  - cd
+  - pipeline
+  - cookbook
+  - framework
+  - spellchecker
+  - resource
+  - producer
+  - concourse
+  - slack
+  - opsworks
+  - cookbooks
+  - exports
+  - playground
+  - manifests
+  - index
+  - simulation
+  - study
+  - covid
+  - napkin
+  - sifter
+  - poet
+  - automate
+  - tiny
+  
+  # OpenStax-specific non-textbook repositories
+  - cms
+  - salesforce
+  - utilities
+  - utility
+  - util
+  - research-kg
+  - research
+  - tagging-legend
+  - legend
+  - min-book
+  - setup-
+  - machine
+  - github.io
+  - onthego
+  - setup
+  - work-management
+  - management
+  - dev
+  - development
+  - build
+  - tools
+  - devops
+  - automation
+  - platform
+  - service
+  - services
+  - core
+  - lib
+  - library
+  - shared
+  - common
+  - base
+
+# Repository quality thresholds
+quality_thresholds:
+  min_size_kb: 50
+  prefer_non_forks: true
+
+# Trusted organizations for more inclusive discovery
+trusted_organizations:
+  - openstax
+  - cnx-user-books
+
+# Subject search patterns for discovery
+subject_search_patterns:
+  - physics
+  - biology
+  - chemistry
+  - mathematics
+  - calculus
+  - algebra
+  - statistics
+  - economics
+  - psychology
+  - sociology
+  - anatomy
+  - physiology
+  - microbiology
+  - organic-chemistry

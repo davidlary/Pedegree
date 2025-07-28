@@ -1,0 +1,117 @@
+# Application Default Values Configuration
+# This file contains all default values used throughout the application
+
+# Language settings
+languages:
+  supported:
+    - english
+    - spanish
+    - french
+    - polish
+    - german
+    - all
+  default: english
+
+# Default application settings
+defaults:
+  workers: 20
+  git_only: false
+  openstax_only: true
+  check_updates: true
+  parallel: true
+  index: true
+  verbose: false
+
+# PDF processing defaults
+pdf_processing:
+  auto_process: true            # Automatically process PDFs after download
+  cache_enabled: true           # Use cache to avoid reprocessing
+  auto_update_search_index: true  # Update search index with PDF content
+
+# Educational levels
+educational_levels:
+  - HighSchool
+  - University
+  - Graduate
+
+# Legacy academic disciplines (kept for compatibility)
+legacy_disciplines:
+  - Biology
+  - Business
+  - Chemistry
+  - Economics
+  - Engineering
+  - Mathematics
+  - Music
+  - Physics
+  - Psychology
+  - Sociology
+  - Statistics
+
+# Project structure paths (relative to project root)
+paths:
+  books: Books
+  cache: cache
+  metadata: metadata
+  docs: docs
+  tests: tests
+  scripts: scripts
+  config: config
+  textbooks: Books/Textbooks
+  professional: Books/Professional
+  specialized: Books/Specialized
+  extracted_content: Books/Specialized/Archives/extracted
+  search_index: metadata/search_index
+
+# Performance settings
+performance:
+  batch_size: 20
+  max_workers: 20
+  max_discovery_workers: 8
+  max_clone_workers: 6
+  max_processing_workers: 12
+  enable_pdf_processing: true
+  enable_git_cloning: true
+  enable_parallel_processing: true
+  enable_text_extraction: true
+  enable_search_indexing: true
+
+# Content validation
+content_validation:
+  min_book_size_mb: 1.0
+  max_book_size_mb: 500.0
+
+# Rate limiting
+rate_limiting:
+  request_delay_seconds: 2.0
+  max_retries: 3
+  timeout_seconds: 30
+
+# Git configuration
+git:
+  lfs_enabled: true
+  clone_depth: null
+  use_ssh: true
+
+# Source priorities (1=highest)
+source_priority:
+  existing_collection: 1
+  git_repositories: 2
+  structured_formats: 3
+  pdf_downloads: 4
+
+# OpenAlex configuration
+openalex:
+  use_openalex_disciplines: true
+  hierarchy_file: null
+  enable_api: false
+  api_email: null
+  directory_structure_mode: openalex
+
+# API endpoints
+api_endpoints:
+  openstax_base_url: https://openstax.org
+  github_api_base_url: https://api.github.com
+  github_base_url: https://github.com
+  github_ssh_base_url: git@github.com
+  cnx_user_books_org: cnx-user-books

@@ -1,0 +1,44 @@
+# PDF Processing Configuration for OpenBooks
+# Configuration for Claude API-based PDF text extraction
+
+pdf_processing:
+  # Claude API settings
+  claude_model: "claude-3-5-sonnet-20241022"  # Use latest available model
+  max_tokens: 4000                            # Max tokens per API call
+  rate_limit_delay: 1.0                       # Seconds between API calls (respect rate limits)
+  
+  # Chunking settings
+  max_pages_per_chunk: 20                     # Pages per chunk (adjust based on content density)
+  overlap_pages: 2                            # Pages to overlap between chunks (for context)
+  
+  # Cache settings
+  cache_dir: "./cache/pdf_processed"          # Directory for processed PDF cache
+  cache_enabled: true                         # Enable/disable caching
+  cache_max_age_days: 30                      # Auto-cleanup cache older than this
+  
+  # Processing settings
+  parallel_processing: true                   # Process multiple PDFs in parallel
+  max_concurrent_pdfs: 3                      # Limit concurrent PDF processing
+  retry_attempts: 3                           # Retry failed chunks
+  timeout_seconds: 300                        # Timeout for individual chunk processing
+  
+  # Quality settings
+  min_text_length: 100                        # Minimum characters to consider successful
+  validate_extraction: true                   # Validate extracted text quality
+  include_metadata: true                      # Include PDF metadata in results
+  
+  # Cost management
+  max_api_calls_per_session: 1000            # Limit API calls to manage costs
+  cost_tracking: true                         # Track estimated API costs
+  daily_budget_limit: 50.0                   # Daily budget limit in USD (optional)
+  
+  # Output settings
+  preserve_formatting: true                   # Attempt to preserve PDF formatting
+  include_page_numbers: true                  # Include page number markers
+  extract_images: false                       # Extract image descriptions (more expensive)
+  extract_tables: true                        # Extract table content
+  
+  # Integration settings
+  auto_process_new_pdfs: true                 # Automatically process new PDFs found
+  update_search_index: true                   # Update search index with extracted text
+  notify_completion: true                     # Log completion notifications
