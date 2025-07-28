@@ -462,8 +462,8 @@ def display_book_reader():
         st.markdown("### 📂 Browse Books")
         
         # Language selection
-        languages = [d.name for d in books_dir.iterdir() 
-                    if d.is_dir() and d.name not in ['BookList.json', 'BookList.tsv']]
+        languages = sorted([d.name for d in books_dir.iterdir() 
+                           if d.is_dir() and d.name not in ['BookList.json', 'BookList.tsv']])
         if not languages:
             st.warning("No books found.")
             return
@@ -472,64 +472,198 @@ def display_book_reader():
         
         # Subject selection
         lang_dir = books_dir / selected_language
-        subjects = [d.name for d in lang_dir.iterdir() if d.is_dir()]
+        subjects = sorted([d.name for d in lang_dir.iterdir() if d.is_dir()])
         if subjects:
             selected_subject = st.selectbox("Subject", subjects)
             
             # Level selection
             subject_dir = lang_dir / selected_subject
-            levels = [d.name for d in subject_dir.iterdir() if d.is_dir()]
+            levels = sorted([d.name for d in subject_dir.iterdir() if d.is_dir()])
             if levels:
                 selected_level = st.selectbox("Level", levels)
                 
                 # Book selection
                 level_dir = subject_dir / selected_level
-                books = [d.name for d in level_dir.iterdir() if d.is_dir() and (d / ".git").exists()]
+                books = sorted([d.name for d in level_dir.iterdir() if d.is_dir() and (d / ".git").exists()])
                 if books:
                     selected_book = st.selectbox("Book", books)
                     
-                    if st.button("📖 Open Book"):
-                        display_book_content(level_dir / selected_book)
+                    # Store selected book in session state
+                    if selected_book:
+                        st.session_state.current_book_path = level_dir / selected_book
+                        st.session_state.current_book_name = selected_book
     
+    # Book content display (right column)
     with col2:
         st.markdown("### 📖 Book Content")
-        st.info("Select a book from the browser to view its content here.")
-
-def display_book_content(book_path: Path):
-    """Display content of a selected book."""
-    try:
-        st.markdown(f"**Book Path:** {book_path}")
         
-        # Look for common content files
-        content_files = []
-        for pattern in ["*.md", "*.cnxml", "*.html", "*.txt"]:
-            content_files.extend(book_path.glob(pattern))
-        
-        if content_files:
-            st.markdown("**Available Content Files:**")
-            for file in content_files[:10]:  # Limit to first 10
-                if st.button(f"📄 {file.name}"):
-                    try:
-                        content = file.read_text(encoding='utf-8', errors='ignore')
-                        st.text_area("File Content", content, height=400)
-                    except Exception as e:
-                        st.error(f"Error reading file: {e}")
+        # Display book content if a book is selected
+        if hasattr(st.session_state, 'current_book_path') and st.session_state.current_book_path:
+            display_book_content_with_toc(st.session_state.current_book_path)
         else:
-            st.warning("No readable content files found in this book.")
+            st.info("Select a book from the browser to view its content here.")
+
+def display_book_content_with_toc(book_path: Path):
+    """Display book content with Table of Contents and content viewer."""
+    try:
+        # Display book information
+        st.markdown(f"**📚 Book:** {book_path.name}")
+        st.markdown(f"**📁 Path:** `{book_path}`")
+        
+        # Create two columns for TOC and content viewer
+        toc_col, content_col = st.columns([1, 2])
+        
+        with toc_col:
+            st.markdown("#### 📋 Table of Contents")
             
-        # Directory structure
-        with st.expander("📁 Directory Structure"):
-            try:
-                for item in sorted(book_path.iterdir()):
-                    if item.is_dir():
-                        st.markdown(f"📁 {item.name}/")
+            # Find all content files
+            content_files = []
+            patterns = ["*.md", "*.cnxml", "*.html", "*.txt", "*.rst"]
+            
+            for pattern in patterns:
+                content_files.extend(book_path.rglob(pattern))
+            
+            # Sort files by path for better organization
+            content_files = sorted(content_files, key=lambda x: str(x.relative_to(book_path)))
+            
+            if content_files:
+                # Initialize selected file in session state
+                if 'selected_content_file' not in st.session_state:
+                    st.session_state.selected_content_file = content_files[0]
+                
+                # Display TOC as a scrollable list
+                st.markdown(f"**Found {len(content_files)} content files:**")
+                
+                # Create a container for the scrollable TOC
+                toc_container = st.container()
+                
+                with toc_container:
+                    for i, file in enumerate(content_files[:50]):  # Limit to first 50 files
+                        relative_path = file.relative_to(book_path)
+                        file_name = relative_path.name
+                        folder_path = str(relative_path.parent) if relative_path.parent != Path('.') else ""
+                        
+                        # Create a more readable display name
+                        if folder_path:
+                            display_name = f"📁 {folder_path} → 📄 {file_name}"
+                        else:
+                            display_name = f"📄 {file_name}"
+                        
+                        # Use radio button or selectbox for file selection
+                        if st.button(display_name, key=f"file_{i}", help=str(relative_path)):
+                            st.session_state.selected_content_file = file
+                            st.rerun()
+                
+                # Show README or main files first
+                if len(content_files) > 50:
+                    st.info(f"Showing first 50 of {len(content_files)} files. Use search to find specific files.")
+                    
+            else:
+                st.warning("No readable content files found in this book.")
+                st.markdown("**Supported formats:** Markdown (.md), CNXML (.cnxml), HTML (.html), Text (.txt), reStructuredText (.rst)")
+        
+        with content_col:
+            st.markdown("#### 📖 Content Viewer")
+            
+            if content_files and hasattr(st.session_state, 'selected_content_file'):
+                selected_file = st.session_state.selected_content_file
+                
+                try:
+                    # Display file information
+                    relative_path = selected_file.relative_to(book_path)
+                    st.markdown(f"**Current File:** `{relative_path}`")
+                    
+                    # File size and modification info
+                    file_stats = selected_file.stat()
+                    file_size = file_stats.st_size
+                    if file_size < 1024:
+                        size_str = f"{file_size} bytes"
+                    elif file_size < 1024 * 1024:
+                        size_str = f"{file_size/1024:.1f} KB"
                     else:
-                        st.markdown(f"📄 {item.name}")
+                        size_str = f"{file_size/(1024*1024):.1f} MB"
+                    
+                    st.markdown(f"**File Size:** {size_str}")
+                    
+                    # Read and display content
+                    with st.spinner("Loading content..."):
+                        try:
+                            content = selected_file.read_text(encoding='utf-8', errors='ignore')
+                            
+                            # Detect file type and display accordingly
+                            file_ext = selected_file.suffix.lower()
+                            
+                            if file_ext == '.md':
+                                # Display Markdown with formatting
+                                st.markdown("---")
+                                st.markdown(content)
+                            elif file_ext in ['.html', '.htm']:
+                                # Display HTML content
+                                st.markdown("---")
+                                st.components.v1.html(content, height=600, scrolling=True)
+                            elif file_ext == '.cnxml':
+                                # Display CNXML as formatted text (XML-like)
+                                st.markdown("---")
+                                st.code(content, language='xml')
+                            else:
+                                # Display as plain text
+                                st.markdown("---")
+                                st.text_area("File Content", content, height=500, key="content_viewer")
+                                
+                        except UnicodeDecodeError:
+                            # Try different encodings
+                            for encoding in ['latin-1', 'cp1252', 'iso-8859-1']:
+                                try:
+                                    content = selected_file.read_text(encoding=encoding, errors='ignore')
+                                    st.text_area("File Content", content, height=500, key="content_viewer_alt")
+                                    break
+                                except:
+                                    continue
+                            else:
+                                st.error("Could not decode file content. File may be binary or use an unsupported encoding.")
+                        
+                except Exception as e:
+                    st.error(f"Error reading file {selected_file.name}: {e}")
+            else:
+                st.info("Select a file from the Table of Contents to view its content.")
+                
+        # Directory structure (expandable)
+        with st.expander("📁 Complete Directory Structure"):
+            try:
+                def display_directory_tree(path, prefix="", max_depth=3, current_depth=0):
+                    if current_depth >= max_depth:
+                        return
+                    
+                    items = sorted(path.iterdir(), key=lambda x: (x.is_file(), x.name.lower()))
+                    for i, item in enumerate(items[:20]):  # Limit items per directory
+                        is_last = i == len(items) - 1
+                        current_prefix = "└── " if is_last else "├── "
+                        
+                        if item.is_dir():
+                            st.text(f"{prefix}{current_prefix}📁 {item.name}/")
+                            next_prefix = prefix + ("    " if is_last else "│   ")
+                            display_directory_tree(item, next_prefix, max_depth, current_depth + 1)
+                        else:
+                            file_size = item.stat().st_size
+                            if file_size < 1024:
+                                size_str = f"({file_size}B)"
+                            elif file_size < 1024 * 1024:
+                                size_str = f"({file_size/1024:.0f}KB)"
+                            else:
+                                size_str = f"({file_size/(1024*1024):.1f}MB)"
+                            st.text(f"{prefix}{current_prefix}📄 {item.name} {size_str}")
+                
+                display_directory_tree(book_path)
+                
             except Exception as e:
-                st.error(f"Error reading directory: {e}")
+                st.error(f"Error reading directory structure: {e}")
                 
     except Exception as e:
         st.error(f"Error displaying book content: {e}")
+
+def display_book_content(book_path: Path):
+    """Legacy function - redirects to new implementation."""
+    display_book_content_with_toc(book_path)
 
 def display_validation_tools(config: OpenBooksConfig):
     """Display validation and testing tools."""

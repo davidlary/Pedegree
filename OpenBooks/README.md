@@ -118,10 +118,13 @@ ReadOpenBooks implements a comprehensive 5-layer validation system:
 - **Progress Tracking**: Real-time progress with detailed status updates
 
 ### Read Books Tab (📖)
-- **Book Browser**: Navigate by Language → Subject → Level → Book
-- **Content Viewer**: Read textbook content directly in the interface
-- **File Explorer**: Browse repository structure and individual files
-- **Format Support**: Markdown, CNXML, HTML, and text files
+- **Book Browser**: Navigate by Language → Subject → Level → Book (all alphabetically sorted)
+- **Table of Contents**: Scrollable list of all content files in selected book
+- **Content Viewer**: Read textbook content with proper formatting and display
+- **Multi-format Support**: Markdown (.md), CNXML (.cnxml), HTML (.html), Text (.txt), reStructuredText (.rst)
+- **File Information**: Shows file size, path, and metadata
+- **Directory Tree**: Complete directory structure with file sizes
+- **Session Persistence**: Remembers selected book and content file
 
 ### Validation Tab (✅)
 - **Individual Tests**: Run specific validation components
