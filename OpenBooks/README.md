@@ -118,13 +118,16 @@ ReadOpenBooks implements a comprehensive 5-layer validation system:
 - **Progress Tracking**: Real-time progress with detailed status updates
 
 ### Read Books Tab (📖)
-- **Book Browser**: Navigate by Language → Subject → Level → Book (all alphabetically sorted)
-- **Table of Contents**: Scrollable list of all content files in selected book
-- **Content Viewer**: Read textbook content with proper formatting and display
-- **Multi-format Support**: Markdown (.md), CNXML (.cnxml), HTML (.html), Text (.txt), reStructuredText (.rst)
-- **File Information**: Shows file size, path, and metadata
-- **Directory Tree**: Complete directory structure with file sizes
-- **Session Persistence**: Remembers selected book and content file
+- **Enhanced Book Browser**: Navigate by Language → Subject → Level → Repository → Book (all alphabetically sorted)
+- **OpenStax Collection Parser**: Automatically detects and parses book collections (e.g., 3 Physics volumes)
+- **Multiple Book Selection**: Interface for choosing from multi-book repositories/bundles
+- **Hierarchical Table of Contents**: Proper chapter and section structure from collection XML
+- **Clickable Navigation**: Expandable chapters with clickable sections for direct content access
+- **Enhanced Content Viewer**: CNXML syntax highlighting with plain text fallback
+- **Chapter/Section Display**: Shows current chapter and section context with module IDs
+- **Book Structure Overview**: Chapter summaries with section counts when no content selected
+- **Session Persistence**: Remembers selected repository, book, chapter, and section
+- **Content Loading**: Direct module content loading from parsed collection structure
 
 ### Validation Tab (✅)
 - **Individual Tests**: Run specific validation components
@@ -171,6 +174,7 @@ ReadOpenBooks/
 ├── core/                      # Core processing modules
 │   ├── orchestrator.py        # Main workflow orchestration
 │   ├── book_discoverer.py     # Repository discovery and validation
+│   ├── book_parser.py         # OpenStax collection XML parser
 │   ├── repository_manager.py  # Git repository operations
 │   ├── content_processor.py   # Content analysis and processing
 │   ├── pdf_integration.py     # PDF processing with Claude API
@@ -209,7 +213,9 @@ python -c "from core.config import OpenBooksConfig; print('✅ Config OK')"
 ### Test Coverage
 - **Module Imports**: All core components load successfully ✅
 - **Configuration**: Settings and environment validation ✅
-- **Core Components**: All 11 core functions tested and validated ✅
+- **Core Components**: All 12 core functions tested and validated ✅
+- **OpenStax Collection Parser**: Book detection and parsing (7/7 tests passed) ✅
+- **Enhanced Book Reader**: Chapter/section navigation and content loading ✅
 - **Directory Structure**: Required directories and permissions ✅
 - **Optional Features**: PDF processing and API integration ✅
 - **Streamlit Application**: Complete functionality testing (8/8 tests passed) ✅
