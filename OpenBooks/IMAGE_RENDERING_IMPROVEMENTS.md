@@ -70,7 +70,7 @@ processed_content, images_to_display = process_html_for_streamlit(rendered_resul
 
 # Display images inline with st.image()
 for image_info in images_to_display:
-    st.image(str(image_info['path']), caption=f"📷 {image_info['alt']}", use_column_width=True)
+    st.image(str(image_info['path']), caption=f"📷 {image_info['alt']}", use_container_width=True)
 ```
 
 ## Test Results

@@ -75,7 +75,9 @@ class OpenStaxBookParser:
             metadata = {}
             
             # Extract metadata - try different paths
-            metadata_elem = root.find('metadata', namespaces) or root.find('.//metadata')
+            metadata_elem = (root.find('col:metadata', namespaces) or 
+                           root.find('metadata') or 
+                           root.find('.//metadata'))
             if metadata_elem is not None:
                 title_elem = metadata_elem.find('md:title', namespaces) or metadata_elem.find('title')
                 if title_elem is not None and title_elem.text:
@@ -85,13 +87,12 @@ class OpenStaxBookParser:
                 if lang_elem is not None and lang_elem.text:
                     metadata['language'] = lang_elem.text.strip()
                 
-                uuid_elem = metadata_elem.find('md:uuid', namespaces) or metadata_elem.find('uuid')
-                if uuid_elem is not None and uuid_elem.text:
-                    metadata['uuid'] = uuid_elem.text.strip()
-                
-                slug_elem = metadata_elem.find('md:slug', namespaces) or metadata_elem.find('slug')
-                if slug_elem is not None and slug_elem.text:
-                    metadata['slug'] = slug_elem.text.strip()
+                # Find UUID and slug by iterating through children
+                for child in metadata_elem:
+                    if child.tag == '{http://cnx.rice.edu/mdml}uuid' and child.text:
+                        metadata['uuid'] = child.text.strip()
+                    elif child.tag == '{http://cnx.rice.edu/mdml}slug' and child.text:
+                        metadata['slug'] = child.text.strip()
             
             # Fallback: try to extract title from filename if not found
             if 'title' not in metadata or not metadata['title']:

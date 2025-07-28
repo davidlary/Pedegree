@@ -160,11 +160,11 @@ Overall: 5/6 comprehensive validation tests passed
 
 ### Sample Data Structure
 ```
-Subject  | Language | Level      | Repository                         | Book Title                | Chapters | Sections
----------|----------|------------|------------------------------------|--------------------------|---------|---------
-Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 1 | 19      | 93
-Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 2 | 18      | 84  
-Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 3 | 13      | 67
+Subject  | Language | Level      | Repository                         | Book Title                | Chapters | Sections | Book ID
+---------|----------|------------|------------------------------------|--------------------------|---------|---------|-----------------------------------------
+Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 1 | 19      | 232     | d50f6e32-0fda-46ef-a362-9bd36ca7c97d
+Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 2 | 18      | 222     | 7a0f9770-1c44-4acd-9920-1cd9a99f2a1e  
+Physics  | English  | University | osbooks-university-physics-bundle | University Physics Vol 3 | 13      | 174     | af275420-6050-4707-995c-57b9cc13c358
 ```
 
 ## User Experience Improvements
@@ -231,7 +231,38 @@ streamlit run ReadOpenBooks.py
 ✅ **Error Resilience**: Handles missing or corrupted repositories  
 ✅ **Responsive Design**: Works across different screen sizes  
 
+## Bug Fixes and Improvements
+
+### Fix 1: Deprecated Parameter Issue
+**Problem**: `use_column_width` parameter deprecated in Streamlit image display  
+**Solution**: Updated to `use_container_width=True` for proper image sizing  
+**Files Changed**: `ReadOpenBooks.py`, `IMAGE_RENDERING_IMPROVEMENTS.md`
+
+### Fix 2: Book ID Column Showing N/A
+**Problem**: Book ID column displayed "N/A" for all books instead of actual OpenStax UUIDs  
+**Root Cause**: XML namespace parsing issue in `parse_collection_metadata()` method  
+**Solution**: Fixed metadata element extraction to handle `col:metadata` namespace and direct child iteration for UUID/slug extraction
+
+**Technical Details**:
+- OpenStax collection XML structure: `<col:collection><col:metadata><md:uuid>...</md:uuid></col:metadata></col:collection>`
+- Original code: `metadata_elem.find('md:uuid', namespaces)` failed due to namespace resolution
+- Fixed code: Direct iteration through children matching `{http://cnx.rice.edu/mdml}uuid` tag
+- Result: Proper UUID extraction from OpenStax collection XML files
+
+**Book ID Explanation**:
+- **Book ID**: OpenStax Universal Unique Identifier (UUID) from collection metadata
+- **Format**: 36-character UUID (e.g., `d50f6e32-0fda-46ef-a362-9bd36ca7c97d`)
+- **Purpose**: Unique identifier for each OpenStax textbook across all repositories
+- **Fallback**: Uses slug if UUID unavailable (e.g., `university-physics-volume-1`)
+
+### Before/After Comparison
+```
+Before: Book ID = 'N/A' (extraction failed)
+After:  Book ID = 'd50f6e32-0fda-46ef-a362-9bd36ca7c97d' (proper UUID)
+```
+
 ---
 
 **User Request Status**: **FULLY IMPLEMENTED**  
-**Result**: Dashboard now features a beautiful, sortable book inventory table with comprehensive information and export functionality, sorted exactly as requested (Subject → Language → Level).
+**Bug Fixes**: **COMPLETED** - Deprecated parameter updated, Book IDs now display proper OpenStax UUIDs  
+**Result**: Dashboard now features a beautiful, sortable book inventory table with comprehensive information, proper Book IDs, and export functionality, sorted exactly as requested (Subject → Language → Level).

@@ -480,7 +480,7 @@ def collect_book_inventory():
                                         'Book Title': book.title,
                                         'Chapters': len(book.chapters),
                                         'Total Sections': sum(len(chapter.modules) for chapter in book.chapters),
-                                        'Book ID': book.id if hasattr(book, 'id') else 'N/A'
+                                        'Book ID': getattr(book, 'uuid', getattr(book, 'slug', 'N/A'))
                                     })
                             else:
                                 # Repository without parsed books
@@ -933,7 +933,7 @@ def display_enhanced_book_content(book, parser):
                                                 st.image(
                                                     str(image_info['path']), 
                                                     caption=f"📷 {image_info['alt']}", 
-                                                    use_column_width=True
+                                                    use_container_width=True
                                                 )
                                             
                                             # Find the end of the placeholder and display remaining content
