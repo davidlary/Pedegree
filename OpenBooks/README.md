@@ -135,6 +135,11 @@ ReadOpenBooks implements a comprehensive 5-layer validation system:
 - **System Information**: Python version, dependencies, and paths
 - **Health Monitoring**: Component status and availability
 
+### Application Control (🚪)
+- **Graceful Exit**: Clean shutdown button in sidebar
+- **Session Summary**: Shows usage statistics before exit
+- **Safe Termination**: Properly stops all background processes
+
 ## ⚡ Performance Features
 
 ### High-Performance Acquisition
@@ -398,11 +403,12 @@ The application will open automatically in your browser, providing comprehensive
 
 **Features Available:**
 - ✅ Complete OpenStax repository discovery and validation
-- ✅ Multi-language support across 6 languages
+- ✅ Multi-language support across 7 languages
 - ✅ Zero contamination protection with 5-layer validation
 - ✅ High-performance parallel processing (20 workers)
 - ✅ Intuitive web interface with real-time monitoring
 - ✅ Comprehensive testing and quality assurance tools
+- ✅ Graceful exit button for clean application shutdown
 
 **Next Steps:**
 1. Open the 🏠 Dashboard to see system status

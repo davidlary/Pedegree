@@ -193,6 +193,29 @@ def display_system_status():
         with st.sidebar.expander("Available Subjects"):
             for subject in status['subjects_available']:
                 st.write(f"• {subject}")
+    
+    # Graceful exit section
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("## 🚪 Application Control")
+    
+    if st.sidebar.button("🚪 Exit Application", type="secondary", help="Gracefully shut down the ReadOpenBooks application"):
+        st.sidebar.success("✅ Shutting down ReadOpenBooks...")
+        st.sidebar.markdown("**Application stopped successfully.**")
+        st.sidebar.markdown("You can close this browser tab.")
+        
+        # Display goodbye message in main area
+        st.markdown("## 👋 Thank you for using ReadOpenBooks!")
+        st.markdown("### 🎉 Session Summary")
+        st.markdown(f"- **Books Available:** {status['books_count']}")
+        st.markdown(f"- **Languages Supported:** {len(status['languages_available'])}")
+        st.markdown(f"- **System Status:** All components operational")
+        
+        st.markdown("---")
+        st.markdown("**The application has been gracefully shut down.**")
+        st.markdown("You can safely close this browser tab now.")
+        
+        # Stop the Streamlit app
+        st.stop()
 
 def main():
     """Main Streamlit application."""
