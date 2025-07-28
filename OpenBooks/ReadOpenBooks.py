@@ -27,8 +27,6 @@ import sys
 import os
 import time
 import json
-import signal
-import atexit
 import threading
 from pathlib import Path
 from typing import Dict, List, Any, Optional
@@ -106,29 +104,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Global shutdown flag
-_shutdown_requested = False
-
-def signal_handler(signum, frame):
-    """Handle shutdown signals gracefully."""
-    global _shutdown_requested
-    _shutdown_requested = True
-    print(f"\n🚪 Received shutdown signal ({signum}). Gracefully exiting ReadOpenBooks...")
-    sys.exit(0)
-
-def cleanup_on_exit():
-    """Cleanup function called on exit."""
-    print("🧹 Cleaning up ReadOpenBooks resources...")
-
-# Register signal handlers and exit cleanup
-signal.signal(signal.SIGINT, signal_handler)
-signal.signal(signal.SIGTERM, signal_handler)
-atexit.register(cleanup_on_exit)
-
 def force_app_shutdown():
     """Force shutdown of the Streamlit application and close browser."""
     def shutdown_after_delay():
-        time.sleep(2)  # Give time for UI updates
+        time.sleep(3)  # Give time for UI updates and countdown
         print("🚪 Force shutting down ReadOpenBooks...")
         os._exit(0)  # Force exit
     

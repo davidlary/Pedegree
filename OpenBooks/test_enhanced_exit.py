@@ -24,12 +24,8 @@ def test_enhanced_exit_functionality():
     try:
         # Test 1: Verify enhanced imports
         print("\n  📦 Testing Enhanced Imports...")
-        import signal
-        import atexit
         import threading
-        print("    ✅ signal module imported")
-        print("    ✅ atexit module imported") 
-        print("    ✅ threading module imported")
+        print("    ✅ threading module imported (for force shutdown)")
         
         # Test 2: Check exit handler functions exist in ReadOpenBooks.py
         print("\n  🔧 Testing Exit Handler Functions...")
@@ -37,14 +33,10 @@ def test_enhanced_exit_functionality():
             content = f.read()
         
         exit_components = [
-            'signal_handler',
-            'cleanup_on_exit', 
             'force_app_shutdown',
-            '_shutdown_requested',
-            'signal.signal(signal.SIGINT',
-            'signal.signal(signal.SIGTERM',
-            'atexit.register',
-            'os._exit(0)'
+            'os._exit(0)',
+            'threading.Thread',
+            'shutdown_after_delay'
         ]
         
         for component in exit_components:
@@ -91,20 +83,12 @@ def test_enhanced_exit_functionality():
                 print(f"    ❌ {component}: Missing")
                 return False
         
-        # Test 5: Check signal handling setup
-        print("\n  📡 Testing Signal Handling...")
-        try:
-            # Test signal registration (without actually triggering)
-            original_sigint = signal.signal(signal.SIGINT, signal.default_int_handler)
-            original_sigterm = signal.signal(signal.SIGTERM, signal.default_int_handler)
-            
-            # Restore original handlers
-            signal.signal(signal.SIGINT, original_sigint)
-            signal.signal(signal.SIGTERM, original_sigterm)
-            
-            print("    ✅ Signal handling setup working")
-        except Exception as e:
-            print(f"    ❌ Signal handling error: {e}")
+        # Test 5: Check force shutdown mechanism
+        print("\n  🚪 Testing Force Shutdown Mechanism...")
+        if 'force_app_shutdown' in content and 'os._exit(0)' in content:
+            print("    ✅ Force shutdown mechanism implemented")
+        else:
+            print("    ❌ Force shutdown mechanism missing")
             return False
         
         # Test 6: Check threading support
@@ -151,8 +135,8 @@ def test_exit_flow_simulation():
         print("     • Method 3: replace with closing page - Simulated ✅")
         
         print("  6. 🔄 Server shutdown signal sent...")
-        print("  7. 🧹 Cleanup functions called...")
-        print("  8. 🚪 Application force shutdown initiated...")
+        print("  7. 🚪 Application force shutdown initiated...")
+        print("  8. 🧹 Process terminated cleanly...")
         
         print("\n✅ Exit Flow Simulation: SUCCESSFUL")
         return True
@@ -194,10 +178,10 @@ if __name__ == "__main__":
         print("- Browser tab automatically closes after 3-second countdown")
         print("- Streamlit application terminates gracefully")
         print("- Multiple fallback methods for tab closure")
-        print("- Signal handling for clean shutdown")
+        print("- Force shutdown mechanism with threading")
         print("- Keyboard shortcut support (Ctrl+Q)")
         print("- Visual countdown with user feedback")
-        print("- Force shutdown mechanism as backup")
+        print("- Streamlit-compatible implementation (no signal handling)")
         
         print(f"\n🚀 ReadOpenBooks Enhanced Exit: PRODUCTION READY!")
     else:
