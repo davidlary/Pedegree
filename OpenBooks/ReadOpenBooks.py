@@ -47,6 +47,7 @@ try:
     from core.repository_manager import RepositoryManager
     from core.content_processor import ContentProcessor
     from core.search_indexer import SearchIndexer
+    from core.book_parser import OpenStaxBookParser
     CORE_MODULES_AVAILABLE = True
 except ImportError as e:
     st.error(f"Failed to import core modules: {e}")
@@ -566,7 +567,7 @@ def run_book_discovery(config, language, subjects, openstax_only, check_updates,
             st.exception(e)
 
 def display_book_reader():
-    """Display book reading interface."""
+    """Display enhanced book reading interface with proper OpenStax collection support."""
     st.markdown('<h2 class="sub-header">📖 Read OpenStax Books</h2>', unsafe_allow_html=True)
     
     books_dir = Path(current_dir / "Books")
@@ -574,6 +575,9 @@ def display_book_reader():
     if not books_dir.exists():
         st.warning("No books directory found. Please run discovery first.")
         return
+    
+    # Initialize book parser
+    parser = OpenStaxBookParser()
     
     # Book browser
     col1, col2 = st.columns([1, 2])
@@ -602,33 +606,52 @@ def display_book_reader():
             if levels:
                 selected_level = st.selectbox("Level", levels)
                 
-                # Book selection
+                # Repository selection
                 level_dir = subject_dir / selected_level
-                books = sorted([d.name for d in level_dir.iterdir() if d.is_dir() and (d / ".git").exists()])
-                if books:
-                    selected_book = st.selectbox("Book", books)
+                repositories = sorted([d.name for d in level_dir.iterdir() if d.is_dir() and (d / ".git").exists()])
+                if repositories:
+                    selected_repository = st.selectbox("Repository", repositories)
                     
-                    # Store selected book in session state
-                    if selected_book:
-                        st.session_state.current_book_path = level_dir / selected_book
-                        st.session_state.current_book_name = selected_book
+                    if selected_repository:
+                        repository_path = level_dir / selected_repository
+                        
+                        # Parse books in this repository
+                        books = parser.parse_repository_books(repository_path)
+                        
+                        if books:
+                            # Book selection (for collections with multiple books)
+                            if len(books) > 1:
+                                st.markdown("### 📚 Select Book")
+                                book_titles = [book.title for book in books]
+                                selected_book_title = st.selectbox("Book", book_titles)
+                                selected_book = next(book for book in books if book.title == selected_book_title)
+                            else:
+                                selected_book = books[0]
+                            
+                            # Store selected book in session state
+                            if selected_book:
+                                st.session_state.current_book = selected_book
+                                st.session_state.current_repository_path = repository_path
+                        else:
+                            st.warning(f"No books found in {selected_repository}")
     
     # Book content display (right column)
     with col2:
         st.markdown("### 📖 Book Content")
         
         # Display book content if a book is selected
-        if hasattr(st.session_state, 'current_book_path') and st.session_state.current_book_path:
-            display_book_content_with_toc(st.session_state.current_book_path)
+        if hasattr(st.session_state, 'current_book') and st.session_state.current_book:
+            display_enhanced_book_content(st.session_state.current_book, parser)
         else:
             st.info("Select a book from the browser to view its content here.")
 
-def display_book_content_with_toc(book_path: Path):
-    """Display book content with Table of Contents and content viewer."""
+def display_enhanced_book_content(book, parser):
+    """Display enhanced book content with proper chapter/section TOC."""
     try:
         # Display book information
-        st.markdown(f"**📚 Book:** {book_path.name}")
-        st.markdown(f"**📁 Path:** `{book_path}`")
+        st.markdown(f"**📚 Book:** {book.title}")
+        st.markdown(f"**🌍 Language:** {book.language}")
+        st.markdown(f"**📊 Structure:** {len(book.chapters)} chapters")
         
         # Create two columns for TOC and content viewer
         toc_col, content_col = st.columns([1, 2])
@@ -636,150 +659,110 @@ def display_book_content_with_toc(book_path: Path):
         with toc_col:
             st.markdown("#### 📋 Table of Contents")
             
-            # Find all content files
-            content_files = []
-            patterns = ["*.md", "*.cnxml", "*.html", "*.txt", "*.rst"]
-            
-            for pattern in patterns:
-                content_files.extend(book_path.rglob(pattern))
-            
-            # Sort files by path for better organization
-            content_files = sorted(content_files, key=lambda x: str(x.relative_to(book_path)))
-            
-            if content_files:
-                # Initialize selected file in session state
-                if 'selected_content_file' not in st.session_state:
-                    st.session_state.selected_content_file = content_files[0]
+            # Display book structure as hierarchical TOC
+            if book.chapters:
+                st.markdown(f"**{len(book.chapters)} Chapters Available:**")
                 
-                # Display TOC as a scrollable list
-                st.markdown(f"**Found {len(content_files)} content files:**")
-                
-                # Create a container for the scrollable TOC
-                toc_container = st.container()
-                
-                with toc_container:
-                    for i, file in enumerate(content_files[:50]):  # Limit to first 50 files
-                        relative_path = file.relative_to(book_path)
-                        file_name = relative_path.name
-                        folder_path = str(relative_path.parent) if relative_path.parent != Path('.') else ""
-                        
-                        # Create a more readable display name
-                        if folder_path:
-                            display_name = f"📁 {folder_path} → 📄 {file_name}"
-                        else:
-                            display_name = f"📄 {file_name}"
-                        
-                        # Use radio button or selectbox for file selection
-                        if st.button(display_name, key=f"file_{i}", help=str(relative_path)):
-                            st.session_state.selected_content_file = file
-                            st.rerun()
-                
-                # Show README or main files first
-                if len(content_files) > 50:
-                    st.info(f"Showing first 50 of {len(content_files)} files. Use search to find specific files.")
-                    
+                # Create expandable TOC
+                for chapter_idx, chapter in enumerate(book.chapters):
+                    with st.expander(f"📖 {chapter.title} ({len(chapter.modules)} sections)"):
+                        for module_idx, module in enumerate(chapter.modules):
+                            # Create clickable section buttons
+                            section_key = f"chapter_{chapter_idx}_module_{module_idx}"
+                            section_label = f"📄 {module.title}"
+                            
+                            if st.button(section_label, key=section_key, help=f"Module ID: {module.id}"):
+                                # Store selected module in session state
+                                st.session_state.selected_chapter = chapter
+                                st.session_state.selected_module = module
+                                st.rerun()
             else:
-                st.warning("No readable content files found in this book.")
-                st.markdown("**Supported formats:** Markdown (.md), CNXML (.cnxml), HTML (.html), Text (.txt), reStructuredText (.rst)")
+                st.warning("No chapters found in this book.")
         
         with content_col:
             st.markdown("#### 📖 Content Viewer")
             
-            if content_files and hasattr(st.session_state, 'selected_content_file'):
-                selected_file = st.session_state.selected_content_file
+            # Display selected module content
+            if hasattr(st.session_state, 'selected_module') and st.session_state.selected_module:
+                module = st.session_state.selected_module
+                chapter = st.session_state.selected_chapter
                 
-                try:
-                    # Display file information
-                    relative_path = selected_file.relative_to(book_path)
-                    st.markdown(f"**Current File:** `{relative_path}`")
-                    
-                    # File size and modification info
-                    file_stats = selected_file.stat()
-                    file_size = file_stats.st_size
-                    if file_size < 1024:
-                        size_str = f"{file_size} bytes"
-                    elif file_size < 1024 * 1024:
-                        size_str = f"{file_size/1024:.1f} KB"
-                    else:
-                        size_str = f"{file_size/(1024*1024):.1f} MB"
-                    
-                    st.markdown(f"**File Size:** {size_str}")
-                    
-                    # Read and display content
-                    with st.spinner("Loading content..."):
-                        try:
-                            content = selected_file.read_text(encoding='utf-8', errors='ignore')
-                            
-                            # Detect file type and display accordingly
-                            file_ext = selected_file.suffix.lower()
-                            
-                            if file_ext == '.md':
-                                # Display Markdown with formatting
-                                st.markdown("---")
-                                st.markdown(content)
-                            elif file_ext in ['.html', '.htm']:
-                                # Display HTML content
-                                st.markdown("---")
-                                st.components.v1.html(content, height=600, scrolling=True)
-                            elif file_ext == '.cnxml':
-                                # Display CNXML as formatted text (XML-like)
-                                st.markdown("---")
-                                st.code(content, language='xml')
-                            else:
-                                # Display as plain text
-                                st.markdown("---")
-                                st.text_area("File Content", content, height=500, key="content_viewer")
+                # Display section information
+                st.markdown(f"**📖 Chapter:** {chapter.title}")
+                st.markdown(f"**📄 Section:** {module.title}")
+                st.markdown(f"**🆔 Module ID:** `{module.id}`")
+                
+                # Load and display module content
+                with st.spinner("Loading section content..."):
+                    try:
+                        content = parser.get_module_content(module.content_path)
+                        
+                        if content:
+                            # Check if module file exists
+                            if module.content_path.exists():
+                                file_size = module.content_path.stat().st_size
+                                if file_size < 1024:
+                                    size_str = f"{file_size} bytes"
+                                elif file_size < 1024 * 1024:
+                                    size_str = f"{file_size/1024:.1f} KB"
+                                else:
+                                    size_str = f"{file_size/(1024*1024):.1f} MB"
                                 
-                        except UnicodeDecodeError:
-                            # Try different encodings
-                            for encoding in ['latin-1', 'cp1252', 'iso-8859-1']:
-                                try:
-                                    content = selected_file.read_text(encoding=encoding, errors='ignore')
-                                    st.text_area("File Content", content, height=500, key="content_viewer_alt")
-                                    break
-                                except:
-                                    continue
-                            else:
-                                st.error("Could not decode file content. File may be binary or use an unsupported encoding.")
-                        
-                except Exception as e:
-                    st.error(f"Error reading file {selected_file.name}: {e}")
-            else:
-                st.info("Select a file from the Table of Contents to view its content.")
-                
-        # Directory structure (expandable)
-        with st.expander("📁 Complete Directory Structure"):
-            try:
-                def display_directory_tree(path, prefix="", max_depth=3, current_depth=0):
-                    if current_depth >= max_depth:
-                        return
-                    
-                    items = sorted(path.iterdir(), key=lambda x: (x.is_file(), x.name.lower()))
-                    for i, item in enumerate(items[:20]):  # Limit items per directory
-                        is_last = i == len(items) - 1
-                        current_prefix = "└── " if is_last else "├── "
-                        
-                        if item.is_dir():
-                            st.text(f"{prefix}{current_prefix}📁 {item.name}/")
-                            next_prefix = prefix + ("    " if is_last else "│   ")
-                            display_directory_tree(item, next_prefix, max_depth, current_depth + 1)
+                                st.markdown(f"**📊 File Size:** {size_str}")
+                            
+                            st.markdown("---")
+                            # Display CNXML content with syntax highlighting
+                            st.code(content, language='xml')
+                            
+                            # Also provide a text area for easier reading
+                            with st.expander("📖 View as Plain Text"):
+                                st.text_area("Section Content", content, height=400, key="module_content_viewer")
                         else:
-                            file_size = item.stat().st_size
-                            if file_size < 1024:
-                                size_str = f"({file_size}B)"
-                            elif file_size < 1024 * 1024:
-                                size_str = f"({file_size/1024:.0f}KB)"
-                            else:
-                                size_str = f"({file_size/(1024*1024):.1f}MB)"
-                            st.text(f"{prefix}{current_prefix}📄 {item.name} {size_str}")
+                            st.error(f"Could not load content for module {module.id}")
+                            st.markdown(f"**File path:** `{module.content_path}`")
+                            st.markdown(f"**File exists:** {module.content_path.exists()}")
+                            
+                    except Exception as e:
+                        st.error(f"Error loading module content: {e}")
+                        st.markdown(f"**Module ID:** {module.id}")
+                        st.markdown(f"**Content Path:** `{module.content_path}`")
+            else:
+                # Show book overview when no section is selected
+                st.info("Click on a section in the Table of Contents to view its content.")
                 
-                display_directory_tree(book_path)
-                
-            except Exception as e:
-                st.error(f"Error reading directory structure: {e}")
+                # Display book summary
+                if book.chapters:
+                    st.markdown("### 📊 Book Summary")
+                    
+                    total_sections = sum(len(chapter.modules) for chapter in book.chapters)
+                    st.markdown(f"**Total Chapters:** {len(book.chapters)}")
+                    st.markdown(f"**Total Sections:** {total_sections}")
+                    
+                    # Show chapter overview
+                    st.markdown("### 📑 Chapter Overview")
+                    for i, chapter in enumerate(book.chapters, 1):
+                        st.markdown(f"{i}. **{chapter.title}** — {len(chapter.modules)} sections")
                 
     except Exception as e:
-        st.error(f"Error displaying book content: {e}")
+        st.error(f"Error displaying enhanced book content: {e}")
+        import traceback
+        st.code(traceback.format_exc())
+
+def display_book_content_with_toc(book_path: Path):
+    """Legacy function - now redirects to enhanced implementation."""
+    # Try to use the enhanced reader if possible
+    try:
+        parser = OpenStaxBookParser()
+        books = parser.parse_repository_books(book_path)
+        if books:
+            display_enhanced_book_content(books[0], parser)
+            return
+    except Exception:
+        pass
+    
+    # Fallback to basic directory listing
+    st.warning("Could not parse book structure. Showing directory contents.")
+    st.markdown(f"**📁 Directory:** `{book_path}`")
 
 def display_book_content(book_path: Path):
     """Legacy function - redirects to new implementation."""
