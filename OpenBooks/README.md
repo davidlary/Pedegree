@@ -106,6 +106,11 @@ ReadOpenBooks implements a comprehensive 5-layer validation system:
 ## 🖥️ User Interface Guide
 
 ### Dashboard Tab (🏠)
+- **Book Inventory Table**: Beautiful sortable table showing all books with Subject, Language, Level, Repository, Title, Chapters, and Sections
+- **Automatic Sorting**: Books sorted by Subject → Language → Level for easy organization
+- **Real-time Metrics**: Dynamic counters for Total Books, Languages, Subjects, and Repositories
+- **Professional Display**: Advanced DataFrame with column configuration and proper sizing
+- **CSV Export**: Download complete book inventory as CSV file for external analysis
 - **System Status**: Real-time monitoring of collection and system health
 - **Key Features Overview**: Validation and performance features summary
 - **Quick Actions**: One-click access to main functionality

@@ -429,11 +429,151 @@ def main():
     with tab5:
         display_settings(config)
 
+def collect_book_inventory():
+    """Collect comprehensive book inventory from the Books directory."""
+    try:
+        from core.book_parser import OpenStaxBookParser
+        
+        books_data = []
+        parser = OpenStaxBookParser()
+        books_dir = Path("Books")
+        
+        if not books_dir.exists():
+            return []
+        
+        # Traverse the Books directory structure: Books/{language}/{subject}/{level}/{repository}
+        for language_dir in books_dir.iterdir():
+            if not language_dir.is_dir():
+                continue
+                
+            language = language_dir.name.title()
+            
+            for subject_dir in language_dir.iterdir():
+                if not subject_dir.is_dir():
+                    continue
+                    
+                subject = subject_dir.name.title()
+                
+                for level_dir in subject_dir.iterdir():
+                    if not level_dir.is_dir():
+                        continue
+                        
+                    level = level_dir.name.title()
+                    
+                    for repository_dir in level_dir.iterdir():
+                        if not repository_dir.is_dir() or not (repository_dir / ".git").exists():
+                            continue
+                        
+                        repository_name = repository_dir.name
+                        
+                        try:
+                            # Try to parse books in this repository
+                            books = parser.parse_repository_books(repository_dir)
+                            
+                            if books:
+                                for book in books:
+                                    books_data.append({
+                                        'Subject': subject,
+                                        'Language': language,
+                                        'Level': level,
+                                        'Repository': repository_name,
+                                        'Book Title': book.title,
+                                        'Chapters': len(book.chapters),
+                                        'Total Sections': sum(len(chapter.modules) for chapter in book.chapters),
+                                        'Book ID': book.id if hasattr(book, 'id') else 'N/A'
+                                    })
+                            else:
+                                # Repository without parsed books
+                                books_data.append({
+                                    'Subject': subject,
+                                    'Language': language,
+                                    'Level': level,
+                                    'Repository': repository_name,
+                                    'Book Title': repository_name.replace('osbooks-', '').replace('-', ' ').title(),
+                                    'Chapters': 'N/A',
+                                    'Total Sections': 'N/A',
+                                    'Book ID': 'N/A'
+                                })
+                        except Exception as e:
+                            # Repository with parsing error
+                            books_data.append({
+                                'Subject': subject,
+                                'Language': language,
+                                'Level': level,
+                                'Repository': repository_name,
+                                'Book Title': repository_name.replace('osbooks-', '').replace('-', ' ').title(),
+                                'Chapters': 'Error',
+                                'Total Sections': 'Error', 
+                                'Book ID': 'Error'
+                            })
+        
+        # Sort by Subject, then Language, then Level
+        books_data.sort(key=lambda x: (x['Subject'], x['Language'], x['Level']))
+        
+        return books_data
+        
+    except Exception as e:
+        st.error(f"Error collecting book inventory: {e}")
+        return []
+
 def display_dashboard():
     """Display the main dashboard."""
     st.markdown('<h2 class="sub-header">🏠 System Dashboard</h2>', unsafe_allow_html=True)
     
-    # Key features
+    # Book inventory table
+    st.markdown("### 📚 Book Inventory")
+    
+    with st.spinner("Loading book inventory..."):
+        books_data = collect_book_inventory()
+    
+    if books_data:
+        # Create DataFrame for beautiful table display
+        import pandas as pd
+        df = pd.DataFrame(books_data)
+        
+        # Display summary statistics
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Total Books", len(df))
+        with col2:
+            st.metric("Languages", df['Language'].nunique())
+        with col3:
+            st.metric("Subjects", df['Subject'].nunique())
+        with col4:
+            st.metric("Repositories", df['Repository'].nunique())
+        
+        # Display the beautiful table
+        st.dataframe(
+            df,
+            use_container_width=True,
+            height=400,
+            column_config={
+                "Subject": st.column_config.TextColumn("📖 Subject", width="medium"),
+                "Language": st.column_config.TextColumn("🌍 Language", width="small"),
+                "Level": st.column_config.TextColumn("🎯 Level", width="small"),
+                "Repository": st.column_config.TextColumn("📦 Repository", width="large"),
+                "Book Title": st.column_config.TextColumn("📚 Book Title", width="large"),
+                "Chapters": st.column_config.NumberColumn("📑 Chapters", width="small"),
+                "Total Sections": st.column_config.NumberColumn("📄 Sections", width="small"),
+                "Book ID": st.column_config.TextColumn("🆔 Book ID", width="medium")
+            }
+        )
+        
+        # Download option
+        if st.button("📥 Download Book Inventory as CSV"):
+            csv = df.to_csv(index=False)
+            st.download_button(
+                label="📥 Download CSV",
+                data=csv,
+                file_name="openbooks_inventory.csv",
+                mime="text/csv"
+            )
+    else:
+        st.warning("No books found in the Books directory. Use the 'Discover Books' tab to acquire textbooks.")
+    
+    st.markdown("---")
+    
+    # Key features (condensed)
     col1, col2 = st.columns(2)
     
     with col1:
@@ -447,14 +587,12 @@ def display_dashboard():
         """)
         
         st.markdown("### 🌍 Language Support")
-        st.markdown("""
-        - **English**: 29 repositories
-        - **Spanish**: 7 repositories  
-        - **French**: 8 repositories
-        - **Polish**: 4 repositories
-        - **German**: 1 repository
-        - **Italian**: Structure ready
-        """)
+        if books_data:
+            language_counts = pd.DataFrame(books_data)['Language'].value_counts()
+            for lang, count in language_counts.items():
+                st.markdown(f"- **{lang}**: {count} repositories")
+        else:
+            st.markdown("- **English, Spanish, French, Polish, German, Italian**: Ready for discovery")
     
     with col2:
         st.markdown("### ⚡ Performance Features")
