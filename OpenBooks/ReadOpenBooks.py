@@ -61,6 +61,52 @@ try:
 except ImportError:
     PDF_PROCESSING_AVAILABLE = False
 
+
+def process_html_for_streamlit(html_content: str, base_path: Optional[Path] = None) -> tuple[str, List[Dict]]:
+    """Process HTML content to handle images for Streamlit display.
+    
+    Returns:
+        tuple: (processed_html, image_list)
+        - processed_html: HTML with image placeholders
+        - image_list: List of dicts with image info for st.image display
+    """
+    import re
+    from pathlib import Path
+    
+    if not html_content:
+        return html_content, []
+    
+    images_to_display = []
+    
+    # Find all figure elements with data-image-path attributes
+    pattern = r'<div class="figure-image" data-image-path="([^"]+)" data-alt="([^"]*)">[^<]*</div>'
+    
+    def replace_image(match):
+        image_path_str = match.group(1)
+        alt_text = match.group(2)
+        
+        try:
+            image_path = Path(image_path_str)
+            if image_path.exists() and image_path.suffix.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg']:
+                # Add to images list for separate display
+                images_to_display.append({
+                    'path': image_path,
+                    'alt': alt_text,
+                    'placeholder_id': len(images_to_display)
+                })
+                # Create placeholder in HTML
+                return f'<div class="figure-placeholder" id="image-{len(images_to_display)-1}">📷 <strong>{alt_text}</strong></div>'
+            else:
+                return f'<div class="figure-image">[📷 {alt_text} - Path: {image_path_str}]</div>'
+        except Exception as e:
+            return f'<div class="figure-image">[📷 {alt_text} - Error: {e}]</div>'
+    
+    # Replace image placeholders
+    processed_html = re.sub(pattern, replace_image, html_content)
+    
+    return processed_html, images_to_display
+
+
 # Configure Streamlit page
 st.set_page_config(
     page_title="ReadOpenBooks - OpenStax Textbook Reader & Validator",
@@ -715,19 +761,59 @@ def display_enhanced_book_content(book, parser):
                             
                             # Render CNXML content properly
                             try:
+                                from pathlib import Path
                                 renderer = CNXMLRenderer()
-                                rendered_result = renderer.cnxml_to_html(content)
+                                
+                                # Get repository base path for image resolution
+                                base_path = None
+                                if hasattr(st.session_state, 'current_repository_path'):
+                                    base_path = Path(st.session_state.current_repository_path)
+                                
+                                rendered_result = renderer.cnxml_to_html(content, base_path)
+                                
+                                # Process HTML to handle images for Streamlit
+                                processed_content, images_to_display = process_html_for_streamlit(rendered_result['content'], base_path)
                                 
                                 # Display rendered content
                                 st.markdown("### 📖 Section Content")
-                                st.markdown(rendered_result['content'], unsafe_allow_html=True)
+                                
+                                # Split content by image placeholders and display images inline
+                                if images_to_display:
+                                    content_parts = processed_content.split('<div class="figure-placeholder"')
+                                    
+                                    # Display first part of content
+                                    if content_parts[0].strip():
+                                        st.markdown(content_parts[0], unsafe_allow_html=True)
+                                    
+                                    # Display remaining parts with images
+                                    for i, part in enumerate(content_parts[1:]):
+                                        # Extract the image ID from the placeholder
+                                        if f'id="image-{i}"' in part:
+                                            # Display the image
+                                            if i < len(images_to_display):
+                                                image_info = images_to_display[i]
+                                                st.image(
+                                                    str(image_info['path']), 
+                                                    caption=f"📷 {image_info['alt']}", 
+                                                    use_column_width=True
+                                                )
+                                            
+                                            # Find the end of the placeholder and display remaining content
+                                            end_div = part.find('</div>')
+                                            if end_div != -1:
+                                                remaining_content = part[end_div + 6:]  # Skip </div>
+                                                if remaining_content.strip():
+                                                    st.markdown(remaining_content, unsafe_allow_html=True)
+                                else:
+                                    # No images, display content normally
+                                    st.markdown(processed_content, unsafe_allow_html=True)
                                 
                                 # Add expandable sections for different views
                                 col1, col2 = st.columns(2)
                                 
                                 with col1:
                                     with st.expander("📝 View as Markdown"):
-                                        md_result = renderer.cnxml_to_markdown(content)
+                                        md_result = renderer.cnxml_to_markdown(content, base_path)
                                         st.markdown(md_result['content'])
                                 
                                 with col2:

@@ -87,7 +87,50 @@ class CNXMLRenderer:
         
         return ''.join(text_parts)
     
-    def render_para(self, para_elem: ET.Element) -> str:
+    def resolve_image_path(self, src: str, base_path: Optional[Path] = None) -> Optional[Path]:
+        """Resolve image path from CNXML source reference."""
+        if not src:
+            return None
+        
+        # Handle relative paths from CNXML modules
+        if src.startswith('../../media/'):
+            # This is the typical OpenStax structure
+            if base_path:
+                # base_path should be the repository root
+                media_path = base_path / 'media' / src.replace('../../media/', '')
+                if media_path.exists():
+                    return media_path
+            
+            # Try to find media directory in common locations
+            # Look for pattern: .../osbooks-*/media/filename
+            filename = src.split('/')[-1]
+            
+            # Search from current working directory
+            current_dir = Path.cwd()
+            
+            # Look for media directories
+            for media_dir in current_dir.rglob('media'):
+                if media_dir.is_dir():
+                    image_file = media_dir / filename
+                    if image_file.exists():
+                        return image_file
+        
+        elif not src.startswith('/') and not src.startswith('http'):
+            # Relative path
+            if base_path:
+                potential_path = base_path / src
+                if potential_path.exists():
+                    return potential_path
+        
+        elif src.startswith('/'):
+            # Absolute path
+            potential_path = Path(src)
+            if potential_path.exists():
+                return potential_path
+        
+        return None
+    
+    def render_para(self, para_elem: ET.Element, base_path: Optional[Path] = None) -> str:
         """Render a paragraph element."""
         content_parts = []
         
@@ -114,6 +157,11 @@ class CNXMLRenderer:
                 link_text = self.extract_text_content(child)
                 target = child.get('target-id', '#')
                 content_parts.append(f'<a href="#{target}">{escape(link_text)}</a>')
+            elif tag_name == 'figure':
+                # Handle inline figures in paragraphs
+                rendered_figure = self.render_figure(child, base_path)
+                if rendered_figure:
+                    content_parts.append(rendered_figure)
             else:
                 # For other elements, just extract text
                 content_parts.append(escape(self.extract_text_content(child)))
@@ -141,8 +189,8 @@ class CNXMLRenderer:
         
         return ""
     
-    def render_figure(self, figure_elem: ET.Element) -> str:
-        """Render a figure element."""
+    def render_figure(self, figure_elem: ET.Element, base_path: Optional[Path] = None) -> str:
+        """Render a figure element with actual image display."""
         figure_parts = []
         
         # Look for image with namespace handling
@@ -166,12 +214,18 @@ class CNXMLRenderer:
                     alt = 'Figure'
             
             if src:
-                # Make relative paths more explicit
-                if src.startswith('../../'):
-                    src_display = src.replace('../../', '[Path: ')
-                    figure_parts.append(f'<div class="figure-image">[📷 {escape(alt)} - {src_display}]</div>')
+                # Handle image path resolution
+                image_path = self.resolve_image_path(src, base_path)
+                if image_path and image_path.exists():
+                    # For Streamlit, we'll use a special format that ReadOpenBooks can detect
+                    figure_parts.append(f'<div class="figure-image" data-image-path="{image_path}" data-alt="{escape(alt)}">📷 {escape(alt)}</div>')
                 else:
-                    figure_parts.append(f'<div class="figure-image">[📷 {escape(alt)}]</div>')
+                    # Fallback to text representation
+                    if src.startswith('../../'):
+                        src_display = src.replace('../../', 'media/')
+                        figure_parts.append(f'<div class="figure-image">[📷 {escape(alt)} - Path: {src_display}]</div>')
+                    else:
+                        figure_parts.append(f'<div class="figure-image">[📷 {escape(alt)} - Path: {src}]</div>')
             else:
                 figure_parts.append(f'<div class="figure-image">[📷 {escape(alt)}]</div>')
         else:
@@ -209,7 +263,7 @@ class CNXMLRenderer:
         
         return ""
     
-    def render_section(self, section_elem: ET.Element, level: int = 2) -> str:
+    def render_section(self, section_elem: ET.Element, level: int = 2, base_path: Optional[Path] = None) -> str:
         """Render a section element."""
         content_parts = []
         
@@ -224,7 +278,7 @@ class CNXMLRenderer:
             if child.tag == 'title':
                 continue  # Already handled
             elif child.tag.endswith('}para') or child.tag == 'para':
-                rendered = self.render_para(child)
+                rendered = self.render_para(child, base_path)
                 if rendered:
                     content_parts.append(rendered)
             elif child.tag.endswith('}list') or child.tag == 'list':
@@ -232,17 +286,17 @@ class CNXMLRenderer:
                 if rendered:
                     content_parts.append(rendered)
             elif child.tag.endswith('}figure') or child.tag == 'figure':
-                rendered = self.render_figure(child)
+                rendered = self.render_figure(child, base_path)
                 if rendered:
                     content_parts.append(rendered)
             elif child.tag.endswith('}section') or child.tag == 'section':
-                rendered = self.render_section(child, level + 1)
+                rendered = self.render_section(child, level + 1, base_path)
                 if rendered:
                     content_parts.append(rendered)
         
         return '\n\n'.join(content_parts)
     
-    def render_content(self, content_elem: ET.Element) -> str:
+    def render_content(self, content_elem: ET.Element, base_path: Optional[Path] = None) -> str:
         """Render the main content element."""
         content_parts = []
         
@@ -250,15 +304,15 @@ class CNXMLRenderer:
             tag_name = child.tag.split('}')[-1] if '}' in child.tag else child.tag
             
             if tag_name == 'para':
-                rendered = self.render_para(child)
+                rendered = self.render_para(child, base_path)
                 if rendered:
                     content_parts.append(rendered)
             elif tag_name == 'section':
-                rendered = self.render_section(child)
+                rendered = self.render_section(child, base_path=base_path)
                 if rendered:
                     content_parts.append(rendered)
             elif tag_name == 'figure':
-                rendered = self.render_figure(child)
+                rendered = self.render_figure(child, base_path)
                 if rendered:
                     content_parts.append(rendered)
             elif tag_name == 'list':
@@ -271,7 +325,7 @@ class CNXMLRenderer:
         
         return '\n\n'.join(content_parts)
     
-    def cnxml_to_html(self, cnxml_content: str) -> Dict[str, str]:
+    def cnxml_to_html(self, cnxml_content: str, base_path: Optional[Path] = None) -> Dict[str, str]:
         """Convert CNXML content to HTML."""
         try:
             root = self.parse_cnxml(cnxml_content)
@@ -298,13 +352,13 @@ class CNXMLRenderer:
                         break
             
             if content_elem is not None:
-                rendered_content = self.render_content(content_elem)
+                rendered_content = self.render_content(content_elem, base_path)
                 if not rendered_content.strip():
                     # Fallback: render all child elements
                     fallback_parts = []
                     for child in content_elem:
                         if child.tag.endswith('figure') or child.tag == 'figure':
-                            fallback_parts.append(self.render_figure(child))
+                            fallback_parts.append(self.render_figure(child, base_path))
                         elif child.text:
                             fallback_parts.append(f"<p>{escape(child.text.strip())}</p>")
                     rendered_content = '\n\n'.join(filter(None, fallback_parts))
@@ -345,11 +399,11 @@ class CNXMLRenderer:
                 'raw_content': cnxml_content[:500] + '...' if len(cnxml_content) > 500 else cnxml_content
             }
     
-    def cnxml_to_markdown(self, cnxml_content: str) -> Dict[str, str]:
+    def cnxml_to_markdown(self, cnxml_content: str, base_path: Optional[Path] = None) -> Dict[str, str]:
         """Convert CNXML content to Markdown (simplified version)."""
         try:
             # First convert to HTML, then simplify to Markdown-like format
-            html_result = self.cnxml_to_html(cnxml_content)
+            html_result = self.cnxml_to_html(cnxml_content, base_path)
             
             # Basic HTML to Markdown conversion
             content = html_result['content']
