@@ -805,7 +805,11 @@ def run_full_validation_suite(config):
     for i, (test_name, test_func) in enumerate(tests):
         try:
             progress_bar.progress((i + 1) / len(tests))
-            test_func(config)
+            # Handle functions that don't take config parameter
+            if test_name == "Language Detection":
+                test_func()
+            else:
+                test_func(config)
             results[test_name] = "✅ Passed"
         except Exception as e:
             results[test_name] = f"❌ Failed: {e}"
