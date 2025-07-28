@@ -48,6 +48,7 @@ try:
     from core.content_processor import ContentProcessor
     from core.search_indexer import SearchIndexer
     from core.book_parser import OpenStaxBookParser
+    from core.cnxml_renderer import CNXMLRenderer
     CORE_MODULES_AVAILABLE = True
 except ImportError as e:
     st.error(f"Failed to import core modules: {e}")
@@ -698,7 +699,7 @@ def display_enhanced_book_content(book, parser):
                         content = parser.get_module_content(module.content_path)
                         
                         if content:
-                            # Check if module file exists
+                            # Check if module file exists and show file info
                             if module.content_path.exists():
                                 file_size = module.content_path.stat().st_size
                                 if file_size < 1024:
@@ -711,12 +712,32 @@ def display_enhanced_book_content(book, parser):
                                 st.markdown(f"**📊 File Size:** {size_str}")
                             
                             st.markdown("---")
-                            # Display CNXML content with syntax highlighting
-                            st.code(content, language='xml')
                             
-                            # Also provide a text area for easier reading
-                            with st.expander("📖 View as Plain Text"):
-                                st.text_area("Section Content", content, height=400, key="module_content_viewer")
+                            # Render CNXML content properly
+                            try:
+                                renderer = CNXMLRenderer()
+                                rendered_result = renderer.cnxml_to_html(content)
+                                
+                                # Display rendered content
+                                st.markdown("### 📖 Section Content")
+                                st.markdown(rendered_result['content'], unsafe_allow_html=True)
+                                
+                                # Add expandable sections for different views
+                                col1, col2 = st.columns(2)
+                                
+                                with col1:
+                                    with st.expander("📝 View as Markdown"):
+                                        md_result = renderer.cnxml_to_markdown(content)
+                                        st.markdown(md_result['content'])
+                                
+                                with col2:
+                                    with st.expander("🔍 View Raw CNXML"):
+                                        st.code(content, language='xml')
+                                        
+                            except Exception as render_error:
+                                st.warning(f"Could not render CNXML content: {render_error}")
+                                st.markdown("### 📄 Raw Content")
+                                st.code(content, language='xml')
                         else:
                             st.error(f"Could not load content for module {module.id}")
                             st.markdown(f"**File path:** `{module.content_path}`")
