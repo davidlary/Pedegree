@@ -144,7 +144,7 @@ ReadOpenBooks implements a comprehensive 5-layer validation system:
 - **Multiple Exit Methods**: Browser tab closure, navigation fallbacks, and force shutdown
 - **Keyboard Shortcut**: Quick exit with Ctrl+Q (or Cmd+Q on Mac)
 - **Session Summary**: Shows usage statistics before exit
-- **Signal Handling**: Proper cleanup on system signals (SIGINT, SIGTERM)
+- **Force Shutdown**: Threading-based force shutdown compatible with Streamlit
 - **Safe Termination**: Properly stops all background processes and closes browser tab
 
 ## ⚡ Performance Features
