@@ -130,7 +130,8 @@ def get_system_status() -> Dict[str, Any]:
     if books_dir.exists():
         try:
             # Count subdirectories by language
-            languages = [d.name for d in books_dir.iterdir() if d.is_dir()]
+            languages = [d.name for d in books_dir.iterdir() 
+                        if d.is_dir() and d.name not in ['BookList.json', 'BookList.tsv']]
             status['languages_available'] = languages
             
             # Count total books across all languages
@@ -290,16 +291,16 @@ def display_dashboard():
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("🔍 Discover New Books", type="primary"):
-            st.switch_page("tab2")
+            st.info("Please click on the 'Discover Books' tab above to access book discovery features.")
     with col2:
         if st.button("📖 Read Existing Books"):
-            st.switch_page("tab3")
+            st.info("Please click on the 'Read Books' tab above to browse textbooks.")
     with col3:
         if st.button("✅ Run Validation"):
-            st.switch_page("tab4")
+            st.info("Please click on the 'Validation' tab above to run system validation.")
     with col4:
         if st.button("⚙️ Configure System"):
-            st.switch_page("tab5")
+            st.info("Please click on the 'Settings' tab above to configure the system.")
 
 def display_book_discovery(config: OpenBooksConfig):
     """Display book discovery interface."""
@@ -438,7 +439,8 @@ def display_book_reader():
         st.markdown("### 📂 Browse Books")
         
         # Language selection
-        languages = [d.name for d in books_dir.iterdir() if d.is_dir()]
+        languages = [d.name for d in books_dir.iterdir() 
+                    if d.is_dir() and d.name not in ['BookList.json', 'BookList.tsv']]
         if not languages:
             st.warning("No books found.")
             return
@@ -608,17 +610,17 @@ def run_language_detection():
             
             st.success("✅ LanguageDetector initialized successfully")
             
-            # Test with sample text
-            test_texts = {
-                "English": "This is a sample text in English about physics and mathematics.",
-                "Spanish": "Este es un texto de muestra en español sobre física y matemáticas.",
-                "French": "Ceci est un exemple de texte en français sur la physique et les mathématiques."
+            # Test with sample repository paths (language detector works on repo paths, not text)
+            test_repos = {
+                "English": Path("osbooks-university-physics-bundle"),
+                "Spanish": Path("osbooks-fisica-universitaria-bundle"), 
+                "French": Path("osbooks-introduction-philosophy")
             }
             
-            for lang, text in test_texts.items():
+            for lang, repo_path in test_repos.items():
                 try:
-                    detected = detector.detect_language(text)
-                    st.success(f"✅ {lang} text detected as: {detected}")
+                    detected = detector.detect_language(repo_path)
+                    st.success(f"✅ {lang} repo detected as: {detected}")
                 except Exception as e:
                     st.warning(f"⚠️ {lang} detection failed: {e}")
             
