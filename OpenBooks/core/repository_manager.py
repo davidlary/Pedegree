@@ -11,6 +11,7 @@ import logging
 from typing import Dict, Any, Optional, List
 from pathlib import Path
 import shutil
+from contextlib import contextmanager
 
 from .config import OpenBooksConfig
 from .repository_tracker import RepositoryTracker
@@ -27,6 +28,16 @@ class RepositoryManager:
         self.books_path = Path(config.books_path)
         self.books_path.mkdir(parents=True, exist_ok=True)
         self.tracker = RepositoryTracker(config)
+    
+    @contextmanager
+    def _change_directory(self, path: Path):
+        """Context manager to safely change working directory."""
+        original_cwd = os.getcwd()
+        try:
+            os.chdir(path)
+            yield path
+        finally:
+            os.chdir(original_cwd)
     
     def clone_repository(self, book_info: Dict[str, Any], openstax_only: bool = True) -> bool:
         """
@@ -169,90 +180,87 @@ class RepositoryManager:
         logger.info(f"Updating repository: {repo_path.name}")
         
         try:
-            # Change to repository directory
-            original_cwd = os.getcwd()
-            os.chdir(repo_path)
-            
-            # Get environment for all git operations
-            env = self._get_git_env()
-            
-            # Check for uncommitted changes
-            result = subprocess.run(
-                ['git', 'status', '--porcelain'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            
-            if result.stdout.strip():
-                logger.warning(f"Repository has uncommitted changes: {repo_path.name}")
-                # For now, skip update if there are uncommitted changes
-                return False
-            
-            # Fetch latest changes
-            result = subprocess.run(
-                ['git', 'fetch', 'origin'],
-                capture_output=True,
-                text=True,
-                timeout=120,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            
-            if result.returncode != 0:
-                logger.error(f"Failed to fetch: {result.stderr}")
-                return False
-            
-            # Check if updates are available
-            result = subprocess.run(
-                ['git', 'rev-list', 'HEAD..origin/main', '--count'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            
-            if result.returncode != 0:
-                # Try master branch
+            with self._change_directory(repo_path):
+                # Get environment for all git operations
+                env = self._get_git_env()
+                
+                # Check for uncommitted changes
                 result = subprocess.run(
-                    ['git', 'rev-list', 'HEAD..origin/master', '--count'],
+                    ['git', 'status', '--porcelain'],
                     capture_output=True,
                     text=True,
                     env=env,
                     stdin=subprocess.DEVNULL
                 )
-            
-            if result.returncode == 0:
-                update_count = int(result.stdout.strip())
-                if update_count == 0:
-                    logger.info(f"Repository is up to date: {repo_path.name}")
+                
+                if result.stdout.strip():
+                    logger.warning(f"Repository has uncommitted changes: {repo_path.name}")
+                    # For now, skip update if there are uncommitted changes
+                    return False
+                
+                # Fetch latest changes
+                result = subprocess.run(
+                    ['git', 'fetch', 'origin'],
+                    capture_output=True,
+                    text=True,
+                    timeout=120,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                
+                if result.returncode != 0:
+                    logger.error(f"Failed to fetch: {result.stderr}")
+                    return False
+                
+                # Check if updates are available
+                result = subprocess.run(
+                    ['git', 'rev-list', 'HEAD..origin/main', '--count'],
+                    capture_output=True,
+                    text=True,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                
+                if result.returncode != 0:
+                    # Try master branch
+                    result = subprocess.run(
+                        ['git', 'rev-list', 'HEAD..origin/master', '--count'],
+                        capture_output=True,
+                        text=True,
+                        env=env,
+                        stdin=subprocess.DEVNULL
+                    )
+                
+                if result.returncode == 0:
+                    update_count = int(result.stdout.strip())
+                    if update_count == 0:
+                        logger.info(f"Repository is up to date: {repo_path.name}")
+                        return True
+                    else:
+                        logger.info(f"Found {update_count} updates for {repo_path.name}")
+                
+                # Pull latest changes
+                result = subprocess.run(
+                    ['git', 'pull', 'origin'],
+                    capture_output=True,
+                    text=True,
+                    timeout=120,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                
+                if result.returncode == 0:
+                    logger.info(f"Successfully updated: {repo_path.name}")
+                    
+                    # Update LFS files if enabled
+                    if self.config.git_lfs_enabled and self._check_git_lfs():
+                        self._update_git_lfs(repo_path)
+                    
                     return True
                 else:
-                    logger.info(f"Found {update_count} updates for {repo_path.name}")
-            
-            # Pull latest changes
-            result = subprocess.run(
-                ['git', 'pull', 'origin'],
-                capture_output=True,
-                text=True,
-                timeout=120,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            
-            if result.returncode == 0:
-                logger.info(f"Successfully updated: {repo_path.name}")
-                
-                # Update LFS files if enabled
-                if self.config.git_lfs_enabled and self._check_git_lfs():
-                    self._update_git_lfs(repo_path)
-                
-                return True
-            else:
-                logger.error(f"Failed to pull updates: {result.stderr}")
-                return False
-                
+                    logger.error(f"Failed to pull updates: {result.stderr}")
+                    return False
+                    
         except subprocess.TimeoutExpired:
             logger.error(f"Update timeout for {repo_path.name}")
             return False
@@ -260,10 +268,6 @@ class RepositoryManager:
         except Exception as e:
             logger.error(f"Error updating {repo_path.name}: {e}")
             return False
-            
-        finally:
-            # Restore original working directory
-            os.chdir(original_cwd)
     
     def _get_git_env(self) -> Dict[str, str]:
         """Get environment variables for git operations that prevent interactive prompts."""
@@ -292,61 +296,55 @@ class RepositoryManager:
     def _setup_git_lfs(self, repo_path: Path) -> None:
         """Setup Git LFS for a repository."""
         try:
-            original_cwd = os.getcwd()
-            os.chdir(repo_path)
-            env = self._get_git_env()
-            
-            # Initialize LFS (capture output to prevent terminal spam)
-            result = subprocess.run(
-                ['git', 'lfs', 'install'], 
-                capture_output=True, 
-                text=True, 
-                env=env, 
-                stdin=subprocess.DEVNULL
-            )
-            if result.returncode != 0:
-                logger.warning(f"Git LFS install failed for {repo_path.name}: {result.stderr}")
-                return
-            
-            # Pull LFS files (capture output to prevent terminal spam)
-            result = subprocess.run(
-                ['git', 'lfs', 'pull'], 
-                capture_output=True, 
-                text=True, 
-                env=env, 
-                stdin=subprocess.DEVNULL
-            )
-            if result.returncode != 0:
-                logger.warning(f"Git LFS pull failed for {repo_path.name}: {result.stderr}")
-                return
-            
-            logger.info(f"Git LFS setup complete for {repo_path.name}")
-            
+            with self._change_directory(repo_path):
+                env = self._get_git_env()
+                
+                # Initialize LFS (capture output to prevent terminal spam)
+                result = subprocess.run(
+                    ['git', 'lfs', 'install'], 
+                    capture_output=True, 
+                    text=True, 
+                    env=env, 
+                    stdin=subprocess.DEVNULL
+                )
+                if result.returncode != 0:
+                    logger.warning(f"Git LFS install failed for {repo_path.name}: {result.stderr}")
+                    return
+                
+                # Pull LFS files (capture output to prevent terminal spam)
+                result = subprocess.run(
+                    ['git', 'lfs', 'pull'], 
+                    capture_output=True, 
+                    text=True, 
+                    env=env, 
+                    stdin=subprocess.DEVNULL
+                )
+                if result.returncode != 0:
+                    logger.warning(f"Git LFS pull failed for {repo_path.name}: {result.stderr}")
+                    return
+                
+                logger.info(f"Git LFS setup complete for {repo_path.name}")
+                
         except subprocess.CalledProcessError as e:
             logger.warning(f"Git LFS setup failed for {repo_path.name}: {e}")
         except Exception as e:
             logger.warning(f"Error setting up Git LFS: {e}")
-        finally:
-            os.chdir(original_cwd)
     
     def _update_git_lfs(self, repo_path: Path) -> None:
         """Update Git LFS files for a repository."""
         try:
-            original_cwd = os.getcwd()
-            os.chdir(repo_path)
-            env = self._get_git_env()
-            
-            # Pull latest LFS files
-            subprocess.run(['git', 'lfs', 'pull'], check=True, env=env, stdin=subprocess.DEVNULL)
-            
-            logger.debug(f"Git LFS files updated for {repo_path.name}")
-            
+            with self._change_directory(repo_path):
+                env = self._get_git_env()
+                
+                # Pull latest LFS files
+                subprocess.run(['git', 'lfs', 'pull'], check=True, env=env, stdin=subprocess.DEVNULL)
+                
+                logger.debug(f"Git LFS files updated for {repo_path.name}")
+                
         except subprocess.CalledProcessError as e:
             logger.warning(f"Git LFS update failed for {repo_path.name}: {e}")
         except Exception as e:
             logger.warning(f"Error updating Git LFS: {e}")
-        finally:
-            os.chdir(original_cwd)
     
     def _log_repository_info(self, repo_path: Path, book_info: Dict[str, Any]) -> None:
         """Log information about the cloned repository."""
@@ -409,66 +407,63 @@ class RepositoryManager:
         status['is_git_repo'] = True
         
         try:
-            original_cwd = os.getcwd()
-            os.chdir(repo_path)
-            env = self._get_git_env()
-            
-            # Check for uncommitted changes
-            result = subprocess.run(
-                ['git', 'status', '--porcelain'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            status['has_changes'] = bool(result.stdout.strip())
-            
-            # Get last commit info
-            result = subprocess.run(
-                ['git', 'log', '-1', '--format=%H|%s|%ai'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            if result.returncode == 0 and result.stdout.strip():
-                commit_info = result.stdout.strip().split('|')
-                if len(commit_info) >= 3:
-                    status['last_commit'] = {
-                        'hash': commit_info[0][:8],
-                        'message': commit_info[1],
-                        'date': commit_info[2]
-                    }
-            
-            # Check if behind/ahead of remote
-            subprocess.run(['git', 'fetch'], capture_output=True, env=env, stdin=subprocess.DEVNULL)
-            
-            # Check behind
-            result = subprocess.run(
-                ['git', 'rev-list', 'HEAD..origin/main', '--count'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            if result.returncode == 0:
-                status['behind_remote'] = int(result.stdout.strip()) > 0
-            
-            # Check ahead
-            result = subprocess.run(
-                ['git', 'rev-list', 'origin/main..HEAD', '--count'],
-                capture_output=True,
-                text=True,
-                env=env,
-                stdin=subprocess.DEVNULL
-            )
-            if result.returncode == 0:
-                status['ahead_remote'] = int(result.stdout.strip()) > 0
-            
+            with self._change_directory(repo_path):
+                env = self._get_git_env()
+                
+                # Check for uncommitted changes
+                result = subprocess.run(
+                    ['git', 'status', '--porcelain'],
+                    capture_output=True,
+                    text=True,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                status['has_changes'] = bool(result.stdout.strip())
+                
+                # Get last commit info
+                result = subprocess.run(
+                    ['git', 'log', '-1', '--format=%H|%s|%ai'],
+                    capture_output=True,
+                    text=True,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                if result.returncode == 0 and result.stdout.strip():
+                    commit_info = result.stdout.strip().split('|')
+                    if len(commit_info) >= 3:
+                        status['last_commit'] = {
+                            'hash': commit_info[0][:8],
+                            'message': commit_info[1],
+                            'date': commit_info[2]
+                        }
+                
+                # Check if behind/ahead of remote
+                subprocess.run(['git', 'fetch'], capture_output=True, env=env, stdin=subprocess.DEVNULL)
+                
+                # Check behind
+                result = subprocess.run(
+                    ['git', 'rev-list', 'HEAD..origin/main', '--count'],
+                    capture_output=True,
+                    text=True,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                if result.returncode == 0:
+                    status['behind_remote'] = int(result.stdout.strip()) > 0
+                
+                # Check ahead
+                result = subprocess.run(
+                    ['git', 'rev-list', 'origin/main..HEAD', '--count'],
+                    capture_output=True,
+                    text=True,
+                    env=env,
+                    stdin=subprocess.DEVNULL
+                )
+                if result.returncode == 0:
+                    status['ahead_remote'] = int(result.stdout.strip()) > 0
+                
         except Exception as e:
             logger.warning(f"Error getting repository status: {e}")
-        finally:
-            os.chdir(original_cwd)
         
         # Get size and file count
         status['size_mb'] = self._get_directory_size(repo_path) / (1024 * 1024)
@@ -658,9 +653,9 @@ class RepositoryManager:
     
     def _is_openstax_repository(self, book_info: Dict[str, Any]) -> bool:
         """Check if the repository is an OpenStax repository."""
-        repo_name = book_info.get('repo', '').lower()
-        org = book_info.get('org', '').lower()
-        source = book_info.get('source', '').lower()
+        repo_name = (book_info.get('repo') or '').lower()
+        org = (book_info.get('org') or '').lower()
+        source = (book_info.get('source') or '').lower()
         
         # Check for OpenStax indicators
         openstax_indicators = [
@@ -677,8 +672,8 @@ class RepositoryManager:
     
     def _is_cnx_repository(self, book_info: Dict[str, Any]) -> bool:
         """Check if the repository is a CNX repository."""
-        repo_name = book_info.get('repo', '').lower()
-        org = book_info.get('org', '').lower()
+        repo_name = (book_info.get('repo') or '').lower()
+        org = (book_info.get('org') or '').lower()
         
         # Check for CNX indicators
         cnx_indicators = [
@@ -730,9 +725,9 @@ class RepositoryManager:
         Checks repository name, title, description, and if needed, repository content
         to accurately classify educational level and prevent misplacement.
         """
-        repo_name = book_info.get('repo', book_info.get('name', '')).lower()
-        title = book_info.get('title', '').lower() 
-        description = book_info.get('description', '').lower()
+        repo_name = (book_info.get('repo') or book_info.get('name') or '').lower()
+        title = (book_info.get('title') or '').lower() 
+        description = (book_info.get('description') or '').lower()
         
         # Check if discovery provided a level hint
         level_hint = book_info.get('level_hint')
@@ -867,7 +862,7 @@ class RepositoryManager:
     
     def _is_personal_or_experimental(self, book_info: Dict[str, Any]) -> bool:
         """Check if the repository is personal or experimental work."""
-        repo_name = book_info.get('repo', book_info.get('name', '')).lower()
+        repo_name = (book_info.get('repo') or book_info.get('name') or '').lower()
         
         personal_indicators = [
             'art-of-the-pfug', 'jsea-effective-practices-personal',
@@ -878,7 +873,7 @@ class RepositoryManager:
     
     def _is_professional_development(self, book_info: Dict[str, Any]) -> bool:
         """Check if the repository is for professional development."""
-        repo_name = book_info.get('repo', book_info.get('name', '')).lower()
+        repo_name = (book_info.get('repo') or book_info.get('name') or '').lower()
         
         professional_indicators = [
             'performance-assessment-in-educational-leadership',
@@ -931,8 +926,8 @@ class RepositoryManager:
         This prevents non-textbook repositories from contaminating the Books directory.
         """
         clone_url = book_info.get('clone_url', '')
-        repo_name = book_info.get('repo', '').lower()
-        description = book_info.get('description', '').lower()
+        repo_name = (book_info.get('repo') or '').lower()
+        description = (book_info.get('description') or '').lower()
         
         # CRITICAL: Check for non-textbook repository patterns
         non_textbook_patterns = [
@@ -1071,7 +1066,7 @@ class RepositoryManager:
         try:
             # Try to get language from book_info first
             if 'language' in book_info and book_info['language']:
-                return book_info['language'].lower()
+                return (book_info['language'] or '').lower()
             
             # Initialize language detector if needed
             if not hasattr(self, '_language_detector'):

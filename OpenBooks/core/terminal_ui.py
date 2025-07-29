@@ -353,17 +353,39 @@ class TerminalUI:
             except:
                 terminal_width = 80  # fallback
             
-            # Clear the entire line properly
-            print('\r' + ' ' * terminal_width + '\r', end='', flush=True)
-            
+            # Build the complete message first
             if details:
                 # Truncate details if too long to prevent overrun
-                max_details_length = 50
+                max_details_length = 30  # Reduced to prevent line wrapping
                 if len(details) > max_details_length:
                     details = details[:max_details_length-3] + "..."
-                print(f"\r{status_msg} {progress_msg} {Colors.GRAY}│ {details}{Colors.RESET}", end='', flush=True)
+                full_message = f"{status_msg} {progress_msg} {Colors.GRAY}│ {details}{Colors.RESET}"
             else:
-                print(f"\r{status_msg} {progress_msg}", end='', flush=True)
+                full_message = f"{status_msg} {progress_msg}"
+            
+            # Calculate actual display width (excluding ANSI codes)
+            display_width = len(self._strip_ansi_codes(full_message))
+            
+            # Truncate if message would exceed terminal width
+            if display_width > terminal_width - 1:  # Leave 1 char margin
+                # Truncate the details part to fit
+                if details:
+                    max_details_for_terminal = terminal_width - len(self._strip_ansi_codes(f"{status_msg} {progress_msg} │ ..."))
+                    if max_details_for_terminal > 0:
+                        truncated_details = details[:max_details_for_terminal-3] + "..."
+                        full_message = f"{status_msg} {progress_msg} {Colors.GRAY}│ {truncated_details}{Colors.RESET}"
+                    else:
+                        full_message = f"{status_msg} {progress_msg}"
+                else:
+                    # If even the basic message is too long, truncate operation name
+                    max_operation_width = terminal_width - len(self._strip_ansi_codes(progress_msg)) - 10
+                    if max_operation_width > 0:
+                        truncated_operation = operation[:max_operation_width-3] + "..." if len(operation) > max_operation_width else operation
+                        status_msg = f"{Colors.BLUE}{Colors.BOLD}{truncated_operation}{Colors.RESET}"
+                        full_message = f"{status_msg} {progress_msg}"
+            
+            # Clear the line and print the message
+            print(f'\r{" " * (terminal_width - 1)}\r{full_message}', end='', flush=True)
             
             if current >= total:
                 print()  # New line when complete
@@ -550,7 +572,7 @@ class TerminalUI:
             terminal_width = os.get_terminal_size().columns
         except:
             terminal_width = 80  # fallback
-        print('\r' + ' ' * terminal_width + '\r', end='', flush=True)
+        print(f'\r{" " * (terminal_width - 1)}\r', end='', flush=True)
     
     def _strip_ansi_codes(self, text: str) -> str:
         """Strip ANSI color codes from text to get actual display length."""
