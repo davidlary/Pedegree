@@ -1971,6 +1971,526 @@ if __name__ == "__main__":
         
         print(f"✅ Intelligent router created successfully")
 
+    def create_current_models_files(self):
+        """Create files for currently available models only (with API keys + installed local models)."""
+        print("🔄 Creating current/available models subset files...")
+        
+        # Get currently available providers (with API keys)
+        available_api_keys = {
+            'openai': self.openai_api_key is not None,
+            'anthropic': self.anthropic_api_key is not None, 
+            'xai': self.xai_api_key is not None,
+            'google': self.google_api_key is not None
+        }
+        
+        # Get currently installed local models via Ollama
+        try:
+            result = subprocess.run(['ollama', 'list'], capture_output=True, text=True)
+            installed_local_models = set()
+            if result.returncode == 0:
+                for line in result.stdout.strip().split('\n')[1:]:  # Skip header
+                    if line.strip():
+                        model_name = line.split()[0]
+                        installed_local_models.add(model_name)
+        except Exception:
+            installed_local_models = set()
+        
+        # Filter data to only include currently available models
+        current_data = {
+            'last_updated': self.models_data['last_updated'],
+            'providers': {},
+            'local_models': {},
+            'routing_recommendations': self.models_data.get('routing_recommendations', {}),
+            'pricing_info': self.models_data.get('pricing_info', {})
+        }
+        
+        # Add providers with API keys
+        available_provider_count = 0
+        for provider, has_key in available_api_keys.items():
+            if has_key and provider in self.models_data['providers']:
+                current_data['providers'][provider] = self.models_data['providers'][provider]
+                available_provider_count += 1
+        
+        # Add only installed local models
+        available_local_count = 0
+        for model_id, model_data in self.models_data['local_models'].items():
+            # Map local model IDs to Ollama model names
+            ollama_mappings = {
+                'llama-3-8b': 'llama3.1:8b',
+                'mistral-7b': 'mistral:7b', 
+                'code-llama-7b': 'codellama:7b',
+                'phi-3-mini': 'phi3:mini'
+            }
+            
+            ollama_name = ollama_mappings.get(model_id)
+            if ollama_name and ollama_name in installed_local_models:
+                current_data['local_models'][model_id] = model_data
+                available_local_count += 1
+        
+        # Save current models JSON
+        with open('available_models_current.json', 'w') as f:
+            json.dump(current_data, f, indent=2, default=str)
+        print("✅ Current models JSON saved")
+        
+        # Create current models markdown
+        self.save_current_markdown(current_data, available_provider_count, available_local_count)
+        
+        # Create current models HTML
+        self.save_current_html_table(current_data, available_provider_count, available_local_count)
+        
+        total_current = sum(len(models) for models in current_data['providers'].values()) + len(current_data['local_models'])
+        print(f"✅ Current models subset created: {total_current} available models")
+        print(f"   📡 Available hosted models: {sum(len(models) for models in current_data['providers'].values())}")
+        print(f"   💻 Available local models: {len(current_data['local_models'])}")
+
+    def save_current_markdown(self, current_data, available_provider_count, available_local_count):
+        """Save current models as markdown file."""
+        
+        total_current_hosted = sum(len(models) for models in current_data['providers'].values())
+        total_current_local = len(current_data['local_models'])
+        total_current = total_current_hosted + total_current_local
+        
+        md_content = f"""# Currently Available AI Models - Practical Guide
+
+*Last updated: {current_data['last_updated']}*
+
+This document shows only the AI models **currently available to you** based on your API keys and installed local models.
+
+## 🎯 Quick Summary
+
+**Total Available Models: {total_current}**
+- 📡 **Hosted Models**: {total_current_hosted} (from {available_provider_count} providers with API keys)
+- 💻 **Local Models**: {total_current_local} (installed via Ollama)
+
+## 🗝️ Available Providers
+
+"""
+        
+        # Add provider status
+        api_key_status = [
+            ('OpenAI', 'openai' in current_data['providers'], 'GPT-4o, O1, ChatGPT models'),
+            ('Anthropic', 'anthropic' in current_data['providers'], 'Claude 3.5 Sonnet, Opus, Haiku'),
+            ('xAI', 'xai' in current_data['providers'], 'Grok-2, Grok-3, Grok-4 models'),
+            ('Google', 'google' in current_data['providers'], 'Gemini 2.5 Pro, Flash models')
+        ]
+        
+        for provider, available, description in api_key_status:
+            status = "✅ Available" if available else "❌ No API key"
+            md_content += f"- **{provider}**: {status}"
+            if available:
+                md_content += f" - {description}"
+            md_content += "\\n"
+        
+        # Add local models status
+        md_content += f"""
+## 💻 Local Models (Ollama)
+
+**Installed Models: {total_current_local}**
+
+"""
+        
+        for model_id, model_data in current_data['local_models'].items():
+            size_gb = model_data.get('size_gb', 'Unknown')
+            speed = model_data.get('speed_rating', 0)
+            stars = "⭐" * speed if speed > 0 else ""
+            strengths = model_data.get('strengths', 'General purpose model')
+            md_content += f"- **{model_id}**: {size_gb}GB {stars} - {strengths}\\n"
+        
+        # Add hosted models breakdown
+        if current_data['providers']:
+            md_content += f"""
+## 📡 Hosted Models Breakdown
+
+"""
+            for provider, models in current_data['providers'].items():
+                md_content += f"### {provider.title()} ({len(models)} models)\\n\\n"
+                
+                # Group models by cost tier
+                budget_models = []
+                standard_models = []
+                premium_models = []
+                
+                for model_id, model_data in models.items():
+                    input_cost = model_data.get('pricing', {}).get('input', 0)
+                    if input_cost <= 1.0:
+                        budget_models.append((model_id, model_data))
+                    elif input_cost <= 5.0:
+                        standard_models.append((model_id, model_data))
+                    else:
+                        premium_models.append((model_id, model_data))
+                
+                if budget_models:
+                    md_content += "**Budget Models (<$1/1K tokens):**\\n"
+                    for model_id, model_data in budget_models[:3]:  # Show top 3
+                        cost = model_data.get('pricing', {}).get('input', 0)
+                        md_content += f"- {model_id}: ${cost:.3f}/1K tokens\\n"
+                    md_content += "\\n"
+                
+                if standard_models:
+                    md_content += "**Standard Models ($1-5/1K tokens):**\\n"
+                    for model_id, model_data in standard_models[:3]:  # Show top 3
+                        cost = model_data.get('pricing', {}).get('input', 0)
+                        md_content += f"- {model_id}: ${cost:.3f}/1K tokens\\n"
+                    md_content += "\\n"
+                
+                if premium_models:
+                    md_content += "**Premium Models (>$5/1K tokens):**\\n"
+                    for model_id, model_data in premium_models[:3]:  # Show top 3
+                        cost = model_data.get('pricing', {}).get('input', 0)
+                        md_content += f"- {model_id}: ${cost:.3f}/1K tokens\\n"
+                    md_content += "\\n"
+        
+        md_content += f"""
+## 🚀 Quick Start Commands
+
+### Local Models (Free)
+```bash
+# Use your installed local models
+ollama run llama3.1:8b "Write a Python function"
+ollama run mistral:7b "Explain quantum physics"  
+ollama run codellama:7b "Debug this code"
+ollama run phi3:mini "Quick question"
+```
+
+### Hosted Models (API Key Required)
+```python
+# Use the IntelligentLLMRouter for automatic selection
+from IntelligentLLMRouter import IntelligentLLMRouter
+
+router = IntelligentLLMRouter()
+result = router.route_request("Your prompt here")
+print(f"Recommended: {{result['recommended_model']}}")
+```
+
+## 📊 Cost Comparison (Available Models Only)
+
+**Cheapest Options:**
+"""
+        
+        # Find cheapest available models
+        all_available_models = []
+        for provider, models in current_data['providers'].items():
+            for model_id, model_data in models.items():
+                cost = model_data.get('pricing', {}).get('input', 0)
+                all_available_models.append((cost, f"{provider}/{model_id}"))
+        
+        # Add local models (free)
+        for model_id in current_data['local_models'].keys():
+            all_available_models.append((0.0, f"local/{model_id}"))
+        
+        # Sort by cost and show cheapest
+        all_available_models.sort()
+        for i, (cost, model) in enumerate(all_available_models[:8]):
+            if cost == 0:
+                md_content += f"{i+1}. **{model}**: Free (local)\\n"
+            else:
+                md_content += f"{i+1}. **{model}**: ${cost:.3f}/1K tokens\\n"
+        
+        md_content += f"""
+
+*This file shows only models you can use immediately. For complete model information, see `available_models.md`.*
+"""
+        
+        with open('available_models_current.md', 'w') as f:
+            f.write(md_content)
+        
+        print("✅ Current models markdown saved")
+
+    def save_current_html_table(self, current_data, available_provider_count, available_local_count):
+        """Save current models as interactive HTML table."""
+        
+        total_current_hosted = sum(len(models) for models in current_data['providers'].values())
+        total_current_local = len(current_data['local_models'])
+        total_current = total_current_hosted + total_current_local
+        
+        html_content = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currently Available AI Models</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }}
+        .container {{
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }}
+        .header {{
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }}
+        .header h1 {{ margin: 0; font-size: 2.5em; }}
+        .updated {{ font-size: 0.9em; opacity: 0.8; margin-top: 10px; }}
+        .summary {{
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #28a745;
+            margin: 20px;
+            border-radius: 5px;
+        }}
+        .legend {{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f1f3f4;
+            flex-wrap: wrap;
+        }}
+        .legend-item {{
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }}
+        .legend-item.local {{ background: #d4edda; color: #155724; }}
+        .legend-item.budget {{ background: #fff3cd; color: #856404; }}
+        .legend-item.premium {{ background: #f8d7da; color: #721c24; }}
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }}
+        th, td {{
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }}
+        th {{
+            background: #34495e;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }}
+        th:hover {{ background: #2c3e50; }}
+        tr:hover {{ background: #f5f5f5; }}
+        .local-row {{ background: #d4edda !important; }}
+        .budget-row {{ background: #fff3cd !important; }}
+        .premium-row {{ background: #f8d7da !important; }}
+        .cost {{ font-weight: bold; }}
+        .model-name {{ font-weight: bold; color: #2c3e50; }}
+        .provider {{ 
+            text-transform: uppercase;
+            font-size: 0.8em;
+            color: #666;
+            font-weight: bold;
+        }}
+        .context {{ color: #28a745; font-weight: bold; }}
+        .strengths {{ font-size: 0.9em; color: #555; }}
+        .capabilities {{
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }}
+        .capability {{
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Currently Available AI Models</h1>
+            <div class="updated">Last updated: {current_data['last_updated']}</div>
+        </div>
+        
+        <div class="summary">
+            <h3>🚀 Ready to Use: {total_current} Models</h3>
+            <p><strong>📡 Hosted Models:</strong> {total_current_hosted} (from {available_provider_count} providers with API keys)</p>
+            <p><strong>💻 Local Models:</strong> {total_current_local} (installed via Ollama)</p>
+            <p><em>This table shows only models you can use immediately with your current setup.</em></p>
+        </div>
+        
+        <div class="legend">
+            <strong>Color Legend:</strong>
+            <span class="legend-item local">🟢 Local/Free ($0 API cost)</span>
+            <span class="legend-item budget">🟡 Budget (<$1/1K tokens)</span>
+            <span class="legend-item premium">🔴 Premium (>$5/1K tokens)</span>
+        </div>
+        
+        <table id="modelsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)" style="cursor: pointer;">Model ID ↕️</th>
+                    <th onclick="sortTable(1)" style="cursor: pointer;">Provider ↕️</th>
+                    <th onclick="sortTable(2)" style="cursor: pointer;">Input Cost ↕️</th>
+                    <th onclick="sortTable(3)" style="cursor: pointer;">Output Cost ↕️</th>
+                    <th onclick="sortTable(4)" style="cursor: pointer;">Context Window ↕️</th>
+                    <th onclick="sortTable(5)" style="cursor: pointer;">Strengths ↕️</th>
+                    <th onclick="sortTable(6)" style="cursor: pointer;">Capabilities ↕️</th>
+                </tr>
+            </thead>
+            <tbody>
+'''
+        
+        # Add table rows for all available models
+        all_rows = []
+        
+        # Add local models
+        for model_id, model_data in current_data['local_models'].items():
+            context_window = model_data.get('context_window', 'Unknown')
+            strengths = model_data.get('strengths', 'General purpose model')
+            capabilities = model_data.get('capabilities', {})
+            
+            # Create capabilities badges
+            cap_badges = []
+            for cap, enabled in capabilities.items():
+                if enabled:
+                    cap_badges.append(f'<span class="capability">{cap.replace("_", " ").title()}</span>')
+            cap_html = ''.join(cap_badges) if cap_badges else '<span class="capability">Text Generation</span>'
+            
+            row_class = "local-row"
+            all_rows.append((
+                f'<tr class="{row_class}">',
+                f'<td class="model-name">{model_id}</td>',
+                f'<td class="provider">LOCAL</td>',
+                f'<td class="cost">$0.000</td>',
+                f'<td class="cost">$0.000</td>',
+                f'<td class="context">{context_window:,} tokens</td>',
+                f'<td class="strengths">{strengths}</td>',
+                f'<td class="capabilities">{cap_html}</td>',
+                '</tr>'
+            ))
+        
+        # Add hosted models
+        for provider, models in current_data['providers'].items():
+            for model_id, model_data in models.items():
+                pricing = model_data.get('pricing', {})
+                input_cost = pricing.get('input', 0)
+                output_cost = pricing.get('output', 0)
+                context_window = model_data.get('context_window', 0)
+                strengths = model_data.get('strengths', 'General purpose model')
+                capabilities = model_data.get('capabilities', {})
+                
+                # Determine row class based on cost
+                if input_cost <= 1.0:
+                    row_class = "budget-row"
+                elif input_cost > 5.0:
+                    row_class = "premium-row"
+                else:
+                    row_class = ""
+                
+                # Create capabilities badges
+                cap_badges = []
+                for cap, enabled in capabilities.items():
+                    if enabled:
+                        cap_badges.append(f'<span class="capability">{cap.replace("_", " ").title()}</span>')
+                cap_html = ''.join(cap_badges) if cap_badges else '<span class="capability">Text Generation</span>'
+                
+                context_display = f"{context_window:,} tokens" if context_window > 0 else "Unknown"
+                
+                all_rows.append((
+                    f'<tr class="{row_class}">',
+                    f'<td class="model-name">{model_id}</td>',
+                    f'<td class="provider">{provider.upper()}</td>',
+                    f'<td class="cost">${input_cost:.3f}</td>',
+                    f'<td class="cost">${output_cost:.3f}</td>',
+                    f'<td class="context">{context_display}</td>',
+                    f'<td class="strengths">{strengths}</td>',
+                    f'<td class="capabilities">{cap_html}</td>',
+                    '</tr>'
+                ))
+        
+        # Add all rows to HTML
+        for row_parts in all_rows:
+            html_content += ''.join(row_parts) + '\\n'
+        
+        html_content += '''
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        let sortDirection = {};
+        
+        function sortTable(columnIndex) {
+            const table = document.getElementById("modelsTable");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            
+            // Determine sort direction
+            const currentDirection = sortDirection[columnIndex] || "asc";
+            const newDirection = currentDirection === "asc" ? "desc" : "asc";
+            sortDirection[columnIndex] = newDirection;
+            
+            // Sort rows
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.trim();
+                const bText = b.cells[columnIndex].textContent.trim();
+                
+                // Handle numeric columns (cost, context window)
+                if (columnIndex === 2 || columnIndex === 3) { // Cost columns
+                    const aNum = parseFloat(aText.replace(/[$,]/g, ''));
+                    const bNum = parseFloat(bText.replace(/[$,]/g, ''));
+                    return newDirection === "asc" ? aNum - bNum : bNum - aNum;
+                } else if (columnIndex === 4) { // Context window
+                    const aNum = parseInt(aText.replace(/[^0-9]/g, '')) || 0;
+                    const bNum = parseInt(bText.replace(/[^0-9]/g, '')) || 0;
+                    return newDirection === "asc" ? aNum - bNum : bNum - aNum;
+                } else {
+                    // Text columns
+                    return newDirection === "asc" ? 
+                        aText.localeCompare(bText) : 
+                        bText.localeCompare(aText);
+                }
+            });
+            
+            // Clear and re-add rows
+            tbody.innerHTML = "";
+            rows.forEach(row => tbody.appendChild(row));
+            
+            // Update header indicators
+            const headers = table.querySelectorAll("th");
+            headers.forEach((header, index) => {
+                if (index === columnIndex) {
+                    header.style.backgroundColor = "#2c3e50";
+                    header.textContent = header.textContent.replace(/ [↕️↑↓]/g, '') + (newDirection === "asc" ? " ↑" : " ↓");
+                } else {
+                    header.style.backgroundColor = "#34495e";
+                    header.textContent = header.textContent.replace(/ [↕️↑↓]/g, '') + " ↕️";
+                }
+            });
+        }
+        
+        // Initialize table
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Currently available AI models table loaded");
+        });
+    </script>
+</body>
+</html>'''
+        
+        with open('available_models_current.html', 'w') as f:
+            f.write(html_content)
+        
+        print("✅ Current models HTML saved")
+        
+        # Auto-open the current models HTML file
+        try:
+            import webbrowser
+            file_path = os.path.abspath('available_models_current.html')
+            webbrowser.open(f'file://{file_path}')
+            print("🌐 Opening available_models_current.html in browser...")
+        except Exception as e:
+            print(f"⚠️  Could not auto-open browser: {e}")
+
     def run(self):
         """Main execution method."""
         print("🎯 Enhanced AI Model Information Collector & Router")
@@ -1981,6 +2501,9 @@ if __name__ == "__main__":
             self.save_markdown()
             self.save_html_table()
             self.create_intelligent_router()
+            
+            # Create current/available models subset
+            self.create_current_models_files()
             
             total_hosted = sum(len(models) for models in self.models_data['providers'].values())
             total_local = len(self.models_data['local_models'])
@@ -1993,6 +2516,9 @@ if __name__ == "__main__":
             print("   - available_models.json")
             print("   - available_models.md")
             print("   - available_models.html")
+            print("   - available_models_current.json")
+            print("   - available_models_current.md") 
+            print("   - available_models_current.html")
             print("   - IntelligentLLMRouter.py")
         else:
             print("❌ Model collection failed")

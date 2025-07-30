@@ -109,7 +109,8 @@ The script will:
 4. 💾 Generate `available_models.json` with structured data  
 5. 📝 Generate `available_models.md` with sortable HTML table
 6. 📄 Generate `available_models.html` with interactive sortable table
-7. 🧠 Create `IntelligentLLMRouter.py` for smart model selection
+7. 🔄 Create current models subset files for models you can actually use
+8. 🧠 Create `IntelligentLLMRouter.py` for smart model selection
 
 ### Output Files
 
@@ -148,6 +149,17 @@ Interactive sortable table with:
 
 #### `IntelligentLLMRouter.py`
 Standalone intelligent router class for automatic model selection with local support.
+
+#### Current Models Files
+Additional files showing only models currently available to you:
+
+- **`available_models_current.json`** - JSON data for models you can actually use right now
+- **`available_models_current.md`** - Documentation for your available models only  
+- **`available_models_current.html`** - Interactive table of your available models
+
+These files filter the complete model list to show only:
+- Models from providers where you have API keys configured
+- Local models that are actually installed via Ollama
 
 ## Model Information Collected
 
