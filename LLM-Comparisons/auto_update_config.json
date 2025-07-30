@@ -1,0 +1,16 @@
+{
+  "auto_update_enabled": true,
+  "check_interval_hours": 24,
+  "auto_install_local_models": true,
+  "max_local_models": 10,
+  "preferred_model_sizes": [
+    "7b",
+    "8b",
+    "13b"
+  ],
+  "exclude_patterns": [
+    "*:latest"
+  ],
+  "notification_email": null,
+  "last_check": "2025-07-30T09:59:00.846239"
+}

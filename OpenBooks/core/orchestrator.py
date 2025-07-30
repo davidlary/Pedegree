@@ -805,48 +805,38 @@ class OpenBooksOrchestrator:
         """Detect subject from repository path."""
         path_parts = [p.lower() for p in path.parts]
         
-        # OpenAlex discipline mapping - 4 domains with 19 fields
+        # Consolidated discipline mapping - simplified category names
         subject_map = {
-            # Physical Sciences Domain (10 fields)
-            'physics': 'Physics and Astronomy', 'astronomy': 'Physics and Astronomy',
-            'chemistry': 'Chemistry', 'quimica': 'Chemistry',
+            # STEM subjects
+            'physics': 'Physics', 'astronomy': 'Physics', 'fisica': 'Physics',
+            'chemistry': 'Chemistry', 'quimica': 'Chemistry', 'organic': 'Chemistry',
             'mathematics': 'Mathematics', 'math': 'Mathematics', 'calculus': 'Mathematics', 'algebra': 'Mathematics', 'statistics': 'Mathematics',
             'computer': 'Computer Science', 'programming': 'Computer Science', 'software': 'Computer Science',
-            'engineering': 'Engineering', 'chemical-engineering': 'Chemical Engineering',
-            'materials': 'Materials Science', 'environmental': 'Environmental Science',
-            'earth': 'Earth and Planetary Sciences', 'geology': 'Earth and Planetary Sciences',
-            'energy': 'Energy',
+            'engineering': 'Engineering',
             
-            # Life Sciences Domain (5 fields)
-            'biology': 'Biochemistry, Genetics and Molecular Biology', 'biologia': 'Biochemistry, Genetics and Molecular Biology',
-            'anatomy': 'Biochemistry, Genetics and Molecular Biology', 'physiology': 'Biochemistry, Genetics and Molecular Biology',
-            'genetics': 'Biochemistry, Genetics and Molecular Biology', 'molecular': 'Biochemistry, Genetics and Molecular Biology',
-            'biochemistry': 'Biochemistry, Genetics and Molecular Biology',
-            'microbiology': 'Immunology and Microbiology', 'immunology': 'Immunology and Microbiology',
-            'agriculture': 'Agricultural and Biological Sciences', 'agricultural': 'Agricultural and Biological Sciences',
-            'neuroscience': 'Neuroscience', 'neurology': 'Neuroscience',
-            'pharmacology': 'Pharmacology, Toxicology and Pharmaceutics', 'toxicology': 'Pharmacology, Toxicology and Pharmaceutics',
+            # Life Sciences
+            'biology': 'Biology', 'biologia': 'Biology',
+            'anatomy': 'Biology', 'physiology': 'Biology', 'genetics': 'Biology', 'molecular': 'Biology',
+            'biochemistry': 'Biology', 'microbiology': 'Biology', 'immunology': 'Biology',
             
-            # Health Sciences Domain (5 fields)
-            'medicine': 'Medicine', 'medical': 'Medicine',
-            'nursing': 'Nursing', 'health': 'Health Professions',
-            'dentistry': 'Dentistry', 'dental': 'Dentistry',
-            'veterinary': 'Veterinary', 'vet': 'Veterinary',
+            # Health Sciences
+            'medicine': 'Medicine', 'medical': 'Medicine', 'nursing': 'Medicine',
             
-            # Social Sciences Domain (6 fields)
+            # Social Sciences
             'psychology': 'Psychology', 'psicologia': 'Psychology',
-            'sociology': 'Social Sciences', 'sociologia': 'Social Sciences', 'soc': 'Social Sciences',
-            'anthropology': 'Social Sciences', 'political': 'Social Sciences', 'government': 'Social Sciences',
-            'business': 'Business, Management and Accounting', 'negocios': 'Business, Management and Accounting',
-            'management': 'Business, Management and Accounting', 'accounting': 'Business, Management and Accounting',
-            'entrepreneurship': 'Business, Management and Accounting', 'marketing': 'Business, Management and Accounting',
-            'economics': 'Economics, Econometrics and Finance', 'economia': 'Economics, Econometrics and Finance',
-            'finance': 'Economics, Econometrics and Finance', 'econometrics': 'Economics, Econometrics and Finance',
-            'decision': 'Decision Sciences', 'operations': 'Decision Sciences',
-            'art': 'Arts and Humanities', 'history': 'Arts and Humanities', 'historia': 'Arts and Humanities',
-            'philosophy': 'Arts and Humanities', 'literature': 'Arts and Humanities', 'writing': 'Arts and Humanities',
-            'communication': 'Arts and Humanities', 'language': 'Arts and Humanities', 'ethics': 'Arts and Humanities',
-            'success': 'Social Sciences'  # General social development
+            'sociology': 'Sociology', 'sociologia': 'Sociology', 'soc': 'Sociology',
+            'anthropology': 'Anthropology', 'political': 'Political Science', 'government': 'Political Science',
+            'business': 'Business', 'negocios': 'Business',
+            'management': 'Business', 'accounting': 'Business',
+            'entrepreneurship': 'Business', 'marketing': 'Business',
+            'economics': 'Economics', 'economia': 'Economics',
+            'finance': 'Economics', 'econometrics': 'Economics',
+            
+            # Humanities
+            'art': 'History', 'history': 'History', 'historia': 'History',
+            'philosophy': 'Philosophy', 'literature': 'History', 'writing': 'History',
+            'communication': 'History', 'language': 'History', 'ethics': 'Philosophy',
+            'success': 'Sociology'  # General social development
         }
         
         # Sort keywords by length (longest first) to prioritize specific matches in path
@@ -869,41 +859,32 @@ class OpenBooksOrchestrator:
         """Extract subject from repository name."""
         name_lower = repo_name.lower()
         
-        # OpenAlex field-based keyword mapping (19 fields across 4 domains)
+        # Consolidated subject keyword mapping - simplified categories
         subject_keywords = {
-            # Physical Sciences Domain
-            'Physics and Astronomy': ['physics', 'fisica', 'astronomy', 'astrophysics', 'cosmology'],
+            # STEM subjects
+            'Physics': ['physics', 'fisica', 'astronomy', 'astrophysics', 'cosmology'],
             'Chemistry': ['chemistry', 'quimica', 'organic-chemistry', 'inorganic', 'analytical'],
-            'Mathematics': ['math', 'calculus', 'algebra', 'matematicas', 'statistics', 'geometry', 'topology'],
-            'Computer Science': ['computer', 'programming', 'software', 'algorithm', 'artificial', 'machine-learning', 'workplace-software'],
+            'Mathematics': ['math', 'calculus', 'algebra', 'matematicas', 'statistics', 'geometry', 'topology', 'precalculo'],
+            'Computer Science': ['computer', 'programming', 'software', 'algorithm', 'artificial', 'machine-learning', 'workplace-software', 'python'],
             'Engineering': ['engineering', 'mechanical', 'electrical', 'civil', 'aerospace'],
-            'Chemical Engineering': ['chemical-engineering', 'process-engineering'],
-            'Materials Science': ['materials', 'nanotechnology', 'polymers'],
-            'Environmental Science': ['environmental', 'ecology', 'climate', 'sustainability'],
-            'Earth and Planetary Sciences': ['earth', 'geology', 'geography', 'planetary', 'geophysics'],
-            'Energy': ['energy', 'renewable', 'solar', 'nuclear'],
             
-            # Life Sciences Domain
-            'Biochemistry, Genetics and Molecular Biology': ['biology', 'biologia', 'anatomy', 'physiology', 'genetics', 'molecular', 'biochemistry'],
-            'Immunology and Microbiology': ['microbiology', 'immunology', 'virology', 'bacteriology'],
-            'Agricultural and Biological Sciences': ['agriculture', 'agricultural', 'botany', 'ecology-bio'],
-            'Neuroscience': ['neuroscience', 'neurology', 'brain', 'cognitive'],
-            'Pharmacology, Toxicology and Pharmaceutics': ['pharmacology', 'toxicology', 'pharmaceutics', 'drug'],
+            # Life Sciences
+            'Biology': ['biology', 'biologia', 'anatomy', 'physiology', 'genetics', 'molecular', 'biochemistry', 'microbiology', 'immunology', 'virology', 'bacteriology'],
             
-            # Health Sciences Domain
-            'Medicine': ['medicine', 'medical', 'clinical', 'surgery', 'cardiology'],
-            'Nursing': ['nursing', 'nurse', 'patient-care'],
-            'Health Professions': ['health', 'public-health', 'healthcare', 'epidemiology'],
-            'Dentistry': ['dentistry', 'dental', 'oral'],
-            'Veterinary': ['veterinary', 'vet', 'animal-health'],
+            # Health Sciences
+            'Medicine': ['medicine', 'medical', 'clinical', 'surgery', 'cardiology', 'nursing', 'nurse', 'patient-care', 'health', 'nutrition', 'pharmacology', 'population'],
             
-            # Social Sciences Domain
-            'Psychology': ['psychology', 'psicologia', 'cognitive', 'behavioral'],
-            'Social Sciences': ['sociology', 'sociologia', 'soc', 'anthropology', 'political', 'government', 'american-government', 'success'],
-            'Business, Management and Accounting': ['business', 'negocios', 'management', 'accounting', 'entrepreneurship', 'marketing'],
-            'Economics, Econometrics and Finance': ['economics', 'economia', 'finance', 'econometrics', 'financial'],
-            'Decision Sciences': ['decision', 'operations', 'optimization', 'analytics'],
-            'Arts and Humanities': ['art', 'history', 'historia', 'us-history', 'world-history', 'philosophy', 'literature', 'writing', 'communication', 'language', 'linguistics', 'ethics', 'humanities']
+            # Social Sciences
+            'Psychology': ['psychology', 'psicologia', 'psychologia', 'cognitive', 'behavioral'],
+            'Sociology': ['sociology', 'sociologia', 'soc', 'success', 'intro-to-soc'],
+            'Anthropology': ['anthropology', 'introduction-anthropology'],
+            'Political Science': ['political', 'government', 'american-government', 'introduction-political-science'],
+            'Business': ['business', 'negocios', 'management', 'accounting', 'entrepreneurship', 'marketing', 'finance', 'ethics', 'law', 'intellectual-property', 'introduction-business'],
+            'Economics': ['economics', 'economia', 'econometrics', 'financial', 'mikroekonomia', 'makroekonomia', 'principles-economics'],
+            
+            # Humanities
+            'History': ['art', 'history', 'historia', 'us-history', 'world-history', 'literature', 'writing', 'communication', 'language', 'linguistics', 'humanities', 'life-liberty', 'writing-guide'],
+            'Philosophy': ['philosophy', 'ethics', 'introduction-philosophy']
         }
         
         # Sort keywords by length (longest first) to prioritize specific matches
