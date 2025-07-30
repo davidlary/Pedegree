@@ -302,6 +302,50 @@ All local models include:
 - **Automatic detection** - Router finds available models automatically
 - **Direct integration** - Native Ollama API calls via subprocess
 
+## Important: PDF Processing Capabilities
+
+**⚠️ PDF Processing Reality Check:**
+
+🌐 **Web Apps (Outstanding capability):**
+- ChatGPT web interface, Claude web interface, etc.
+- Have integrated PDF processing tools
+- Can directly upload and analyze PDF files
+
+🐍 **Python APIs (Limited capability):**
+- OpenAI Python API, Anthropic Python API, etc.
+- **Cannot** directly process PDF files
+- Require external PDF → text conversion
+
+💻 **Local LLMs (Same as Python APIs - Limited capability):**
+- Ollama models, llama-cpp, transformers, etc.
+- **Cannot** directly process PDF files
+- Require external PDF → text conversion
+
+**The key insight:** Local LLMs have the **same PDF limitations as Python APIs**, not the enhanced capabilities of web apps.
+
+### PDF Processing Workflow for Python APIs & Local LLMs:
+
+```python
+# Required for both Python APIs and Local LLMs
+import PyPDF2  # or pdfplumber, pymupdf, etc.
+
+# 1. Extract text from PDF
+with open('document.pdf', 'rb') as file:
+    pdf_reader = PyPDF2.PdfReader(file)
+    text = ""
+    for page in pdf_reader.pages:
+        text += page.extract_text()
+
+# 2. Send to model (works same for hosted APIs or local LLMs)
+# For local LLM via Ollama:
+response = subprocess.run(['ollama', 'run', 'llama3.1:8b', f"Analyze: {text}"])
+
+# For hosted API:
+response = openai.ChatCompletion.create(model="gpt-4", messages=[{"role": "user", "content": f"Analyze: {text}"}])
+```
+
+This system correctly identifies all models as having `"pdf_processing": false` because it focuses on Python API and local capabilities, not web app features.
+
 ## Updating Information
 
 Run periodically to keep current:

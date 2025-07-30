@@ -119,6 +119,36 @@ The system is optimized for Apple Silicon Macs:
 - Respects memory constraints with model limits
 - Fast installation with parallel processing
 
+## Important: PDF Processing Capabilities
+
+**Local LLMs have the SAME PDF limitations as Python APIs:**
+
+🚫 **Cannot directly process PDF files**
+- Local LLMs (Ollama) are text-only models
+- Same limitations as Python APIs for hosted models
+- Require external PDF → text conversion
+
+🌐 **Web apps vs APIs/Local models:**
+- **Web apps**: Have integrated PDF processing tools (Outstanding capability)
+- **Python APIs**: Limited - require external PDF parsing (Limited capability)  
+- **Local LLMs**: Same as Python APIs - require external PDF parsing (Limited capability)
+
+💡 **For PDF processing with local LLMs:**
+```python
+# Required approach for both Python APIs and Local LLMs
+import PyPDF2  # or pdfplumber, pymupdf, etc.
+
+# 1. Extract text from PDF
+with open('document.pdf', 'rb') as file:
+    pdf_reader = PyPDF2.PdfReader(file)
+    text = ""
+    for page in pdf_reader.pages:
+        text += page.extract_text()
+
+# 2. Send extracted text to local LLM
+ollama run llama3.1:8b "Analyze this text: " + text
+```
+
 ## Integration with Existing System
 
 ### Auto-Opening Results

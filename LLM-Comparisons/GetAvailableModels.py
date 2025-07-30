@@ -1125,9 +1125,11 @@ class EnhancedModelInfoCollector:
         elif any(term in model_lower for term in ['gpt-4', 'claude-3', 'o1', 'grok']):
             capabilities['coding'] = True  # Strong coding models
         
-        # PDF processing - VERY LIMITED in Python APIs
+        # PDF processing - VERY LIMITED in Python APIs AND LOCAL LLMs
         # Python APIs generally require pre-processing PDFs to text
-        # NO models have direct PDF input via Python API
+        # LOCAL LLMs (Ollama) have SAME limitations as Python APIs
+        # NO models (hosted or local) have direct PDF input via Python API
+        # Web apps have integrated PDF tools, but raw APIs and local models do not
         capabilities['pdf_processing'] = False  # Requires external PDF parsing
         
         return capabilities
