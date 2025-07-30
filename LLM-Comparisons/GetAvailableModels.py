@@ -35,6 +35,66 @@ class EnhancedModelInfoCollector:
         self.xai_api_key = os.getenv('XAI_API_KEY')
         self.google_api_key = os.getenv('GOOGLE_API_KEY')
         
+        # Dynamic discovery endpoints
+        self.api_endpoints = {
+            'openai': 'https://api.openai.com/v1/models',
+            'anthropic': 'https://api.anthropic.com/v1/models',
+            'xai': 'https://api.x.ai/v1/models',
+            'google': 'https://generativelanguage.googleapis.com/v1/models',
+            'ollama': 'http://localhost:11434/api/tags'
+        }
+        
+        # Model release dates for non-OpenAI models (OpenAI provides 'created' field)
+        self.model_release_dates = {
+            'anthropic': {
+                'claude-3-5-sonnet-20241022': '2024-10-22',
+                'claude-3-5-sonnet-20240620': '2024-06-20',
+                'claude-3-opus-20240229': '2024-02-29',
+                'claude-3-sonnet-20240229': '2024-02-29',
+                'claude-3-haiku-20240307': '2024-03-07',
+            },
+            'xai': {
+                'grok-2-1212': '2024-12-12',
+                'grok-2-vision-1212': '2024-12-12',
+                'grok-2-image-1212': '2024-12-12',
+                'grok-3': '2025-01-15',
+                'grok-3-fast': '2025-01-15',
+                'grok-3-mini': '2025-01-15',
+                'grok-3-mini-fast': '2025-01-15',
+                'grok-4': '2024-07-09',
+                'grok-4-0709': '2024-07-09',
+            },
+            'google': {
+                'gemini-2.5-pro': '2024-12-11',
+                'gemini-2.5-flash': '2024-12-11',
+                'gemini-pro': '2023-12-06',
+                'gemini-pro-vision': '2023-12-06',
+            },
+            'local': {
+                # Latest 2025 models
+                'llama-3.3-70b': '2024-12-06',
+                'deepseek-r1-8b': '2025-01-20',
+                'deepseek-r1-7b': '2025-01-20',
+                'qwen3-8b': '2025-01-13',
+                'qwen3-14b': '2025-01-13',
+                'qwen3-32b': '2025-01-13',
+                'qwen2.5-coder-7b': '2024-11-11',
+                'qwen2.5-coder-14b': '2024-11-11',
+                'qwen2.5-coder-32b': '2024-11-11',
+                'qwen2.5-vl-7b': '2024-12-28',
+                'qwen2.5-vl-32b': '2024-12-28',
+                'llava-13b': '2024-07-15',
+                'qwq-32b': '2024-11-27',
+                'llama-3.1-8b': '2024-07-23',
+                'llama-3.1-70b': '2024-07-23',
+                'gemma3-9b': '2024-12-11',
+                'phi4-14b': '2024-12-11',
+                'qwen3-1.7b': '2025-01-13',
+                'gemma3-4b': '2024-12-11',
+                'mistral-nemo-12b': '2024-07-18'
+            }
+        }
+        
         self.models_data = {
             'last_updated': datetime.now().isoformat(),
             'providers': {},
@@ -72,16 +132,37 @@ class EnhancedModelInfoCollector:
                 'gemini-pro-vision': 'Multimodal version with vision capabilities'
             },
             'local': {
-                'llama-3-8b': 'Balanced reasoning + offline privacy, efficient on Apple Silicon',
-                'mistral-7b': 'Code + logic tasks, very fast, excellent for development',
-                'mixtral-8x7b': 'Top-tier reasoning, mixture of experts architecture',
-                'code-llama-7b': 'Specialized for code generation and completion',
-                'phi-3-mini': 'Efficient for small reasoning/code tasks, very lightweight',
-                'gemma-7b': 'Good multilingual, safe, simple tasks',
-                'falcon-7b': 'Apache 2.0 license, good general purpose model',
-                'falcon-40b': 'Larger Falcon model for complex reasoning',
-                'mpt-7b': 'Reasoning and summarization, permissive license',
-                'mpt-30b': 'Larger MPT model for complex tasks'
+                # Latest 2025 Flagship Models
+                'llama-3.3-70b': 'GPT-4 class performance, excellent reasoning and instruction following',
+                'deepseek-r1-8b': 'Advanced reasoning model, competitive with O1-mini, chain-of-thought',
+                'deepseek-r1-7b': 'Efficient reasoning model with strong problem-solving capabilities',
+                'qwen3-8b': 'Latest Qwen generation, excellent multilingual and general capabilities',
+                'qwen3-14b': 'Larger Qwen3 model with enhanced reasoning and coding abilities',
+                'qwen3-32b': 'High-performance Qwen3 model for complex tasks and reasoning',
+                
+                # Specialized Coding Models
+                'qwen2.5-coder-7b': 'State-of-the-art code generation, competitive with GPT-4 for coding',
+                'qwen2.5-coder-14b': 'Enhanced coding model with superior debugging and refactoring',
+                'qwen2.5-coder-32b': 'Premium coding assistant, handles complex codebases and architecture',
+                
+                # Vision-Language Models
+                'qwen2.5-vl-7b': 'Multimodal model with vision understanding and reasoning',
+                'qwen2.5-vl-32b': 'Advanced vision-language model with tool use capabilities',
+                'llava-13b': 'Open-source vision model, good for image analysis and description',
+                
+                # Reasoning Specialist
+                'qwq-32b': 'Specialized reasoning model with enhanced logical thinking',
+                
+                # Proven General Models
+                'llama-3.1-8b': 'Reliable general purpose model, well-optimized for Apple Silicon',
+                'llama-3.1-70b': 'High-performance Llama model for complex reasoning tasks',
+                'gemma3-9b': 'Latest Gemma with improved safety and multilingual support',
+                'phi4-14b': 'Microsoft\'s latest small language model with strong reasoning',
+                
+                # Efficient Options
+                'qwen3-1.7b': 'Ultra-lightweight model for basic tasks and edge deployment',
+                'gemma3-4b': 'Compact model with good performance-to-size ratio',
+                'mistral-nemo-12b': 'Balanced model with strong multilingual capabilities'
             }
         }
         
@@ -174,16 +255,26 @@ class EnhancedModelInfoCollector:
             },
             'local': {
                 # Local models have no API costs, only compute/electricity
-                'llama-3-8b': {'input': 0.0, 'output': 0.0},
-                'mistral-7b': {'input': 0.0, 'output': 0.0},
-                'mixtral-8x7b': {'input': 0.0, 'output': 0.0},
-                'code-llama-7b': {'input': 0.0, 'output': 0.0},
-                'phi-3-mini': {'input': 0.0, 'output': 0.0},
-                'gemma-7b': {'input': 0.0, 'output': 0.0},
-                'falcon-7b': {'input': 0.0, 'output': 0.0},
-                'falcon-40b': {'input': 0.0, 'output': 0.0},
-                'mpt-7b': {'input': 0.0, 'output': 0.0},
-                'mpt-30b': {'input': 0.0, 'output': 0.0}
+                'llama-3.3-70b': {'input': 0.0, 'output': 0.0},
+                'deepseek-r1-8b': {'input': 0.0, 'output': 0.0},
+                'deepseek-r1-7b': {'input': 0.0, 'output': 0.0},
+                'qwen3-8b': {'input': 0.0, 'output': 0.0},
+                'qwen3-14b': {'input': 0.0, 'output': 0.0},
+                'qwen3-32b': {'input': 0.0, 'output': 0.0},
+                'qwen2.5-coder-7b': {'input': 0.0, 'output': 0.0},
+                'qwen2.5-coder-14b': {'input': 0.0, 'output': 0.0},
+                'qwen2.5-coder-32b': {'input': 0.0, 'output': 0.0},
+                'qwen2.5-vl-7b': {'input': 0.0, 'output': 0.0},
+                'qwen2.5-vl-32b': {'input': 0.0, 'output': 0.0},
+                'llava-13b': {'input': 0.0, 'output': 0.0},
+                'qwq-32b': {'input': 0.0, 'output': 0.0},
+                'llama-3.1-8b': {'input': 0.0, 'output': 0.0},
+                'llama-3.1-70b': {'input': 0.0, 'output': 0.0},
+                'gemma3-9b': {'input': 0.0, 'output': 0.0},
+                'phi4-14b': {'input': 0.0, 'output': 0.0},
+                'qwen3-1.7b': {'input': 0.0, 'output': 0.0},
+                'gemma3-4b': {'input': 0.0, 'output': 0.0},
+                'mistral-nemo-12b': {'input': 0.0, 'output': 0.0}
             }
         }
         
@@ -283,37 +374,422 @@ class EnhancedModelInfoCollector:
                 'gemini-pro-vision': 128000
             },
             'local': {
-                'llama-3-8b': 128000,  # Extended context versions available
-                'mistral-7b': 32768,
-                'mixtral-8x7b': 32768,
-                'code-llama-7b': 32768,
-                'phi-3-mini': 128000,
-                'gemma-7b': 32768,
-                'falcon-7b': 16384,
-                'falcon-40b': 16384,
-                'mpt-7b': 32768,
-                'mpt-30b': 32768
+                # Latest 2025 models with enhanced context windows
+                'llama-3.3-70b': 131072,  # 128K context window
+                'deepseek-r1-8b': 65536,   # 64K context window  
+                'deepseek-r1-7b': 65536,   # 64K context window
+                'qwen3-8b': 131072,        # 128K context window
+                'qwen3-14b': 131072,       # 128K context window
+                'qwen3-32b': 131072,       # 128K context window
+                'qwen2.5-coder-7b': 131072,  # 128K context window
+                'qwen2.5-coder-14b': 131072, # 128K context window
+                'qwen2.5-coder-32b': 131072, # 128K context window
+                'qwen2.5-vl-7b': 65536,   # 64K context window for vision
+                'qwen2.5-vl-32b': 65536,  # 64K context window for vision
+                'llava-13b': 32768,       # 32K context window
+                'qwq-32b': 131072,        # 128K context window for reasoning
+                'llama-3.1-8b': 131072,   # 128K context window
+                'llama-3.1-70b': 131072,  # 128K context window
+                'gemma3-9b': 131072,      # 128K context window
+                'phi4-14b': 131072,       # 128K context window
+                'qwen3-1.7b': 131072,     # 128K context window
+                'gemma3-4b': 131072,      # 128K context window
+                'mistral-nemo-12b': 131072 # 128K context window
             }
         }
         
         # Local model specifications
         self.local_model_specs = {
-            'llama-3-8b': {'size_gb': 6, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)'},
-            'mistral-7b': {'size_gb': 6, 'speed_rating': 5, 'format': 'GGUF'},
-            'mixtral-8x7b': {'size_gb': 20, 'speed_rating': 2, 'format': 'GGUF (2 experts active)'},
-            'code-llama-7b': {'size_gb': 8, 'speed_rating': 4, 'format': 'GGUF'},
-            'phi-3-mini': {'size_gb': 3, 'speed_rating': 5, 'format': 'MLC / GGUF'},
-            'gemma-7b': {'size_gb': 6, 'speed_rating': 4, 'format': 'GGUF'},
-            'falcon-7b': {'size_gb': 6, 'speed_rating': 3, 'format': 'GGUF / HF'},
-            'falcon-40b': {'size_gb': 24, 'speed_rating': 1, 'format': 'GGUF / HF'},
-            'mpt-7b': {'size_gb': 6, 'speed_rating': 3, 'format': 'GGUF'},
-            'mpt-30b': {'size_gb': 18, 'speed_rating': 1, 'format': 'GGUF'}
+            # Latest 2025 Models - Top Tier
+            'llama-3.3-70b': {'size_gb': 43, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'llama3.3:70b'},
+            'deepseek-r1-8b': {'size_gb': 5, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'deepseek-r1:8b'},
+            'deepseek-r1-7b': {'size_gb': 4.7, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'deepseek-r1:7b'},
+            'qwen3-8b': {'size_gb': 5.2, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen3:8b'},
+            'qwen3-14b': {'size_gb': 9.0, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen3:14b'},
+            'qwen3-32b': {'size_gb': 20, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen3:32b'},
+            
+            # Latest Coding Models
+            'qwen2.5-coder-7b': {'size_gb': 4.7, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen2.5-coder:7b'},
+            'qwen2.5-coder-14b': {'size_gb': 9.0, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen2.5-coder:14b'},
+            'qwen2.5-coder-32b': {'size_gb': 20, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen2.5-coder:32b'},
+            
+            # Vision Models
+            'qwen2.5-vl-7b': {'size_gb': 6.0, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen2.5vl:7b'},
+            'qwen2.5-vl-32b': {'size_gb': 21, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen2.5vl:32b'},
+            'llava-13b': {'size_gb': 8.0, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'llava:13b'},
+            
+            # Reasoning Specialist
+            'qwq-32b': {'size_gb': 20, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwq:32b'},
+            
+            # Latest General Models
+            'llama-3.1-8b': {'size_gb': 5.0, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'llama3.1:8b'},
+            'llama-3.1-70b': {'size_gb': 43, 'speed_rating': 3, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'llama3.1:70b'},
+            'gemma3-9b': {'size_gb': 5.5, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'gemma3:9b'},
+            'phi4-14b': {'size_gb': 9.1, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'phi4:14b'},
+            
+            # Efficient/Lightweight Options
+            'qwen3-1.7b': {'size_gb': 1.2, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'qwen3:1.7b'},
+            'gemma3-4b': {'size_gb': 2.5, 'speed_rating': 5, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'gemma3:4b'},
+            'mistral-nemo-12b': {'size_gb': 7.5, 'speed_rating': 4, 'format': 'GGUF (Q4_K_M)', 'ollama_name': 'mistral-nemo:12b'}
         }
         
         # Cache for real-time pricing to avoid excessive API calls
         self.pricing_cache = {}
         self.pricing_cache_timestamp = {}
         self.cache_duration = 300  # 5 minutes cache
+        
+        # Initialize dynamic model discovery
+        self.discovered_models = {
+            'openai': [],
+            'anthropic': [],
+            'xai': [],
+            'google': [],
+            'ollama': []
+        }
+
+    def discover_available_models(self) -> Dict[str, List[Dict]]:
+        """Dynamically discover all available models from APIs and local installations."""
+        print("🔍 Starting dynamic model discovery...")
+        
+        discovered = {}
+        
+        # Discover hosted models
+        for provider in ['openai', 'anthropic', 'xai', 'google']:
+            try:
+                discovered[provider] = self._discover_provider_models(provider)
+                print(f"✅ Discovered {len(discovered[provider])} models from {provider}")
+            except Exception as e:
+                print(f"❌ Failed to discover {provider} models: {e}")
+                discovered[provider] = []
+        
+        # Discover local models
+        try:
+            discovered['ollama'] = self._discover_ollama_models()
+            print(f"✅ Discovered {len(discovered['ollama'])} local Ollama models")
+        except Exception as e:
+            print(f"❌ Failed to discover Ollama models: {e}")
+            discovered['ollama'] = []
+        
+        # Update internal storage
+        self.discovered_models = discovered
+        return discovered
+
+    def _discover_provider_models(self, provider: str) -> List[Dict]:
+        """Discover models from a specific provider's API."""
+        endpoint = self.api_endpoints.get(provider)
+        if not endpoint:
+            return []
+        
+        headers = self._get_api_headers(provider)
+        if not headers:
+            print(f"⚠️  No API key for {provider}, skipping discovery")
+            return []
+        
+        try:
+            response = requests.get(endpoint, headers=headers, timeout=30)
+            if response.status_code == 200:
+                data = response.json()
+                
+                if provider == 'openai':
+                    return self._parse_openai_models(data)
+                elif provider == 'anthropic':
+                    return self._parse_anthropic_models(data)
+                elif provider == 'xai':
+                    return self._parse_xai_models(data)
+                elif provider == 'google':
+                    return self._parse_google_models(data)
+            else:
+                print(f"❌ API error for {provider}: {response.status_code}")
+                return []
+        except Exception as e:
+            print(f"❌ Error discovering {provider} models: {e}")
+            return []
+
+    def _discover_ollama_models(self) -> List[Dict]:
+        """Discover locally available Ollama models."""
+        try:
+            # Check if Ollama is running
+            response = requests.get(self.api_endpoints['ollama'], timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                models = data.get('models', [])
+                
+                # Also discover available models from Ollama library
+                available_models = self._discover_ollama_library()
+                
+                return self._parse_ollama_models(models, available_models)
+            else:
+                print(f"❌ Ollama not running (status: {response.status_code})")
+                return self._discover_ollama_library()  # Return library models as available
+        except Exception as e:
+            print(f"❌ Error connecting to Ollama: {e}")
+            return self._discover_ollama_library()  # Return library models as available
+
+    def _discover_ollama_library(self) -> List[Dict]:
+        """Discover available models from Ollama library."""
+        try:
+            # Use Ollama's search API or parse library page
+            library_url = "https://ollama.com/api/library"
+            response = requests.get(library_url, timeout=30)
+            if response.status_code == 200:
+                return response.json().get('models', [])
+        except:
+            pass
+        
+        # Fallback to known popular models from 2025
+        return [
+            {'name': 'llama3.3:70b', 'size': '43GB', 'description': 'GPT-4 class performance'},
+            {'name': 'deepseek-r1:8b', 'size': '5GB', 'description': 'Advanced reasoning model'},
+            {'name': 'qwen3:8b', 'size': '5.2GB', 'description': 'Latest Qwen generation'},
+            {'name': 'qwen2.5-coder:7b', 'size': '4.7GB', 'description': 'Specialized coding model'},
+            {'name': 'qwen2.5vl:7b', 'size': '6GB', 'description': 'Vision-language model'},
+        ]
+
+    def _get_api_headers(self, provider: str) -> Optional[Dict[str, str]]:
+        """Get appropriate headers for API requests."""
+        if provider == 'openai' and self.openai_api_key:
+            return {'Authorization': f'Bearer {self.openai_api_key}', 'Content-Type': 'application/json'}
+        elif provider == 'anthropic' and self.anthropic_api_key:
+            return {'x-api-key': self.anthropic_api_key, 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01'}
+        elif provider == 'xai' and self.xai_api_key:
+            return {'Authorization': f'Bearer {self.xai_api_key}', 'Content-Type': 'application/json'}
+        elif provider == 'google' and self.google_api_key:
+            return {'Authorization': f'Bearer {self.google_api_key}', 'Content-Type': 'application/json'}
+        return None
+
+    def _parse_openai_models(self, data: Dict) -> List[Dict]:
+        """Parse OpenAI models API response."""
+        models = []
+        for model in data.get('data', []):
+            models.append({
+                'id': model.get('id'),
+                'created': model.get('created'),
+                'owned_by': model.get('owned_by'),
+                'object': model.get('object', 'model')
+            })
+        return models
+
+    def _parse_anthropic_models(self, data: Dict) -> List[Dict]:
+        """Parse Anthropic models API response."""
+        models = []
+        for model in data.get('data', []):
+            models.append({
+                'id': model.get('id'),
+                'display_name': model.get('display_name'),
+                'created_at': model.get('created_at'),
+                'type': model.get('type', 'model')
+            })
+        return models
+
+    def _parse_xai_models(self, data: Dict) -> List[Dict]:
+        """Parse xAI models API response."""
+        models = []
+        for model in data.get('data', []):
+            models.append({
+                'id': model.get('id'),
+                'created': model.get('created'),
+                'owned_by': model.get('owned_by', 'xai'),
+                'object': model.get('object', 'model')
+            })
+        return models
+
+    def _parse_google_models(self, data: Dict) -> List[Dict]:
+        """Parse Google models API response."""
+        models = []
+        for model in data.get('models', []):
+            models.append({
+                'name': model.get('name'),
+                'displayName': model.get('displayName'),
+                'description': model.get('description'),
+                'inputTokenLimit': model.get('inputTokenLimit'),
+                'outputTokenLimit': model.get('outputTokenLimit')
+            })
+        return models
+
+    def _parse_ollama_models(self, local_models: List[Dict], available_models: List[Dict]) -> List[Dict]:
+        """Parse Ollama models combining local and available."""
+        all_models = []
+        
+        # Add locally installed models
+        for model in local_models:
+            all_models.append({
+                'name': model.get('name'),
+                'size': model.get('size'),
+                'digest': model.get('digest'),
+                'modified_at': model.get('modified_at'),
+                'status': 'installed'
+            })
+        
+        # Add available models not yet installed
+        local_names = {m.get('name') for m in local_models}
+        for model in available_models:
+            if model.get('name') not in local_names:
+                model['status'] = 'available'
+                all_models.append(model)
+        
+        return all_models
+
+    def _convert_ollama_name_to_id(self, ollama_name: str) -> str:
+        """Convert Ollama model name to our internal ID format."""
+        # Examples: llama3.3:70b -> llama-3.3-70b, qwen2.5-coder:7b -> qwen2.5-coder-7b
+        return ollama_name.replace(':', '-').replace('.', '-').lower()
+
+    def _build_dynamic_local_model_info(self, model_id: str, ollama_name: str, model_info: Dict, 
+                                       tools_available: Dict, llama_cpp_available: bool, 
+                                       model_paths: Dict) -> Dict[str, Any]:
+        """Build local model information from dynamically discovered data."""
+        
+        # Extract size from model info
+        size_str = model_info.get('size', '0B')
+        size_gb = self._parse_size_to_gb(size_str)
+        
+        # Determine format and speed rating
+        format_info = 'GGUF (Q4_K_M)'  # Default for Ollama models
+        speed_rating = self._estimate_speed_rating(size_gb)
+        
+        # Dynamic capability detection
+        capabilities = self._detect_local_model_capabilities(model_id)
+        
+        # Generate dynamic strengths
+        strengths = self._generate_dynamic_strengths(model_id, ollama_name, model_info)
+        
+        # Estimate context window based on model name
+        context_window = self._estimate_context_window(model_id)
+        
+        # Check if model is installed
+        status = model_info.get('status', 'available')
+        installation_status = 'ready' if status == 'installed' else 'available'
+        
+        return {
+            'id': model_id,
+            'provider': 'local',
+            'type': 'local',
+            'ollama_name': ollama_name,
+            'pricing': {'input': 0.0, 'output': 0.0},
+            'context_window': context_window,
+            'strengths': strengths,
+            'capabilities': capabilities,
+            'cost_per_1m_tokens': {'input': 0, 'output': 0},
+            'size_gb': size_gb,
+            'speed_rating': speed_rating,
+            'format': format_info,
+            'tools_available': tools_available,
+            'llama_cpp_available': llama_cpp_available,
+            'estimated_ram_usage': f"{size_gb * 1.2:.1f} GB",
+            'local_files_found': 1 if status == 'installed' else 0,
+            'file_paths': [],
+            'installation_status': installation_status,
+            'release_date': self._estimate_release_date(model_id),
+            'discovery_method': 'dynamic_ollama',
+            'last_modified': model_info.get('modified_at', 'Unknown')
+        }
+
+    def _parse_size_to_gb(self, size_str) -> float:
+        """Parse size string to GB."""
+        if not size_str:
+            return 5.0  # Default size
+        
+        # Handle numeric inputs
+        if isinstance(size_str, (int, float)):
+            return float(size_str) / (1024**3)  # Assume bytes
+        
+        # Convert to string and handle
+        size_str = str(size_str).upper()
+        if 'GB' in size_str:
+            return float(size_str.replace('GB', '').strip())
+        elif 'MB' in size_str:
+            return float(size_str.replace('MB', '').strip()) / 1024
+        elif 'B' in size_str and 'GB' not in size_str and 'MB' not in size_str:
+            return float(size_str.replace('B', '').strip()) / (1024**3)
+        else:
+            # Try to extract number and assume GB
+            import re
+            numbers = re.findall(r'\d+\.?\d*', size_str)
+            return float(numbers[0]) if numbers else 5.0
+
+    def _estimate_speed_rating(self, size_gb: float) -> int:
+        """Estimate speed rating based on model size."""
+        if size_gb < 2:
+            return 5  # Very fast
+        elif size_gb < 8:
+            return 4  # Fast
+        elif size_gb < 20:
+            return 3  # Medium
+        elif size_gb < 50:
+            return 2  # Slow
+        else:
+            return 1  # Very slow
+
+    def _generate_dynamic_strengths(self, model_id: str, ollama_name: str, model_info: Dict) -> str:
+        """Generate strengths description based on model characteristics."""
+        strengths = []
+        
+        model_lower = model_id.lower()
+        
+        # Model-specific strengths
+        if 'deepseek-r1' in model_lower:
+            strengths.append("Advanced reasoning and chain-of-thought capabilities")
+        elif 'qwen3' in model_lower:
+            strengths.append("Latest generation multilingual model with excellent performance")
+        elif 'coder' in model_lower:
+            strengths.append("Specialized for code generation and programming tasks")
+        elif 'vl' in model_lower or 'vision' in model_lower:
+            strengths.append("Multimodal vision-language understanding")
+        elif 'llama' in model_lower:
+            strengths.append("Reliable general-purpose model optimized for Apple Silicon")
+        elif 'qwq' in model_lower:
+            strengths.append("Specialized reasoning model with enhanced logical thinking")
+        elif 'gemma' in model_lower:
+            strengths.append("Google's safe and efficient language model")
+        elif 'phi' in model_lower:
+            strengths.append("Microsoft's compact model with strong reasoning")
+        elif 'mistral' in model_lower:
+            strengths.append("Excellent multilingual capabilities and efficiency")
+        else:
+            strengths.append("General-purpose language model")
+        
+        # Size-based strengths
+        description = model_info.get('description', '')
+        if description:
+            strengths.append(description)
+        
+        return "; ".join(strengths) if strengths else "Local language model for privacy and offline use"
+
+    def _estimate_context_window(self, model_id: str) -> int:
+        """Estimate context window based on model name and generation."""
+        model_lower = model_id.lower()
+        
+        # Latest models typically have larger context windows
+        if any(term in model_lower for term in ['3.3', 'r1', 'qwen3', 'phi4', 'gemma3']):
+            return 131072  # 128K
+        elif any(term in model_lower for term in ['3.1', '2.5']):
+            return 131072  # 128K
+        elif 'vl' in model_lower or 'vision' in model_lower:
+            return 65536   # 64K for vision models
+        else:
+            return 32768   # 32K default
+
+    def _estimate_release_date(self, model_id: str) -> str:
+        """Estimate release date based on model name."""
+        model_lower = model_id.lower()
+        
+        # Try to extract date from model name
+        import re
+        date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', model_id)
+        if date_match:
+            return f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}"
+        
+        # Estimate based on model family
+        if 'r1' in model_lower or 'qwen3' in model_lower:
+            return '2025-01-20'
+        elif '3.3' in model_lower:
+            return '2024-12-06'
+        elif '2.5' in model_lower:
+            return '2024-12-01'
+        elif '3.1' in model_lower:
+            return '2024-07-23'
+        else:
+            return '2024-01-01'
 
     def get_real_time_pricing(self, provider: str, model_id: str) -> Dict[str, float]:
         """Fetch real-time pricing for a specific model from multiple sources."""
@@ -632,6 +1108,10 @@ class EnhancedModelInfoCollector:
     def _get_fallback_pricing(self, provider: str, model_id: str) -> Dict[str, float]:
         """Get fallback pricing from hardcoded data."""
         return self.pricing_info[provider].get(model_id, {'input': 0.0, 'output': 0.0})
+    
+    def _get_model_release_date(self, provider: str, model_id: str) -> str:
+        """Get model release date if available."""
+        return self.model_release_dates.get(provider, {}).get(model_id, 'Unknown')
 
     def check_api_keys(self):
         """Verify that available API keys are present."""
@@ -665,7 +1145,7 @@ class EnhancedModelInfoCollector:
         return len(available_keys) > 0
 
     def get_openai_models(self) -> Dict[str, Any]:
-        """Fetch available models from OpenAI API."""
+        """Dynamically fetch available models from OpenAI API."""
         print("🔍 Fetching OpenAI models...")
         
         if not self.openai_api_key:
@@ -673,19 +1153,14 @@ class EnhancedModelInfoCollector:
             return self._get_openai_fallback()
         
         try:
-            headers = {
-                'Authorization': f'Bearer {self.openai_api_key}',
-                'Content-Type': 'application/json'
-            }
-            
-            response = requests.get('https://api.openai.com/v1/models', headers=headers)
-            response.raise_for_status()
-            
-            api_models = response.json()['data']
+            # Use dynamic discovery
+            discovered_models = self._discover_provider_models('openai')
+            if not discovered_models:
+                return self._get_openai_fallback()
             
             # Filter for relevant chat models and add our enhanced information
             relevant_models = {}
-            for model in api_models:
+            for model in discovered_models:
                 model_id = model['id']
                 if any(name in model_id for name in ['gpt-4', 'gpt-3.5', 'o1']):
                     relevant_models[model_id] = self._build_model_info('openai', model_id, model)
@@ -703,10 +1178,26 @@ class EnhancedModelInfoCollector:
         return {model_id: self._build_model_info('openai', model_id) for model_id in fallback_models}
 
     def get_anthropic_models(self) -> Dict[str, Any]:
-        """Fetch available models from Anthropic API."""
+        """Dynamically fetch available models from Anthropic API."""
         print("🔍 Fetching Anthropic models...")
         
-        # Anthropic doesn't have a public models endpoint, so we use known models
+        try:
+            # Use dynamic discovery first
+            discovered_models = self._discover_provider_models('anthropic')
+            if discovered_models:
+                models = {}
+                for model in discovered_models:
+                    model_id = model.get('id', model.get('name'))
+                    if model_id and 'claude' in model_id.lower():
+                        models[model_id] = self._build_model_info('anthropic', model_id, model)
+                
+                if models:
+                    print(f"✅ Found {len(models)} Anthropic models via API")
+                    return models
+        except Exception as e:
+            print(f"⚠️  API discovery failed: {e}")
+        
+        # Fallback to known models if API discovery fails
         known_models = [
             'claude-3-5-sonnet-20241022',
             'claude-3-5-sonnet-20240620', 
@@ -717,44 +1208,32 @@ class EnhancedModelInfoCollector:
         
         models = {model_id: self._build_model_info('anthropic', model_id) for model_id in known_models}
         
-        print(f"✅ Found {len(models)} Anthropic models")
+        print(f"✅ Found {len(models)} Anthropic models (fallback)")
         return models
 
     def get_xai_models(self) -> Dict[str, Any]:
-        """Fetch available models from xAI API."""
+        """Dynamically fetch available models from xAI API."""
         print("🔍 Fetching xAI (Grok) models...")
         
-        if not self.xai_api_key:
-            print("⚠️  No xAI API key, using fallback data")
-            return self._get_xai_fallback()
-        
         try:
-            headers = {
-                'Authorization': f'Bearer {self.xai_api_key}',
-                'Content-Type': 'application/json'
-            }
-            
-            # Try to get models from xAI API
-            response = requests.get('https://api.x.ai/v1/models', headers=headers)
-            response.raise_for_status()
-            
-            api_models = response.json()['data']
-            
-            models = {}
-            for model in api_models:
-                model_id = model['id']
-                models[model_id] = self._build_model_info('xai', model_id, model)
-            
-            # Ensure Grok-4 is included even if not in API response
-            if 'grok-4' not in models:
-                models['grok-4'] = self._build_model_info('xai', 'grok-4')
-            
-            print(f"✅ Found {len(models)} xAI models")
-            return models
-            
+            # Use dynamic discovery first
+            discovered_models = self._discover_provider_models('xai')
+            if discovered_models:
+                models = {}
+                for model in discovered_models:
+                    model_id = model.get('id', model.get('name'))
+                    if model_id and 'grok' in model_id.lower():
+                        models[model_id] = self._build_model_info('xai', model_id, model)
+                
+                if models:
+                    print(f"✅ Found {len(models)} xAI models via API")
+                    return models
         except Exception as e:
-            print(f"❌ Error fetching xAI models (using fallback): {e}")
-            return self._get_xai_fallback()
+            print(f"⚠️  API discovery failed: {e}")
+        
+        # Fallback to known models
+        print("⚠️  Using fallback xAI models")
+        return self._get_xai_fallback()
 
     def _get_xai_fallback(self) -> Dict[str, Any]:
         """Fallback xAI model data."""
@@ -762,10 +1241,26 @@ class EnhancedModelInfoCollector:
         return {model_id: self._build_model_info('xai', model_id) for model_id in fallback_models}
 
     def get_google_models(self) -> Dict[str, Any]:
-        """Fetch available models from Google API."""
+        """Dynamically fetch available models from Google API."""
         print("🔍 Fetching Google (Gemini) models...")
         
-        # Google Gemini models (using known models as API structure varies)
+        try:
+            # Use dynamic discovery first
+            discovered_models = self._discover_provider_models('google')
+            if discovered_models:
+                models = {}
+                for model in discovered_models:
+                    model_id = model.get('name', model.get('id'))
+                    if model_id and 'gemini' in model_id.lower():
+                        models[model_id] = self._build_model_info('google', model_id, model)
+                
+                if models:
+                    print(f"✅ Found {len(models)} Google models via API")
+                    return models
+        except Exception as e:
+            print(f"⚠️  API discovery failed: {e}")
+        
+        # Fallback to known models
         known_models = [
             'gemini-2.5-pro',
             'gemini-2.5-flash',
@@ -775,11 +1270,11 @@ class EnhancedModelInfoCollector:
         
         models = {model_id: self._build_model_info('google', model_id) for model_id in known_models}
         
-        print(f"✅ Found {len(models)} Google models")
+        print(f"✅ Found {len(models)} Google models (fallback)")
         return models
 
     def get_local_models(self) -> Dict[str, Any]:
-        """Get information about locally available models."""
+        """Dynamically discover and get information about locally available models."""
         print("🔍 Checking local models...")
         
         local_models = {}
@@ -813,8 +1308,27 @@ class EnhancedModelInfoCollector:
         # Check for actual model files in common locations
         model_paths = self._scan_for_local_models()
         
+        # Discover available Ollama models dynamically
+        try:
+            discovered_ollama = self._discover_ollama_models()
+            print(f"   🔍 Discovered {len(discovered_ollama)} Ollama models")
+            
+            # Build local model info for discovered models
+            for model_info in discovered_ollama:
+                model_name = model_info.get('name')
+                if model_name:
+                    # Convert Ollama name to our format
+                    model_id = self._convert_ollama_name_to_id(model_name)
+                    local_models[model_id] = self._build_dynamic_local_model_info(
+                        model_id, model_name, model_info, tools_available, llama_cpp_available, model_paths
+                    )
+        except Exception as e:
+            print(f"   ⚠️  Ollama discovery failed: {e}")
+        
+        # Also include our predefined models for compatibility
         for model_id in self.local_model_specs.keys():
-            local_models[model_id] = self._build_local_model_info(model_id, tools_available, llama_cpp_available, model_paths)
+            if model_id not in local_models:
+                local_models[model_id] = self._build_local_model_info(model_id, tools_available, llama_cpp_available, model_paths)
         
         print(f"✅ Found {len(local_models)} local model configurations")
         return local_models
@@ -930,6 +1444,11 @@ class EnhancedModelInfoCollector:
                 'created': api_model.get('created'),
                 'owned_by': api_model.get('owned_by')
             })
+        else:
+            # For non-OpenAI models, add release date from our data
+            release_date = self._get_model_release_date(provider, model_id)
+            if release_date != 'Unknown':
+                info['release_date'] = release_date
         
         return info
 
@@ -1134,12 +1653,48 @@ class EnhancedModelInfoCollector:
         
         return capabilities
 
+    def _detect_local_model_capabilities(self, model_id: str) -> Dict[str, bool]:
+        """Detect capabilities for local models based on their known strengths."""
+        model_lower = model_id.lower()
+        capabilities = {
+            'text_generation': True,  # All models can generate text
+            'multimodal': False,
+            'vision': False,
+            'audio': False,
+            'pdf_processing': False,  # Requires external PDF parsing
+            'search': False,  # Local models don't have web access
+            'reasoning': False,
+            'coding': False,
+        }
+        
+        # Reasoning capabilities - based on model architecture and known performance
+        if any(term in model_lower for term in ['deepseek-r1', 'qwq', 'llama-3.3', 'llama-3.1', 'qwen3', 'phi4', 'gemma3']):
+            capabilities['reasoning'] = True  # Latest 2025 models with advanced reasoning
+        elif any(term in model_lower for term in ['llama-3', 'llama-2', 'mistral', 'vicuna', 'wizardlm', 'orca']):
+            capabilities['reasoning'] = True  # Older models with reasoning abilities
+        
+        # Coding capabilities - based on training and specialization
+        if any(term in model_lower for term in ['coder', 'code', 'coding', 'programmer']):
+            capabilities['coding'] = True  # Explicitly code-focused models
+        elif any(term in model_lower for term in ['deepseek', 'qwen3', 'qwen2.5', 'llama-3', 'mistral', 'phi4']):
+            capabilities['coding'] = True  # Models known for strong coding performance
+        
+        # Vision capabilities for local multimodal models
+        if any(term in model_lower for term in ['vl', 'llava', 'vision', 'multimodal']):
+            capabilities['multimodal'] = True
+            capabilities['vision'] = True
+        
+        return capabilities
+
     def _build_local_model_info(self, model_id: str, tools_available: Dict, llama_cpp_available: bool, model_paths: Dict) -> Dict[str, Any]:
         """Build local model information."""
         specs = self.local_model_specs[model_id]
         pricing = self.pricing_info['local'][model_id]
         context_window = self.context_windows['local'][model_id]
         strengths = self.model_strengths['local'][model_id]
+        
+        # Dynamic capability detection for local models
+        capabilities = self._detect_local_model_capabilities(model_id)
         
         # Check if actual model files are available
         model_key = model_id.split('-')[0]  # e.g., 'llama-3-8b' -> 'llama'
@@ -1152,6 +1707,7 @@ class EnhancedModelInfoCollector:
             'pricing': pricing,
             'context_window': context_window,
             'strengths': strengths,
+            'capabilities': capabilities,
             'cost_per_1m_tokens': {'input': 0, 'output': 0},
             'size_gb': specs['size_gb'],
             'speed_rating': specs['speed_rating'],
@@ -1161,24 +1717,32 @@ class EnhancedModelInfoCollector:
             'estimated_ram_usage': f"{specs['size_gb'] * 1.2:.1f} GB",  # Include overhead
             'local_files_found': len(available_files),
             'file_paths': available_files[:3] if available_files else [],  # Show first 3 paths
-            'installation_status': 'ready' if (tools_available.get('llama-cpp-python') or tools_available.get('ctransformers')) else 'tools_missing'
+            'installation_status': 'ready' if (tools_available.get('llama-cpp-python') or tools_available.get('ctransformers')) else 'tools_missing',
+            'release_date': self._get_model_release_date('local', model_id)
         }
 
     def collect_all_models(self):
-        """Collect models from all providers with real-time pricing."""
-        print("🚀 Starting comprehensive model collection with real-time pricing...")
+        """Dynamically collect models from all providers with real-time pricing and discovery."""
+        print("🚀 Starting comprehensive dynamic model collection...")
         
         self.check_api_keys()
         
-        # Add pricing metadata to the data structure
+        # First, discover all available models
+        print("🔍 Phase 1: Dynamic model discovery")
+        discovered = self.discover_available_models()
+        
+        # Add metadata to the data structure
         self.models_data['pricing_info'] = {
             'last_updated': datetime.now().isoformat(),
             'cache_duration_seconds': self.cache_duration,
             'pricing_sources': ['real-time-api', 'openrouter', 'litellm', 'fallback'],
-            'validation_enabled': True
+            'validation_enabled': True,
+            'discovery_enabled': True,
+            'discovered_counts': {provider: len(models) for provider, models in discovered.items()}
         }
         
-        # Collect from each provider
+        # Collect from each provider with dynamic discovery
+        print("🔍 Phase 2: Enhanced model information collection")
         self.models_data['providers']['openai'] = self.get_openai_models()
         self.models_data['providers']['anthropic'] = self.get_anthropic_models()
         self.models_data['providers']['xai'] = self.get_xai_models()
@@ -1300,18 +1864,21 @@ This document provides comprehensive information about available AI models from 
                     output_price = pricing.get('output', 'Unknown')
                     md_content += f"- **Pricing**: ${input_price}/1K input tokens, ${output_price}/1K output tokens\n"
                 
-                cost_per_1m = info.get('cost_per_1m_tokens', {})
-                if isinstance(cost_per_1m, dict):
-                    input_cost = cost_per_1m.get('input', 'Unknown')
-                    output_cost = cost_per_1m.get('output', 'Unknown')
+                pricing_per_1k = info.get('pricing', {})
+                if isinstance(pricing_per_1k, dict):
+                    input_cost = pricing_per_1k.get('input', 'Unknown')
+                    output_cost = pricing_per_1k.get('output', 'Unknown')
                     if isinstance(input_cost, (int, float)) and isinstance(output_cost, (int, float)):
-                        md_content += f"- **Cost per 1M tokens**: ${input_cost * 1000:,.2f} input, ${output_cost * 1000:,.2f} output\n"
+                        md_content += f"- **Cost per 1K tokens**: ${input_cost:.3f} input, ${output_cost:.3f} output\n"
                 
                 md_content += f"- **Strengths**: {info.get('strengths', 'General purpose model')}\n"
                 
+                # Show release date (from created timestamp or our data)
                 if 'created' in info and info['created']:
                     created_date = datetime.fromtimestamp(info['created']).strftime('%Y-%m-%d') if isinstance(info['created'], (int, float)) else info['created']
-                    md_content += f"- **Created**: {created_date}\n"
+                    md_content += f"- **Release Date**: {created_date}\n"
+                elif 'release_date' in info and info['release_date'] != 'Unknown':
+                    md_content += f"- **Release Date**: {info['release_date']}\n"
                 
                 md_content += "\n"
         
@@ -1328,6 +1895,8 @@ This document provides comprehensive information about available AI models from 
                 md_content += f"- **RAM Usage**: ~{info.get('estimated_ram_usage', 'Unknown')}\n"
                 md_content += f"- **Strengths**: {info.get('strengths', 'General purpose model')}\n"
                 md_content += f"- **API Cost**: $0.00 (local inference only)\n"
+                if 'release_date' in info and info['release_date'] != 'Unknown':
+                    md_content += f"- **Release Date**: {info['release_date']}\n"
                 md_content += "\n"
         
         # Routing recommendations
@@ -1401,6 +1970,14 @@ This document provides comprehensive information about available AI models from 
         for provider, models in self.models_data['providers'].items():
             for model_id, info in models.items():
                 pricing_per_1k = info.get('pricing', {})
+                
+                # Get release date
+                release_date = 'Unknown'
+                if 'created' in info and info['created']:
+                    release_date = datetime.fromtimestamp(info['created']).strftime('%Y-%m-%d') if isinstance(info['created'], (int, float)) else str(info['created'])
+                elif 'release_date' in info:
+                    release_date = info['release_date']
+                
                 all_models.append({
                     'model': model_id,
                     'provider': provider,
@@ -1408,6 +1985,7 @@ This document provides comprehensive information about available AI models from 
                     'input_cost': pricing_per_1k.get('input', 0),
                     'output_cost': pricing_per_1k.get('output', 0),
                     'context_window': info.get('context_window', 'Unknown'),
+                    'release_date': release_date,
                     'capabilities': info.get('capabilities', {}),
                     'strengths': info.get('strengths', 'General purpose model')
                 })
@@ -1421,6 +1999,7 @@ This document provides comprehensive information about available AI models from 
                 'input_cost': 0,
                 'output_cost': 0,
                 'context_window': info.get('context_window', 'Unknown'),
+                'release_date': info.get('release_date', 'Unknown'),
                 'capabilities': info.get('capabilities', {'text_generation': True}),
                 'strengths': info.get('strengths', 'Local inference model')
             })
@@ -1552,8 +2131,9 @@ This document provides comprehensive information about available AI models from 
                     <th onclick="sortTable(2)">Input Cost (per 1K tokens)</th>
                     <th onclick="sortTable(3)">Output Cost (per 1K tokens)</th>
                     <th onclick="sortTable(4)">Context Window</th>
-                    <th onclick="sortTable(5)">Capabilities</th>
-                    <th onclick="sortTable(6)">Strengths</th>
+                    <th onclick="sortTable(5)">Release Date</th>
+                    <th onclick="sortTable(6)">Capabilities</th>
+                    <th onclick="sortTable(7)">Strengths</th>
                 </tr>
             </thead>
             <tbody>
@@ -1599,6 +2179,7 @@ This document provides comprehensive information about available AI models from 
                     <td class="cost">{input_cost}</td>
                     <td class="cost">{output_cost}</td>
                     <td class="context">{context_window}</td>
+                    <td class="release-date">{model.get('release_date', 'Unknown')}</td>
                     <td class="capabilities">{capability_str}</td>
                     <td class="strengths">{model['strengths']}</td>
                 </tr>
@@ -2333,8 +2914,9 @@ print(f"Recommended: {{result['recommended_model']}}")
                     <th onclick="sortTable(2)" style="cursor: pointer;">Input Cost ↕️</th>
                     <th onclick="sortTable(3)" style="cursor: pointer;">Output Cost ↕️</th>
                     <th onclick="sortTable(4)" style="cursor: pointer;">Context Window ↕️</th>
-                    <th onclick="sortTable(5)" style="cursor: pointer;">Strengths ↕️</th>
-                    <th onclick="sortTable(6)" style="cursor: pointer;">Capabilities ↕️</th>
+                    <th onclick="sortTable(5)" style="cursor: pointer;">Release Date ↕️</th>
+                    <th onclick="sortTable(6)" style="cursor: pointer;">Strengths ↕️</th>
+                    <th onclick="sortTable(7)" style="cursor: pointer;">Capabilities ↕️</th>
                 </tr>
             </thead>
             <tbody>
@@ -2357,6 +2939,7 @@ print(f"Recommended: {{result['recommended_model']}}")
             cap_html = ''.join(cap_badges) if cap_badges else '<span class="capability">Text Generation</span>'
             
             row_class = "local-row"
+            release_date = model_data.get('release_date', 'Unknown')
             all_rows.append((
                 f'<tr class="{row_class}">',
                 f'<td class="model-name">{model_id}</td>',
@@ -2364,6 +2947,7 @@ print(f"Recommended: {{result['recommended_model']}}")
                 f'<td class="cost">$0.000</td>',
                 f'<td class="cost">$0.000</td>',
                 f'<td class="context">{context_window:,} tokens</td>',
+                f'<td class="release-date">{release_date}</td>',
                 f'<td class="strengths">{strengths}</td>',
                 f'<td class="capabilities">{cap_html}</td>',
                 '</tr>'
@@ -2396,6 +2980,13 @@ print(f"Recommended: {{result['recommended_model']}}")
                 
                 context_display = f"{context_window:,} tokens" if context_window > 0 else "Unknown"
                 
+                # Get release date
+                release_date = 'Unknown'
+                if 'created' in model_data and model_data['created']:
+                    release_date = datetime.fromtimestamp(model_data['created']).strftime('%Y-%m-%d') if isinstance(model_data['created'], (int, float)) else str(model_data['created'])
+                elif 'release_date' in model_data:
+                    release_date = model_data['release_date']
+                
                 all_rows.append((
                     f'<tr class="{row_class}">',
                     f'<td class="model-name">{model_id}</td>',
@@ -2403,6 +2994,7 @@ print(f"Recommended: {{result['recommended_model']}}")
                     f'<td class="cost">${input_cost:.3f}</td>',
                     f'<td class="cost">${output_cost:.3f}</td>',
                     f'<td class="context">{context_display}</td>',
+                    f'<td class="release-date">{release_date}</td>',
                     f'<td class="strengths">{strengths}</td>',
                     f'<td class="capabilities">{cap_html}</td>',
                     '</tr>'

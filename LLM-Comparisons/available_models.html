@@ -104,7 +104,7 @@
 <body>
     <div class="container">
         <h1>🤖 AI Models Comparison</h1>
-        <div class="updated">Last updated: 2025-07-30 14:31:48</div>
+        <div class="updated">Last updated: 2025-07-30 15:20:50</div>
         
         <div class="legend">
             <strong>Color Legend:</strong>
@@ -121,19 +121,31 @@
                     <th onclick="sortTable(2)">Input Cost (per 1K tokens)</th>
                     <th onclick="sortTable(3)">Output Cost (per 1K tokens)</th>
                     <th onclick="sortTable(4)">Context Window</th>
-                    <th onclick="sortTable(5)">Capabilities</th>
-                    <th onclick="sortTable(6)">Strengths</th>
+                    <th onclick="sortTable(5)">Release Date</th>
+                    <th onclick="sortTable(6)">Capabilities</th>
+                    <th onclick="sortTable(7)">Strengths</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="local">
-                    <td class="model-name">llama-3-8b</td>
+                    <td class="model-name">phi3-mini</td>
                     <td>local</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
-                    <td class="context">128,000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
                     <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Balanced reasoning + offline privacy, efficient on Apple Silicon</td>
+                    <td class="strengths">Microsoft's compact model with strong reasoning</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">codellama-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon</td>
                 </tr>
                 <tr class="local">
                     <td class="model-name">mistral-7b</td>
@@ -141,80 +153,289 @@
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
                     <td class="context">32,768</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Code + logic tasks, very fast, excellent for development</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Excellent multilingual capabilities and efficiency</td>
                 </tr>
                 <tr class="local">
-                    <td class="model-name">mixtral-8x7b</td>
+                    <td class="model-name">llama3-1-8b</td>
                     <td>local</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
                     <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
                     <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Top-tier reasoning, mixture of experts architecture</td>
+                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon</td>
                 </tr>
                 <tr class="local">
-                    <td class="model-name">code-llama-7b</td>
+                    <td class="model-name">llama3-3-70b</td>
                     <td>local</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
                     <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
                     <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Specialized for code generation and completion</td>
+                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon; GPT-4 class performance</td>
                 </tr>
                 <tr class="local">
-                    <td class="model-name">phi-3-mini</td>
+                    <td class="model-name">deepseek-r1-8b</td>
                     <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-20</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning and chain-of-thought capabilities; Advanced reasoning model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen3-8b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-20</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest generation multilingual model with excellent performance; Latest Qwen generation</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-coder-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Specialized for code generation and programming tasks; Specialized coding model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5vl-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">65,536</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">🖼️ Vision</td>
+                    <td class="strengths">Multimodal vision-language understanding; Vision-language model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">llama-3.3-70b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-12-06</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">GPT-4 class performance, excellent reasoning and instruction following</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">deepseek-r1-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">65,536</td>
+                    <td class="release-date">2025-01-20</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Efficient reasoning model with strong problem-solving capabilities</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen3-14b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-13</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Larger Qwen3 model with enhanced reasoning and coding abilities</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen3-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-13</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">High-performance Qwen3 model for complex tasks and reasoning</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2.5-coder-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-11-11</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">State-of-the-art code generation, competitive with GPT-4 for coding</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2.5-coder-14b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-11-11</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Enhanced coding model with superior debugging and refactoring</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2.5-coder-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-11-11</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Premium coding assistant, handles complex codebases and architecture</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2.5-vl-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">65,536</td>
+                    <td class="release-date">2024-12-28</td>
+                    <td class="capabilities">🖼️ Vision, 💻 Code</td>
+                    <td class="strengths">Multimodal model with vision understanding and reasoning</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2.5-vl-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">65,536</td>
+                    <td class="release-date">2024-12-28</td>
+                    <td class="capabilities">🖼️ Vision, 💻 Code</td>
+                    <td class="strengths">Advanced vision-language model with tool use capabilities</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">llava-13b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-07-15</td>
+                    <td class="capabilities">🖼️ Vision</td>
+                    <td class="strengths">Open-source vision model, good for image analysis and description</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwq-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-11-27</td>
+                    <td class="capabilities">🧠 Reasoning</td>
+                    <td class="strengths">Specialized reasoning model with enhanced logical thinking</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">llama-3.1-8b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-07-23</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Reliable general purpose model, well-optimized for Apple Silicon</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">llama-3.1-70b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-07-23</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">High-performance Llama model for complex reasoning tasks</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">gemma3-9b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🧠 Reasoning</td>
+                    <td class="strengths">Latest Gemma with improved safety and multilingual support</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">phi4-14b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Microsoft's latest small language model with strong reasoning</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen3-1.7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-13</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Ultra-lightweight model for basic tasks and edge deployment</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">gemma3-4b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🧠 Reasoning</td>
+                    <td class="strengths">Compact model with good performance-to-size ratio</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">mistral-nemo-12b</td>
+                    <td>local</td>
+                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.00</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2024-07-18</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Balanced model with strong multilingual capabilities</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">claude-opus-4-20250514</td>
+                    <td>anthropic</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Efficient for small reasoning/code tasks, very lightweight</td>
+                    <td class="strengths">General purpose model</td>
                 </tr>
-                <tr class="local">
-                    <td class="model-name">gemma-7b</td>
-                    <td>local</td>
+                <tr class="budget">
+                    <td class="model-name">claude-sonnet-4-20250514</td>
+                    <td>anthropic</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
-                    <td class="context">32,768</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Good multilingual, safe, simple tasks</td>
+                    <td class="strengths">General purpose model</td>
                 </tr>
-                <tr class="local">
-                    <td class="model-name">falcon-7b</td>
-                    <td>local</td>
+                <tr class="budget">
+                    <td class="model-name">claude-3-7-sonnet-20250219</td>
+                    <td>anthropic</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
-                    <td class="context">16,384</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Apache 2.0 license, good general purpose model</td>
+                    <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">General purpose model</td>
                 </tr>
-                <tr class="local">
-                    <td class="model-name">falcon-40b</td>
-                    <td>local</td>
+                <tr class="budget">
+                    <td class="model-name">claude-3-5-haiku-20241022</td>
+                    <td>anthropic</td>
                     <td class="cost">$0.00</td>
                     <td class="cost">$0.00</td>
-                    <td class="context">16,384</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Larger Falcon model for complex reasoning</td>
-                </tr>
-                <tr class="local">
-                    <td class="model-name">mpt-7b</td>
-                    <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
-                    <td class="context">32,768</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Reasoning and summarization, permissive license</td>
-                </tr>
-                <tr class="local">
-                    <td class="model-name">mpt-30b</td>
-                    <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
-                    <td class="context">32,768</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Larger MPT model for complex tasks</td>
+                    <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest claude with excellent coding and analysis capabilities</td>
                 </tr>
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-transcribe</td>
@@ -222,6 +443,7 @@
                     <td class="cost">$0.10</td>
                     <td class="cost">$0.40</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-15</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio transcription, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -231,6 +453,7 @@
                     <td class="cost">$0.10</td>
                     <td class="cost">$0.40</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -240,6 +463,7 @@
                     <td class="cost">$0.10</td>
                     <td class="cost">$0.40</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -249,6 +473,7 @@
                     <td class="cost">$0.15</td>
                     <td class="cost">$0.60</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-07-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -258,6 +483,7 @@
                     <td class="cost">$0.15</td>
                     <td class="cost">$0.60</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-07-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -267,6 +493,7 @@
                     <td class="cost">$0.15</td>
                     <td class="cost">$0.60</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2025-03-17</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning for complex problem-solving</td>
                 </tr>
@@ -276,6 +503,7 @@
                     <td class="cost">$0.15</td>
                     <td class="cost">$0.60</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2025-03-17</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning for complex problem-solving</td>
                 </tr>
@@ -285,6 +513,7 @@
                     <td class="cost">$0.15</td>
                     <td class="cost">$0.60</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-19</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Text-to-speech generation, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -294,6 +523,7 @@
                     <td class="cost">$0.20</td>
                     <td class="cost">$0.80</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -303,6 +533,7 @@
                     <td class="cost">$0.20</td>
                     <td class="cost">$0.80</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -312,6 +543,7 @@
                     <td class="cost">$0.25</td>
                     <td class="cost">$1.25</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Fastest claude model, good for simple tasks and high volume</td>
                 </tr>
@@ -321,6 +553,7 @@
                     <td class="cost">$0.30</td>
                     <td class="cost">$1.20</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -330,6 +563,7 @@
                     <td class="cost">$0.30</td>
                     <td class="cost">$1.20</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -339,6 +573,7 @@
                     <td class="cost">$0.50</td>
                     <td class="cost">$1.50</td>
                     <td class="context">16,385</td>
+                    <td class="release-date">2023-02-28</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -348,6 +583,7 @@
                     <td class="cost">$0.50</td>
                     <td class="cost">$1.50</td>
                     <td class="context">16,385</td>
+                    <td class="release-date">2023-11-02</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -357,6 +593,7 @@
                     <td class="cost">$0.50</td>
                     <td class="cost">$1.50</td>
                     <td class="context">16,385</td>
+                    <td class="release-date">2024-01-23</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -366,6 +603,7 @@
                     <td class="cost">$0.50</td>
                     <td class="cost">$2.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Compact model for efficient processing</td>
                 </tr>
@@ -375,6 +613,7 @@
                     <td class="cost">$0.50</td>
                     <td class="cost">$2.00</td>
                     <td class="context">1,000,000</td>
+                    <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🧠 Reasoning</td>
                     <td class="strengths">Fast version optimized for speed</td>
                 </tr>
@@ -384,6 +623,7 @@
                     <td class="cost">$0.60</td>
                     <td class="cost">$2.40</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-13</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -393,6 +633,7 @@
                     <td class="cost">$0.60</td>
                     <td class="cost">$2.40</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-13</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -402,6 +643,7 @@
                     <td class="cost">$0.60</td>
                     <td class="cost">$2.40</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -411,6 +653,7 @@
                     <td class="cost">$0.60</td>
                     <td class="cost">$2.40</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -420,6 +663,7 @@
                     <td class="cost">$1.00</td>
                     <td class="cost">$4.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Compact model for efficient processing</td>
                 </tr>
@@ -429,6 +673,7 @@
                     <td class="cost">$1.00</td>
                     <td class="cost">$3.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2023-12-06</td>
                     <td class="capabilities">🧠 Reasoning</td>
                     <td class="strengths">General purpose model with strong capabilities</td>
                 </tr>
@@ -438,6 +683,7 @@
                     <td class="cost">$1.50</td>
                     <td class="cost">$2.00</td>
                     <td class="context">16,385</td>
+                    <td class="release-date">2023-08-24</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -447,6 +693,7 @@
                     <td class="cost">$1.50</td>
                     <td class="cost">$2.00</td>
                     <td class="context">16,385</td>
+                    <td class="release-date">2023-09-07</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -456,6 +703,7 @@
                     <td class="cost">$1.50</td>
                     <td class="cost">$4.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2023-12-06</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning</td>
                     <td class="strengths">Multimodal vision capabilities, multimodal version with vision capabilities</td>
                 </tr>
@@ -465,6 +713,7 @@
                     <td class="cost">$2.00</td>
                     <td class="cost">$8.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-15</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio transcription, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -474,6 +723,7 @@
                     <td class="cost">$2.00</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-01-19</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Balanced reasoning and performance</td>
                 </tr>
@@ -483,6 +733,7 @@
                     <td class="cost">$2.00</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Multimodal vision capabilities, balanced reasoning and performance</td>
                 </tr>
@@ -492,6 +743,7 @@
                     <td class="cost">$2.00</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-01-12</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Multimodal vision capabilities, balanced reasoning and performance</td>
                 </tr>
@@ -501,6 +753,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-05-10</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -510,6 +763,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-05-10</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -519,6 +773,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-08-04</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -528,6 +783,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-08-12</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -537,6 +793,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-02-11</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -546,6 +803,7 @@
                     <td class="cost">$2.50</td>
                     <td class="cost">$10.00</td>
                     <td class="context">1,000,000</td>
+                    <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🧠 Reasoning</td>
                     <td class="strengths">Long context up to 1m+ tokens, multimodal, grounded responses</td>
                 </tr>
@@ -555,6 +813,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$12.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2024-09-06</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Reasoning-focused model optimized for coding and math</td>
                 </tr>
@@ -564,6 +823,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$12.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2024-09-06</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Reasoning-focused model optimized for coding and math</td>
                 </tr>
@@ -573,6 +833,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$12.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -582,6 +843,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$12.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -591,6 +853,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$4.00</td>
                     <td class="context">16,384</td>
+                    <td class="release-date">2023-05-10</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
@@ -600,6 +863,7 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$15.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest claude with excellent coding and analysis capabilities</td>
                 </tr>
@@ -609,17 +873,9 @@
                     <td class="cost">$3.00</td>
                     <td class="cost">$15.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest claude with excellent coding and analysis capabilities</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">claude-3-sonnet-20240229</td>
-                    <td>anthropic</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$15.00</td>
-                    <td class="context">200,000</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Balanced performance and speed for most tasks</td>
                 </tr>
                 <tr class="premium">
                     <td class="model-name">gpt-4o-realtime-preview-2025-06-03</td>
@@ -627,6 +883,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-06-02</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -636,6 +893,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-06-02</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -645,6 +903,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-09-23</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -654,6 +913,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-09-26</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -663,6 +923,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-09-27</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -672,6 +933,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-09-29</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -681,6 +943,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -690,6 +953,7 @@
                     <td class="cost">$6.00</td>
                     <td class="cost">$24.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-12-12</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
@@ -699,6 +963,7 @@
                     <td class="cost">$8.00</td>
                     <td class="cost">$20.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Optimized for speed and quick responses</td>
                 </tr>
@@ -708,15 +973,7 @@
                     <td class="cost">$8.00</td>
                     <td class="cost">$20.00</td>
                     <td class="context">128,000</td>
-                    <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Stem and science focused, strong reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">grok-4</td>
-                    <td>xai</td>
-                    <td class="cost">$8.00</td>
-                    <td class="cost">$20.00</td>
-                    <td class="context">128,000</td>
+                    <td class="release-date">2025-07-08</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Stem and science focused, strong reasoning</td>
                 </tr>
@@ -726,6 +983,7 @@
                     <td class="cost">$10.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2023-11-02</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -735,6 +993,7 @@
                     <td class="cost">$10.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2024-01-23</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -744,6 +1003,7 @@
                     <td class="cost">$10.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-01-23</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning with large context window</td>
                 </tr>
@@ -753,6 +1013,7 @@
                     <td class="cost">$10.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-04-05</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning with large context window</td>
                 </tr>
@@ -762,6 +1023,7 @@
                     <td class="cost">$10.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2024-04-08</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning with large context window</td>
                 </tr>
@@ -771,6 +1033,7 @@
                     <td class="cost">$12.00</td>
                     <td class="cost">$30.00</td>
                     <td class="context">128,000</td>
+                    <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning capabilities</td>
                 </tr>
@@ -780,6 +1043,7 @@
                     <td class="cost">$15.00</td>
                     <td class="cost">$60.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2024-12-15</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Sophisticated reasoning capabilities</td>
                 </tr>
@@ -789,6 +1053,7 @@
                     <td class="cost">$15.00</td>
                     <td class="cost">$60.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Sophisticated reasoning capabilities</td>
                 </tr>
@@ -798,6 +1063,7 @@
                     <td class="cost">$15.00</td>
                     <td class="cost">$45.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -807,6 +1073,7 @@
                     <td class="cost">$15.00</td>
                     <td class="cost">$45.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -816,6 +1083,7 @@
                     <td class="cost">$15.00</td>
                     <td class="cost">$75.00</td>
                     <td class="context">200,000</td>
+                    <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Most capable claude model for complex reasoning tasks</td>
                 </tr>
@@ -825,6 +1093,7 @@
                     <td class="cost">$30.00</td>
                     <td class="cost">$60.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2023-06-12</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
@@ -834,6 +1103,7 @@
                     <td class="cost">$30.00</td>
                     <td class="cost">$60.00</td>
                     <td class="context">8,192</td>
+                    <td class="release-date">2023-06-27</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>

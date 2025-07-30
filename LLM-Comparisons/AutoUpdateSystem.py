@@ -59,16 +59,27 @@ class AutoUpdateSystem:
             }
         }
         
-        # Ollama model recommendations for auto-installation
+        # Ollama model recommendations for auto-installation (Latest 2025 models)
         self.recommended_local_models = [
-            'llama3.1:8b', 'llama3.1:70b', 'llama3.2:1b', 'llama3.2:3b',
-            'mistral:7b', 'mistral:latest', 'mixtral:8x7b',
-            'codellama:7b', 'codellama:13b', 'codellama:34b',
-            'phi3:mini', 'phi3:medium', 'phi3.5:latest',
-            'qwen2:7b', 'qwen2.5:7b', 'qwen2.5:14b',
-            'deepseek-coder:6.7b', 'deepseek-coder:33b',
-            'gemma2:9b', 'gemma2:27b',
-            'neural-chat:7b', 'starling-lm:7b'
+            # Latest flagship models
+            'llama3.3:70b', 'deepseek-r1:8b', 'deepseek-r1:7b',
+            'qwen3:8b', 'qwen3:14b', 'qwen3:32b', 'qwen3:1.7b',
+            
+            # Latest coding specialists
+            'qwen2.5-coder:7b', 'qwen2.5-coder:14b', 'qwen2.5-coder:32b',
+            
+            # Vision models
+            'qwen2.5vl:7b', 'qwen2.5vl:32b', 'llava:13b',
+            
+            # Reasoning specialists
+            'qwq:32b',
+            
+            # Latest general models
+            'llama3.1:8b', 'llama3.1:70b', 'gemma3:9b', 'gemma3:4b',
+            'phi4:14b', 'mistral-nemo:12b',
+            
+            # Proven reliable models
+            'mistral:7b', 'mixtral:8x7b'
         ]
 
     def _load_current_models(self) -> Dict[str, Any]:
@@ -94,7 +105,7 @@ class AutoUpdateSystem:
             'check_interval_hours': 24,
             'auto_install_local_models': True,
             'max_local_models': 10,
-            'preferred_model_sizes': ['7b', '8b', '13b'],  # Prefer smaller models for Apple Silicon
+            'preferred_model_sizes': ['1.7b', '4b', '7b', '8b', '9b', '12b', '14b'],  # Optimized for Apple Silicon 2025
             'exclude_patterns': ['*:latest'],  # Avoid installing 'latest' tags
             'notification_email': None,
             'last_check': None
@@ -122,11 +133,66 @@ class AutoUpdateSystem:
             json.dump(self.update_history, f, indent=2)
 
     def check_for_new_models(self) -> Dict[str, List[str]]:
-        """Check all providers for new models."""
+        """Dynamically check all providers for new models."""
         print("🔍 Checking for new models across all providers...")
         new_models = {'hosted': [], 'local': []}
         
-        # Check hosted models
+        # Use the dynamic discovery system
+        try:
+            from GetAvailableModels import EnhancedModelInfoCollector
+            collector = EnhancedModelInfoCollector()
+            
+            print("🔍 Running dynamic model discovery...")
+            discovered = collector.discover_available_models()
+            
+            # Compare with existing models to find new ones
+            current_models = self.current_models.get('providers', {})
+            current_local = self.current_models.get('local_models', {})
+            
+            # Check for new hosted models
+            for provider, models in discovered.items():
+                if provider == 'ollama':
+                    continue  # Handle local separately
+                    
+                current_provider_models = set(current_models.get(provider, {}).keys())
+                discovered_model_ids = {m.get('id', m.get('name')) for m in models}
+                
+                new_in_provider = discovered_model_ids - current_provider_models
+                for model_id in new_in_provider:
+                    if model_id:
+                        new_models['hosted'].append(f"{provider}:{model_id}")
+                        print(f"🆕 New hosted model: {provider}:{model_id}")
+            
+            # Check for new local models
+            if 'ollama' in discovered:
+                current_local_models = set(current_local.keys())
+                discovered_local = {collector._convert_ollama_name_to_id(m.get('name', '')) 
+                                  for m in discovered['ollama'] if m.get('name')}
+                
+                new_local = discovered_local - current_local_models
+                for model_id in new_local:
+                    if model_id:
+                        new_models['local'].append(model_id)
+                        print(f"🆕 New local model available: {model_id}")
+                        
+        except Exception as e:
+            print(f"❌ Error in dynamic discovery: {e}")
+            # Fallback to manual checking
+            return self._manual_model_check()
+        
+        # Log the check
+        self.config['last_check'] = datetime.now().isoformat()
+        self._save_config()
+        
+        print(f"✅ Discovery complete: {len(new_models['hosted'])} new hosted, {len(new_models['local'])} new local")
+        return new_models
+
+    def _manual_model_check(self) -> Dict[str, List[str]]:
+        """Fallback manual model checking."""
+        print("🔄 Falling back to manual model checking...")
+        new_models = {'hosted': [], 'local': []}
+        
+        # Check hosted models manually
         for provider, config in self.api_configs.items():
             try:
                 provider_new_models = self._check_provider_models(provider, config)
@@ -140,10 +206,6 @@ class AutoUpdateSystem:
             new_models['local'].extend(local_new_models)
         except Exception as e:
             print(f"⚠️  Failed to check Ollama registry: {e}")
-        
-        # Log the check
-        self.config['last_check'] = datetime.now().isoformat()
-        self._save_config()
         
         return new_models
 
@@ -228,8 +290,15 @@ class AutoUpdateSystem:
             print("⚠️  Insufficient disk space for model installation")
             return {}
         
-        # Check current model count
-        current_count = len(self.current_models.get('local_models', {}))
+        # Check current model count using dynamic discovery
+        try:
+            from GetAvailableModels import EnhancedModelInfoCollector
+            collector = EnhancedModelInfoCollector()
+            discovered = collector._discover_ollama_models()
+            current_count = len([m for m in discovered if m.get('status') == 'installed'])
+        except:
+            current_count = len(self.current_models.get('local_models', {}))
+        
         max_models = self.config.get('max_local_models', 10)
         
         if current_count >= max_models:

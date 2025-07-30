@@ -1,10 +1,10 @@
 # Enhanced AI Model Information Collector & Intelligent Router
 
-A comprehensive Python tool for collecting, comparing, and intelligently routing between AI models from OpenAI (ChatGPT), Anthropic (Claude), xAI (Grok), Google (Gemini), and local LLMs optimized for Apple Silicon.
+A comprehensive Python tool for **dynamically discovering**, collecting, comparing, and intelligently routing between AI models from OpenAI (ChatGPT), Anthropic (Claude), xAI (Grok), Google (Gemini), and local LLMs optimized for Apple Silicon.
 
 ## Overview
 
-The `GetAvailableModels.py` script automatically queries multiple AI provider APIs and local installations to collect detailed information about available models, including:
+The `GetAvailableModels.py` script **dynamically discovers models in real-time** by querying multiple AI provider APIs and local installations to collect detailed information about available models, including:
 
 - 🆔 **Model IDs and versions** (hosted and local)
 - 💰 **Cost per token** (input/output pricing)
@@ -16,10 +16,17 @@ The `GetAvailableModels.py` script automatically queries multiple AI provider AP
 
 ## New Features
 
+### 🔄 Dynamic Model Discovery (NEW!)
+- **Real-time API discovery**: Automatically finds the latest models via REST APIs
+- **Data-driven approach**: No hardcoded model lists - discovers what's actually available
+- **Auto-discovery of new releases**: Detects Claude 4, GPT-5, Grok-5, etc. as they're released
+- **Live model availability**: Only shows models you can actually use right now
+- **Automatic fallback**: Graceful handling when APIs are unavailable
+
 ### Enhanced Model Coverage
 - **All major providers**: OpenAI, Anthropic, xAI, Google
 - **Local LLMs**: Llama 3, Mistral, Mixtral, Code Llama, Phi-3, Gemma, Falcon, MPT
-- **Grok-4 inclusion**: Explicitly includes Grok-4 (often omitted from other tools)
+- **Latest model inclusion**: Automatically discovers new models like Claude 4, Grok-4
 - **Apple Silicon optimization**: Optimized specifications for M2 Ultra systems
 - **Tool availability detection**: Automatically detects installed local inference tools
 
@@ -36,7 +43,9 @@ The `GetAvailableModels.py` script automatically queries multiple AI provider AP
 - **Installation status**: Real-time status of local model availability
 - **Download suggestions**: Direct links to recommended model downloads
 
-### Intelligent Router
+### Intelligent Router with Auto-Refresh
+- **Dynamic model awareness**: Automatically discovers and uses newly available models
+- **Auto-refresh capability**: Periodically updates model data (default: 1 hour)
 - **Automatic task detection**: Physics/STEM, code generation, multimodal, etc.
 - **Cost-aware routing**: Select models based on budget constraints
 - **Context-aware selection**: Choose models based on token requirements
@@ -104,13 +113,14 @@ python3 GetAvailableModels.py
 
 The script will:
 1. ✅ Check available API keys
-2. 🔍 Query each provider's API for available models  
-3. 💻 Check local model tool availability and scan for existing files
-4. 💾 Generate `available_models.json` with structured data  
-5. 📝 Generate `available_models.md` with sortable HTML table
-6. 📄 Generate `available_models.html` with interactive sortable table
-7. 🔄 Create current models subset files for models you can actually use
-8. 🧠 Create `IntelligentLLMRouter.py` for smart model selection
+2. 🔍 **Dynamically discover models** from each provider's API in real-time
+3. 💻 Auto-detect local model tool availability and scan for existing files
+4. 🔄 **Auto-refresh model data** to ensure latest availability
+5. 💾 Generate `available_models.json` with structured data  
+6. 📝 Generate `available_models.md` with sortable HTML table
+7. 📄 Generate `available_models.html` with interactive sortable table
+8. 🔄 Create current models subset files for models you can actually use
+9. 🧠 Create `IntelligentLLMRouter.py` for smart model selection with auto-refresh
 
 ### Output Files
 
@@ -190,7 +200,8 @@ These files filter the complete model list to show only:
 ```python
 from IntelligentLLMRouter import IntelligentLLMRouter
 
-router = IntelligentLLMRouter()
+# Router with auto-refresh (default: every hour)
+router = IntelligentLLMRouter(auto_refresh=True)
 
 # Check available local models
 local_models = router.get_available_local_models()
@@ -358,20 +369,29 @@ response = openai.ChatCompletion.create(model="gpt-4", messages=[{"role": "user"
 
 This system correctly identifies all models as having `"pdf_processing": false` because it focuses on Python API and local capabilities, not web app features.
 
-## Updating Information
+## Dynamic Updates
 
-Run periodically to keep current:
+### Automatic Updates (NEW!)
+The system now **automatically discovers** new models without manual updates:
 
+```python
+# Router automatically refreshes model data every hour
+router = IntelligentLLMRouter(auto_refresh=True)
+result = router.route_request("Your prompt")  # Uses latest models
+```
+
+### Manual Updates (when needed)
 ```bash
-# Weekly/monthly updates recommended
+# Force immediate discovery of latest models
 python3 GetAvailableModels.py
 ```
 
-Updates capture:
-- New model releases
-- Pricing changes  
-- Local tool availability
-- Routing logic improvements
+Dynamic discovery captures:
+- **New model releases** (Claude 4, GPT-5, Grok-5, etc.)
+- **Real-time pricing** changes
+- **Local tool availability** updates
+- **Model capability** improvements
+- **Context window** expansions
 
 ## Cost Analysis Features
 

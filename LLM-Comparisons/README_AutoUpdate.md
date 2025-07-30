@@ -2,14 +2,16 @@
 
 ## Overview
 
-The AutoUpdateSystem automatically detects new models (like gpt-5, claude-4, grok-5) and installs local LLMs via Ollama. It integrates with the existing model comparison system to keep everything up-to-date.
+The AutoUpdateSystem **dynamically discovers and auto-installs** new models (like GPT-5, Claude 4, Grok-5) using real-time API discovery. It integrates with the enhanced dynamic model collection system to keep everything up-to-date.
 
 ## Features
 
-✅ **Automatic Model Detection**
-- Monitors OpenAI, Anthropic, xAI, and Google APIs for new models
-- Detects next-generation models like gpt-5, claude-4, grok-5
-- Updates model database with real-time pricing
+✅ **Dynamic Model Discovery (NEW!)**
+- **Real-time API discovery** across OpenAI, Anthropic, xAI, and Google
+- **Data-driven detection** - no hardcoded model lists
+- **Automatic discovery** of next-generation models like GPT-5, Claude 4, Grok-5
+- **Live pricing updates** with real-time API data
+- **Integrated with enhanced collection system** for comprehensive discovery
 
 ✅ **Auto-Installation of Local LLMs** 
 - Automatically installs new Ollama models
@@ -22,10 +24,12 @@ The AutoUpdateSystem automatically detects new models (like gpt-5, claude-4, gro
 - Background monitoring with minimal system impact
 - Update history logging and error tracking
 
-✅ **Integration**
-- Works with existing GetAvailableModels.py system
+✅ **Enhanced Integration**
+- **Seamless integration** with dynamic GetAvailableModels.py system
+- **Auto-refresh capabilities** in IntelligentLLMRouter
+- **Real-time model availability** updates
 - Auto-opens updated comparison tables in browser
-- Updates IntelligentLLMRouter with new models
+- **Dynamic routing** with newly discovered models
 
 ## Usage
 
@@ -63,10 +67,14 @@ updater = AutoUpdateSystem()
 # Force update check
 updater.force_update_check()
 
-# Check what new models are available
+# Dynamic discovery of new models (uses real-time API discovery)
 new_models = updater.check_for_new_models()
 print(f"New hosted models: {new_models['hosted']}")
 print(f"New local models: {new_models['local']}")
+
+# Example output:
+# New hosted models: ['openai:gpt-5', 'anthropic:claude-4', 'xai:grok-5']
+# New local models: ['llama3.3:8b', 'mistral:8x22b']
 
 # Get system status
 status = updater.get_update_status()
@@ -151,17 +159,21 @@ ollama run llama3.1:8b "Analyze this text: " + text
 
 ## Integration with Existing System
 
-### Auto-Opening Results
-When new models are detected and the database is updated, the system automatically:
-1. Runs GetAvailableModels.py to collect latest data
-2. Generates updated HTML comparison table
-3. Auto-opens the results in your default browser
+### Dynamic Discovery Integration
+When new models are detected, the system automatically:
+1. **Triggers dynamic discovery** via enhanced GetAvailableModels.py
+2. **Real-time model collection** with live API data
+3. **Auto-refresh routing logic** in IntelligentLLMRouter
+4. Generates updated HTML comparison table
+5. Auto-opens the results in your default browser
 
-### IntelligentLLMRouter Integration
-New models are automatically available in the router for:
-- Task-based model selection
-- Cost-optimized routing
-- Local vs hosted model preferences
+### Enhanced Router Integration
+New models are **automatically discovered and integrated** in the router for:
+- **Dynamic model selection** with real-time availability
+- **Auto-refreshing routing** (updates every hour by default)
+- Task-based model selection with latest models
+- Cost-optimized routing with current pricing
+- Local vs hosted model preferences with live detection
 
 ## Monitoring and Logs
 

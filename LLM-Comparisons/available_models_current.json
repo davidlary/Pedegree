@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-30T14:31:43.860570",
+  "last_updated": "2025-07-30T15:20:47.488012",
   "providers": {
     "openai": {
       "gpt-4-0613": {
@@ -26,7 +26,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315561",
+        "last_price_check": "2025-07-30T15:20:48.399971",
         "created": 1686588896,
         "owned_by": "openai"
       },
@@ -54,7 +54,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315608",
+        "last_price_check": "2025-07-30T15:20:48.399995",
         "created": 1687882411,
         "owned_by": "openai"
       },
@@ -82,7 +82,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315636",
+        "last_price_check": "2025-07-30T15:20:48.400011",
         "created": 1677610602,
         "owned_by": "openai"
       },
@@ -110,7 +110,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315665",
+        "last_price_check": "2025-07-30T15:20:48.400027",
         "created": 1748907838,
         "owned_by": "system"
       },
@@ -138,7 +138,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315751",
+        "last_price_check": "2025-07-30T15:20:48.400039",
         "created": 1748908498,
         "owned_by": "system"
       },
@@ -166,7 +166,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315841",
+        "last_price_check": "2025-07-30T15:20:48.400053",
         "created": 1692901427,
         "owned_by": "system"
       },
@@ -194,7 +194,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315872",
+        "last_price_check": "2025-07-30T15:20:48.400065",
         "created": 1694122472,
         "owned_by": "system"
       },
@@ -222,7 +222,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315901",
+        "last_price_check": "2025-07-30T15:20:48.400079",
         "created": 1698957206,
         "owned_by": "system"
       },
@@ -250,7 +250,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315936",
+        "last_price_check": "2025-07-30T15:20:48.400090",
         "created": 1698959748,
         "owned_by": "system"
       },
@@ -278,7 +278,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.315966",
+        "last_price_check": "2025-07-30T15:20:48.400102",
         "created": 1706037612,
         "owned_by": "system"
       },
@@ -306,7 +306,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316008",
+        "last_price_check": "2025-07-30T15:20:48.400113",
         "created": 1706037777,
         "owned_by": "system"
       },
@@ -334,7 +334,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316034",
+        "last_price_check": "2025-07-30T15:20:48.400124",
         "created": 1706048358,
         "owned_by": "system"
       },
@@ -362,7 +362,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316061",
+        "last_price_check": "2025-07-30T15:20:48.400136",
         "created": 1712361441,
         "owned_by": "system"
       },
@@ -390,7 +390,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316083",
+        "last_price_check": "2025-07-30T15:20:48.400146",
         "created": 1712601677,
         "owned_by": "system"
       },
@@ -418,7 +418,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316105",
+        "last_price_check": "2025-07-30T15:20:48.400158",
         "created": 1715367049,
         "owned_by": "system"
       },
@@ -446,7 +446,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316126",
+        "last_price_check": "2025-07-30T15:20:48.400168",
         "created": 1715368132,
         "owned_by": "system"
       },
@@ -474,7 +474,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316148",
+        "last_price_check": "2025-07-30T15:20:48.400180",
         "created": 1721172717,
         "owned_by": "system"
       },
@@ -502,7 +502,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316168",
+        "last_price_check": "2025-07-30T15:20:48.400190",
         "created": 1721172741,
         "owned_by": "system"
       },
@@ -530,7 +530,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316188",
+        "last_price_check": "2025-07-30T15:20:48.400201",
         "created": 1722814719,
         "owned_by": "system"
       },
@@ -558,7 +558,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316209",
+        "last_price_check": "2025-07-30T15:20:48.400212",
         "created": 1723515131,
         "owned_by": "system"
       },
@@ -586,7 +586,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316233",
+        "last_price_check": "2025-07-30T15:20:48.400224",
         "created": 1725648979,
         "owned_by": "system"
       },
@@ -614,7 +614,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316256",
+        "last_price_check": "2025-07-30T15:20:48.400236",
         "created": 1725649008,
         "owned_by": "system"
       },
@@ -642,7 +642,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316289",
+        "last_price_check": "2025-07-30T15:20:48.400247",
         "created": 1727131766,
         "owned_by": "system"
       },
@@ -670,7 +670,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316312",
+        "last_price_check": "2025-07-30T15:20:48.400258",
         "created": 1727389042,
         "owned_by": "system"
       },
@@ -698,7 +698,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316334",
+        "last_price_check": "2025-07-30T15:20:48.400269",
         "created": 1727460443,
         "owned_by": "system"
       },
@@ -726,7 +726,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316355",
+        "last_price_check": "2025-07-30T15:20:48.400280",
         "created": 1727659998,
         "owned_by": "system"
       },
@@ -754,7 +754,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316378",
+        "last_price_check": "2025-07-30T15:20:48.400292",
         "created": 1733945430,
         "owned_by": "system"
       },
@@ -782,7 +782,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316399",
+        "last_price_check": "2025-07-30T15:20:48.400302",
         "created": 1734034239,
         "owned_by": "system"
       },
@@ -810,7 +810,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316420",
+        "last_price_check": "2025-07-30T15:20:48.400314",
         "created": 1734112601,
         "owned_by": "system"
       },
@@ -838,7 +838,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316443",
+        "last_price_check": "2025-07-30T15:20:48.400325",
         "created": 1734115920,
         "owned_by": "system"
       },
@@ -866,7 +866,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316469",
+        "last_price_check": "2025-07-30T15:20:48.400340",
         "created": 1734326976,
         "owned_by": "system"
       },
@@ -894,7 +894,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316489",
+        "last_price_check": "2025-07-30T15:20:48.400352",
         "created": 1734375816,
         "owned_by": "system"
       },
@@ -922,7 +922,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316511",
+        "last_price_check": "2025-07-30T15:20:48.400363",
         "created": 1734387380,
         "owned_by": "system"
       },
@@ -950,7 +950,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316531",
+        "last_price_check": "2025-07-30T15:20:48.400373",
         "created": 1734387424,
         "owned_by": "system"
       },
@@ -978,7 +978,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316554",
+        "last_price_check": "2025-07-30T15:20:48.400385",
         "created": 1739331543,
         "owned_by": "system"
       },
@@ -1006,7 +1006,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316577",
+        "last_price_check": "2025-07-30T15:20:48.400397",
         "created": 1741388170,
         "owned_by": "system"
       },
@@ -1034,7 +1034,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.316598",
+        "last_price_check": "2025-07-30T15:20:48.400409",
         "created": 1741388720,
         "owned_by": "system"
       },
@@ -1062,7 +1062,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.318901",
+        "last_price_check": "2025-07-30T15:20:48.400421",
         "created": 1741390858,
         "owned_by": "system"
       },
@@ -1090,7 +1090,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.318941",
+        "last_price_check": "2025-07-30T15:20:48.400432",
         "created": 1741391161,
         "owned_by": "system"
       },
@@ -1118,7 +1118,7 @@
           "output": 8000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.318977",
+        "last_price_check": "2025-07-30T15:20:48.400444",
         "created": 1742068463,
         "owned_by": "system"
       },
@@ -1146,7 +1146,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319004",
+        "last_price_check": "2025-07-30T15:20:48.400456",
         "created": 1742068596,
         "owned_by": "system"
       },
@@ -1174,7 +1174,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319028",
+        "last_price_check": "2025-07-30T15:20:48.400467",
         "created": 1742251504,
         "owned_by": "system"
       },
@@ -1202,7 +1202,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319052",
+        "last_price_check": "2025-07-30T15:20:48.400478",
         "created": 1742251791,
         "owned_by": "system"
       },
@@ -1230,7 +1230,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319080",
+        "last_price_check": "2025-07-30T15:20:48.400490",
         "created": 1742403959,
         "owned_by": "system"
       },
@@ -1258,7 +1258,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319110",
+        "last_price_check": "2025-07-30T15:20:48.400503",
         "created": 1744315746,
         "owned_by": "system"
       },
@@ -1286,7 +1286,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319131",
+        "last_price_check": "2025-07-30T15:20:48.400514",
         "created": 1744316542,
         "owned_by": "system"
       },
@@ -1314,7 +1314,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319152",
+        "last_price_check": "2025-07-30T15:20:48.400527",
         "created": 1744317547,
         "owned_by": "system"
       },
@@ -1342,7 +1342,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319174",
+        "last_price_check": "2025-07-30T15:20:48.400538",
         "created": 1744318173,
         "owned_by": "system"
       },
@@ -1370,7 +1370,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319205",
+        "last_price_check": "2025-07-30T15:20:48.400548",
         "created": 1744321025,
         "owned_by": "system"
       },
@@ -1398,7 +1398,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319226",
+        "last_price_check": "2025-07-30T15:20:48.400559",
         "created": 1744321707,
         "owned_by": "system"
       },
@@ -1426,12 +1426,96 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319260",
+        "last_price_check": "2025-07-30T15:20:48.400570",
         "created": 1683758102,
         "owned_by": "openai-internal"
       }
     },
     "anthropic": {
+      "claude-opus-4-20250514": {
+        "id": "claude-opus-4-20250514",
+        "provider": "anthropic",
+        "pricing": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "context_window": 128000,
+        "strengths": "General purpose model",
+        "capabilities": {
+          "text_generation": true,
+          "multimodal": false,
+          "vision": false,
+          "audio": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": false,
+          "coding": false
+        },
+        "cost_per_1m_tokens": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "pricing_source": "real-time",
+        "last_price_check": "2025-07-30T15:20:48.858091",
+        "created": null,
+        "owned_by": null
+      },
+      "claude-sonnet-4-20250514": {
+        "id": "claude-sonnet-4-20250514",
+        "provider": "anthropic",
+        "pricing": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "context_window": 128000,
+        "strengths": "General purpose model",
+        "capabilities": {
+          "text_generation": true,
+          "multimodal": false,
+          "vision": false,
+          "audio": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": false,
+          "coding": false
+        },
+        "cost_per_1m_tokens": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "pricing_source": "real-time",
+        "last_price_check": "2025-07-30T15:20:49.047957",
+        "created": null,
+        "owned_by": null
+      },
+      "claude-3-7-sonnet-20250219": {
+        "id": "claude-3-7-sonnet-20250219",
+        "provider": "anthropic",
+        "pricing": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "context_window": 200000,
+        "strengths": "General purpose model",
+        "capabilities": {
+          "text_generation": true,
+          "multimodal": false,
+          "vision": false,
+          "audio": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
+          "coding": true
+        },
+        "cost_per_1m_tokens": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "pricing_source": "real-time",
+        "last_price_check": "2025-07-30T15:20:49.262135",
+        "created": null,
+        "owned_by": null
+      },
       "claude-3-5-sonnet-20241022": {
         "id": "claude-3-5-sonnet-20241022",
         "provider": "anthropic",
@@ -1456,7 +1540,37 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319680"
+        "last_price_check": "2025-07-30T15:20:49.262167",
+        "created": null,
+        "owned_by": null
+      },
+      "claude-3-5-haiku-20241022": {
+        "id": "claude-3-5-haiku-20241022",
+        "provider": "anthropic",
+        "pricing": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "context_window": 200000,
+        "strengths": "Latest claude with excellent coding and analysis capabilities",
+        "capabilities": {
+          "text_generation": true,
+          "multimodal": false,
+          "vision": false,
+          "audio": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
+          "coding": true
+        },
+        "cost_per_1m_tokens": {
+          "input": 0.0,
+          "output": 0.0
+        },
+        "pricing_source": "real-time",
+        "last_price_check": "2025-07-30T15:20:49.551961",
+        "created": null,
+        "owned_by": null
       },
       "claude-3-5-sonnet-20240620": {
         "id": "claude-3-5-sonnet-20240620",
@@ -1482,59 +1596,9 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319713"
-      },
-      "claude-3-opus-20240229": {
-        "id": "claude-3-opus-20240229",
-        "provider": "anthropic",
-        "pricing": {
-          "input": 15.0,
-          "output": 75.0
-        },
-        "context_window": 200000,
-        "strengths": "Most capable claude model for complex reasoning tasks",
-        "capabilities": {
-          "text_generation": true,
-          "multimodal": false,
-          "vision": false,
-          "audio": false,
-          "pdf_processing": false,
-          "search": false,
-          "reasoning": true,
-          "coding": true
-        },
-        "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 75000.0
-        },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319738"
-      },
-      "claude-3-sonnet-20240229": {
-        "id": "claude-3-sonnet-20240229",
-        "provider": "anthropic",
-        "pricing": {
-          "input": 3.0,
-          "output": 15.0
-        },
-        "context_window": 200000,
-        "strengths": "Balanced performance and speed for most tasks",
-        "capabilities": {
-          "text_generation": true,
-          "multimodal": false,
-          "vision": false,
-          "audio": false,
-          "pdf_processing": false,
-          "search": false,
-          "reasoning": true,
-          "coding": true
-        },
-        "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
-        },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319761"
+        "last_price_check": "2025-07-30T15:20:49.551990",
+        "created": null,
+        "owned_by": null
       },
       "claude-3-haiku-20240307": {
         "id": "claude-3-haiku-20240307",
@@ -1560,7 +1624,37 @@
           "output": 1250.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.319783"
+        "last_price_check": "2025-07-30T15:20:49.552005",
+        "created": null,
+        "owned_by": null
+      },
+      "claude-3-opus-20240229": {
+        "id": "claude-3-opus-20240229",
+        "provider": "anthropic",
+        "pricing": {
+          "input": 15.0,
+          "output": 75.0
+        },
+        "context_window": 200000,
+        "strengths": "Most capable claude model for complex reasoning tasks",
+        "capabilities": {
+          "text_generation": true,
+          "multimodal": false,
+          "vision": false,
+          "audio": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
+          "coding": true
+        },
+        "cost_per_1m_tokens": {
+          "input": 15000.0,
+          "output": 75000.0
+        },
+        "pricing_source": "real-time",
+        "last_price_check": "2025-07-30T15:20:49.552017",
+        "created": null,
+        "owned_by": null
       }
     },
     "xai": {
@@ -1588,7 +1682,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454311",
+        "last_price_check": "2025-07-30T15:20:49.733456",
         "created": 1737331200,
         "owned_by": "xai"
       },
@@ -1616,7 +1710,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454348",
+        "last_price_check": "2025-07-30T15:20:49.733492",
         "created": 1733961600,
         "owned_by": "xai"
       },
@@ -1644,7 +1738,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454373",
+        "last_price_check": "2025-07-30T15:20:49.733510",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1672,7 +1766,7 @@
           "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454397",
+        "last_price_check": "2025-07-30T15:20:49.733525",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1700,7 +1794,7 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454420",
+        "last_price_check": "2025-07-30T15:20:49.733537",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1728,7 +1822,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454442",
+        "last_price_check": "2025-07-30T15:20:49.733550",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1756,7 +1850,7 @@
           "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454466",
+        "last_price_check": "2025-07-30T15:20:49.733591",
         "created": 1752019200,
         "owned_by": "xai"
       },
@@ -1784,54 +1878,39 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454490",
+        "last_price_check": "2025-07-30T15:20:49.733645",
         "created": 1736726400,
         "owned_by": "xai"
-      },
-      "grok-4": {
-        "id": "grok-4",
-        "provider": "xai",
-        "pricing": {
-          "input": 8.0,
-          "output": 20.0
-        },
-        "context_window": 128000,
-        "strengths": "Stem and science focused, strong reasoning",
-        "capabilities": {
-          "text_generation": true,
-          "multimodal": false,
-          "vision": false,
-          "audio": false,
-          "pdf_processing": false,
-          "search": true,
-          "reasoning": true,
-          "coding": true
-        },
-        "cost_per_1m_tokens": {
-          "input": 8000.0,
-          "output": 20000.0
-        },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T14:31:44.454513"
       }
     }
   },
   "local_models": {
-    "llama-3-8b": {
-      "id": "llama-3-8b",
+    "mistral-7b": {
+      "id": "mistral-7b",
       "provider": "local",
       "type": "local",
+      "ollama_name": "mistral:7b",
       "pricing": {
         "input": 0.0,
         "output": 0.0
       },
-      "context_window": 128000,
-      "strengths": "Balanced reasoning + offline privacy, efficient on Apple Silicon",
+      "context_window": 32768,
+      "strengths": "Excellent multilingual capabilities and efficiency",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": true,
+        "coding": true
+      },
       "cost_per_1m_tokens": {
         "input": 0,
         "output": 0
       },
-      "size_gb": 6,
+      "size_gb": 4.072510063648224,
       "speed_rating": 4,
       "format": "GGUF (Q4_K_M)",
       "tools_available": {
@@ -1841,97 +1920,13 @@
         "transformers": true
       },
       "llama_cpp_available": false,
-      "estimated_ram_usage": "7.2 GB",
-      "local_files_found": 0,
+      "estimated_ram_usage": "4.9 GB",
+      "local_files_found": 1,
       "file_paths": [],
-      "installation_status": "ready"
-    },
-    "mistral-7b": {
-      "id": "mistral-7b",
-      "provider": "local",
-      "type": "local",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 32768,
-      "strengths": "Code + logic tasks, very fast, excellent for development",
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 6,
-      "speed_rating": 5,
-      "format": "GGUF",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "7.2 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "ready"
-    },
-    "code-llama-7b": {
-      "id": "code-llama-7b",
-      "provider": "local",
-      "type": "local",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 32768,
-      "strengths": "Specialized for code generation and completion",
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 8,
-      "speed_rating": 4,
-      "format": "GGUF",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "9.6 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "ready"
-    },
-    "phi-3-mini": {
-      "id": "phi-3-mini",
-      "provider": "local",
-      "type": "local",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 128000,
-      "strengths": "Efficient for small reasoning/code tasks, very lightweight",
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 3,
-      "speed_rating": 5,
-      "format": "MLC / GGUF",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "3.6 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "ready"
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-29T16:13:48.703819019-05:00"
     }
   },
   "routing_recommendations": {
@@ -2041,7 +2036,7 @@
     }
   },
   "pricing_info": {
-    "last_updated": "2025-07-30T14:31:43.860603",
+    "last_updated": "2025-07-30T15:20:48.122513",
     "cache_duration_seconds": 300,
     "pricing_sources": [
       "real-time-api",
@@ -2049,6 +2044,14 @@
       "litellm",
       "fallback"
     ],
-    "validation_enabled": true
+    "validation_enabled": true,
+    "discovery_enabled": true,
+    "discovered_counts": {
+      "openai": 75,
+      "anthropic": 8,
+      "xai": 8,
+      "google": 0,
+      "ollama": 9
+    }
   }
 }
