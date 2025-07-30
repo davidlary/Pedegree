@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-29T16:07:40.677553",
+  "last_updated": "2025-07-29T16:26:46.236265",
   "providers": {
     "openai": {
       "gpt-4-0613": {
@@ -16,9 +16,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -26,7 +26,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069793",
+        "last_price_check": "2025-07-29T16:26:46.527608",
         "created": 1686588896,
         "owned_by": "openai"
       },
@@ -44,9 +44,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -54,7 +54,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069851",
+        "last_price_check": "2025-07-29T16:26:46.527657",
         "created": 1687882411,
         "owned_by": "openai"
       },
@@ -82,7 +82,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069878",
+        "last_price_check": "2025-07-29T16:26:46.527699",
         "created": 1677610602,
         "owned_by": "openai"
       },
@@ -99,10 +99,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -110,7 +110,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069907",
+        "last_price_check": "2025-07-29T16:26:46.527804",
         "created": 1748907838,
         "owned_by": "system"
       },
@@ -127,10 +127,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -138,7 +138,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069931",
+        "last_price_check": "2025-07-29T16:26:46.527930",
         "created": 1748908498,
         "owned_by": "system"
       },
@@ -166,7 +166,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069957",
+        "last_price_check": "2025-07-29T16:26:46.527965",
         "created": 1692901427,
         "owned_by": "system"
       },
@@ -194,7 +194,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.069979",
+        "last_price_check": "2025-07-29T16:26:46.527990",
         "created": 1694122472,
         "owned_by": "system"
       },
@@ -212,9 +212,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -222,7 +222,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070008",
+        "last_price_check": "2025-07-29T16:26:46.528022",
         "created": 1698957206,
         "owned_by": "system"
       },
@@ -250,7 +250,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070033",
+        "last_price_check": "2025-07-29T16:26:46.528047",
         "created": 1698959748,
         "owned_by": "system"
       },
@@ -268,9 +268,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -278,7 +278,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070059",
+        "last_price_check": "2025-07-29T16:26:46.528073",
         "created": 1706037612,
         "owned_by": "system"
       },
@@ -296,9 +296,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -306,7 +306,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070083",
+        "last_price_check": "2025-07-29T16:26:46.528104",
         "created": 1706037777,
         "owned_by": "system"
       },
@@ -334,7 +334,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070104",
+        "last_price_check": "2025-07-29T16:26:46.528127",
         "created": 1706048358,
         "owned_by": "system"
       },
@@ -352,9 +352,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -362,7 +362,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070126",
+        "last_price_check": "2025-07-29T16:26:46.528148",
         "created": 1712361441,
         "owned_by": "system"
       },
@@ -380,9 +380,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -390,7 +390,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070147",
+        "last_price_check": "2025-07-29T16:26:46.528173",
         "created": 1712601677,
         "owned_by": "system"
       },
@@ -408,9 +408,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -418,7 +418,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070168",
+        "last_price_check": "2025-07-29T16:26:46.528193",
         "created": 1715367049,
         "owned_by": "system"
       },
@@ -436,9 +436,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -446,7 +446,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070188",
+        "last_price_check": "2025-07-29T16:26:46.528214",
         "created": 1715368132,
         "owned_by": "system"
       },
@@ -464,9 +464,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -474,7 +474,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070217",
+        "last_price_check": "2025-07-29T16:26:46.528242",
         "created": 1721172717,
         "owned_by": "system"
       },
@@ -492,9 +492,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -502,7 +502,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070241",
+        "last_price_check": "2025-07-29T16:26:46.528263",
         "created": 1721172741,
         "owned_by": "system"
       },
@@ -520,9 +520,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -530,7 +530,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070264",
+        "last_price_check": "2025-07-29T16:26:46.528285",
         "created": 1722814719,
         "owned_by": "system"
       },
@@ -548,9 +548,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -558,7 +558,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070289",
+        "last_price_check": "2025-07-29T16:26:46.528307",
         "created": 1723515131,
         "owned_by": "system"
       },
@@ -579,14 +579,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 3000.0,
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070313",
+        "last_price_check": "2025-07-29T16:26:46.528340",
         "created": 1725648979,
         "owned_by": "system"
       },
@@ -607,14 +607,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 3000.0,
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070335",
+        "last_price_check": "2025-07-29T16:26:46.528365",
         "created": 1725649008,
         "owned_by": "system"
       },
@@ -631,10 +631,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -642,7 +642,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070360",
+        "last_price_check": "2025-07-29T16:26:46.528391",
         "created": 1727131766,
         "owned_by": "system"
       },
@@ -659,10 +659,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -670,7 +670,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070382",
+        "last_price_check": "2025-07-29T16:26:46.528413",
         "created": 1727389042,
         "owned_by": "system"
       },
@@ -687,10 +687,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -698,7 +698,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070403",
+        "last_price_check": "2025-07-29T16:26:46.528436",
         "created": 1727460443,
         "owned_by": "system"
       },
@@ -715,10 +715,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -726,7 +726,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070424",
+        "last_price_check": "2025-07-29T16:26:46.528457",
         "created": 1727659998,
         "owned_by": "system"
       },
@@ -743,10 +743,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -754,7 +754,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070447",
+        "last_price_check": "2025-07-29T16:26:46.528482",
         "created": 1733945430,
         "owned_by": "system"
       },
@@ -771,10 +771,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -782,7 +782,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070467",
+        "last_price_check": "2025-07-29T16:26:46.528503",
         "created": 1734034239,
         "owned_by": "system"
       },
@@ -799,10 +799,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -810,7 +810,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070490",
+        "last_price_check": "2025-07-29T16:26:46.528525",
         "created": 1734112601,
         "owned_by": "system"
       },
@@ -827,10 +827,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -838,7 +838,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070513",
+        "last_price_check": "2025-07-29T16:26:46.528551",
         "created": 1734115920,
         "owned_by": "system"
       },
@@ -859,14 +859,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 15000.0,
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070535",
+        "last_price_check": "2025-07-29T16:26:46.528574",
         "created": 1734326976,
         "owned_by": "system"
       },
@@ -887,14 +887,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 15000.0,
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070556",
+        "last_price_check": "2025-07-29T16:26:46.528595",
         "created": 1734375816,
         "owned_by": "system"
       },
@@ -911,10 +911,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -922,7 +922,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070578",
+        "last_price_check": "2025-07-29T16:26:46.528617",
         "created": 1734387380,
         "owned_by": "system"
       },
@@ -939,10 +939,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -950,7 +950,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070598",
+        "last_price_check": "2025-07-29T16:26:46.528638",
         "created": 1734387424,
         "owned_by": "system"
       },
@@ -968,9 +968,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -978,7 +978,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070621",
+        "last_price_check": "2025-07-29T16:26:46.528663",
         "created": 1739331543,
         "owned_by": "system"
       },
@@ -996,9 +996,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
-          "search": true,
-          "reasoning": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1006,7 +1006,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070643",
+        "last_price_check": "2025-07-29T16:26:46.528686",
         "created": 1741388170,
         "owned_by": "system"
       },
@@ -1024,9 +1024,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
-          "search": true,
-          "reasoning": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1034,7 +1034,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.070663",
+        "last_price_check": "2025-07-29T16:26:46.528708",
         "created": 1741388720,
         "owned_by": "system"
       },
@@ -1052,9 +1052,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
-          "search": true,
-          "reasoning": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1062,7 +1062,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073116",
+        "last_price_check": "2025-07-29T16:26:46.530306",
         "created": 1741390858,
         "owned_by": "system"
       },
@@ -1080,9 +1080,9 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
-          "search": true,
-          "reasoning": false,
+          "pdf_processing": false,
+          "search": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1090,7 +1090,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073216",
+        "last_price_check": "2025-07-29T16:26:46.530348",
         "created": 1741391161,
         "owned_by": "system"
       },
@@ -1107,10 +1107,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1118,7 +1118,7 @@
           "output": 8000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073247",
+        "last_price_check": "2025-07-29T16:26:46.530373",
         "created": 1742068463,
         "owned_by": "system"
       },
@@ -1135,10 +1135,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1146,7 +1146,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073275",
+        "last_price_check": "2025-07-29T16:26:46.530396",
         "created": 1742068596,
         "owned_by": "system"
       },
@@ -1167,14 +1167,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 150.0,
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073300",
+        "last_price_check": "2025-07-29T16:26:46.530420",
         "created": 1742251504,
         "owned_by": "system"
       },
@@ -1195,14 +1195,14 @@
           "pdf_processing": false,
           "search": false,
           "reasoning": true,
-          "coding": false
+          "coding": true
         },
         "cost_per_1m_tokens": {
           "input": 150.0,
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073341",
+        "last_price_check": "2025-07-29T16:26:46.530444",
         "created": 1742251791,
         "owned_by": "system"
       },
@@ -1219,10 +1219,10 @@
           "text_generation": true,
           "multimodal": true,
           "vision": true,
-          "audio": true,
-          "pdf_processing": true,
+          "audio": false,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1230,7 +1230,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073370",
+        "last_price_check": "2025-07-29T16:26:46.530473",
         "created": 1742403959,
         "owned_by": "system"
       },
@@ -1248,9 +1248,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1258,7 +1258,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073395",
+        "last_price_check": "2025-07-29T16:26:46.530497",
         "created": 1744315746,
         "owned_by": "system"
       },
@@ -1276,9 +1276,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1286,7 +1286,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073416",
+        "last_price_check": "2025-07-29T16:26:46.530517",
         "created": 1744316542,
         "owned_by": "system"
       },
@@ -1304,9 +1304,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1314,7 +1314,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073443",
+        "last_price_check": "2025-07-29T16:26:46.530541",
         "created": 1744317547,
         "owned_by": "system"
       },
@@ -1332,9 +1332,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1342,7 +1342,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073465",
+        "last_price_check": "2025-07-29T16:26:46.530562",
         "created": 1744318173,
         "owned_by": "system"
       },
@@ -1360,9 +1360,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1370,7 +1370,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073494",
+        "last_price_check": "2025-07-29T16:26:46.530585",
         "created": 1744321025,
         "owned_by": "system"
       },
@@ -1388,9 +1388,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1398,7 +1398,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073516",
+        "last_price_check": "2025-07-29T16:26:46.530608",
         "created": 1744321707,
         "owned_by": "system"
       },
@@ -1426,7 +1426,7 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.073560",
+        "last_price_check": "2025-07-29T16:26:46.530630",
         "created": 1683758102,
         "owned_by": "openai-internal"
       }
@@ -1446,9 +1446,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1456,7 +1456,7 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.074113"
+        "last_price_check": "2025-07-29T16:26:46.531337"
       },
       "claude-3-5-sonnet-20240620": {
         "id": "claude-3-5-sonnet-20240620",
@@ -1472,9 +1472,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1482,7 +1482,7 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.074184"
+        "last_price_check": "2025-07-29T16:26:46.531382"
       },
       "claude-3-opus-20240229": {
         "id": "claude-3-opus-20240229",
@@ -1498,7 +1498,7 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
           "reasoning": true,
           "coding": true
@@ -1508,7 +1508,7 @@
           "output": 75000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.074215"
+        "last_price_check": "2025-07-29T16:26:46.531409"
       },
       "claude-3-sonnet-20240229": {
         "id": "claude-3-sonnet-20240229",
@@ -1524,9 +1524,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1534,7 +1534,7 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.074246"
+        "last_price_check": "2025-07-29T16:26:46.531440"
       },
       "claude-3-haiku-20240307": {
         "id": "claude-3-haiku-20240307",
@@ -1550,9 +1550,9 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
+          "reasoning": true,
           "coding": true
         },
         "cost_per_1m_tokens": {
@@ -1560,7 +1560,7 @@
           "output": 1250.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.074273"
+        "last_price_check": "2025-07-29T16:26:46.531463"
       }
     },
     "xai": {
@@ -1578,8 +1578,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1588,7 +1588,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.213896",
+        "last_price_check": "2025-07-29T16:26:46.653032",
         "created": 1737331200,
         "owned_by": "xai"
       },
@@ -1603,11 +1603,11 @@
         "strengths": "Multimodal vision capabilities, balanced reasoning and performance",
         "capabilities": {
           "text_generation": true,
-          "multimodal": true,
-          "vision": true,
+          "multimodal": false,
+          "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1616,7 +1616,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.213934",
+        "last_price_check": "2025-07-29T16:26:46.653053",
         "created": 1733961600,
         "owned_by": "xai"
       },
@@ -1634,8 +1634,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1644,7 +1644,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.213962",
+        "last_price_check": "2025-07-29T16:26:46.653066",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1662,8 +1662,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1672,7 +1672,7 @@
           "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.213987",
+        "last_price_check": "2025-07-29T16:26:46.653077",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1690,8 +1690,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1700,7 +1700,7 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214012",
+        "last_price_check": "2025-07-29T16:26:46.653088",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1718,8 +1718,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1728,7 +1728,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214037",
+        "last_price_check": "2025-07-29T16:26:46.653099",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1746,8 +1746,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1756,7 +1756,7 @@
           "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214068",
+        "last_price_check": "2025-07-29T16:26:46.653110",
         "created": 1752019200,
         "owned_by": "xai"
       },
@@ -1771,11 +1771,11 @@
         "strengths": "Multimodal vision capabilities, balanced reasoning and performance",
         "capabilities": {
           "text_generation": true,
-          "multimodal": true,
-          "vision": true,
+          "multimodal": false,
+          "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1784,7 +1784,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214093",
+        "last_price_check": "2025-07-29T16:26:46.653126",
         "created": 1736726400,
         "owned_by": "xai"
       },
@@ -1802,8 +1802,8 @@
           "multimodal": false,
           "vision": false,
           "audio": false,
-          "pdf_processing": true,
-          "search": false,
+          "pdf_processing": false,
+          "search": true,
           "reasoning": true,
           "coding": true
         },
@@ -1812,7 +1812,7 @@
           "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214117"
+        "last_price_check": "2025-07-29T16:26:46.653138"
       }
     },
     "google": {
@@ -1827,20 +1827,20 @@
         "strengths": "Long context up to 1m+ tokens, multimodal, grounded responses",
         "capabilities": {
           "text_generation": true,
-          "multimodal": true,
-          "vision": true,
+          "multimodal": false,
+          "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
-          "coding": true
+          "reasoning": true,
+          "coding": false
         },
         "cost_per_1m_tokens": {
           "input": 2500.0,
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214356"
+        "last_price_check": "2025-07-29T16:26:46.653258"
       },
       "gemini-2.5-flash": {
         "id": "gemini-2.5-flash",
@@ -1853,20 +1853,20 @@
         "strengths": "Fast version optimized for speed",
         "capabilities": {
           "text_generation": true,
-          "multimodal": true,
-          "vision": true,
+          "multimodal": false,
+          "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
-          "coding": true
+          "reasoning": true,
+          "coding": false
         },
         "cost_per_1m_tokens": {
           "input": 500.0,
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214380"
+        "last_price_check": "2025-07-29T16:26:46.653270"
       },
       "gemini-pro": {
         "id": "gemini-pro",
@@ -1879,20 +1879,20 @@
         "strengths": "General purpose model with strong capabilities",
         "capabilities": {
           "text_generation": true,
-          "multimodal": true,
-          "vision": true,
+          "multimodal": false,
+          "vision": false,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
-          "coding": true
+          "reasoning": true,
+          "coding": false
         },
         "cost_per_1m_tokens": {
           "input": 1000.0,
           "output": 3000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214402"
+        "last_price_check": "2025-07-29T16:26:46.653283"
       },
       "gemini-pro-vision": {
         "id": "gemini-pro-vision",
@@ -1908,17 +1908,17 @@
           "multimodal": true,
           "vision": true,
           "audio": false,
-          "pdf_processing": true,
+          "pdf_processing": false,
           "search": false,
-          "reasoning": false,
-          "coding": true
+          "reasoning": true,
+          "coding": false
         },
         "cost_per_1m_tokens": {
           "input": 1500.0,
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-29T16:07:41.214425"
+        "last_price_check": "2025-07-29T16:26:46.653295"
       }
     }
   },
@@ -2321,7 +2321,7 @@
     }
   },
   "pricing_info": {
-    "last_updated": "2025-07-29T16:07:40.677585",
+    "last_updated": "2025-07-29T16:26:46.236297",
     "cache_duration_seconds": 300,
     "pricing_sources": [
       "real-time-api",
