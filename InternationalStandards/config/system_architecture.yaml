@@ -1,0 +1,272 @@
+# System Architecture Design
+# Autonomous architectural decisions for International Standards Retrieval System
+
+# Multi-Page Streamlit Application Architecture
+streamlit_architecture:
+  main_entry_point: "GetInternationalStandards.py"
+  
+  pages:
+    dashboard:
+      file: "pages/1_Dashboard.py"
+      purpose: "Real-time system overview and control"
+      components:
+        - "System status monitoring"
+        - "Agent health dashboard"
+        - "Progress tracking by discipline"
+        - "LLM optimization metrics"
+        - "Recovery system status"
+        
+    discipline_explorer:
+      file: "pages/2_Discipline_Explorer.py"
+      purpose: "Explore standards by OpenAlex discipline"
+      components:
+        - "19 discipline navigation"
+        - "Standards hierarchical view"
+        - "Cross-disciplinary connections"
+        - "Search and filtering"
+        
+    standards_browser:
+      file: "pages/3_Standards_Browser.py"
+      purpose: "Browse and inspect individual standards"
+      components:
+        - "Standard detail viewer"
+        - "Quality assessment display"
+        - "Version history tracking"
+        - "Export capabilities"
+        
+    agent_monitor:
+      file: "pages/4_Agent_Monitor.py"
+      purpose: "Monitor multi-agent system operations"
+      components:
+        - "Individual agent status"
+        - "Task distribution visualization"
+        - "Performance metrics"
+        - "Load balancing status"
+        
+    llm_optimization:
+      file: "pages/5_LLM_Optimization.py"
+      purpose: "LLM model selection and cost optimization"
+      components:
+        - "Model usage dashboard"
+        - "Token consumption tracking"
+        - "Cost analysis and optimization"
+        - "Quality vs cost analysis"
+        
+    data_apis:
+      file: "pages/6_Data_APIs.py"
+      purpose: "Programmatic data access interfaces"
+      components:
+        - "REST API endpoints"
+        - "Data export formats"
+        - "Query builder interface"
+        - "Integration examples"
+        
+    recovery_center:
+      file: "pages/7_Recovery_Center.py"
+      purpose: "System recovery and continuation management"
+      components:
+        - "Recovery status display"
+        - "Checkpoint management"
+        - "Manual recovery controls"
+        - "System health validation"
+
+# Multi-Agent System Architecture
+agent_system:
+  orchestrator:
+    class: "StandardsOrchestrator"
+    file: "core/orchestrator.py"
+    responsibilities:
+      - "Agent lifecycle management"
+      - "Task distribution and coordination"
+      - "Load balancing across 24 cores"
+      - "LLM Router integration"
+      - "Recovery coordination"
+      
+  discovery_agents:
+    count: 19  # One per OpenAlex discipline initially
+    class: "DiscoveryAgent"
+    file: "core/discovery_agent.py"
+    responsibilities:
+      - "Dynamic standards source discovery"
+      - "Organization website crawling"
+      - "API endpoint identification"
+      - "Document type classification"
+      
+  retrieval_agents:
+    count: 20  # Scalable based on workload
+    class: "RetrievalAgent"
+    file: "core/retrieval_agent.py"
+    responsibilities:
+      - "Standards document downloading"
+      - "Content extraction and parsing"
+      - "Metadata extraction"
+      - "Quality assessment"
+      
+  processing_agents:
+    count: 15  # For content analysis
+    class: "ProcessingAgent"
+    file: "core/processing_agent.py"
+    responsibilities:
+      - "Content semantic analysis"
+      - "Cross-reference identification"
+      - "Classification and tagging"
+      - "Quality scoring"
+      
+  validation_agents:
+    count: 5   # For quality assurance
+    class: "ValidationAgent"
+    file: "core/validation_agent.py"
+    responsibilities:
+      - "Authority validation"
+      - "Content accuracy verification"
+      - "Completeness assessment"
+      - "Cross-disciplinary consistency"
+
+# Data Storage and Organization Schema
+data_architecture:
+  hierarchical_structure:
+    root: "data/"
+    discipline_level: "data/{discipline}/"
+    subdiscipline_level: "data/{discipline}/{subdiscipline}/"
+    organization_level: "data/{discipline}/{subdiscipline}/{organization}/"
+    standard_level: "data/{discipline}/{subdiscipline}/{organization}/{standard}/"
+    
+  metadata_schema:
+    standard_metadata:
+      - "unique_id"
+      - "title"
+      - "organization"
+      - "discipline_classification"
+      - "education_level"
+      - "publication_date"
+      - "last_updated"
+      - "authority_score"
+      - "quality_score"
+      - "cross_references"
+      
+    discipline_metadata:
+      - "discipline_name"
+      - "standards_count"
+      - "last_scan_date"
+      - "completion_percentage"
+      - "quality_metrics"
+      
+  cross_reference_system:
+    interdisciplinary_links:
+      storage: "data/cross_references/"
+      format: "JSON graphs"
+      relationships:
+        - "prerequisite_standards"
+        - "complementary_standards"
+        - "conflicting_standards"
+        - "superseded_standards"
+
+# API and Integration Architecture
+api_architecture:
+  rest_api:
+    framework: "FastAPI"
+    file: "core/api_server.py"
+    endpoints:
+      - "/api/v1/disciplines"
+      - "/api/v1/standards/{discipline}"
+      - "/api/v1/search"
+      - "/api/v1/quality-metrics"
+      - "/api/v1/cross-references"
+      
+  data_export:
+    formats: ["JSON", "CSV", "XML", "RDF"]
+    compression: "gzip"
+    streaming: true
+    pagination: true
+    
+  external_integrations:
+    llm_router:
+      path: "/Users/davidlary/Dropbox/Environments/Code/Pedegree/LLM-Comparisons/IntelligentLLMRouter.py"
+      integration_type: "direct_import"
+      
+    openalex_disciplines:
+      reference_path: "/Users/davidlary/Dropbox/Environments/Code/Pedegree/OpenBooks/Books"
+      integration_type: "structure_mapping"
+
+# Performance and Scalability Architecture
+performance_architecture:
+  parallel_processing:
+    max_cores: 20  # Leave 4 cores for system
+    worker_pools:
+      discovery_pool: 8
+      retrieval_pool: 8  
+      processing_pool: 4
+      
+  caching_strategy:
+    levels:
+      - "LLM response caching"
+      - "Web request caching"
+      - "Processed content caching"
+      - "Search index caching"
+    storage: "Redis-compatible in-memory"
+    
+  resource_management:
+    memory_limits:
+      total_system: "180GB"  # Leave 12GB buffer
+      per_agent_max: "2GB"
+      shared_cache: "50GB"
+      
+  optimization_targets:
+    standards_per_hour: 10000
+    concurrent_agents: 50
+    query_response_time: "<100ms"
+    system_uptime: "99.9%"
+
+# Quality Assurance and Testing Architecture
+quality_architecture:
+  testing_framework:
+    unit_tests: "pytest"
+    integration_tests: "pytest + httpx"
+    property_tests: "hypothesis"
+    performance_tests: "locust"
+    
+  quality_metrics:
+    code_coverage: ">85%"
+    test_pass_rate: "100%"
+    performance_benchmarks: "documented baselines"
+    
+  continuous_validation:
+    data_integrity_checks: "hourly"
+    cross_reference_validation: "daily"
+    authority_validation: "weekly"
+    
+# Security and Reliability Architecture
+security_architecture:
+  data_protection:
+    encryption_at_rest: false  # Public educational data
+    secure_communications: true
+    api_rate_limiting: true
+    
+  reliability_patterns:
+    circuit_breakers: true
+    retry_mechanisms: true
+    graceful_degradation: true
+    health_checks: true
+    
+  monitoring_and_alerting:
+    system_health_monitoring: true
+    performance_degradation_alerts: true
+    error_rate_monitoring: true
+    recovery_success_tracking: true
+
+# Deployment and Maintenance Architecture
+deployment_architecture:
+  development_setup:
+    local_development: "streamlit run GetInternationalStandards.py"
+    testing_environment: "pytest + streamlit testing"
+    
+  production_considerations:
+    containerization: "Docker (future)"
+    orchestration: "Docker Compose (future)"
+    monitoring: "Built-in Streamlit monitoring"
+    
+  maintenance_automation:
+    automated_updates: true
+    self_healing_capabilities: true
+    performance_optimization: true
+    data_refresh_scheduling: true
