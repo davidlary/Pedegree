@@ -1,0 +1,20 @@
+{
+  "checkpoint_name": "graceful_shutdown",
+  "timestamp": "2025-07-31T15:10:24.843117",
+  "system_state": {},
+  "additional_data": {
+    "shutdown_timestamp": "2025-07-31T15:10:24.843082",
+    "total_standards_processed": 0,
+    "final_cost": 0.0,
+    "session_duration": "session_completed",
+    "shutdown_reason": "user_requested_graceful_exit"
+  },
+  "recovery_metrics": {
+    "checkpoints_created": 0,
+    "successful_recoveries": 0,
+    "failed_recoveries": 0,
+    "state_saves": 0,
+    "data_integrity_checks": 0
+  },
+  "checkpoint_hash": "84689bcd1fd4dfa9aad5a448cbecaf3d5a341921fdb6d60e79d4a5e9b67d40de"
+}

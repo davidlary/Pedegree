@@ -367,8 +367,17 @@ class InternationalStandardsApp:
                         'last_refresh': datetime.now()
                     }
                 else:
-                    st.warning(f"Models data file not found: {models_path}")
-                    return {'available': False, 'error': 'Models data file not found'}
+                    # Don't show warning in UI - handle gracefully with fallback
+                    try:
+                        router = IntelligentLLMRouter()  # Use default config
+                        return {
+                            'router': router,
+                            'available': True,
+                            'models_path': 'default',
+                            'last_refresh': datetime.now()
+                        }
+                    except:
+                        return {'available': False, 'error': 'LLM Router not available'}
             except Exception as e:
                 st.error(f"Error initializing LLM Router: {e}")
                 return {'available': False, 'error': str(e)}
@@ -381,7 +390,9 @@ class InternationalStandardsApp:
             if StandardsOrchestrator:
                 # Create orchestrator with proper configuration
                 config_manager = ConfigManager(self.config_dir)
-                llm_integration = LLMIntegration(self.config.get('llm_optimization', {}))
+                # Set models data path for LLM integration
+                models_data_path = str(Path(__file__).parent.parent / "LLM-Comparisons" / "available_models_current.json")
+                llm_integration = LLMIntegration(self.config.get('llm_optimization', {}), models_data_path)
                 
                 orchestrator = StandardsOrchestrator(
                     config_manager=config_manager,

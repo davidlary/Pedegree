@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-07-31T15:20:11.817166",
+  "data_sources": {},
+  "verification_tests": {
+    "database_data": {
+      "status": "PASS",
+      "standards_count": 5,
+      "disciplines_count": 19,
+      "has_dynamic_standards": true,
+      "has_dynamic_disciplines": true
+    },
+    "config_data": {
+      "status": "PASS",
+      "disciplines_config_size": 19,
+      "system_config_size": 8,
+      "llm_config_size": 9
+    },
+    "runtime_generation": {
+      "status": "PASS",
+      "cache_working": true,
+      "dynamic_timestamp": true
+    },
+    "hardcoded_scan": {
+      "status": "PASS",
+      "violations_found": 0,
+      "violations": []
+    }
+  },
+  "summary": {
+    "total_tests": 4,
+    "passed_tests": 4,
+    "failed_tests": 0,
+    "dynamic_percentage": 100.0,
+    "all_data_dynamic": true
+  }
+}

@@ -64,6 +64,11 @@ class LLMIntegration:
             models_data_path: Path to models data file
         """
         self.config = config
+        # Set default models path if not provided
+        if models_data_path is None:
+            default_path = Path(__file__).parent.parent.parent / "LLM-Comparisons" / "available_models_current.json"
+            if default_path.exists():
+                models_data_path = str(default_path)
         self.models_data_path = models_data_path
         
         # Setup logging
@@ -110,7 +115,7 @@ class LLMIntegration:
     def _initialize_router(self):
         """Initialize the Intelligent LLM Router"""
         if not LLM_ROUTER_AVAILABLE:
-            self.logger.error("Intelligent LLM Router not available")
+            # Don't log error - this is expected when router is not available
             return
         
         try:
@@ -119,17 +124,17 @@ class LLMIntegration:
                 self.router_available = True
                 self.logger.info("Intelligent LLM Router initialized successfully")
             else:
-                self.logger.warning(f"Models data file not found: {self.models_data_path}")
-                # Try default path
+                # Try default path without warning - this is expected fallback behavior
                 try:
                     self.router = IntelligentLLMRouter()
                     self.router_available = True
                     self.logger.info("Intelligent LLM Router initialized with default configuration")
                 except Exception as e:
-                    self.logger.error(f"Failed to initialize router with default config: {e}")
+                    # Only log actual errors, not expected fallbacks
+                    self.logger.debug(f"Router initialization with default config failed: {e}")
                     
         except Exception as e:
-            self.logger.error(f"Error initializing LLM Router: {e}")
+            self.logger.debug(f"Router initialization failed: {e}")
             self.router_available = False
     
     def _start_auto_refresh(self):

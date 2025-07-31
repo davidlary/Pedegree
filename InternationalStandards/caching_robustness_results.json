@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-07-31T15:16:46.939588",
+  "cache_tests": {
+    "memory_cache": {
+      "status": "PASS",
+      "write_time": 0.0,
+      "read_time": 0.0,
+      "speedup": "Instant access"
+    },
+    "database_cache": {
+      "status": "PASS",
+      "first_query": 6.580352783203125e-05,
+      "second_query": 9.5367431640625e-07,
+      "speedup_ratio": 69.0,
+      "standards_count": 5,
+      "disciplines_count": 19
+    },
+    "streamlit_cache": {
+      "status": "PASS",
+      "decorators_present": true
+    },
+    "file_cache": {
+      "status": "PASS",
+      "write_time": 0.00020575523376464844,
+      "read_time": 0.0003521442413330078,
+      "persistent": true
+    },
+    "cache_management": {
+      "status": "PASS",
+      "clear_cache_method": true,
+      "clear_all_method": true
+    }
+  },
+  "performance_metrics": {},
+  "robustness_score": 100.0,
+  "summary": {
+    "total_tests": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "robustness_percentage": 100.0,
+    "is_robust": true
+  }
+}
