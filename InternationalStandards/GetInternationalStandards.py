@@ -206,6 +206,10 @@ class StandardsCache:
             self.memory_cache.clear()
             for cache_file in self.cache_dir.glob("*.pkl"):
                 cache_file.unlink()
+    
+    def clear_all_cache(self):
+        """Clear all caches completely"""
+        self.clear_cache()  # This clears all when no cache_type specified
 
 class InternationalStandardsApp:
     """Main Streamlit application class for International Standards Retrieval System"""

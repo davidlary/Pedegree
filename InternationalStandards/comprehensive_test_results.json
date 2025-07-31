@@ -1,0 +1,196 @@
+{
+  "timestamp": "2025-07-31T14:48:12.740600",
+  "tests_run": 36,
+  "tests_passed": 32,
+  "tests_failed": 4,
+  "test_details": {
+    "Core_Module_StandardsOrchestrator": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated StandardsOrchestrator",
+      "timestamp": "2025-07-31T14:48:13.709647"
+    },
+    "Core_Module_ConfigManager": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated ConfigManager",
+      "timestamp": "2025-07-31T14:48:13.758198"
+    },
+    "Core_Module_RecoveryManager": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated RecoveryManager",
+      "timestamp": "2025-07-31T14:48:13.758508"
+    },
+    "Core_Module_LLMIntegration": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated LLMIntegration",
+      "timestamp": "2025-07-31T14:48:13.758518"
+    },
+    "Core_Module_DatabaseManager": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated DatabaseManager",
+      "timestamp": "2025-07-31T14:48:13.765514"
+    },
+    "Core_Module_QualityScoring": {
+      "status": "FAIL",
+      "details": "Failed: module 'quality.quality_scoring' has no attribute 'QualityScoring'",
+      "timestamp": "2025-07-31T14:48:13.766854"
+    },
+    "Core_Module_APIGenerator": {
+      "status": "PASS",
+      "details": "Successfully imported and instantiated APIGenerator",
+      "timestamp": "2025-07-31T14:48:13.928804"
+    },
+    "Streamlit_Server_Start": {
+      "status": "PASS",
+      "details": "Server responding with status 200",
+      "timestamp": "2025-07-31T14:48:23.951429"
+    },
+    "Streamlit_Health_Check": {
+      "status": "PASS",
+      "details": "Health endpoint accessible",
+      "timestamp": "2025-07-31T14:48:23.956028"
+    },
+    "Page_Dashboard_Method": {
+      "status": "PASS",
+      "details": "Method _render_dashboard exists",
+      "timestamp": "2025-07-31T14:48:24.110912"
+    },
+    "Page_Dashboard_Callable": {
+      "status": "PASS",
+      "details": "Method _render_dashboard is callable",
+      "timestamp": "2025-07-31T14:48:24.110919"
+    },
+    "Page_Discipline_Explorer_Method": {
+      "status": "PASS",
+      "details": "Method _render_discipline_explorer exists",
+      "timestamp": "2025-07-31T14:48:24.110922"
+    },
+    "Page_Discipline_Explorer_Callable": {
+      "status": "PASS",
+      "details": "Method _render_discipline_explorer is callable",
+      "timestamp": "2025-07-31T14:48:24.110925"
+    },
+    "Page_Standards_Browser_Method": {
+      "status": "PASS",
+      "details": "Method _render_standards_browser exists",
+      "timestamp": "2025-07-31T14:48:24.110927"
+    },
+    "Page_Standards_Browser_Callable": {
+      "status": "PASS",
+      "details": "Method _render_standards_browser is callable",
+      "timestamp": "2025-07-31T14:48:24.110929"
+    },
+    "Page_Agent_Monitor_Method": {
+      "status": "PASS",
+      "details": "Method _render_agent_monitor exists",
+      "timestamp": "2025-07-31T14:48:24.110930"
+    },
+    "Page_Agent_Monitor_Callable": {
+      "status": "PASS",
+      "details": "Method _render_agent_monitor is callable",
+      "timestamp": "2025-07-31T14:48:24.110932"
+    },
+    "Page_LLM_Optimization_Method": {
+      "status": "PASS",
+      "details": "Method _render_llm_optimization exists",
+      "timestamp": "2025-07-31T14:48:24.110934"
+    },
+    "Page_LLM_Optimization_Callable": {
+      "status": "PASS",
+      "details": "Method _render_llm_optimization is callable",
+      "timestamp": "2025-07-31T14:48:24.110936"
+    },
+    "Page_Data_APIs_Method": {
+      "status": "PASS",
+      "details": "Method _render_data_apis exists",
+      "timestamp": "2025-07-31T14:48:24.110937"
+    },
+    "Page_Data_APIs_Callable": {
+      "status": "PASS",
+      "details": "Method _render_data_apis is callable",
+      "timestamp": "2025-07-31T14:48:24.110939"
+    },
+    "Page_Recovery_Center_Method": {
+      "status": "PASS",
+      "details": "Method _render_recovery_center exists",
+      "timestamp": "2025-07-31T14:48:24.110940"
+    },
+    "Page_Recovery_Center_Callable": {
+      "status": "PASS",
+      "details": "Method _render_recovery_center is callable",
+      "timestamp": "2025-07-31T14:48:24.110942"
+    },
+    "Database_Manager_Init": {
+      "status": "PASS",
+      "details": "Database manager initialized successfully",
+      "timestamp": "2025-07-31T14:48:24.143405"
+    },
+    "Database_Get_All_Standards": {
+      "status": "PASS",
+      "details": "Retrieved 5 standards with caching",
+      "timestamp": "2025-07-31T14:48:24.143790"
+    },
+    "Database_Connection_Stats": {
+      "status": "PASS",
+      "details": "Connection stats: sqlite",
+      "timestamp": "2025-07-31T14:48:24.143795"
+    },
+    "Agent_Status_Method": {
+      "status": "PASS",
+      "details": "get_agent_status method exists",
+      "timestamp": "2025-07-31T14:48:24.167964"
+    },
+    "Agent_Restart_Method": {
+      "status": "PASS",
+      "details": "restart_agent method exists",
+      "timestamp": "2025-07-31T14:48:24.167969"
+    },
+    "LLM_Router_Import": {
+      "status": "PASS",
+      "details": "LLM Router imported successfully",
+      "timestamp": "2025-07-31T14:48:24.167999"
+    },
+    "LLM_Available_Models": {
+      "status": "FAIL",
+      "details": "Failed to get models: 'IntelligentLLMRouter' object has no attribute 'get_available_models'",
+      "timestamp": "2025-07-31T14:48:24.168004"
+    },
+    "Memory_Cache_Write": {
+      "status": "PASS",
+      "details": "Memory cache write successful",
+      "timestamp": "2025-07-31T14:48:24.168032"
+    },
+    "Cache_Directory": {
+      "status": "PASS",
+      "details": "Cache directory exists at test_cache",
+      "timestamp": "2025-07-31T14:48:24.168037"
+    },
+    "Cache_Method_clear_cache": {
+      "status": "PASS",
+      "details": "Method clear_cache exists",
+      "timestamp": "2025-07-31T14:48:24.168039"
+    },
+    "Cache_Method_clear_all_cache": {
+      "status": "PASS",
+      "details": "Method clear_all_cache exists",
+      "timestamp": "2025-07-31T14:48:24.168041"
+    },
+    "API_Generator_FastAPI": {
+      "status": "FAIL",
+      "details": "FastAPI generator failed: APIGenerator.__init__() missing 1 required positional argument: 'database_manager'",
+      "timestamp": "2025-07-31T14:48:24.168052"
+    },
+    "Recovery_System_Real": {
+      "status": "FAIL",
+      "details": "Recovery system test failed: RecoveryManager.__init__() missing 1 required positional argument: 'config'",
+      "timestamp": "2025-07-31T14:48:24.168304"
+    }
+  },
+  "streamlit_server": null,
+  "summary": {
+    "total_tests": 36,
+    "passed_tests": 32,
+    "failed_tests": 4,
+    "success_rate": 88.9,
+    "status": "NEEDS_ATTENTION"
+  }
+}

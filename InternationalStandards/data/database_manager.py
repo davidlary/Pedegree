@@ -895,10 +895,10 @@ class DatabaseManager:
             ORDER BY last_updated DESC
             """
             
-            result = self._execute_query(query)
+            results = self.execute_query(query)
             
-            if result['success']:
-                standards_data = result['data']
+            if results:
+                standards_data = results
                 
                 # Cache the results
                 with self.cache_lock:
@@ -914,7 +914,7 @@ class DatabaseManager:
                 self.logger.info(f"Retrieved and cached {len(standards_data)} standards")
                 return standards_data
             else:
-                self.logger.error(f"Failed to get all standards: {result.get('error', 'Unknown error')}")
+                self.logger.error(f"No standards found or query failed")
                 return []
                 
         except Exception as e:
