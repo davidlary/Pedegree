@@ -16,11 +16,13 @@ The `GetAvailableModels.py` script **dynamically discovers models in real-time**
 
 ## New Features
 
-### 🔄 Dynamic Model Discovery (NEW!)
+### 🔄 Dynamic Model Discovery & Pricing (NEW!)
 - **Real-time API discovery**: Automatically finds the latest models via REST APIs
-- **Data-driven approach**: No hardcoded model lists - discovers what's actually available
+- **Dynamic pricing via OpenRouter API**: Live pricing data with per-1K token accuracy
+- **Data-driven approach**: No hardcoded model lists or pricing - discovers what's actually available
 - **Auto-discovery of new releases**: Detects Claude 4, GPT-5, Grok-5, etc. as they're released
 - **Live model availability**: Only shows models you can actually use right now
+- **Dynamic capability detection**: Automatically determines Vision, Coding, Reasoning capabilities at runtime
 - **Automatic fallback**: Graceful handling when APIs are unavailable
 
 ### Enhanced Model Coverage
@@ -114,13 +116,15 @@ python3 GetAvailableModels.py
 The script will:
 1. ✅ Check available API keys
 2. 🔍 **Dynamically discover models** from each provider's API in real-time
-3. 💻 Auto-detect local model tool availability and scan for existing files
-4. 🔄 **Auto-refresh model data** to ensure latest availability
-5. 💾 Generate `available_models.json` with structured data  
-6. 📝 Generate `available_models.md` with sortable HTML table
-7. 📄 Generate `available_models.html` with interactive sortable table
-8. 🔄 Create current models subset files for models you can actually use
-9. 🧠 Create `IntelligentLLMRouter.py` for smart model selection with auto-refresh
+3. 💰 **Fetch real-time pricing** via OpenRouter API with LiteLLM fallback
+4. 🎯 **Detect capabilities dynamically** based on model name patterns and characteristics
+5. 💻 Auto-detect local model tool availability and scan for existing files
+6. 🔄 **Auto-refresh model data** to ensure latest availability
+7. 💾 Generate `available_models.json` with structured data  
+8. 📝 Generate `available_models.md` with sortable HTML table
+9. 📄 Generate `available_models.html` with interactive sortable table
+10. 🔄 Create current models subset files for models you can actually use
+11. 🧠 Create `IntelligentLLMRouter.py` for smart model selection with auto-refresh
 
 ### Output Files
 
@@ -178,8 +182,10 @@ These files filter the complete model list to show only:
 |-------|-------------|
 | `id` | Official model identifier |
 | `provider` | API provider (openai, anthropic, xai, google) |
-| `pricing` | Cost per 1K tokens (input/output) |
+| `pricing` | Cost per 1K tokens (input/output) - **dynamically fetched** |
+| `pricing_source` | Source of pricing data (real-time, openrouter, litellm, fallback) |
 | `context_window` | Maximum tokens in context |
+| `capabilities` | **Dynamically detected** (Vision, Coding, Reasoning, etc.) |
 | `strengths` | Key capabilities and use cases |
 | `cost_per_1m_tokens` | Cost per million tokens |
 
@@ -369,29 +375,43 @@ response = openai.ChatCompletion.create(model="gpt-4", messages=[{"role": "user"
 
 This system correctly identifies all models as having `"pdf_processing": false` because it focuses on Python API and local capabilities, not web app features.
 
-## Dynamic Updates
+## Dynamic Updates & Real-Time Data
 
 ### Automatic Updates (NEW!)
-The system now **automatically discovers** new models without manual updates:
+The system now **automatically discovers** new models and **real-time pricing** without manual updates:
 
 ```python
 # Router automatically refreshes model data every hour
 router = IntelligentLLMRouter(auto_refresh=True)
-result = router.route_request("Your prompt")  # Uses latest models
+result = router.route_request("Your prompt")  # Uses latest models with current pricing
 ```
+
+### Real-Time Pricing Sources
+1. **OpenRouter API** - Most comprehensive real-time pricing data
+2. **LiteLLM Database** - Fallback pricing for known models  
+3. **Provider APIs** - Direct pricing when available
+4. **Local Cache** - Cached pricing to avoid excessive API calls
 
 ### Manual Updates (when needed)
 ```bash
-# Force immediate discovery of latest models
+# Force immediate discovery of latest models and pricing
 python3 GetAvailableModels.py
 ```
 
 Dynamic discovery captures:
 - **New model releases** (Claude 4, GPT-5, Grok-5, etc.)
-- **Real-time pricing** changes
+- **Real-time pricing changes** via OpenRouter API
+- **Dynamic capability detection** based on model characteristics
 - **Local tool availability** updates
 - **Model capability** improvements
 - **Context window** expansions
+
+### Pricing Accuracy
+All pricing is now **per-1K tokens** with minimal conversion:
+- GPT-4o: $0.003/$0.010 per 1K tokens (not inflated $5/$20)
+- Claude Sonnet: $0.003/$0.015 per 1K tokens
+- Grok-2: $0.002/$0.002 per 1K tokens
+- Local models: $0.000/$0.000 (free)
 
 ## Cost Analysis Features
 

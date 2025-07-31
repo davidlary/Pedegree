@@ -1,13 +1,13 @@
 {
-  "last_updated": "2025-07-31T08:17:56.002103",
+  "last_updated": "2025-07-31T08:51:18.905658",
   "providers": {
     "openai": {
       "gpt-4-0613": {
         "id": "gpt-4-0613",
         "provider": "openai",
         "pricing": {
-          "input": 30.0,
-          "output": 60.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -22,11 +22,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 30000.0,
-          "output": 60000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336718",
+        "last_price_check": "2025-07-31T08:51:20.386044",
         "created": 1686588896,
         "owned_by": "openai"
       },
@@ -34,8 +34,8 @@
         "id": "gpt-4",
         "provider": "openai",
         "pricing": {
-          "input": 30.0,
-          "output": 60.0
+          "input": 0.030000000000000002,
+          "output": 0.060000000000000005
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -50,11 +50,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 30000.0,
-          "output": 60000.0
+          "input": 30.000000000000004,
+          "output": 60.00000000000001
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336800",
+        "last_price_check": "2025-07-31T08:51:20.628095",
         "created": 1687882411,
         "owned_by": "openai"
       },
@@ -62,8 +62,8 @@
         "id": "gpt-3.5-turbo",
         "provider": "openai",
         "pricing": {
-          "input": 0.5,
-          "output": 1.5
+          "input": 0.0005,
+          "output": 0.0015
         },
         "context_window": 16385,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -78,11 +78,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 500.0,
-          "output": 1500.0
+          "input": 0.5,
+          "output": 1.5
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336835",
+        "last_price_check": "2025-07-31T08:51:20.855773",
         "created": 1677610602,
         "owned_by": "openai"
       },
@@ -90,8 +90,8 @@
         "id": "gpt-4o-realtime-preview-2025-06-03",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -106,11 +106,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336868",
+        "last_price_check": "2025-07-31T08:51:21.097379",
         "created": 1748907838,
         "owned_by": "system"
       },
@@ -118,8 +118,8 @@
         "id": "gpt-4o-audio-preview-2025-06-03",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -134,11 +134,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336892",
+        "last_price_check": "2025-07-31T08:51:21.298313",
         "created": 1748908498,
         "owned_by": "system"
       },
@@ -146,8 +146,8 @@
         "id": "gpt-3.5-turbo-instruct",
         "provider": "openai",
         "pricing": {
-          "input": 1.5,
-          "output": 2.0
+          "input": 0.0015,
+          "output": 0.002
         },
         "context_window": 16385,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -162,11 +162,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 1500.0,
-          "output": 2000.0
+          "input": 1.5,
+          "output": 2.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336918",
+        "last_price_check": "2025-07-31T08:51:21.591504",
         "created": 1692901427,
         "owned_by": "system"
       },
@@ -174,8 +174,8 @@
         "id": "gpt-3.5-turbo-instruct-0914",
         "provider": "openai",
         "pricing": {
-          "input": 1.5,
-          "output": 2.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 16385,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -190,11 +190,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 1500.0,
-          "output": 2000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336948",
+        "last_price_check": "2025-07-31T08:51:21.888053",
         "created": 1694122472,
         "owned_by": "system"
       },
@@ -202,8 +202,8 @@
         "id": "gpt-4-1106-preview",
         "provider": "openai",
         "pricing": {
-          "input": 10.0,
-          "output": 30.0
+          "input": 0.01,
+          "output": 0.030000000000000002
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -218,11 +218,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 10000.0,
-          "output": 30000.0
+          "input": 10.0,
+          "output": 30.000000000000004
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.336981",
+        "last_price_check": "2025-07-31T08:51:22.135816",
         "created": 1698957206,
         "owned_by": "system"
       },
@@ -230,8 +230,8 @@
         "id": "gpt-3.5-turbo-1106",
         "provider": "openai",
         "pricing": {
-          "input": 0.5,
-          "output": 1.5
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 16385,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -246,11 +246,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 500.0,
-          "output": 1500.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337005",
+        "last_price_check": "2025-07-31T08:51:22.285066",
         "created": 1698959748,
         "owned_by": "system"
       },
@@ -258,8 +258,8 @@
         "id": "gpt-4-0125-preview",
         "provider": "openai",
         "pricing": {
-          "input": 10.0,
-          "output": 30.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -274,11 +274,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 10000.0,
-          "output": 30000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337030",
+        "last_price_check": "2025-07-31T08:51:22.448877",
         "created": 1706037612,
         "owned_by": "system"
       },
@@ -286,8 +286,8 @@
         "id": "gpt-4-turbo-preview",
         "provider": "openai",
         "pricing": {
-          "input": 10.0,
-          "output": 30.0
+          "input": 0.01,
+          "output": 0.030000000000000002
         },
         "context_window": 128000,
         "strengths": "Advanced reasoning with large context window",
@@ -302,11 +302,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 10000.0,
-          "output": 30000.0
+          "input": 10.0,
+          "output": 30.000000000000004
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337065",
+        "last_price_check": "2025-07-31T08:51:22.721485",
         "created": 1706037777,
         "owned_by": "system"
       },
@@ -314,8 +314,8 @@
         "id": "gpt-3.5-turbo-0125",
         "provider": "openai",
         "pricing": {
-          "input": 0.5,
-          "output": 1.5
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 16385,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -330,11 +330,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 500.0,
-          "output": 1500.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337089",
+        "last_price_check": "2025-07-31T08:51:22.903968",
         "created": 1706048358,
         "owned_by": "system"
       },
@@ -342,8 +342,8 @@
         "id": "gpt-4-turbo",
         "provider": "openai",
         "pricing": {
-          "input": 10.0,
-          "output": 30.0
+          "input": 0.01,
+          "output": 0.030000000000000002
         },
         "context_window": 128000,
         "strengths": "Advanced reasoning with large context window",
@@ -358,11 +358,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 10000.0,
-          "output": 30000.0
+          "input": 10.0,
+          "output": 30.000000000000004
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337111",
+        "last_price_check": "2025-07-31T08:51:23.088492",
         "created": 1712361441,
         "owned_by": "system"
       },
@@ -370,8 +370,8 @@
         "id": "gpt-4-turbo-2024-04-09",
         "provider": "openai",
         "pricing": {
-          "input": 10.0,
-          "output": 30.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Advanced reasoning with large context window",
@@ -386,11 +386,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 10000.0,
-          "output": 30000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337138",
+        "last_price_check": "2025-07-31T08:51:23.333966",
         "created": 1712601677,
         "owned_by": "system"
       },
@@ -398,8 +398,8 @@
         "id": "gpt-4o",
         "provider": "openai",
         "pricing": {
-          "input": 5.0,
-          "output": 20.0
+          "input": 0.0025,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -414,11 +414,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 5000.0,
-          "output": 20000.0
+          "input": 2.5,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337159",
+        "last_price_check": "2025-07-31T08:51:23.514855",
         "created": 1715367049,
         "owned_by": "system"
       },
@@ -426,8 +426,8 @@
         "id": "gpt-4o-2024-05-13",
         "provider": "openai",
         "pricing": {
-          "input": 5.0,
-          "output": 20.0
+          "input": 0.005,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -442,11 +442,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 5000.0,
-          "output": 20000.0
+          "input": 5.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337286",
+        "last_price_check": "2025-07-31T08:51:23.774873",
         "created": 1715368132,
         "owned_by": "system"
       },
@@ -454,8 +454,8 @@
         "id": "gpt-4o-mini-2024-07-18",
         "provider": "openai",
         "pricing": {
-          "input": 0.15,
-          "output": 0.6
+          "input": 0.00015,
+          "output": 0.0006
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -470,11 +470,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 150.0,
-          "output": 600.0
+          "input": 0.15,
+          "output": 0.6
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337335",
+        "last_price_check": "2025-07-31T08:51:24.054878",
         "created": 1721172717,
         "owned_by": "system"
       },
@@ -482,8 +482,8 @@
         "id": "gpt-4o-mini",
         "provider": "openai",
         "pricing": {
-          "input": 0.15,
-          "output": 0.6
+          "input": 0.00015,
+          "output": 0.0006
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -498,11 +498,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 150.0,
-          "output": 600.0
+          "input": 0.15,
+          "output": 0.6
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337361",
+        "last_price_check": "2025-07-31T08:51:24.251475",
         "created": 1721172741,
         "owned_by": "system"
       },
@@ -510,8 +510,8 @@
         "id": "gpt-4o-2024-08-06",
         "provider": "openai",
         "pricing": {
-          "input": 5.0,
-          "output": 20.0
+          "input": 0.0025,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -526,11 +526,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 5000.0,
-          "output": 20000.0
+          "input": 2.5,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337384",
+        "last_price_check": "2025-07-31T08:51:24.504146",
         "created": 1722814719,
         "owned_by": "system"
       },
@@ -538,8 +538,8 @@
         "id": "chatgpt-4o-latest",
         "provider": "openai",
         "pricing": {
-          "input": 5.0,
-          "output": 20.0
+          "input": 0.005,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -554,11 +554,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 5000.0,
-          "output": 20000.0
+          "input": 5.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337409",
+        "last_price_check": "2025-07-31T08:51:24.763851",
         "created": 1723515131,
         "owned_by": "system"
       },
@@ -566,8 +566,8 @@
         "id": "o1-mini-2024-09-12",
         "provider": "openai",
         "pricing": {
-          "input": 3.0,
-          "output": 12.0
+          "input": 0.0011,
+          "output": 0.0044
         },
         "context_window": 200000,
         "strengths": "Reasoning-focused model optimized for coding and math",
@@ -582,11 +582,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 12000.0
+          "input": 1.1,
+          "output": 4.4
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337436",
+        "last_price_check": "2025-07-31T08:51:24.949531",
         "created": 1725648979,
         "owned_by": "system"
       },
@@ -594,8 +594,8 @@
         "id": "o1-mini",
         "provider": "openai",
         "pricing": {
-          "input": 3.0,
-          "output": 12.0
+          "input": 0.0011,
+          "output": 0.0044
         },
         "context_window": 200000,
         "strengths": "Reasoning-focused model optimized for coding and math",
@@ -610,11 +610,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 12000.0
+          "input": 1.1,
+          "output": 4.4
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337461",
+        "last_price_check": "2025-07-31T08:51:25.049186",
         "created": 1725649008,
         "owned_by": "system"
       },
@@ -622,8 +622,8 @@
         "id": "gpt-4o-realtime-preview-2024-10-01",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -638,11 +638,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337486",
+        "last_price_check": "2025-07-31T08:51:25.291460",
         "created": 1727131766,
         "owned_by": "system"
       },
@@ -650,8 +650,8 @@
         "id": "gpt-4o-audio-preview-2024-10-01",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -666,11 +666,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337509",
+        "last_price_check": "2025-07-31T08:51:25.559350",
         "created": 1727389042,
         "owned_by": "system"
       },
@@ -678,8 +678,8 @@
         "id": "gpt-4o-audio-preview",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -694,11 +694,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337532",
+        "last_price_check": "2025-07-31T08:51:25.842904",
         "created": 1727460443,
         "owned_by": "system"
       },
@@ -706,8 +706,8 @@
         "id": "gpt-4o-realtime-preview",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -722,11 +722,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337554",
+        "last_price_check": "2025-07-31T08:51:25.999523",
         "created": 1727659998,
         "owned_by": "system"
       },
@@ -734,8 +734,8 @@
         "id": "gpt-4o-realtime-preview-2024-12-17",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -750,11 +750,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337578",
+        "last_price_check": "2025-07-31T08:51:26.264562",
         "created": 1733945430,
         "owned_by": "system"
       },
@@ -762,8 +762,8 @@
         "id": "gpt-4o-audio-preview-2024-12-17",
         "provider": "openai",
         "pricing": {
-          "input": 6.0,
-          "output": 24.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -778,11 +778,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 6000.0,
-          "output": 24000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337600",
+        "last_price_check": "2025-07-31T08:51:26.407755",
         "created": 1734034239,
         "owned_by": "system"
       },
@@ -790,8 +790,8 @@
         "id": "gpt-4o-mini-realtime-preview-2024-12-17",
         "provider": "openai",
         "pricing": {
-          "input": 0.6,
-          "output": 2.4
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -806,11 +806,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 600.0,
-          "output": 2400.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337622",
+        "last_price_check": "2025-07-31T08:51:26.682678",
         "created": 1734112601,
         "owned_by": "system"
       },
@@ -818,8 +818,8 @@
         "id": "gpt-4o-mini-audio-preview-2024-12-17",
         "provider": "openai",
         "pricing": {
-          "input": 0.6,
-          "output": 2.4
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -834,11 +834,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 600.0,
-          "output": 2400.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337645",
+        "last_price_check": "2025-07-31T08:51:26.901248",
         "created": 1734115920,
         "owned_by": "system"
       },
@@ -846,8 +846,8 @@
         "id": "o1-2024-12-17",
         "provider": "openai",
         "pricing": {
-          "input": 15.0,
-          "output": 60.0
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 200000,
         "strengths": "Sophisticated reasoning capabilities",
@@ -862,11 +862,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 60000.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337669",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:27.178047",
         "created": 1734326976,
         "owned_by": "system"
       },
@@ -874,8 +874,8 @@
         "id": "o1",
         "provider": "openai",
         "pricing": {
-          "input": 15.0,
-          "output": 60.0
+          "input": 0.015000000000000001,
+          "output": 0.060000000000000005
         },
         "context_window": 200000,
         "strengths": "Sophisticated reasoning capabilities",
@@ -890,11 +890,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 60000.0
+          "input": 15.000000000000002,
+          "output": 60.00000000000001
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337691",
+        "last_price_check": "2025-07-31T08:51:27.424012",
         "created": 1734375816,
         "owned_by": "system"
       },
@@ -902,8 +902,8 @@
         "id": "gpt-4o-mini-realtime-preview",
         "provider": "openai",
         "pricing": {
-          "input": 0.6,
-          "output": 2.4
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -918,11 +918,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 600.0,
-          "output": 2400.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337725",
+        "last_price_check": "2025-07-31T08:51:27.653660",
         "created": 1734387380,
         "owned_by": "system"
       },
@@ -930,8 +930,8 @@
         "id": "gpt-4o-mini-audio-preview",
         "provider": "openai",
         "pricing": {
-          "input": 0.6,
-          "output": 2.4
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning",
@@ -946,11 +946,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 600.0,
-          "output": 2400.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337748",
+        "last_price_check": "2025-07-31T08:51:27.919053",
         "created": 1734387424,
         "owned_by": "system"
       },
@@ -958,8 +958,8 @@
         "id": "gpt-4o-2024-11-20",
         "provider": "openai",
         "pricing": {
-          "input": 5.0,
-          "output": 20.0
+          "input": 0.0025,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -974,11 +974,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 5000.0,
-          "output": 20000.0
+          "input": 2.5,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337773",
+        "last_price_check": "2025-07-31T08:51:28.052379",
         "created": 1739331543,
         "owned_by": "system"
       },
@@ -986,8 +986,8 @@
         "id": "gpt-4o-search-preview-2025-03-11",
         "provider": "openai",
         "pricing": {
-          "input": 3.0,
-          "output": 12.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Web search integration, latest multimodal model, excellent for complex reasoning",
@@ -1002,11 +1002,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 12000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337796",
+        "last_price_check": "2025-07-31T08:51:28.227774",
         "created": 1741388170,
         "owned_by": "system"
       },
@@ -1014,8 +1014,8 @@
         "id": "gpt-4o-search-preview",
         "provider": "openai",
         "pricing": {
-          "input": 3.0,
-          "output": 12.0
+          "input": 0.0025,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Web search integration, latest multimodal model, excellent for complex reasoning",
@@ -1030,11 +1030,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 12000.0
+          "input": 2.5,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337817",
+        "last_price_check": "2025-07-31T08:51:28.408253",
         "created": 1741388720,
         "owned_by": "system"
       },
@@ -1042,8 +1042,8 @@
         "id": "gpt-4o-mini-search-preview-2025-03-11",
         "provider": "openai",
         "pricing": {
-          "input": 0.2,
-          "output": 0.8
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Web search integration, latest multimodal model, excellent for complex reasoning",
@@ -1058,11 +1058,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 200.0,
-          "output": 800.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337846",
+        "last_price_check": "2025-07-31T08:51:28.538279",
         "created": 1741390858,
         "owned_by": "system"
       },
@@ -1070,8 +1070,8 @@
         "id": "gpt-4o-mini-search-preview",
         "provider": "openai",
         "pricing": {
-          "input": 0.2,
-          "output": 0.8
+          "input": 0.00015,
+          "output": 0.0006
         },
         "context_window": 128000,
         "strengths": "Web search integration, latest multimodal model, excellent for complex reasoning",
@@ -1086,11 +1086,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 200.0,
-          "output": 800.0
+          "input": 0.15,
+          "output": 0.6
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337885",
+        "last_price_check": "2025-07-31T08:51:28.825970",
         "created": 1741391161,
         "owned_by": "system"
       },
@@ -1098,8 +1098,8 @@
         "id": "gpt-4o-transcribe",
         "provider": "openai",
         "pricing": {
-          "input": 2.0,
-          "output": 8.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio transcription, latest multimodal model, excellent for complex reasoning",
@@ -1114,11 +1114,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2000.0,
-          "output": 8000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337908",
+        "last_price_check": "2025-07-31T08:51:29.105035",
         "created": 1742068463,
         "owned_by": "system"
       },
@@ -1126,8 +1126,8 @@
         "id": "gpt-4o-mini-transcribe",
         "provider": "openai",
         "pricing": {
-          "input": 0.1,
-          "output": 0.4
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Audio transcription, latest multimodal model, excellent for complex reasoning",
@@ -1142,11 +1142,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 100.0,
-          "output": 400.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337929",
+        "last_price_check": "2025-07-31T08:51:29.242231",
         "created": 1742068596,
         "owned_by": "system"
       },
@@ -1154,8 +1154,8 @@
         "id": "o1-pro-2025-03-19",
         "provider": "openai",
         "pricing": {
-          "input": 0.15,
-          "output": 0.6
+          "input": 0.00125,
+          "output": 0.01
         },
         "context_window": 200000,
         "strengths": "Advanced reasoning for complex problem-solving",
@@ -1170,11 +1170,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 150.0,
-          "output": 600.0
+          "input": 1.25,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337952",
+        "last_price_check": "2025-07-31T08:51:29.503314",
         "created": 1742251504,
         "owned_by": "system"
       },
@@ -1202,7 +1202,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337975",
+        "last_price_check": "2025-07-31T08:51:29.698516",
         "created": 1742251791,
         "owned_by": "system"
       },
@@ -1210,8 +1210,8 @@
         "id": "gpt-4o-mini-tts",
         "provider": "openai",
         "pricing": {
-          "input": 0.15,
-          "output": 0.6
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 128000,
         "strengths": "Text-to-speech generation, latest multimodal model, excellent for complex reasoning",
@@ -1226,11 +1226,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 150.0,
-          "output": 600.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.337997",
+        "last_price_check": "2025-07-31T08:51:29.935607",
         "created": 1742403959,
         "owned_by": "system"
       },
@@ -1238,8 +1238,8 @@
         "id": "gpt-4.1-2025-04-14",
         "provider": "openai",
         "pricing": {
-          "input": 15.0,
-          "output": 45.0
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1254,11 +1254,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 45000.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338019",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:30.118502",
         "created": 1744315746,
         "owned_by": "system"
       },
@@ -1266,8 +1266,8 @@
         "id": "gpt-4.1",
         "provider": "openai",
         "pricing": {
-          "input": 15.0,
-          "output": 45.0
+          "input": 0.002,
+          "output": 0.008
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1282,11 +1282,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 45000.0
+          "input": 2.0,
+          "output": 8.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338040",
+        "last_price_check": "2025-07-31T08:51:30.377707",
         "created": 1744316542,
         "owned_by": "system"
       },
@@ -1294,8 +1294,8 @@
         "id": "gpt-4.1-mini-2025-04-14",
         "provider": "openai",
         "pricing": {
-          "input": 0.3,
-          "output": 1.2
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1310,11 +1310,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 300.0,
-          "output": 1200.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338063",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:30.570908",
         "created": 1744317547,
         "owned_by": "system"
       },
@@ -1322,8 +1322,8 @@
         "id": "gpt-4.1-mini",
         "provider": "openai",
         "pricing": {
-          "input": 0.3,
-          "output": 1.2
+          "input": 0.00039999999999999996,
+          "output": 0.0015999999999999999
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1338,11 +1338,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 300.0,
-          "output": 1200.0
+          "input": 0.39999999999999997,
+          "output": 1.5999999999999999
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338083",
+        "last_price_check": "2025-07-31T08:51:30.848372",
         "created": 1744318173,
         "owned_by": "system"
       },
@@ -1350,8 +1350,8 @@
         "id": "gpt-4.1-nano-2025-04-14",
         "provider": "openai",
         "pricing": {
-          "input": 0.1,
-          "output": 0.4
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1366,11 +1366,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 100.0,
-          "output": 400.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338104",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:31.032244",
         "created": 1744321025,
         "owned_by": "system"
       },
@@ -1378,8 +1378,8 @@
         "id": "gpt-4.1-nano",
         "provider": "openai",
         "pricing": {
-          "input": 0.1,
-          "output": 0.4
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 8192,
         "strengths": "Strong reasoning and creative tasks",
@@ -1394,11 +1394,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 100.0,
-          "output": 400.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338231",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:31.292302",
         "created": 1744321707,
         "owned_by": "system"
       },
@@ -1406,8 +1406,8 @@
         "id": "gpt-3.5-turbo-16k",
         "provider": "openai",
         "pricing": {
-          "input": 3.0,
-          "output": 4.0
+          "input": 0.003,
+          "output": 0.004
         },
         "context_window": 16384,
         "strengths": "Fast and cost-effective for simpler tasks",
@@ -1422,11 +1422,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 4000.0
+          "input": 3.0,
+          "output": 4.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.338269",
+        "last_price_check": "2025-07-31T08:51:31.463937",
         "created": 1683758102,
         "owned_by": "openai-internal"
       }
@@ -1436,8 +1436,8 @@
         "id": "claude-opus-4-20250514",
         "provider": "anthropic",
         "pricing": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 128000,
         "strengths": "General purpose model",
@@ -1452,11 +1452,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.605289",
+        "last_price_check": "2025-07-31T08:51:31.785306",
         "created": null,
         "owned_by": null
       },
@@ -1464,8 +1464,8 @@
         "id": "claude-sonnet-4-20250514",
         "provider": "anthropic",
         "pricing": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 128000,
         "strengths": "General purpose model",
@@ -1480,11 +1480,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:57.785030",
+        "last_price_check": "2025-07-31T08:51:32.286265",
         "created": null,
         "owned_by": null
       },
@@ -1492,8 +1492,8 @@
         "id": "claude-3-7-sonnet-20250219",
         "provider": "anthropic",
         "pricing": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "General purpose model",
@@ -1508,11 +1508,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.034639",
+        "last_price_check": "2025-07-31T08:51:32.388909",
         "created": null,
         "owned_by": null
       },
@@ -1520,8 +1520,8 @@
         "id": "claude-3-5-sonnet-20241022",
         "provider": "anthropic",
         "pricing": {
-          "input": 3.0,
-          "output": 15.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "Latest claude with excellent coding and analysis capabilities",
@@ -1536,11 +1536,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.034669",
+        "last_price_check": "2025-07-31T08:51:32.602116",
         "created": null,
         "owned_by": null
       },
@@ -1548,8 +1548,8 @@
         "id": "claude-3-5-haiku-20241022",
         "provider": "anthropic",
         "pricing": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "Latest claude with excellent coding and analysis capabilities",
@@ -1564,11 +1564,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 0.0,
-          "output": 0.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.252334",
+        "last_price_check": "2025-07-31T08:51:32.839638",
         "created": null,
         "owned_by": null
       },
@@ -1576,8 +1576,8 @@
         "id": "claude-3-5-sonnet-20240620",
         "provider": "anthropic",
         "pricing": {
-          "input": 3.0,
-          "output": 15.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "Latest claude with excellent coding and analysis capabilities",
@@ -1592,11 +1592,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.252388",
+        "last_price_check": "2025-07-31T08:51:33.139023",
         "created": null,
         "owned_by": null
       },
@@ -1604,8 +1604,8 @@
         "id": "claude-3-haiku-20240307",
         "provider": "anthropic",
         "pricing": {
-          "input": 0.25,
-          "output": 1.25
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "Fastest claude model, good for simple tasks and high volume",
@@ -1620,11 +1620,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 250.0,
-          "output": 1250.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.252417",
+        "last_price_check": "2025-07-31T08:51:33.333714",
         "created": null,
         "owned_by": null
       },
@@ -1632,8 +1632,8 @@
         "id": "claude-3-opus-20240229",
         "provider": "anthropic",
         "pricing": {
-          "input": 15.0,
-          "output": 75.0
+          "input": 0.015000000000000001,
+          "output": 0.075
         },
         "context_window": 200000,
         "strengths": "Most capable claude model for complex reasoning tasks",
@@ -1648,11 +1648,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 15000.0,
-          "output": 75000.0
+          "input": 15.000000000000002,
+          "output": 75.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.252442",
+        "last_price_check": "2025-07-31T08:51:33.488192",
         "created": null,
         "owned_by": null
       }
@@ -1662,8 +1662,8 @@
         "id": "grok-2-1212",
         "provider": "xai",
         "pricing": {
-          "input": 2.0,
-          "output": 10.0
+          "input": 0.002,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Balanced reasoning and performance",
@@ -1678,11 +1678,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2000.0,
-          "output": 10000.0
+          "input": 2.0,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380428",
+        "last_price_check": "2025-07-31T08:51:33.751414",
         "created": 1737331200,
         "owned_by": "xai"
       },
@@ -1690,8 +1690,8 @@
         "id": "grok-2-vision-1212",
         "provider": "xai",
         "pricing": {
-          "input": 2.0,
-          "output": 10.0
+          "input": 0.002,
+          "output": 0.01
         },
         "context_window": 128000,
         "strengths": "Multimodal vision capabilities, balanced reasoning and performance",
@@ -1706,11 +1706,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2000.0,
-          "output": 10000.0
+          "input": 2.0,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380476",
+        "last_price_check": "2025-07-31T08:51:33.993489",
         "created": 1733961600,
         "owned_by": "xai"
       },
@@ -1718,8 +1718,8 @@
         "id": "grok-3",
         "provider": "xai",
         "pricing": {
-          "input": 3.0,
-          "output": 15.0
+          "input": 0.003,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Advanced reasoning capabilities",
@@ -1734,11 +1734,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
+          "input": 3.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380503",
+        "last_price_check": "2025-07-31T08:51:34.172044",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1746,8 +1746,8 @@
         "id": "grok-3-fast",
         "provider": "xai",
         "pricing": {
-          "input": 3.0,
-          "output": 15.0
+          "input": 0.003,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Optimized for speed and quick responses",
@@ -1762,11 +1762,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
+          "input": 3.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380528",
+        "last_price_check": "2025-07-31T08:51:34.410100",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1774,8 +1774,8 @@
         "id": "grok-3-mini",
         "provider": "xai",
         "pricing": {
-          "input": 1.0,
-          "output": 4.0
+          "input": 0.0003,
+          "output": 0.0005
         },
         "context_window": 128000,
         "strengths": "Compact model for efficient processing",
@@ -1790,11 +1790,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 1000.0,
-          "output": 4000.0
+          "input": 0.3,
+          "output": 0.5
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380552",
+        "last_price_check": "2025-07-31T08:51:34.737615",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1802,8 +1802,8 @@
         "id": "grok-3-mini-fast",
         "provider": "xai",
         "pricing": {
-          "input": 0.5,
-          "output": 2.0
+          "input": 0.003,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Compact model for efficient processing",
@@ -1818,11 +1818,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 500.0,
-          "output": 2000.0
+          "input": 3.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380578",
+        "last_price_check": "2025-07-31T08:51:35.000119",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1830,8 +1830,8 @@
         "id": "grok-4-0709",
         "provider": "xai",
         "pricing": {
-          "input": 3.0,
-          "output": 15.0
+          "input": 0.003,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Stem and science focused, strong reasoning",
@@ -1846,11 +1846,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 3000.0,
-          "output": 15000.0
+          "input": 3.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380602",
+        "last_price_check": "2025-07-31T08:51:35.183206",
         "created": 1752019200,
         "owned_by": "xai"
       },
@@ -1858,8 +1858,8 @@
         "id": "grok-2-image-1212",
         "provider": "xai",
         "pricing": {
-          "input": 2.0,
-          "output": 10.0
+          "input": 0.003,
+          "output": 0.015000000000000001
         },
         "context_window": 128000,
         "strengths": "Multimodal vision capabilities, balanced reasoning and performance",
@@ -1874,11 +1874,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2000.0,
-          "output": 10000.0
+          "input": 3.0,
+          "output": 15.000000000000002
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380627",
+        "last_price_check": "2025-07-31T08:51:35.366590",
         "created": 1736726400,
         "owned_by": "xai"
       }
@@ -1888,8 +1888,8 @@
         "id": "gemini-2.5-pro",
         "provider": "google",
         "pricing": {
-          "input": 4.0,
-          "output": 20.0
+          "input": 0.00125,
+          "output": 0.01
         },
         "context_window": 1000000,
         "strengths": "Long context up to 1m+ tokens, multimodal, grounded responses",
@@ -1904,19 +1904,19 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 4000.0,
-          "output": 20000.0
+          "input": 1.25,
+          "output": 10.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380679",
+        "last_price_check": "2025-07-31T08:51:35.655835",
         "release_date": "2024-12-11"
       },
       "gemini-2.5-flash": {
         "id": "gemini-2.5-flash",
         "provider": "google",
         "pricing": {
-          "input": 1.0,
-          "output": 5.0
+          "input": 0.0003,
+          "output": 0.0025
         },
         "context_window": 1000000,
         "strengths": "Fast version optimized for speed",
@@ -1931,19 +1931,19 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 1000.0,
-          "output": 5000.0
+          "input": 0.3,
+          "output": 2.5
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380710",
+        "last_price_check": "2025-07-31T08:51:35.885368",
         "release_date": "2024-12-11"
       },
       "gemini-pro": {
         "id": "gemini-pro",
         "provider": "google",
         "pricing": {
-          "input": 1.0,
-          "output": 3.0
+          "input": 0.00125,
+          "output": 0.005
         },
         "context_window": 128000,
         "strengths": "General purpose model with strong capabilities",
@@ -1958,19 +1958,19 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 1000.0,
-          "output": 3000.0
+          "input": 1.25,
+          "output": 5.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380745",
+        "last_price_check": "2025-07-31T08:51:36.096918",
         "release_date": "2023-12-06"
       },
       "gemini-pro-vision": {
         "id": "gemini-pro-vision",
         "provider": "google",
         "pricing": {
-          "input": 1.5,
-          "output": 4.0
+          "input": 0.0,
+          "output": 0.0
         },
         "context_window": 128000,
         "strengths": "Multimodal vision capabilities, multimodal version with vision capabilities",
@@ -1985,11 +1985,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 1500.0,
-          "output": 4000.0
+          "input": 0.0,
+          "output": 0.0
         },
-        "pricing_source": "real-time",
-        "last_price_check": "2025-07-31T08:17:58.380770",
+        "pricing_source": "fallback",
+        "last_price_check": "2025-07-31T08:51:36.365789",
         "release_date": "2023-12-06"
       }
     }
@@ -3554,7 +3554,7 @@
     }
   },
   "pricing_info": {
-    "last_updated": "2025-07-31T08:17:56.881350",
+    "last_updated": "2025-07-31T08:51:19.538316",
     "cache_duration_seconds": 300,
     "pricing_sources": [
       "real-time-api",

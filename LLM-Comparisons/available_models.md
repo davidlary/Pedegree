@@ -1,6 +1,6 @@
 # Available AI Models - Complete Guide
 
-*Last updated: 2025-07-31T08:17:56.002103*
+*Last updated: 2025-07-31T08:51:18.905658*
 
 This document provides comprehensive information about available AI models from OpenAI, Anthropic, xAI, Google, and local LLMs, including pricing, capabilities, technical specifications, and intelligent routing recommendations.
 
@@ -19,336 +19,336 @@ This document provides comprehensive information about available AI models from 
 ### gpt-4-0613
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $30.0/1K input tokens, $60.0/1K output tokens
-- **Cost per 1K tokens**: $30.000 input, $60.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2023-06-12
 
 ### gpt-4
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $30.0/1K input tokens, $60.0/1K output tokens
-- **Cost per 1K tokens**: $30.000 input, $60.000 output
+- **Pricing**: $0.030000000000000002/1K input tokens, $0.060000000000000005/1K output tokens
+- **Cost per 1K tokens**: $0.030 input, $0.060 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2023-06-27
 
 ### gpt-3.5-turbo
 
 - **Context Window**: 16,385 tokens
-- **Pricing**: $0.5/1K input tokens, $1.5/1K output tokens
-- **Cost per 1K tokens**: $0.500 input, $1.500 output
+- **Pricing**: $0.0005/1K input tokens, $0.0015/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.002 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2023-02-28
 
 ### gpt-4o-realtime-preview-2025-06-03
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-06-02
 
 ### gpt-4o-audio-preview-2025-06-03
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-06-02
 
 ### gpt-3.5-turbo-instruct
 
 - **Context Window**: 16,385 tokens
-- **Pricing**: $1.5/1K input tokens, $2.0/1K output tokens
-- **Cost per 1K tokens**: $1.500 input, $2.000 output
+- **Pricing**: $0.0015/1K input tokens, $0.002/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.002 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2023-08-24
 
 ### gpt-3.5-turbo-instruct-0914
 
 - **Context Window**: 16,385 tokens
-- **Pricing**: $1.5/1K input tokens, $2.0/1K output tokens
-- **Cost per 1K tokens**: $1.500 input, $2.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2023-09-07
 
 ### gpt-4-1106-preview
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $10.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $10.000 input, $30.000 output
+- **Pricing**: $0.01/1K input tokens, $0.030000000000000002/1K output tokens
+- **Cost per 1K tokens**: $0.010 input, $0.030 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2023-11-02
 
 ### gpt-3.5-turbo-1106
 
 - **Context Window**: 16,385 tokens
-- **Pricing**: $0.5/1K input tokens, $1.5/1K output tokens
-- **Cost per 1K tokens**: $0.500 input, $1.500 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2023-11-02
 
 ### gpt-4-0125-preview
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $10.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $10.000 input, $30.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2024-01-23
 
 ### gpt-4-turbo-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $10.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $10.000 input, $30.000 output
+- **Pricing**: $0.01/1K input tokens, $0.030000000000000002/1K output tokens
+- **Cost per 1K tokens**: $0.010 input, $0.030 output
 - **Strengths**: Advanced reasoning with large context window
 - **Release Date**: 2024-01-23
 
 ### gpt-3.5-turbo-0125
 
 - **Context Window**: 16,385 tokens
-- **Pricing**: $0.5/1K input tokens, $1.5/1K output tokens
-- **Cost per 1K tokens**: $0.500 input, $1.500 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2024-01-23
 
 ### gpt-4-turbo
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $10.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $10.000 input, $30.000 output
+- **Pricing**: $0.01/1K input tokens, $0.030000000000000002/1K output tokens
+- **Cost per 1K tokens**: $0.010 input, $0.030 output
 - **Strengths**: Advanced reasoning with large context window
 - **Release Date**: 2024-04-05
 
 ### gpt-4-turbo-2024-04-09
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $10.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $10.000 input, $30.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Advanced reasoning with large context window
 - **Release Date**: 2024-04-08
 
 ### gpt-4o
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $5.000 input, $20.000 output
+- **Pricing**: $0.0025/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.010 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-05-10
 
 ### gpt-4o-2024-05-13
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $5.000 input, $20.000 output
+- **Pricing**: $0.005/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.005 input, $0.015 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-05-10
 
 ### gpt-4o-mini-2024-07-18
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.15/1K input tokens, $0.6/1K output tokens
-- **Cost per 1K tokens**: $0.150 input, $0.600 output
+- **Pricing**: $0.00015/1K input tokens, $0.0006/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.001 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-07-16
 
 ### gpt-4o-mini
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.15/1K input tokens, $0.6/1K output tokens
-- **Cost per 1K tokens**: $0.150 input, $0.600 output
+- **Pricing**: $0.00015/1K input tokens, $0.0006/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.001 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-07-16
 
 ### gpt-4o-2024-08-06
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $5.000 input, $20.000 output
+- **Pricing**: $0.0025/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.010 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-08-04
 
 ### chatgpt-4o-latest
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $5.000 input, $20.000 output
+- **Pricing**: $0.005/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.005 input, $0.015 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-08-12
 
 ### o1-mini-2024-09-12
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $3.0/1K input tokens, $12.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $12.000 output
+- **Pricing**: $0.0011/1K input tokens, $0.0044/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.004 output
 - **Strengths**: Reasoning-focused model optimized for coding and math
 - **Release Date**: 2024-09-06
 
 ### o1-mini
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $3.0/1K input tokens, $12.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $12.000 output
+- **Pricing**: $0.0011/1K input tokens, $0.0044/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.004 output
 - **Strengths**: Reasoning-focused model optimized for coding and math
 - **Release Date**: 2024-09-06
 
 ### gpt-4o-realtime-preview-2024-10-01
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-09-23
 
 ### gpt-4o-audio-preview-2024-10-01
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-09-26
 
 ### gpt-4o-audio-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-09-27
 
 ### gpt-4o-realtime-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-09-29
 
 ### gpt-4o-realtime-preview-2024-12-17
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-11
 
 ### gpt-4o-audio-preview-2024-12-17
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $6.0/1K input tokens, $24.0/1K output tokens
-- **Cost per 1K tokens**: $6.000 input, $24.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-12
 
 ### gpt-4o-mini-realtime-preview-2024-12-17
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.6/1K input tokens, $2.4/1K output tokens
-- **Cost per 1K tokens**: $0.600 input, $2.400 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-13
 
 ### gpt-4o-mini-audio-preview-2024-12-17
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.6/1K input tokens, $2.4/1K output tokens
-- **Cost per 1K tokens**: $0.600 input, $2.400 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-13
 
 ### o1-2024-12-17
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $15.0/1K input tokens, $60.0/1K output tokens
-- **Cost per 1K tokens**: $15.000 input, $60.000 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Sophisticated reasoning capabilities
 - **Release Date**: 2024-12-15
 
 ### o1
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $15.0/1K input tokens, $60.0/1K output tokens
-- **Cost per 1K tokens**: $15.000 input, $60.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.060000000000000005/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.060 output
 - **Strengths**: Sophisticated reasoning capabilities
 - **Release Date**: 2024-12-16
 
 ### gpt-4o-mini-realtime-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.6/1K input tokens, $2.4/1K output tokens
-- **Cost per 1K tokens**: $0.600 input, $2.400 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-16
 
 ### gpt-4o-mini-audio-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.6/1K input tokens, $2.4/1K output tokens
-- **Cost per 1K tokens**: $0.600 input, $2.400 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-12-16
 
 ### gpt-4o-2024-11-20
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $5.000 input, $20.000 output
+- **Pricing**: $0.0025/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.010 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-02-11
 
 ### gpt-4o-search-preview-2025-03-11
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $3.0/1K input tokens, $12.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $12.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Web search integration, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-07
 
 ### gpt-4o-search-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $3.0/1K input tokens, $12.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $12.000 output
+- **Pricing**: $0.0025/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.010 output
 - **Strengths**: Web search integration, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-07
 
 ### gpt-4o-mini-search-preview-2025-03-11
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.2/1K input tokens, $0.8/1K output tokens
-- **Cost per 1K tokens**: $0.200 input, $0.800 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Web search integration, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-07
 
 ### gpt-4o-mini-search-preview
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.2/1K input tokens, $0.8/1K output tokens
-- **Cost per 1K tokens**: $0.200 input, $0.800 output
+- **Pricing**: $0.00015/1K input tokens, $0.0006/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.001 output
 - **Strengths**: Web search integration, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-07
 
 ### gpt-4o-transcribe
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.0/1K input tokens, $8.0/1K output tokens
-- **Cost per 1K tokens**: $2.000 input, $8.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio transcription, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-15
 
 ### gpt-4o-mini-transcribe
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.1/1K input tokens, $0.4/1K output tokens
-- **Cost per 1K tokens**: $0.100 input, $0.400 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Audio transcription, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-15
 
 ### o1-pro-2025-03-19
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $0.15/1K input tokens, $0.6/1K output tokens
-- **Cost per 1K tokens**: $0.150 input, $0.600 output
+- **Pricing**: $0.00125/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.010 output
 - **Strengths**: Advanced reasoning for complex problem-solving
 - **Release Date**: 2025-03-17
 
@@ -363,64 +363,64 @@ This document provides comprehensive information about available AI models from 
 ### gpt-4o-mini-tts
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.15/1K input tokens, $0.6/1K output tokens
-- **Cost per 1K tokens**: $0.150 input, $0.600 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Text-to-speech generation, latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-03-19
 
 ### gpt-4.1-2025-04-14
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $15.0/1K input tokens, $45.0/1K output tokens
-- **Cost per 1K tokens**: $15.000 input, $45.000 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-4.1
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $15.0/1K input tokens, $45.0/1K output tokens
-- **Cost per 1K tokens**: $15.000 input, $45.000 output
+- **Pricing**: $0.002/1K input tokens, $0.008/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.008 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-4.1-mini-2025-04-14
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $0.3/1K input tokens, $1.2/1K output tokens
-- **Cost per 1K tokens**: $0.300 input, $1.200 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-4.1-mini
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $0.3/1K input tokens, $1.2/1K output tokens
-- **Cost per 1K tokens**: $0.300 input, $1.200 output
+- **Pricing**: $0.00039999999999999996/1K input tokens, $0.0015999999999999999/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.002 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-4.1-nano-2025-04-14
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $0.1/1K input tokens, $0.4/1K output tokens
-- **Cost per 1K tokens**: $0.100 input, $0.400 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-4.1-nano
 
 - **Context Window**: 8,192 tokens
-- **Pricing**: $0.1/1K input tokens, $0.4/1K output tokens
-- **Cost per 1K tokens**: $0.100 input, $0.400 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Strong reasoning and creative tasks
 - **Release Date**: 2025-04-10
 
 ### gpt-3.5-turbo-16k
 
 - **Context Window**: 16,384 tokens
-- **Pricing**: $3.0/1K input tokens, $4.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $4.000 output
+- **Pricing**: $0.003/1K input tokens, $0.004/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.004 output
 - **Strengths**: Fast and cost-effective for simpler tasks
 - **Release Date**: 2023-05-10
 
@@ -429,57 +429,57 @@ This document provides comprehensive information about available AI models from 
 ### claude-opus-4-20250514
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
-- **Cost per 1K tokens**: $0.000 input, $0.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: General purpose model
 
 ### claude-sonnet-4-20250514
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
-- **Cost per 1K tokens**: $0.000 input, $0.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: General purpose model
 
 ### claude-3-7-sonnet-20250219
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
-- **Cost per 1K tokens**: $0.000 input, $0.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: General purpose model
 
 ### claude-3-5-sonnet-20241022
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $15.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: Latest claude with excellent coding and analysis capabilities
 
 ### claude-3-5-haiku-20241022
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
-- **Cost per 1K tokens**: $0.000 input, $0.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: Latest claude with excellent coding and analysis capabilities
 
 ### claude-3-5-sonnet-20240620
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $15.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: Latest claude with excellent coding and analysis capabilities
 
 ### claude-3-haiku-20240307
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $0.25/1K input tokens, $1.25/1K output tokens
-- **Cost per 1K tokens**: $0.250 input, $1.250 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: Fastest claude model, good for simple tasks and high volume
 
 ### claude-3-opus-20240229
 
 - **Context Window**: 200,000 tokens
-- **Pricing**: $15.0/1K input tokens, $75.0/1K output tokens
-- **Cost per 1K tokens**: $15.000 input, $75.000 output
+- **Pricing**: $0.015000000000000001/1K input tokens, $0.075/1K output tokens
+- **Cost per 1K tokens**: $0.015 input, $0.075 output
 - **Strengths**: Most capable claude model for complex reasoning tasks
 
 ## XAI (Hosted)
@@ -487,64 +487,64 @@ This document provides comprehensive information about available AI models from 
 ### grok-2-1212
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.0/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.000 input, $10.000 output
+- **Pricing**: $0.002/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.010 output
 - **Strengths**: Balanced reasoning and performance
 - **Release Date**: 2025-01-19
 
 ### grok-2-vision-1212
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.0/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.000 input, $10.000 output
+- **Pricing**: $0.002/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.002 input, $0.010 output
 - **Strengths**: Multimodal vision capabilities, balanced reasoning and performance
 - **Release Date**: 2024-12-11
 
 ### grok-3
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $15.000 output
+- **Pricing**: $0.003/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.015 output
 - **Strengths**: Advanced reasoning capabilities
 - **Release Date**: 2025-04-03
 
 ### grok-3-fast
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $15.000 output
+- **Pricing**: $0.003/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.015 output
 - **Strengths**: Optimized for speed and quick responses
 - **Release Date**: 2025-04-03
 
 ### grok-3-mini
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $1.0/1K input tokens, $4.0/1K output tokens
-- **Cost per 1K tokens**: $1.000 input, $4.000 output
+- **Pricing**: $0.0003/1K input tokens, $0.0005/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.001 output
 - **Strengths**: Compact model for efficient processing
 - **Release Date**: 2025-04-03
 
 ### grok-3-mini-fast
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $0.5/1K input tokens, $2.0/1K output tokens
-- **Cost per 1K tokens**: $0.500 input, $2.000 output
+- **Pricing**: $0.003/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.015 output
 - **Strengths**: Compact model for efficient processing
 - **Release Date**: 2025-04-03
 
 ### grok-4-0709
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
-- **Cost per 1K tokens**: $3.000 input, $15.000 output
+- **Pricing**: $0.003/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.015 output
 - **Strengths**: Stem and science focused, strong reasoning
 - **Release Date**: 2025-07-08
 
 ### grok-2-image-1212
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.0/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.000 input, $10.000 output
+- **Pricing**: $0.003/1K input tokens, $0.015000000000000001/1K output tokens
+- **Cost per 1K tokens**: $0.003 input, $0.015 output
 - **Strengths**: Multimodal vision capabilities, balanced reasoning and performance
 - **Release Date**: 2025-01-12
 
@@ -553,32 +553,32 @@ This document provides comprehensive information about available AI models from 
 ### gemini-2.5-pro
 
 - **Context Window**: 1,000,000 tokens
-- **Pricing**: $4.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $4.000 input, $20.000 output
+- **Pricing**: $0.00125/1K input tokens, $0.01/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.010 output
 - **Strengths**: Long context up to 1m+ tokens, multimodal, grounded responses
 - **Release Date**: 2024-12-11
 
 ### gemini-2.5-flash
 
 - **Context Window**: 1,000,000 tokens
-- **Pricing**: $1.0/1K input tokens, $5.0/1K output tokens
-- **Cost per 1K tokens**: $1.000 input, $5.000 output
+- **Pricing**: $0.0003/1K input tokens, $0.0025/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.003 output
 - **Strengths**: Fast version optimized for speed
 - **Release Date**: 2024-12-11
 
 ### gemini-pro
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $1.0/1K input tokens, $3.0/1K output tokens
-- **Cost per 1K tokens**: $1.000 input, $3.000 output
+- **Pricing**: $0.00125/1K input tokens, $0.005/1K output tokens
+- **Cost per 1K tokens**: $0.001 input, $0.005 output
 - **Strengths**: General purpose model with strong capabilities
 - **Release Date**: 2023-12-06
 
 ### gemini-pro-vision
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $1.5/1K input tokens, $4.0/1K output tokens
-- **Cost per 1K tokens**: $1.500 input, $4.000 output
+- **Pricing**: $0.0/1K input tokens, $0.0/1K output tokens
+- **Cost per 1K tokens**: $0.000 input, $0.000 output
 - **Strengths**: Multimodal vision capabilities, multimodal version with vision capabilities
 - **Release Date**: 2023-12-06
 
@@ -1046,77 +1046,77 @@ This document provides comprehensive information about available AI models from 
 | qwen3-1.7b | local | local | $0.00 | $0.00 | 131,072 |
 | gemma3-4b | local | local | $0.00 | $0.00 | 131,072 |
 | mistral-nemo-12b | local | local | $0.00 | $0.00 | 131,072 |
-| claude-opus-4-20250514 | anthropic | hosted | $0.00 | $0.00 | 128,000 |
-| claude-sonnet-4-20250514 | anthropic | hosted | $0.00 | $0.00 | 128,000 |
-| claude-3-7-sonnet-20250219 | anthropic | hosted | $0.00 | $0.00 | 200,000 |
-| claude-3-5-haiku-20241022 | anthropic | hosted | $0.00 | $0.00 | 200,000 |
-| gpt-4o-mini-transcribe | openai | hosted | $0.10 | $0.40 | 128,000 |
-| gpt-4.1-nano-2025-04-14 | openai | hosted | $0.10 | $0.40 | 8,192 |
-| gpt-4.1-nano | openai | hosted | $0.10 | $0.40 | 8,192 |
-| gpt-4o-mini-2024-07-18 | openai | hosted | $0.15 | $0.60 | 128,000 |
-| gpt-4o-mini | openai | hosted | $0.15 | $0.60 | 128,000 |
-| o1-pro-2025-03-19 | openai | hosted | $0.15 | $0.60 | 200,000 |
+| o1-2024-12-17 | openai | hosted | $0.00 | $0.00 | 200,000 |
+| gpt-4.1-2025-04-14 | openai | hosted | $0.00 | $0.00 | 8,192 |
+| gpt-4.1-mini-2025-04-14 | openai | hosted | $0.00 | $0.00 | 8,192 |
+| gpt-4.1-nano-2025-04-14 | openai | hosted | $0.00 | $0.00 | 8,192 |
+| gpt-4.1-nano | openai | hosted | $0.00 | $0.00 | 8,192 |
+| gemini-pro-vision | google | hosted | $0.00 | $0.00 | 128,000 |
+| gpt-4o-mini-2024-07-18 | openai | hosted | $0.00 | $0.00 | 128,000 |
+| gpt-4o-mini | openai | hosted | $0.00 | $0.00 | 128,000 |
+| gpt-4o-mini-search-preview | openai | hosted | $0.00 | $0.00 | 128,000 |
+| grok-3-mini | xai | hosted | $0.00 | $0.00 | 128,000 |
+| gemini-2.5-flash | google | hosted | $0.00 | $0.00 | 1,000,000 |
+| gpt-4.1-mini | openai | hosted | $0.00 | $0.00 | 8,192 |
+| gpt-3.5-turbo | openai | hosted | $0.00 | $0.00 | 16,385 |
+| o1-mini-2024-09-12 | openai | hosted | $0.00 | $0.00 | 200,000 |
+| o1-mini | openai | hosted | $0.00 | $0.00 | 200,000 |
+| o1-pro-2025-03-19 | openai | hosted | $0.00 | $0.01 | 200,000 |
+| gemini-2.5-pro | google | hosted | $0.00 | $0.01 | 1,000,000 |
+| gemini-pro | google | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-3.5-turbo-instruct | openai | hosted | $0.00 | $0.00 | 16,385 |
+| gpt-4-0613 | openai | hosted | $0.00 | $0.01 | 8,192 |
+| gpt-4o-realtime-preview-2025-06-03 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-audio-preview-2025-06-03 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-3.5-turbo-instruct-0914 | openai | hosted | $0.00 | $0.01 | 16,385 |
+| gpt-3.5-turbo-1106 | openai | hosted | $0.00 | $0.01 | 16,385 |
+| gpt-4-0125-preview | openai | hosted | $0.00 | $0.01 | 8,192 |
+| gpt-3.5-turbo-0125 | openai | hosted | $0.00 | $0.01 | 16,385 |
+| gpt-4-turbo-2024-04-09 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-realtime-preview-2024-10-01 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-audio-preview-2024-10-01 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-audio-preview | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-realtime-preview | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-realtime-preview-2024-12-17 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-audio-preview-2024-12-17 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-realtime-preview-2024-12-17 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-audio-preview-2024-12-17 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-realtime-preview | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-audio-preview | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-search-preview-2025-03-11 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-search-preview-2025-03-11 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-transcribe | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-transcribe | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-mini-tts | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4.1 | openai | hosted | $0.00 | $0.01 | 8,192 |
+| grok-2-1212 | xai | hosted | $0.00 | $0.01 | 128,000 |
+| grok-2-vision-1212 | xai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-2024-08-06 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-2024-11-20 | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-4o-search-preview | openai | hosted | $0.00 | $0.01 | 128,000 |
+| gpt-3.5-turbo-16k | openai | hosted | $0.00 | $0.00 | 16,384 |
+| grok-3 | xai | hosted | $0.00 | $0.02 | 128,000 |
+| grok-3-fast | xai | hosted | $0.00 | $0.02 | 128,000 |
+| grok-3-mini-fast | xai | hosted | $0.00 | $0.02 | 128,000 |
+| grok-4-0709 | xai | hosted | $0.00 | $0.02 | 128,000 |
+| grok-2-image-1212 | xai | hosted | $0.00 | $0.02 | 128,000 |
+| gpt-4o-2024-05-13 | openai | hosted | $0.01 | $0.02 | 128,000 |
+| chatgpt-4o-latest | openai | hosted | $0.01 | $0.02 | 128,000 |
+| gpt-4-1106-preview | openai | hosted | $0.01 | $0.03 | 8,192 |
+| gpt-4-turbo-preview | openai | hosted | $0.01 | $0.03 | 128,000 |
+| gpt-4-turbo | openai | hosted | $0.01 | $0.03 | 128,000 |
+| o1 | openai | hosted | $0.02 | $0.06 | 200,000 |
+| claude-opus-4-20250514 | anthropic | hosted | $0.02 | $0.07 | 128,000 |
+| claude-sonnet-4-20250514 | anthropic | hosted | $0.02 | $0.07 | 128,000 |
+| claude-3-7-sonnet-20250219 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| claude-3-5-sonnet-20241022 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| claude-3-5-haiku-20241022 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| claude-3-5-sonnet-20240620 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| claude-3-haiku-20240307 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| claude-3-opus-20240229 | anthropic | hosted | $0.02 | $0.07 | 200,000 |
+| gpt-4 | openai | hosted | $0.03 | $0.06 | 8,192 |
 | o1-pro | openai | hosted | $0.15 | $0.60 | 200,000 |
-| gpt-4o-mini-tts | openai | hosted | $0.15 | $0.60 | 128,000 |
-| gpt-4o-mini-search-preview-2025-03-11 | openai | hosted | $0.20 | $0.80 | 128,000 |
-| gpt-4o-mini-search-preview | openai | hosted | $0.20 | $0.80 | 128,000 |
-| claude-3-haiku-20240307 | anthropic | hosted | $0.25 | $1.25 | 200,000 |
-| gpt-4.1-mini-2025-04-14 | openai | hosted | $0.30 | $1.20 | 8,192 |
-| gpt-4.1-mini | openai | hosted | $0.30 | $1.20 | 8,192 |
-| gpt-3.5-turbo | openai | hosted | $0.50 | $1.50 | 16,385 |
-| gpt-3.5-turbo-1106 | openai | hosted | $0.50 | $1.50 | 16,385 |
-| gpt-3.5-turbo-0125 | openai | hosted | $0.50 | $1.50 | 16,385 |
-| grok-3-mini-fast | xai | hosted | $0.50 | $2.00 | 128,000 |
-| gpt-4o-mini-realtime-preview-2024-12-17 | openai | hosted | $0.60 | $2.40 | 128,000 |
-| gpt-4o-mini-audio-preview-2024-12-17 | openai | hosted | $0.60 | $2.40 | 128,000 |
-| gpt-4o-mini-realtime-preview | openai | hosted | $0.60 | $2.40 | 128,000 |
-| gpt-4o-mini-audio-preview | openai | hosted | $0.60 | $2.40 | 128,000 |
-| grok-3-mini | xai | hosted | $1.00 | $4.00 | 128,000 |
-| gemini-2.5-flash | google | hosted | $1.00 | $5.00 | 1,000,000 |
-| gemini-pro | google | hosted | $1.00 | $3.00 | 128,000 |
-| gpt-3.5-turbo-instruct | openai | hosted | $1.50 | $2.00 | 16,385 |
-| gpt-3.5-turbo-instruct-0914 | openai | hosted | $1.50 | $2.00 | 16,385 |
-| gemini-pro-vision | google | hosted | $1.50 | $4.00 | 128,000 |
-| gpt-4o-transcribe | openai | hosted | $2.00 | $8.00 | 128,000 |
-| grok-2-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
-| grok-2-vision-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
-| grok-2-image-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
-| o1-mini-2024-09-12 | openai | hosted | $3.00 | $12.00 | 200,000 |
-| o1-mini | openai | hosted | $3.00 | $12.00 | 200,000 |
-| gpt-4o-search-preview-2025-03-11 | openai | hosted | $3.00 | $12.00 | 128,000 |
-| gpt-4o-search-preview | openai | hosted | $3.00 | $12.00 | 128,000 |
-| gpt-3.5-turbo-16k | openai | hosted | $3.00 | $4.00 | 16,384 |
-| claude-3-5-sonnet-20241022 | anthropic | hosted | $3.00 | $15.00 | 200,000 |
-| claude-3-5-sonnet-20240620 | anthropic | hosted | $3.00 | $15.00 | 200,000 |
-| grok-3 | xai | hosted | $3.00 | $15.00 | 128,000 |
-| grok-3-fast | xai | hosted | $3.00 | $15.00 | 128,000 |
-| grok-4-0709 | xai | hosted | $3.00 | $15.00 | 128,000 |
-| gemini-2.5-pro | google | hosted | $4.00 | $20.00 | 1,000,000 |
-| gpt-4o | openai | hosted | $5.00 | $20.00 | 128,000 |
-| gpt-4o-2024-05-13 | openai | hosted | $5.00 | $20.00 | 128,000 |
-| gpt-4o-2024-08-06 | openai | hosted | $5.00 | $20.00 | 128,000 |
-| chatgpt-4o-latest | openai | hosted | $5.00 | $20.00 | 128,000 |
-| gpt-4o-2024-11-20 | openai | hosted | $5.00 | $20.00 | 128,000 |
-| gpt-4o-realtime-preview-2025-06-03 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-audio-preview-2025-06-03 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-realtime-preview-2024-10-01 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-audio-preview-2024-10-01 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-audio-preview | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-realtime-preview | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-realtime-preview-2024-12-17 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4o-audio-preview-2024-12-17 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| gpt-4-1106-preview | openai | hosted | $10.00 | $30.00 | 8,192 |
-| gpt-4-0125-preview | openai | hosted | $10.00 | $30.00 | 8,192 |
-| gpt-4-turbo-preview | openai | hosted | $10.00 | $30.00 | 128,000 |
-| gpt-4-turbo | openai | hosted | $10.00 | $30.00 | 128,000 |
-| gpt-4-turbo-2024-04-09 | openai | hosted | $10.00 | $30.00 | 128,000 |
-| o1-2024-12-17 | openai | hosted | $15.00 | $60.00 | 200,000 |
-| o1 | openai | hosted | $15.00 | $60.00 | 200,000 |
-| gpt-4.1-2025-04-14 | openai | hosted | $15.00 | $45.00 | 8,192 |
-| gpt-4.1 | openai | hosted | $15.00 | $45.00 | 8,192 |
-| claude-3-opus-20240229 | anthropic | hosted | $15.00 | $75.00 | 200,000 |
-| gpt-4-0613 | openai | hosted | $30.00 | $60.00 | 8,192 |
-| gpt-4 | openai | hosted | $30.00 | $60.00 | 8,192 |
 
 ---
 *Generated by Enhanced GetAvailableModels.py - Including Grok-4 and Local LLMs*

@@ -166,115 +166,12 @@ class EnhancedModelInfoCollector:
             }
         }
         
-        # Enhanced pricing information including local models (local = 0 cost)
+        # Minimal pricing info - most pricing now comes from dynamic lookups
+        # This is kept only for models not found in OpenRouter/LiteLLM
         self.pricing_info = {
-            'openai': {
-                # Current models with corrected 2025 pricing
-                'gpt-4o': {'input': 5.0, 'output': 20.0},
-                'gpt-4o-mini': {'input': 0.15, 'output': 0.6},
-                'gpt-4-turbo': {'input': 10.0, 'output': 30.0},
-                'gpt-4': {'input': 30.0, 'output': 60.0},
-                'gpt-3.5-turbo': {'input': 0.5, 'output': 1.5},
-                'o1-preview': {'input': 15.0, 'output': 60.0},
-                'o1-mini': {'input': 3.0, 'output': 12.0},
-                'o1': {'input': 15.0, 'output': 60.0},
-                # Legacy/versioned models - same pricing as current versions
-                'gpt-4-0613': {'input': 30.0, 'output': 60.0},
-                'gpt-4-1106-preview': {'input': 10.0, 'output': 30.0},
-                'gpt-4-0125-preview': {'input': 10.0, 'output': 30.0},
-                'gpt-4-turbo-preview': {'input': 10.0, 'output': 30.0},
-                'gpt-4-turbo-2024-04-09': {'input': 10.0, 'output': 30.0},
-                'gpt-4o-2024-05-13': {'input': 5.0, 'output': 20.0},
-                'gpt-4o-2024-08-06': {'input': 5.0, 'output': 20.0},
-                'gpt-4o-2024-11-20': {'input': 5.0, 'output': 20.0},
-                'gpt-4o-mini-2024-07-18': {'input': 0.15, 'output': 0.6},
-                'gpt-3.5-turbo-0125': {'input': 0.5, 'output': 1.5},
-                'gpt-3.5-turbo-1106': {'input': 0.5, 'output': 1.5},
-                'gpt-3.5-turbo-instruct': {'input': 1.5, 'output': 2.0},
-                'gpt-3.5-turbo-instruct-0914': {'input': 1.5, 'output': 2.0},
-                'gpt-3.5-turbo-16k': {'input': 3.0, 'output': 4.0},
-                'o1-mini-2024-09-12': {'input': 3.0, 'output': 12.0},
-                'o1-2024-12-17': {'input': 15.0, 'output': 60.0},
-                'o1-pro': {'input': 0.15, 'output': 0.60},
-                'o1-pro-2025-03-19': {'input': 0.15, 'output': 0.60},
-                'chatgpt-4o-latest': {'input': 5.0, 'output': 20.0},
-                # Realtime/Audio models (estimated pricing)
-                'gpt-4o-realtime-preview': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-realtime-preview-2024-10-01': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-realtime-preview-2024-12-17': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-realtime-preview-2025-06-03': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-audio-preview': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-audio-preview-2024-10-01': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-audio-preview-2024-12-17': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-audio-preview-2025-06-03': {'input': 6.0, 'output': 24.0},
-                'gpt-4o-mini-realtime-preview': {'input': 0.6, 'output': 2.4},
-                'gpt-4o-mini-realtime-preview-2024-12-17': {'input': 0.6, 'output': 2.4},
-                'gpt-4o-mini-audio-preview': {'input': 0.6, 'output': 2.4},
-                'gpt-4o-mini-audio-preview-2024-12-17': {'input': 0.6, 'output': 2.4},
-                # Newer models (estimated based on capabilities)
-                'gpt-4.1': {'input': 15.0, 'output': 45.0},
-                'gpt-4.1-2025-04-14': {'input': 15.0, 'output': 45.0},
-                'gpt-4.1-mini': {'input': 0.3, 'output': 1.2},
-                'gpt-4.1-mini-2025-04-14': {'input': 0.3, 'output': 1.2},
-                'gpt-4.1-nano': {'input': 0.1, 'output': 0.4},
-                'gpt-4.1-nano-2025-04-14': {'input': 0.1, 'output': 0.4},
-                # Search and specialized models
-                'gpt-4o-search-preview': {'input': 3.0, 'output': 12.0},
-                'gpt-4o-search-preview-2025-03-11': {'input': 3.0, 'output': 12.0},
-                'gpt-4o-mini-search-preview': {'input': 0.2, 'output': 0.8},
-                'gpt-4o-mini-search-preview-2025-03-11': {'input': 0.2, 'output': 0.8},
-                'gpt-4o-transcribe': {'input': 2.0, 'output': 8.0},
-                'gpt-4o-mini-transcribe': {'input': 0.1, 'output': 0.4},
-                'gpt-4o-mini-tts': {'input': 0.15, 'output': 0.6}
-            },
-            'anthropic': {
-                'claude-3-5-sonnet-20241022': {'input': 3.0, 'output': 15.0},
-                'claude-3-5-sonnet-20240620': {'input': 3.0, 'output': 15.0},
-                'claude-3-opus-20240229': {'input': 15.0, 'output': 75.0},
-                'claude-3-sonnet-20240229': {'input': 3.0, 'output': 15.0},
-                'claude-3-haiku-20240307': {'input': 0.25, 'output': 1.25}
-            },
-            'xai': {
-                'grok-beta': {'input': 5.0, 'output': 15.0},
-                'grok-vision-beta': {'input': 5.0, 'output': 15.0},
-                'grok-4': {'input': 3.0, 'output': 15.0},
-                'grok-4-0709': {'input': 3.0, 'output': 15.0},
-                'grok-2-1212': {'input': 2.0, 'output': 10.0},
-                'grok-2-vision-1212': {'input': 2.0, 'output': 10.0},
-                'grok-2-image-1212': {'input': 2.0, 'output': 10.0},
-                'grok-3': {'input': 3.0, 'output': 15.0},
-                'grok-3-fast': {'input': 3.0, 'output': 15.0},
-                'grok-3-mini': {'input': 1.0, 'output': 4.0},
-                'grok-3-mini-fast': {'input': 0.5, 'output': 2.0}
-            },
-            'google': {
-                'gemini-2.5-pro': {'input': 4.0, 'output': 20.0},
-                'gemini-2.5-flash': {'input': 1.0, 'output': 5.0},
-                'gemini-pro': {'input': 1.0, 'output': 3.0},
-                'gemini-pro-vision': {'input': 1.5, 'output': 4.0}
-            },
             'local': {
                 # Local models have no API costs, only compute/electricity
-                'llama-3.3-70b': {'input': 0.0, 'output': 0.0},
-                'deepseek-r1-8b': {'input': 0.0, 'output': 0.0},
-                'deepseek-r1-7b': {'input': 0.0, 'output': 0.0},
-                'qwen3-8b': {'input': 0.0, 'output': 0.0},
-                'qwen3-14b': {'input': 0.0, 'output': 0.0},
-                'qwen3-32b': {'input': 0.0, 'output': 0.0},
-                'qwen2.5-coder-7b': {'input': 0.0, 'output': 0.0},
-                'qwen2.5-coder-14b': {'input': 0.0, 'output': 0.0},
-                'qwen2.5-coder-32b': {'input': 0.0, 'output': 0.0},
-                'qwen2.5-vl-7b': {'input': 0.0, 'output': 0.0},
-                'qwen2.5-vl-32b': {'input': 0.0, 'output': 0.0},
-                'llava-13b': {'input': 0.0, 'output': 0.0},
-                'qwq-32b': {'input': 0.0, 'output': 0.0},
-                'llama-3.1-8b': {'input': 0.0, 'output': 0.0},
-                'llama-3.1-70b': {'input': 0.0, 'output': 0.0},
-                'gemma3-9b': {'input': 0.0, 'output': 0.0},
-                'phi4-14b': {'input': 0.0, 'output': 0.0},
-                'qwen3-1.7b': {'input': 0.0, 'output': 0.0},
-                'gemma3-4b': {'input': 0.0, 'output': 0.0},
-                'mistral-nemo-12b': {'input': 0.0, 'output': 0.0}
+                'default': {'input': 0.0, 'output': 0.0}  # Default for all local models
             }
         }
         
@@ -906,90 +803,130 @@ class EnhancedModelInfoCollector:
     def _get_pricing_from_web_search(self, model_id: str, provider: str) -> Dict[str, float]:
         """Get pricing by searching for official pricing information using external APIs."""
         try:
-            # Try multiple external pricing sources
+            # Try multiple external pricing sources in order of preference
             pricing_sources = [
-                self._check_openrouter_pricing,
-                self._check_litellm_pricing,
-                self._search_official_docs,
-                self._get_fallback_pricing
+                self._check_openrouter_pricing,  # Most comprehensive real-time data
+                self._check_litellm_pricing,     # Fallback with known pricing
+                self._get_fallback_pricing       # Last resort hardcoded data
             ]
             
             for source in pricing_sources:
                 try:
                     pricing = source(provider, model_id)
                     if pricing and (pricing.get('input', 0) > 0 or pricing.get('output', 0) > 0):
+                        print(f"📊 Dynamic pricing from {source.__name__} for {model_id}: ${pricing.get('input', 0):.6f}/${pricing.get('output', 0):.6f} per 1K tokens")
                         return pricing
                 except Exception as e:
                     continue
             
-            # If all else fails, use fallback pricing
-            return self._get_fallback_pricing(provider, model_id)
+            # If all sources fail, return zero cost (for local models or unknown pricing)
+            return {'input': 0.0, 'output': 0.0}
             
         except Exception:
             return {'input': 0.0, 'output': 0.0}
 
     def _check_openrouter_pricing(self, provider: str, model_id: str) -> Dict[str, float]:
-        """Check OpenRouter API for pricing information."""
+        """Check OpenRouter API for real-time pricing information."""
         try:
-            # OpenRouter aggregates many model providers and has pricing info
+            # OpenRouter aggregates many model providers and has real-time pricing
             response = requests.get('https://openrouter.ai/api/v1/models', timeout=10)
             if response.status_code == 200:
                 models = response.json().get('data', [])
                 
+                # Enhanced model matching logic
+                possible_matches = []
                 for model in models:
                     model_name = model.get('id', '')
-                    # Try to match model names across providers
-                    if (model_id in model_name or 
-                        model_name.split('/')[-1] == model_id or
-                        any(part in model_name for part in model_id.split('-')[:2])):
+                    
+                    # Direct match
+                    if model_id == model_name.split('/')[-1]:
+                        possible_matches.append((model, 10))  # High priority
+                    # Provider-specific match
+                    elif f"{provider}/{model_id}" in model_name:
+                        possible_matches.append((model, 9))
+                    # Partial name match
+                    elif model_id in model_name:
+                        possible_matches.append((model, 5))
+                    # Fuzzy match on key parts
+                    elif any(part in model_name for part in model_id.split('-')[:2] if len(part) > 2):
+                        possible_matches.append((model, 3))
+                
+                # Sort by match quality and take the best match
+                if possible_matches:
+                    best_match = sorted(possible_matches, key=lambda x: x[1], reverse=True)[0][0]
+                    pricing = best_match.get('pricing', {})
+                    
+                    if pricing:
+                        # OpenRouter uses string format like "0.000005" per token, convert to per-1K tokens
+                        input_per_token = float(pricing.get('prompt', 0))
+                        output_per_token = float(pricing.get('completion', 0))
                         
-                        pricing = model.get('pricing', {})
-                        if pricing:
-                            # OpenRouter prices are typically per 1M tokens, convert to 1K
-                            return {
-                                'input': float(pricing.get('prompt', 0)) / 1000,
-                                'output': float(pricing.get('completion', 0)) / 1000
-                            }
+                        return {
+                            'input': input_per_token * 1000,  # Convert per-token to per-1K tokens
+                            'output': output_per_token * 1000
+                        }
         except Exception as e:
-            pass
+            print(f"⚠️  OpenRouter API error for {model_id}: {e}")
         
         return {'input': 0.0, 'output': 0.0}
 
     def _check_litellm_pricing(self, provider: str, model_id: str) -> Dict[str, float]:
-        """Check LiteLLM pricing database."""
+        """Check LiteLLM pricing database with current 2025 pricing per 1K tokens."""
         try:
-            # LiteLLM maintains pricing for many providers
-            # This is a simplified example - actual implementation would query their API
+            # Updated pricing map with current 2025 rates (per 1K tokens)
             litellm_pricing_map = {
                 'openai': {
-                    'gpt-4o': {'input': 5.0, 'output': 20.0},
-                    'gpt-4o-mini': {'input': 0.15, 'output': 0.6},
-                    'gpt-4-turbo': {'input': 10.0, 'output': 30.0},
-                    'gpt-4': {'input': 30.0, 'output': 60.0},
-                    'gpt-3.5-turbo': {'input': 0.5, 'output': 1.5},
-                    'o1': {'input': 15.0, 'output': 60.0},
-                    'o1-mini': {'input': 3.0, 'output': 12.0},
-                    'o1-pro': {'input': 0.15, 'output': 0.6},  # $150/$600 per 1M = $0.15/$0.6 per 1K
-                    'o1-pro-2025-03-19': {'input': 0.15, 'output': 0.6},  # $150/$600 per 1M = $0.15/$0.6 per 1K
+                    'gpt-4o': {'input': 0.005, 'output': 0.020},
+                    'gpt-4o-mini': {'input': 0.00015, 'output': 0.0006},
+                    'gpt-4-turbo': {'input': 0.010, 'output': 0.030},
+                    'gpt-4': {'input': 0.030, 'output': 0.060},
+                    'gpt-3.5-turbo': {'input': 0.0005, 'output': 0.0015},
+                    'o1': {'input': 0.015, 'output': 0.060},
+                    'o1-mini': {'input': 0.003, 'output': 0.012},
+                    'o1-pro': {'input': 0.00015, 'output': 0.0006},
+                    # Audio models
+                    'gpt-4o-realtime-preview': {'input': 0.006, 'output': 0.024},
+                    'gpt-4o-audio-preview': {'input': 0.006, 'output': 0.024},
                 },
                 'anthropic': {
-                    'claude-3-5-sonnet-20241022': {'input': 3.0, 'output': 15.0},
-                    'claude-3-opus-20240229': {'input': 15.0, 'output': 75.0},
-                    'claude-3-sonnet-20240229': {'input': 3.0, 'output': 15.0},
-                    'claude-3-haiku-20240307': {'input': 0.25, 'output': 1.25},
+                    'claude-3-5-sonnet-20241022': {'input': 0.003, 'output': 0.015},
+                    'claude-3-5-sonnet-20240620': {'input': 0.003, 'output': 0.015},
+                    'claude-3-opus-20240229': {'input': 0.015, 'output': 0.075},
+                    'claude-opus-4-20250514': {'input': 0.015, 'output': 0.075},
+                    'claude-3-sonnet-20240229': {'input': 0.003, 'output': 0.015},
+                    'claude-sonnet-4-20250514': {'input': 0.003, 'output': 0.015},
+                    'claude-3-haiku-20240307': {'input': 0.00025, 'output': 0.00125},
+                    'claude-3-5-haiku-20241022': {'input': 0.00025, 'output': 0.00125},
                 },
                 'xai': {
-                    'grok-beta': {'input': 5.0, 'output': 15.0},
-                    'grok-vision-beta': {'input': 5.0, 'output': 15.0},
+                    'grok-beta': {'input': 0.005, 'output': 0.015},
+                    'grok-vision-beta': {'input': 0.005, 'output': 0.015},
+                    'grok-2-1212': {'input': 0.002, 'output': 0.010},
+                    'grok-2-vision-1212': {'input': 0.002, 'output': 0.010},
+                    'grok-3': {'input': 0.003, 'output': 0.015},
+                    'grok-3-mini': {'input': 0.001, 'output': 0.004},
+                    'grok-4': {'input': 0.003, 'output': 0.015},
                 },
                 'google': {
-                    'gemini-pro': {'input': 0.5, 'output': 1.5},
-                    'gemini-pro-vision': {'input': 0.5, 'output': 1.5},
+                    'gemini-2.5-pro': {'input': 0.004, 'output': 0.020},
+                    'gemini-2.5-flash': {'input': 0.001, 'output': 0.005},
+                    'gemini-pro': {'input': 0.001, 'output': 0.003},
+                    'gemini-pro-vision': {'input': 0.0015, 'output': 0.004},
                 }
             }
             
+            # Try exact match first
             if provider in litellm_pricing_map and model_id in litellm_pricing_map[provider]:
                 return litellm_pricing_map[provider][model_id]
+            
+            # Try fuzzy matching for versioned models
+            if provider in litellm_pricing_map:
+                for known_model, pricing in litellm_pricing_map[provider].items():
+                    # Match base model names (e.g., gpt-4o matches gpt-4o-2024-08-06)
+                    if (known_model in model_id or 
+                        model_id.replace('-', '').startswith(known_model.replace('-', '')) or
+                        any(part in model_id for part in known_model.split('-')[:2] if len(part) > 2)):
+                        return pricing
                 
         except Exception:
             pass
@@ -1012,6 +949,12 @@ class EnhancedModelInfoCollector:
             
         except Exception:
             return {'input': 0.0, 'output': 0.0}
+
+    def _get_fallback_pricing(self, provider: str, model_id: str) -> Dict[str, float]:
+        """Get fallback pricing for unknown models - return zero cost."""
+        # For unknown models or when all dynamic pricing fails, 
+        # return zero cost (especially for local models)
+        return {'input': 0.0, 'output': 0.0}
 
     def _get_community_pricing_data(self, model_id: str) -> Dict[str, float]:
         """Fetch pricing from community-maintained pricing databases."""
@@ -1398,15 +1341,19 @@ class EnhancedModelInfoCollector:
         """Build comprehensive model information with real-time pricing."""
         
         # Get real-time pricing first
-        real_time_pricing = self.get_real_time_pricing(provider, model_id)
+        real_time_pricing = self._get_pricing_from_web_search(model_id, provider)
         
         # Validate the pricing data
         if self._validate_pricing_data(real_time_pricing):
             pricing = real_time_pricing
+            print(f"✅ Real-time pricing for {model_id}: ${real_time_pricing.get('input', 0):.3f}/${real_time_pricing.get('output', 0):.3f}")
         else:
-            # Fall back to hardcoded pricing if real-time fails validation
-            pricing = self.pricing_info[provider].get(model_id, {'input': 0.0, 'output': 0.0})
-            print(f"⚠️  Using fallback pricing for {model_id}: ${pricing.get('input', 0):.3f}/${pricing.get('output', 0):.3f}")
+            # Fall back to zero pricing if real-time fails validation
+            pricing = {'input': 0.0, 'output': 0.0}
+            if provider == 'local':
+                print(f"✅ Local model {model_id}: Free (no API cost)")
+            else:
+                print(f"⚠️  No pricing found for {model_id}, using zero cost")
         
         # Dynamic context window detection
         context_window = self._detect_context_window(provider, model_id, api_model)
@@ -1689,7 +1636,7 @@ class EnhancedModelInfoCollector:
     def _build_local_model_info(self, model_id: str, tools_available: Dict, llama_cpp_available: bool, model_paths: Dict) -> Dict[str, Any]:
         """Build local model information."""
         specs = self.local_model_specs[model_id]
-        pricing = self.pricing_info['local'][model_id]
+        pricing = self.pricing_info['local']['default']  # All local models are free
         context_window = self.context_windows['local'][model_id]
         strengths = self.model_strengths['local'][model_id]
         
@@ -2161,9 +2108,9 @@ This document provides comprehensive information about available AI models from 
 
         # Add table rows
         for model in all_models:
-            # Convert costs from per-1M to per-1K tokens for display
-            input_cost_per_1k = model['input_cost'] / 1000 if isinstance(model['input_cost'], (int, float)) else 0
-            output_cost_per_1k = model['output_cost'] / 1000 if isinstance(model['output_cost'], (int, float)) else 0
+            # Costs are already stored per-1K tokens, no conversion needed
+            input_cost_per_1k = model['input_cost'] if isinstance(model['input_cost'], (int, float)) else 0
+            output_cost_per_1k = model['output_cost'] if isinstance(model['output_cost'], (int, float)) else 0
             
             # Determine row class based on cost (now correctly per-1K)
             if model['type'] == 'local':
@@ -2996,9 +2943,9 @@ print(f"Recommended: {{result['recommended_model']}}")
                 strengths = model_data.get('strengths', 'General purpose model')
                 capabilities = model_data.get('capabilities', {})
                 
-                # Convert cost from per-1M to per-1K for classification
-                input_cost_per_1k = input_cost / 1000 if input_cost > 0 else 0
-                output_cost_per_1k = output_cost / 1000 if output_cost > 0 else 0
+                # Costs are already stored per-1K tokens, no conversion needed
+                input_cost_per_1k = input_cost if input_cost > 0 else 0
+                output_cost_per_1k = output_cost if output_cost > 0 else 0
                 
                 # Determine row class based on cost (per-1K)
                 if input_cost_per_1k <= 1.0:
