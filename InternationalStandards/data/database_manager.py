@@ -18,6 +18,9 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 import hashlib
 import threading
+import pickle
+import time
+from functools import lru_cache
 
 # Database connectivity
 try:
@@ -97,7 +100,9 @@ class DatabaseManager:
         self.connection_pool = None
         self.connection_lock = threading.Lock()
         
-        # Query optimization
+        # Comprehensive caching system
+        self.cache_dir = Path("cache/database")
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.query_cache = {}
         self.cache_lock = threading.Lock()
         self.cache_ttl = 3600  # 1 hour
@@ -846,6 +851,75 @@ class DatabaseManager:
         except Exception as e:
             self.logger.error(f"Database backup failed: {e}")
             return False
+    
+    def get_all_standards(self) -> List[Dict[str, Any]]:
+        """Get all standards from database with comprehensive caching
+        
+        Returns:
+            List of all standards
+        """
+        cache_key = "all_standards"
+        
+        try:
+            # Check memory cache first
+            with self.cache_lock:
+                if cache_key in self.query_cache:
+                    cached_time, cached_data = self.query_cache[cache_key]
+                    if time.time() - cached_time < self.cache_ttl:
+                        self.logger.debug("Returning cached standards data")
+                        return cached_data
+            
+            # Check file cache
+            cache_file = self.cache_dir / f"{cache_key}.pkl"
+            if cache_file.exists():
+                cache_age = time.time() - cache_file.stat().st_mtime
+                if cache_age < self.cache_ttl:
+                    try:
+                        with open(cache_file, 'rb') as f:
+                            cached_data = pickle.load(f)
+                            # Update memory cache
+                            with self.cache_lock:
+                                self.query_cache[cache_key] = (time.time(), cached_data)
+                            self.logger.debug("Returning file cached standards data")
+                            return cached_data
+                    except Exception as e:
+                        self.logger.warning(f"Error reading cache file: {e}")
+            
+            # Query database if no valid cache
+            query = """
+            SELECT 
+                id, title, discipline, organization, 
+                quality_score, status, last_updated,
+                created_date, metadata
+            FROM standards 
+            ORDER BY last_updated DESC
+            """
+            
+            result = self._execute_query(query)
+            
+            if result['success']:
+                standards_data = result['data']
+                
+                # Cache the results
+                with self.cache_lock:
+                    self.query_cache[cache_key] = (time.time(), standards_data)
+                
+                # Save to file cache
+                try:
+                    with open(cache_file, 'wb') as f:
+                        pickle.dump(standards_data, f)
+                except Exception as e:
+                    self.logger.warning(f"Error saving to cache file: {e}")
+                
+                self.logger.info(f"Retrieved and cached {len(standards_data)} standards")
+                return standards_data
+            else:
+                self.logger.error(f"Failed to get all standards: {result.get('error', 'Unknown error')}")
+                return []
+                
+        except Exception as e:
+            self.logger.error(f"Error getting all standards: {e}")
+            return []
     
     def get_connection_stats(self) -> Dict[str, Any]:
         """Get connection pool statistics

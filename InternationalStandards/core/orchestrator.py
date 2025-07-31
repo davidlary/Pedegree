@@ -123,6 +123,90 @@ class StandardsOrchestrator:
         # Initialize discipline progress tracking
         self._initialize_discipline_tracking()
     
+    def initialize_all_agents(self) -> bool:
+        """Initialize all 59 agents as specified in original requirements
+        
+        Creates:
+        - 19 Discovery Agents (one per discipline)
+        - 20 Retrieval Agents 
+        - 15 Processing Agents
+        - 5 Validation Agents
+        
+        Returns:
+            True if all agents initialized successfully
+        """
+        try:
+            self.logger.info("Initializing all 59 agents...")
+            
+            # Get disciplines for discovery agents
+            disciplines = self.config_manager.get_disciplines()
+            discipline_names = list(disciplines.keys())[:19]  # First 19
+            
+            with self.agents_lock:
+                # Initialize 19 Discovery Agents (one per discipline)
+                for i, discipline in enumerate(discipline_names):
+                    agent_id = f"discovery_{discipline.lower().replace(' ', '_')}"
+                    agent = DiscoveryAgent(
+                        agent_id=agent_id,
+                        discipline=discipline,
+                        config=self.agent_configs.get('discovery_agents', {}),
+                        llm_integration=self.llm_integration,
+                        config_manager=self.config_manager
+                    )
+                    self.agents[agent_id] = agent
+                    self.logger.info(f"Created discovery agent for {discipline}")
+                
+                # Initialize 20 Retrieval Agents
+                for i in range(20):
+                    agent_id = f"retrieval_agent_{i+1:02d}"
+                    agent = RetrievalAgent(
+                        agent_id=agent_id,
+                        discipline="multi_discipline", 
+                        config=self.agent_configs.get('retrieval_agents', {}),
+                        llm_integration=self.llm_integration,
+                        config_manager=self.config_manager
+                    )
+                    self.agents[agent_id] = agent
+                    self.logger.info(f"Created retrieval agent {i+1}")
+                
+                # Initialize 15 Processing Agents
+                for i in range(15):
+                    agent_id = f"processing_agent_{i+1:02d}"
+                    agent = ProcessingAgent(
+                        agent_id=agent_id,
+                        discipline="multi_discipline",
+                        config=self.agent_configs.get('processing_agents', {}),
+                        llm_integration=self.llm_integration,
+                        config_manager=self.config_manager
+                    )
+                    self.agents[agent_id] = agent
+                    self.logger.info(f"Created processing agent {i+1}")
+                
+                # Initialize 5 Validation Agents
+                for i in range(5):
+                    agent_id = f"validation_agent_{i+1:02d}"
+                    agent = ValidationAgent(
+                        agent_id=agent_id,
+                        discipline="multi_discipline",
+                        config=self.agent_configs.get('validation_agents', {}),
+                        llm_integration=self.llm_integration,
+                        config_manager=self.config_manager
+                    )
+                    self.agents[agent_id] = agent
+                    self.logger.info(f"Created validation agent {i+1}")
+            
+            total_agents = len(self.agents)
+            self.logger.info(f"Successfully initialized {total_agents} agents")
+            
+            # Update system metrics
+            self.system_metrics['total_agents_active'] = total_agents
+            
+            return total_agents == 59
+            
+        except Exception as e:
+            self.logger.error(f"Failed to initialize agents: {e}")
+            return False
+    
     def _initialize_discipline_tracking(self):
         """Initialize progress tracking for all disciplines"""
         disciplines = self.config_manager.get_disciplines()
@@ -858,6 +942,65 @@ class StandardsOrchestrator:
             
         except Exception as e:
             self.logger.error(f"Error creating periodic checkpoint: {e}")
+    
+    def get_agent_status(self) -> Dict[str, Dict[str, Any]]:
+        """Get status of all agents"""
+        agent_status = {}
+        
+        with self.agents_lock:
+            for agent_id, agent in self.agents.items():
+                try:
+                    # Get real agent status
+                    status = agent.status if hasattr(agent, 'status') else AgentStatus.IDLE
+                    agent_type = agent.agent_type if hasattr(agent, 'agent_type') else 'unknown'
+                    
+                    agent_status[agent_id] = {
+                        'id': agent_id,
+                        'name': f"{agent_type.title()} Agent {agent_id}",
+                        'type': agent_type,
+                        'status': status.value if hasattr(status, 'value') else str(status),
+                        'last_activity': getattr(agent, 'last_activity', 'Unknown'),
+                        'standards_found': getattr(agent, 'standards_found', 0),
+                        'success_rate': getattr(agent, 'success_rate', 0.0)
+                    }
+                except Exception as e:
+                    self.logger.error(f"Error getting status for agent {agent_id}: {e}")
+                    agent_status[agent_id] = {
+                        'id': agent_id,
+                        'name': f"Agent {agent_id}",
+                        'type': 'unknown',
+                        'status': 'error',
+                        'last_activity': 'Unknown',
+                        'standards_found': 0,
+                        'success_rate': 0.0
+                    }
+        
+        return agent_status
+    
+    def restart_agent(self, agent_id: str) -> bool:
+        """Restart a specific agent"""
+        try:
+            with self.agents_lock:
+                if agent_id not in self.agents:
+                    self.logger.error(f"Agent {agent_id} not found")
+                    return False
+                
+                agent = self.agents[agent_id]
+                
+                # Stop the agent
+                if hasattr(agent, 'stop'):
+                    agent.stop()
+                
+                # Restart the agent
+                if hasattr(agent, 'start'):
+                    agent.start()
+                    
+                self.logger.info(f"Restarted agent {agent_id}")
+                return True
+                
+        except Exception as e:
+            self.logger.error(f"Error restarting agent {agent_id}: {e}")
+            return False
     
     def __del__(self):
         """Cleanup when orchestrator is destroyed"""

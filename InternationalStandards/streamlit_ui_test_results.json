@@ -1,5 +1,5 @@
 {
-  "test_timestamp": "2025-07-31T13:47:30.952525",
+  "test_timestamp": "2025-07-31T14:30:37.523426",
   "streamlit_tests": {
     "app_initialization": {
       "test_name": "Application_Initialization",
@@ -60,27 +60,33 @@
         {
           "test_name": "\ud83d\udd2c Discipline Explorer_components_analysis",
           "status": "PASS",
-          "details": "Found 0 Streamlit components, 0 buttons"
+          "details": "Found 5 Streamlit components, 0 buttons"
         },
         {
           "test_name": "disciplines_functionality",
-          "status": "FAIL",
-          "error": "Page missing disciplines functionality"
+          "status": "PASS",
+          "details": "Page implements disciplines functionality"
         },
         {
           "test_name": "selectbox_functionality",
-          "status": "FAIL",
-          "error": "Page missing selectbox functionality"
+          "status": "PASS",
+          "details": "Page implements selectbox functionality"
         },
         {
           "test_name": "multiselect_functionality",
-          "status": "FAIL",
-          "error": "Page missing multiselect functionality"
+          "status": "PASS",
+          "details": "Page implements multiselect functionality"
         }
       ],
       "buttons_found": [],
-      "status": "FAIL",
-      "components_found": []
+      "status": "PASS",
+      "components_found": [
+        "st.selectbox",
+        "st.multiselect",
+        "st.expander",
+        "st.columns",
+        "st.progress"
+      ]
     },
     "\ud83d\udcd6 Standards Browser": {
       "page_name": "\ud83d\udcd6 Standards Browser",
@@ -93,7 +99,7 @@
         {
           "test_name": "\ud83d\udcd6 Standards Browser_components_analysis",
           "status": "PASS",
-          "details": "Found 0 Streamlit components, 0 buttons"
+          "details": "Found 5 Streamlit components, 2 buttons"
         },
         {
           "test_name": "standards_functionality",
@@ -107,13 +113,30 @@
         },
         {
           "test_name": "filtering_functionality",
-          "status": "FAIL",
-          "error": "Page missing filtering functionality"
+          "status": "PASS",
+          "details": "Page implements filtering functionality"
         }
       ],
-      "buttons_found": [],
-      "status": "FAIL",
-      "components_found": []
+      "buttons_found": [
+        {
+          "button_text": "\ud83d\udd04 Refresh Cache",
+          "line_number": 39,
+          "full_line": "if st.button(\"\ud83d\udd04 Refresh Cache\"):"
+        },
+        {
+          "button_text": "\ud83d\udce5 Download {standard_id}",
+          "line_number": 86,
+          "full_line": "if st.button(f\"\ud83d\udce5 Download {standard_id}\", key=f\"download_{standard_id}\"):"
+        }
+      ],
+      "status": "PASS",
+      "components_found": [
+        "st.button",
+        "st.selectbox",
+        "st.text_input",
+        "st.expander",
+        "st.columns"
+      ]
     },
     "\ud83e\udd16 Agent Monitor": {
       "page_name": "\ud83e\udd16 Agent Monitor",
@@ -126,7 +149,7 @@
         {
           "test_name": "\ud83e\udd16 Agent Monitor_components_analysis",
           "status": "PASS",
-          "details": "Found 0 Streamlit components, 0 buttons"
+          "details": "Found 5 Streamlit components, 3 buttons"
         },
         {
           "test_name": "agent_functionality",
@@ -140,13 +163,35 @@
         },
         {
           "test_name": "status_functionality",
-          "status": "FAIL",
-          "error": "Page missing status functionality"
+          "status": "PASS",
+          "details": "Page implements status functionality"
         }
       ],
-      "buttons_found": [],
-      "status": "FAIL",
-      "components_found": []
+      "buttons_found": [
+        {
+          "button_text": "\ud83d\udd04 Restart {agent_id}",
+          "line_number": 107,
+          "full_line": "if st.button(f\"\ud83d\udd04 Restart {agent_id}\", key=f\"restart_{agent_id}\"):"
+        },
+        {
+          "button_text": "\ud83d\udd04 Refresh Agent Cache",
+          "line_number": 124,
+          "full_line": "if st.button(\"\ud83d\udd04 Refresh Agent Cache\"):"
+        },
+        {
+          "button_text": "\ud83d\uddd1\ufe0f Clear All Cache",
+          "line_number": 130,
+          "full_line": "if st.button(\"\ud83d\uddd1\ufe0f Clear All Cache\"):"
+        }
+      ],
+      "status": "PASS",
+      "components_found": [
+        "st.button",
+        "st.selectbox",
+        "st.expander",
+        "st.columns",
+        "st.metric"
+      ]
     },
     "\ud83e\udde0 LLM Optimization": {
       "page_name": "\ud83e\udde0 LLM Optimization",
@@ -201,7 +246,7 @@
         {
           "test_name": "\ud83d\udd17 Data APIs_components_analysis",
           "status": "PASS",
-          "details": "Found 0 Streamlit components, 0 buttons"
+          "details": "Found 6 Streamlit components, 4 buttons"
         },
         {
           "test_name": "api_functionality",
@@ -215,13 +260,41 @@
         },
         {
           "test_name": "endpoints_functionality",
-          "status": "FAIL",
-          "error": "Page missing endpoints functionality"
+          "status": "PASS",
+          "details": "Page implements endpoints functionality"
         }
       ],
-      "buttons_found": [],
-      "status": "FAIL",
-      "components_found": []
+      "buttons_found": [
+        {
+          "button_text": "\ud83d\ude80 Test API Endpoint",
+          "line_number": 82,
+          "full_line": "if st.button(\"\ud83d\ude80 Test API Endpoint\"):"
+        },
+        {
+          "button_text": "\ud83d\udcca Export as CSV",
+          "line_number": 121,
+          "full_line": "if st.button(\"\ud83d\udcca Export as CSV\"):"
+        },
+        {
+          "button_text": "\ud83d\udccb Export as JSON",
+          "line_number": 131,
+          "full_line": "if st.button(\"\ud83d\udccb Export as JSON\"):"
+        },
+        {
+          "button_text": "\ud83d\udcdc Export as XML",
+          "line_number": 142,
+          "full_line": "if st.button(\"\ud83d\udcdc Export as XML\"):"
+        }
+      ],
+      "status": "PASS",
+      "components_found": [
+        "st.button",
+        "st.selectbox",
+        "st.text_input",
+        "st.expander",
+        "st.columns",
+        "st.metric"
+      ]
     },
     "\ud83d\udd04 Recovery Center": {
       "page_name": "\ud83d\udd04 Recovery Center",
@@ -278,6 +351,111 @@
     }
   },
   "button_tests": {
+    "\ud83d\udcd6 Standards Browser_\ud83d\udd04 Refresh Cache": {
+      "button_text": "\ud83d\udd04 Refresh Cache",
+      "page": "\ud83d\udcd6 Standards Browser",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udd04 Refresh Cache\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udcd6 Standards Browser_\ud83d\udce5 Download {standard_id}": {
+      "button_text": "\ud83d\udce5 Download {standard_id}",
+      "page": "\ud83d\udcd6 Standards Browser",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udce5 Download {standard_id}\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83e\udd16 Agent Monitor_\ud83d\udd04 Restart {agent_id}": {
+      "button_text": "\ud83d\udd04 Restart {agent_id}",
+      "page": "\ud83e\udd16 Agent Monitor",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udd04 Restart {agent_id}\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83e\udd16 Agent Monitor_\ud83d\udd04 Refresh Agent Cache": {
+      "button_text": "\ud83d\udd04 Refresh Agent Cache",
+      "page": "\ud83e\udd16 Agent Monitor",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udd04 Refresh Agent Cache\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83e\udd16 Agent Monitor_\ud83d\uddd1\ufe0f Clear All Cache": {
+      "button_text": "\ud83d\uddd1\ufe0f Clear All Cache",
+      "page": "\ud83e\udd16 Agent Monitor",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\uddd1\ufe0f Clear All Cache\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
     "\ud83e\udde0 LLM Optimization_\ud83e\uddea Test Router": {
       "button_text": "\ud83e\uddea Test Router",
       "page": "\ud83e\udde0 LLM Optimization",
@@ -286,6 +464,90 @@
           "test_name": "button_text_extraction",
           "status": "PASS",
           "details": "Button text \"\ud83e\uddea Test Router\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\ude80 Test API Endpoint": {
+      "button_text": "\ud83d\ude80 Test API Endpoint",
+      "page": "\ud83d\udd17 Data APIs",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\ude80 Test API Endpoint\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udcca Export as CSV": {
+      "button_text": "\ud83d\udcca Export as CSV",
+      "page": "\ud83d\udd17 Data APIs",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udcca Export as CSV\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udccb Export as JSON": {
+      "button_text": "\ud83d\udccb Export as JSON",
+      "page": "\ud83d\udd17 Data APIs",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udccb Export as JSON\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udcdc Export as XML": {
+      "button_text": "\ud83d\udcdc Export as XML",
+      "page": "\ud83d\udd17 Data APIs",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udcdc Export as XML\" extracted successfully"
         },
         {
           "test_name": "button_handler_exists",
@@ -366,9 +628,9 @@
   "summary": {
     "total_pages": 7,
     "tested_pages": 7,
-    "total_buttons": 4,
-    "tested_buttons": 4,
-    "passed_tests": 7,
-    "failed_tests": 4
+    "total_buttons": 13,
+    "tested_buttons": 13,
+    "passed_tests": 20,
+    "failed_tests": 0
   }
 }
