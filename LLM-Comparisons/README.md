@@ -33,15 +33,15 @@ The `GetAvailableModels.py` script **dynamically discovers models in real-time**
 ### Interactive Sortable Tables
 - **Sortable HTML table**: Click column headers to sort by context size, cost, or strengths
 - **Color-coded rows**: Green (local/free), yellow (budget), red (premium)
-- **Quick comparison**: Visual comparison of all 79 models in one table
+- **Quick comparison**: Visual comparison of all 82 models in one table (67 hosted + 15 local)
 - **Real-time filtering**: Easy identification of best models for specific needs
 
 ### Enhanced Local Model Support
-- **Automatic detection**: Scans for installed tools (llama-cpp-python, ctransformers, transformers)
-- **Local file scanning**: Finds existing model files in common cache directories
-- **Loader examples**: Complete code examples for each available inference tool
+- **Automatic detection**: Scans for installed Ollama models (15 models detected)
+- **Real-time discovery**: Dynamic detection of all installed local models via Ollama API
+- **Apple Silicon optimization**: All models optimized for M1/M2/M3 processors
 - **Installation status**: Real-time status of local model availability
-- **Download suggestions**: Direct links to recommended model downloads
+- **Zero-setup usage**: Models are immediately available via IntelligentLLMRouter
 
 ### Intelligent Router with Auto-Refresh
 - **Dynamic model awareness**: Automatically discovers and uses newly available models
@@ -205,7 +205,7 @@ router = IntelligentLLMRouter(auto_refresh=True)
 
 # Check available local models
 local_models = router.get_available_local_models()
-print(f"Available: {local_models}")  # ['llama3.1:8b', 'mistral:7b', 'codellama:7b', 'phi3:mini']
+print(f"Available: {len(local_models)} models")  # 15 models total: llama3.1:8b, mistral:7b, codellama:7b, etc.
 
 # Automatic routing for hosted models
 result = router.route_request("Explain quantum mechanics")
@@ -450,11 +450,12 @@ for model in models_to_test:
 python3 IntelligentLLMRouter.py
 
 # Expected output shows:
-# 🔍 Available Local Models via Ollama:
-#   ✅ phi3:mini
-#   ✅ codellama:7b  
-#   ✅ mistral:7b
-#   ✅ llama3.1:8b
+# 🔍 Available Local Models via Ollama: 15 models
+#   ✅ codellama:34b, qwen2.5-coder:32b, mixtral:8x7b
+#   ✅ deepseek-r1:32b, qwen2.5:32b, llama3.3:70b
+#   ✅ qwen2.5-coder:1.5b, gemma2:9b, qwen2.5:7b
+#   ✅ qwen2.5-coder:7b, deepseek-r1:8b, phi3:mini
+#   ✅ codellama:7b, mistral:7b, llama3.1:8b
 # 
 # 🧠 Intelligent LLM Router - Test Results
 # [Routing examples with actual Ollama queries]

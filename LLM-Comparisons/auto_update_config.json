@@ -2,15 +2,11 @@
   "auto_update_enabled": true,
   "check_interval_hours": 24,
   "auto_install_local_models": true,
-  "max_local_models": 10,
-  "preferred_model_sizes": [
-    "7b",
-    "8b",
-    "13b"
-  ],
+  "max_local_models": 20,
+  "preferred_model_sizes": "[\"7b\", \"8b\", \"13b\", \"32b\", \"70b\"]",
   "exclude_patterns": [
     "*:latest"
   ],
   "notification_email": null,
-  "last_check": "2025-07-30T15:20:35.993710"
+  "last_check": "2025-07-30T15:58:59.291430"
 }

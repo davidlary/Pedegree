@@ -169,8 +169,8 @@ class EnhancedModelInfoCollector:
         # Enhanced pricing information including local models (local = 0 cost)
         self.pricing_info = {
             'openai': {
-                # Current models with known pricing
-                'gpt-4o': {'input': 2.5, 'output': 10.0},
+                # Current models with corrected 2025 pricing
+                'gpt-4o': {'input': 5.0, 'output': 20.0},
                 'gpt-4o-mini': {'input': 0.15, 'output': 0.6},
                 'gpt-4-turbo': {'input': 10.0, 'output': 30.0},
                 'gpt-4': {'input': 30.0, 'output': 60.0},
@@ -184,9 +184,9 @@ class EnhancedModelInfoCollector:
                 'gpt-4-0125-preview': {'input': 10.0, 'output': 30.0},
                 'gpt-4-turbo-preview': {'input': 10.0, 'output': 30.0},
                 'gpt-4-turbo-2024-04-09': {'input': 10.0, 'output': 30.0},
-                'gpt-4o-2024-05-13': {'input': 2.5, 'output': 10.0},
-                'gpt-4o-2024-08-06': {'input': 2.5, 'output': 10.0},
-                'gpt-4o-2024-11-20': {'input': 2.5, 'output': 10.0},
+                'gpt-4o-2024-05-13': {'input': 5.0, 'output': 20.0},
+                'gpt-4o-2024-08-06': {'input': 5.0, 'output': 20.0},
+                'gpt-4o-2024-11-20': {'input': 5.0, 'output': 20.0},
                 'gpt-4o-mini-2024-07-18': {'input': 0.15, 'output': 0.6},
                 'gpt-3.5-turbo-0125': {'input': 0.5, 'output': 1.5},
                 'gpt-3.5-turbo-1106': {'input': 0.5, 'output': 1.5},
@@ -197,7 +197,7 @@ class EnhancedModelInfoCollector:
                 'o1-2024-12-17': {'input': 15.0, 'output': 60.0},
                 'o1-pro': {'input': 0.15, 'output': 0.60},
                 'o1-pro-2025-03-19': {'input': 0.15, 'output': 0.60},
-                'chatgpt-4o-latest': {'input': 2.5, 'output': 10.0},
+                'chatgpt-4o-latest': {'input': 5.0, 'output': 20.0},
                 # Realtime/Audio models (estimated pricing)
                 'gpt-4o-realtime-preview': {'input': 6.0, 'output': 24.0},
                 'gpt-4o-realtime-preview-2024-10-01': {'input': 6.0, 'output': 24.0},
@@ -237,19 +237,19 @@ class EnhancedModelInfoCollector:
             'xai': {
                 'grok-beta': {'input': 5.0, 'output': 15.0},
                 'grok-vision-beta': {'input': 5.0, 'output': 15.0},
-                'grok-4': {'input': 8.0, 'output': 20.0},
-                'grok-4-0709': {'input': 8.0, 'output': 20.0},
+                'grok-4': {'input': 3.0, 'output': 15.0},
+                'grok-4-0709': {'input': 3.0, 'output': 15.0},
                 'grok-2-1212': {'input': 2.0, 'output': 10.0},
                 'grok-2-vision-1212': {'input': 2.0, 'output': 10.0},
                 'grok-2-image-1212': {'input': 2.0, 'output': 10.0},
-                'grok-3': {'input': 12.0, 'output': 30.0},
-                'grok-3-fast': {'input': 8.0, 'output': 20.0},
+                'grok-3': {'input': 3.0, 'output': 15.0},
+                'grok-3-fast': {'input': 3.0, 'output': 15.0},
                 'grok-3-mini': {'input': 1.0, 'output': 4.0},
                 'grok-3-mini-fast': {'input': 0.5, 'output': 2.0}
             },
             'google': {
-                'gemini-2.5-pro': {'input': 2.5, 'output': 10.0},
-                'gemini-2.5-flash': {'input': 0.5, 'output': 2.0},
+                'gemini-2.5-pro': {'input': 4.0, 'output': 20.0},
+                'gemini-2.5-flash': {'input': 1.0, 'output': 5.0},
                 'gemini-pro': {'input': 1.0, 'output': 3.0},
                 'gemini-pro-vision': {'input': 1.5, 'output': 4.0}
             },
@@ -962,7 +962,7 @@ class EnhancedModelInfoCollector:
             # This is a simplified example - actual implementation would query their API
             litellm_pricing_map = {
                 'openai': {
-                    'gpt-4o': {'input': 2.5, 'output': 10.0},
+                    'gpt-4o': {'input': 5.0, 'output': 20.0},
                     'gpt-4o-mini': {'input': 0.15, 'output': 0.6},
                     'gpt-4-turbo': {'input': 10.0, 'output': 30.0},
                     'gpt-4': {'input': 30.0, 'output': 60.0},
@@ -2007,6 +2007,12 @@ This document provides comprehensive information about available AI models from 
         # Sort by input cost (local models first)
         all_models.sort(key=lambda x: (x['type'] != 'local', x['input_cost'] if isinstance(x['input_cost'], (int, float)) else float('inf')))
         
+        # Calculate summary statistics
+        total_models = len(all_models)
+        hosted_models = len([m for m in all_models if m['type'] == 'hosted'])
+        local_models = len([m for m in all_models if m['type'] == 'local'])
+        provider_count = len(self.models_data['providers'])
+        
         # Create HTML content
         html_content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -2038,6 +2044,13 @@ This document provides comprehensive information about available AI models from 
             color: #666;
             font-style: italic;
             margin-bottom: 20px;
+        }}
+        .summary {{
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+            border-radius: 5px;
         }}
         table {{
             width: 100%;
@@ -2113,8 +2126,15 @@ This document provides comprehensive information about available AI models from 
 </head>
 <body>
     <div class="container">
-        <h1>🤖 AI Models Comparison</h1>
+        <h1>🤖 AI Models Comparison - All Available Models</h1>
         <div class="updated">Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</div>
+        
+        <div class="summary">
+            <h3>📊 Complete Model Database: {total_models} Models</h3>
+            <p><strong>📡 Hosted Models:</strong> {hosted_models} (from {provider_count} providers)</p>
+            <p><strong>💻 Local Models:</strong> {local_models} (available for installation)</p>
+            <p><em>This table shows all known AI models including those requiring API keys or local installation.</em></p>
+        </div>
         
         <div class="legend">
             <strong>Color Legend:</strong>
@@ -2141,18 +2161,22 @@ This document provides comprehensive information about available AI models from 
 
         # Add table rows
         for model in all_models:
-            # Determine row class based on cost
+            # Convert costs from per-1M to per-1K tokens for display
+            input_cost_per_1k = model['input_cost'] / 1000 if isinstance(model['input_cost'], (int, float)) else 0
+            output_cost_per_1k = model['output_cost'] / 1000 if isinstance(model['output_cost'], (int, float)) else 0
+            
+            # Determine row class based on cost (now correctly per-1K)
             if model['type'] == 'local':
                 row_class = 'local'
-            elif isinstance(model['input_cost'], (int, float)) and model['input_cost'] < 1.0:
+            elif input_cost_per_1k < 1.0:
                 row_class = 'budget'
-            elif isinstance(model['input_cost'], (int, float)) and model['input_cost'] > 5.0:
+            elif input_cost_per_1k > 5.0:
                 row_class = 'premium'
             else:
                 row_class = ''
             
-            input_cost = f"${model['input_cost']:,.2f}" if isinstance(model['input_cost'], (int, float)) and model['input_cost'] > 0 else "$0.00"
-            output_cost = f"${model['output_cost']:,.2f}" if isinstance(model['output_cost'], (int, float)) and model['output_cost'] > 0 else "$0.00"
+            input_cost = f"${input_cost_per_1k:.3f}" if input_cost_per_1k > 0 else "$0.000"
+            output_cost = f"${output_cost_per_1k:.3f}" if output_cost_per_1k > 0 else "$0.000"
             context_window = f"{model['context_window']:,}" if isinstance(model['context_window'], int) else str(model['context_window'])
             
             # Format capabilities
@@ -2595,18 +2619,27 @@ if __name__ == "__main__":
         # Add only installed local models
         available_local_count = 0
         for model_id, model_data in self.models_data['local_models'].items():
-            # Map local model IDs to Ollama model names
-            ollama_mappings = {
-                'llama-3-8b': 'llama3.1:8b',
-                'mistral-7b': 'mistral:7b', 
-                'code-llama-7b': 'codellama:7b',
-                'phi-3-mini': 'phi3:mini'
-            }
-            
-            ollama_name = ollama_mappings.get(model_id)
+            # Check if this model has an ollama_name field that matches installed models
+            ollama_name = model_data.get('ollama_name')
             if ollama_name and ollama_name in installed_local_models:
                 current_data['local_models'][model_id] = model_data
                 available_local_count += 1
+                continue
+            
+            # Fallback: Try to match by name patterns
+            model_name_variations = [
+                model_id.replace('-', ':'),
+                model_id.replace('-', ''),
+                model_id.replace('_', ':'),
+                model_id.replace('_', ''),
+                model_id + ':latest'
+            ]
+            
+            for variation in model_name_variations:
+                if variation in installed_local_models:
+                    current_data['local_models'][model_id] = model_data
+                    available_local_count += 1
+                    break
         
         # Save current models JSON
         with open('available_models_current.json', 'w') as f:
@@ -2911,8 +2944,8 @@ print(f"Recommended: {{result['recommended_model']}}")
                 <tr>
                     <th onclick="sortTable(0)" style="cursor: pointer;">Model ID ↕️</th>
                     <th onclick="sortTable(1)" style="cursor: pointer;">Provider ↕️</th>
-                    <th onclick="sortTable(2)" style="cursor: pointer;">Input Cost ↕️</th>
-                    <th onclick="sortTable(3)" style="cursor: pointer;">Output Cost ↕️</th>
+                    <th onclick="sortTable(2)" style="cursor: pointer;">Input Cost (per 1K tokens) ↕️</th>
+                    <th onclick="sortTable(3)" style="cursor: pointer;">Output Cost (per 1K tokens) ↕️</th>
                     <th onclick="sortTable(4)" style="cursor: pointer;">Context Window ↕️</th>
                     <th onclick="sortTable(5)" style="cursor: pointer;">Release Date ↕️</th>
                     <th onclick="sortTable(6)" style="cursor: pointer;">Strengths ↕️</th>
@@ -2963,10 +2996,14 @@ print(f"Recommended: {{result['recommended_model']}}")
                 strengths = model_data.get('strengths', 'General purpose model')
                 capabilities = model_data.get('capabilities', {})
                 
-                # Determine row class based on cost
-                if input_cost <= 1.0:
+                # Convert cost from per-1M to per-1K for classification
+                input_cost_per_1k = input_cost / 1000 if input_cost > 0 else 0
+                output_cost_per_1k = output_cost / 1000 if output_cost > 0 else 0
+                
+                # Determine row class based on cost (per-1K)
+                if input_cost_per_1k <= 1.0:
                     row_class = "budget-row"
-                elif input_cost > 5.0:
+                elif input_cost_per_1k > 5.0:
                     row_class = "premium-row"
                 else:
                     row_class = ""
@@ -2991,8 +3028,8 @@ print(f"Recommended: {{result['recommended_model']}}")
                     f'<tr class="{row_class}">',
                     f'<td class="model-name">{model_id}</td>',
                     f'<td class="provider">{provider.upper()}</td>',
-                    f'<td class="cost">${input_cost:.3f}</td>',
-                    f'<td class="cost">${output_cost:.3f}</td>',
+                    f'<td class="cost">${input_cost_per_1k:.3f}</td>',
+                    f'<td class="cost">${output_cost_per_1k:.3f}</td>',
                     f'<td class="context">{context_display}</td>',
                     f'<td class="release-date">{release_date}</td>',
                     f'<td class="strengths">{strengths}</td>',

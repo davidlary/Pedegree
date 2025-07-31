@@ -1,6 +1,6 @@
 # Available AI Models - Complete Guide
 
-*Last updated: 2025-07-30T15:20:47.488012*
+*Last updated: 2025-07-31T08:17:56.002103*
 
 This document provides comprehensive information about available AI models from OpenAI, Anthropic, xAI, Google, and local LLMs, including pricing, capabilities, technical specifications, and intelligent routing recommendations.
 
@@ -131,16 +131,16 @@ This document provides comprehensive information about available AI models from 
 ### gpt-4o
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $5.000 input, $20.000 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-05-10
 
 ### gpt-4o-2024-05-13
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $5.000 input, $20.000 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-05-10
 
@@ -163,16 +163,16 @@ This document provides comprehensive information about available AI models from 
 ### gpt-4o-2024-08-06
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $5.000 input, $20.000 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-08-04
 
 ### chatgpt-4o-latest
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $5.000 input, $20.000 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2024-08-12
 
@@ -291,8 +291,8 @@ This document provides comprehensive information about available AI models from 
 ### gpt-4o-2024-11-20
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $5.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $5.000 input, $20.000 output
 - **Strengths**: Latest multimodal model, excellent for complex reasoning
 - **Release Date**: 2025-02-11
 
@@ -503,16 +503,16 @@ This document provides comprehensive information about available AI models from 
 ### grok-3
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $12.0/1K input tokens, $30.0/1K output tokens
-- **Cost per 1K tokens**: $12.000 input, $30.000 output
+- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
+- **Cost per 1K tokens**: $3.000 input, $15.000 output
 - **Strengths**: Advanced reasoning capabilities
 - **Release Date**: 2025-04-03
 
 ### grok-3-fast
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $8.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $8.000 input, $20.000 output
+- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
+- **Cost per 1K tokens**: $3.000 input, $15.000 output
 - **Strengths**: Optimized for speed and quick responses
 - **Release Date**: 2025-04-03
 
@@ -535,8 +535,8 @@ This document provides comprehensive information about available AI models from 
 ### grok-4-0709
 
 - **Context Window**: 128,000 tokens
-- **Pricing**: $8.0/1K input tokens, $20.0/1K output tokens
-- **Cost per 1K tokens**: $8.000 input, $20.000 output
+- **Pricing**: $3.0/1K input tokens, $15.0/1K output tokens
+- **Cost per 1K tokens**: $3.000 input, $15.000 output
 - **Strengths**: Stem and science focused, strong reasoning
 - **Release Date**: 2025-07-08
 
@@ -553,16 +553,16 @@ This document provides comprehensive information about available AI models from 
 ### gemini-2.5-pro
 
 - **Context Window**: 1,000,000 tokens
-- **Pricing**: $2.5/1K input tokens, $10.0/1K output tokens
-- **Cost per 1K tokens**: $2.500 input, $10.000 output
+- **Pricing**: $4.0/1K input tokens, $20.0/1K output tokens
+- **Cost per 1K tokens**: $4.000 input, $20.000 output
 - **Strengths**: Long context up to 1m+ tokens, multimodal, grounded responses
 - **Release Date**: 2024-12-11
 
 ### gemini-2.5-flash
 
 - **Context Window**: 1,000,000 tokens
-- **Pricing**: $0.5/1K input tokens, $2.0/1K output tokens
-- **Cost per 1K tokens**: $0.500 input, $2.000 output
+- **Pricing**: $1.0/1K input tokens, $5.0/1K output tokens
+- **Cost per 1K tokens**: $1.000 input, $5.000 output
 - **Strengths**: Fast version optimized for speed
 - **Release Date**: 2024-12-11
 
@@ -583,6 +583,127 @@ This document provides comprehensive information about available AI models from 
 - **Release Date**: 2023-12-06
 
 ## LOCAL MODELS (Apple Silicon Optimized)
+
+### codellama-34b
+
+- **Size**: 17.74360340554267 GB
+- **Speed Rating**: ⭐⭐⭐ (3/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~21.3 GB
+- **Strengths**: Reliable general-purpose model optimized for Apple Silicon
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### qwen2-5-coder-32b
+
+- **Size**: 18.488010296598077 GB
+- **Speed Rating**: ⭐⭐⭐ (3/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~22.2 GB
+- **Strengths**: Specialized for code generation and programming tasks
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### mixtral-8x7b
+
+- **Size**: 24.627523977309465 GB
+- **Speed Rating**: ⭐⭐ (2/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~29.6 GB
+- **Strengths**: General-purpose language model
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### deepseek-r1-32b
+
+- **Size**: 18.487999037839472 GB
+- **Speed Rating**: ⭐⭐⭐ (3/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 131,072 tokens
+- **RAM Usage**: ~22.2 GB
+- **Strengths**: Advanced reasoning and chain-of-thought capabilities
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2025-01-20
+
+### qwen2-5-32b
+
+- **Size**: 18.488010083325207 GB
+- **Speed Rating**: ⭐⭐⭐ (3/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~22.2 GB
+- **Strengths**: General-purpose language model
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### llama3-3-70b
+
+- **Size**: 39.60022136196494 GB
+- **Speed Rating**: ⭐⭐ (2/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~47.5 GB
+- **Strengths**: Reliable general-purpose model optimized for Apple Silicon
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### qwen2-5-coder-1-5b
+
+- **Size**: 0.9183418834581971 GB
+- **Speed Rating**: ⭐⭐⭐⭐⭐ (5/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~1.1 GB
+- **Strengths**: Specialized for code generation and programming tasks
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### gemma2-9b
+
+- **Size**: 5.069330723024905 GB
+- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~6.1 GB
+- **Strengths**: Google's safe and efficient language model
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### qwen2-5-7b
+
+- **Size**: 4.361464951187372 GB
+- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~5.2 GB
+- **Strengths**: General-purpose language model
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### qwen2-5-coder-7b
+
+- **Size**: 4.361465164460242 GB
+- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 32,768 tokens
+- **RAM Usage**: ~5.2 GB
+- **Strengths**: Specialized for code generation and programming tasks
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2024-01-01
+
+### deepseek-r1-8b
+
+- **Size**: 4.866510673426092 GB
+- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
+- **Format**: GGUF (Q4_K_M)
+- **Context Window**: 131,072 tokens
+- **RAM Usage**: ~5.8 GB
+- **Strengths**: Advanced reasoning and chain-of-thought capabilities
+- **API Cost**: $0.00 (local inference only)
+- **Release Date**: 2025-01-20
 
 ### phi3-mini
 
@@ -628,28 +749,6 @@ This document provides comprehensive information about available AI models from 
 - **API Cost**: $0.00 (local inference only)
 - **Release Date**: 2024-01-01
 
-### llama3-3-70b
-
-- **Size**: 43.0 GB
-- **Speed Rating**: ⭐⭐ (2/5)
-- **Format**: GGUF (Q4_K_M)
-- **Context Window**: 32,768 tokens
-- **RAM Usage**: ~51.6 GB
-- **Strengths**: Reliable general-purpose model optimized for Apple Silicon; GPT-4 class performance
-- **API Cost**: $0.00 (local inference only)
-- **Release Date**: 2024-01-01
-
-### deepseek-r1-8b
-
-- **Size**: 5.0 GB
-- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
-- **Format**: GGUF (Q4_K_M)
-- **Context Window**: 131,072 tokens
-- **RAM Usage**: ~6.0 GB
-- **Strengths**: Advanced reasoning and chain-of-thought capabilities; Advanced reasoning model
-- **API Cost**: $0.00 (local inference only)
-- **Release Date**: 2025-01-20
-
 ### qwen3-8b
 
 - **Size**: 5.2 GB
@@ -660,17 +759,6 @@ This document provides comprehensive information about available AI models from 
 - **Strengths**: Latest generation multilingual model with excellent performance; Latest Qwen generation
 - **API Cost**: $0.00 (local inference only)
 - **Release Date**: 2025-01-20
-
-### qwen2-5-coder-7b
-
-- **Size**: 4.7 GB
-- **Speed Rating**: ⭐⭐⭐⭐ (4/5)
-- **Format**: GGUF (Q4_K_M)
-- **Context Window**: 32,768 tokens
-- **RAM Usage**: ~5.6 GB
-- **Strengths**: Specialized for code generation and programming tasks; Specialized coding model
-- **API Cost**: $0.00 (local inference only)
-- **Release Date**: 2024-01-01
 
 ### qwen2-5vl-7b
 
@@ -923,14 +1011,22 @@ This document provides comprehensive information about available AI models from 
 
 | Model | Provider | Type | Input Cost | Output Cost | Context Window |
 |-------|----------|------|------------|-------------|----------------|
+| codellama-34b | local | local | $0.00 | $0.00 | 32,768 |
+| qwen2-5-coder-32b | local | local | $0.00 | $0.00 | 32,768 |
+| mixtral-8x7b | local | local | $0.00 | $0.00 | 32,768 |
+| deepseek-r1-32b | local | local | $0.00 | $0.00 | 131,072 |
+| qwen2-5-32b | local | local | $0.00 | $0.00 | 32,768 |
+| llama3-3-70b | local | local | $0.00 | $0.00 | 32,768 |
+| qwen2-5-coder-1-5b | local | local | $0.00 | $0.00 | 32,768 |
+| gemma2-9b | local | local | $0.00 | $0.00 | 32,768 |
+| qwen2-5-7b | local | local | $0.00 | $0.00 | 32,768 |
+| qwen2-5-coder-7b | local | local | $0.00 | $0.00 | 32,768 |
+| deepseek-r1-8b | local | local | $0.00 | $0.00 | 131,072 |
 | phi3-mini | local | local | $0.00 | $0.00 | 32,768 |
 | codellama-7b | local | local | $0.00 | $0.00 | 32,768 |
 | mistral-7b | local | local | $0.00 | $0.00 | 32,768 |
 | llama3-1-8b | local | local | $0.00 | $0.00 | 32,768 |
-| llama3-3-70b | local | local | $0.00 | $0.00 | 32,768 |
-| deepseek-r1-8b | local | local | $0.00 | $0.00 | 131,072 |
 | qwen3-8b | local | local | $0.00 | $0.00 | 131,072 |
-| qwen2-5-coder-7b | local | local | $0.00 | $0.00 | 32,768 |
 | qwen2-5vl-7b | local | local | $0.00 | $0.00 | 65,536 |
 | llama-3.3-70b | local | local | $0.00 | $0.00 | 131,072 |
 | deepseek-r1-7b | local | local | $0.00 | $0.00 | 65,536 |
@@ -971,12 +1067,12 @@ This document provides comprehensive information about available AI models from 
 | gpt-3.5-turbo-1106 | openai | hosted | $0.50 | $1.50 | 16,385 |
 | gpt-3.5-turbo-0125 | openai | hosted | $0.50 | $1.50 | 16,385 |
 | grok-3-mini-fast | xai | hosted | $0.50 | $2.00 | 128,000 |
-| gemini-2.5-flash | google | hosted | $0.50 | $2.00 | 1,000,000 |
 | gpt-4o-mini-realtime-preview-2024-12-17 | openai | hosted | $0.60 | $2.40 | 128,000 |
 | gpt-4o-mini-audio-preview-2024-12-17 | openai | hosted | $0.60 | $2.40 | 128,000 |
 | gpt-4o-mini-realtime-preview | openai | hosted | $0.60 | $2.40 | 128,000 |
 | gpt-4o-mini-audio-preview | openai | hosted | $0.60 | $2.40 | 128,000 |
 | grok-3-mini | xai | hosted | $1.00 | $4.00 | 128,000 |
+| gemini-2.5-flash | google | hosted | $1.00 | $5.00 | 1,000,000 |
 | gemini-pro | google | hosted | $1.00 | $3.00 | 128,000 |
 | gpt-3.5-turbo-instruct | openai | hosted | $1.50 | $2.00 | 16,385 |
 | gpt-3.5-turbo-instruct-0914 | openai | hosted | $1.50 | $2.00 | 16,385 |
@@ -985,12 +1081,6 @@ This document provides comprehensive information about available AI models from 
 | grok-2-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
 | grok-2-vision-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
 | grok-2-image-1212 | xai | hosted | $2.00 | $10.00 | 128,000 |
-| gpt-4o | openai | hosted | $2.50 | $10.00 | 128,000 |
-| gpt-4o-2024-05-13 | openai | hosted | $2.50 | $10.00 | 128,000 |
-| gpt-4o-2024-08-06 | openai | hosted | $2.50 | $10.00 | 128,000 |
-| chatgpt-4o-latest | openai | hosted | $2.50 | $10.00 | 128,000 |
-| gpt-4o-2024-11-20 | openai | hosted | $2.50 | $10.00 | 128,000 |
-| gemini-2.5-pro | google | hosted | $2.50 | $10.00 | 1,000,000 |
 | o1-mini-2024-09-12 | openai | hosted | $3.00 | $12.00 | 200,000 |
 | o1-mini | openai | hosted | $3.00 | $12.00 | 200,000 |
 | gpt-4o-search-preview-2025-03-11 | openai | hosted | $3.00 | $12.00 | 128,000 |
@@ -998,6 +1088,15 @@ This document provides comprehensive information about available AI models from 
 | gpt-3.5-turbo-16k | openai | hosted | $3.00 | $4.00 | 16,384 |
 | claude-3-5-sonnet-20241022 | anthropic | hosted | $3.00 | $15.00 | 200,000 |
 | claude-3-5-sonnet-20240620 | anthropic | hosted | $3.00 | $15.00 | 200,000 |
+| grok-3 | xai | hosted | $3.00 | $15.00 | 128,000 |
+| grok-3-fast | xai | hosted | $3.00 | $15.00 | 128,000 |
+| grok-4-0709 | xai | hosted | $3.00 | $15.00 | 128,000 |
+| gemini-2.5-pro | google | hosted | $4.00 | $20.00 | 1,000,000 |
+| gpt-4o | openai | hosted | $5.00 | $20.00 | 128,000 |
+| gpt-4o-2024-05-13 | openai | hosted | $5.00 | $20.00 | 128,000 |
+| gpt-4o-2024-08-06 | openai | hosted | $5.00 | $20.00 | 128,000 |
+| chatgpt-4o-latest | openai | hosted | $5.00 | $20.00 | 128,000 |
+| gpt-4o-2024-11-20 | openai | hosted | $5.00 | $20.00 | 128,000 |
 | gpt-4o-realtime-preview-2025-06-03 | openai | hosted | $6.00 | $24.00 | 128,000 |
 | gpt-4o-audio-preview-2025-06-03 | openai | hosted | $6.00 | $24.00 | 128,000 |
 | gpt-4o-realtime-preview-2024-10-01 | openai | hosted | $6.00 | $24.00 | 128,000 |
@@ -1006,14 +1105,11 @@ This document provides comprehensive information about available AI models from 
 | gpt-4o-realtime-preview | openai | hosted | $6.00 | $24.00 | 128,000 |
 | gpt-4o-realtime-preview-2024-12-17 | openai | hosted | $6.00 | $24.00 | 128,000 |
 | gpt-4o-audio-preview-2024-12-17 | openai | hosted | $6.00 | $24.00 | 128,000 |
-| grok-3-fast | xai | hosted | $8.00 | $20.00 | 128,000 |
-| grok-4-0709 | xai | hosted | $8.00 | $20.00 | 128,000 |
 | gpt-4-1106-preview | openai | hosted | $10.00 | $30.00 | 8,192 |
 | gpt-4-0125-preview | openai | hosted | $10.00 | $30.00 | 8,192 |
 | gpt-4-turbo-preview | openai | hosted | $10.00 | $30.00 | 128,000 |
 | gpt-4-turbo | openai | hosted | $10.00 | $30.00 | 128,000 |
 | gpt-4-turbo-2024-04-09 | openai | hosted | $10.00 | $30.00 | 128,000 |
-| grok-3 | xai | hosted | $12.00 | $30.00 | 128,000 |
 | o1-2024-12-17 | openai | hosted | $15.00 | $60.00 | 200,000 |
 | o1 | openai | hosted | $15.00 | $60.00 | 200,000 |
 | gpt-4.1-2025-04-14 | openai | hosted | $15.00 | $45.00 | 8,192 |

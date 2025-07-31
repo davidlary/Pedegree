@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-30T15:20:47.488012",
+  "last_updated": "2025-07-31T08:17:56.002103",
   "providers": {
     "openai": {
       "gpt-4-0613": {
@@ -26,7 +26,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.399971",
+        "last_price_check": "2025-07-31T08:17:57.336718",
         "created": 1686588896,
         "owned_by": "openai"
       },
@@ -54,7 +54,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.399995",
+        "last_price_check": "2025-07-31T08:17:57.336800",
         "created": 1687882411,
         "owned_by": "openai"
       },
@@ -82,7 +82,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400011",
+        "last_price_check": "2025-07-31T08:17:57.336835",
         "created": 1677610602,
         "owned_by": "openai"
       },
@@ -110,7 +110,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400027",
+        "last_price_check": "2025-07-31T08:17:57.336868",
         "created": 1748907838,
         "owned_by": "system"
       },
@@ -138,7 +138,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400039",
+        "last_price_check": "2025-07-31T08:17:57.336892",
         "created": 1748908498,
         "owned_by": "system"
       },
@@ -166,7 +166,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400053",
+        "last_price_check": "2025-07-31T08:17:57.336918",
         "created": 1692901427,
         "owned_by": "system"
       },
@@ -194,7 +194,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400065",
+        "last_price_check": "2025-07-31T08:17:57.336948",
         "created": 1694122472,
         "owned_by": "system"
       },
@@ -222,7 +222,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400079",
+        "last_price_check": "2025-07-31T08:17:57.336981",
         "created": 1698957206,
         "owned_by": "system"
       },
@@ -250,7 +250,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400090",
+        "last_price_check": "2025-07-31T08:17:57.337005",
         "created": 1698959748,
         "owned_by": "system"
       },
@@ -278,7 +278,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400102",
+        "last_price_check": "2025-07-31T08:17:57.337030",
         "created": 1706037612,
         "owned_by": "system"
       },
@@ -306,7 +306,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400113",
+        "last_price_check": "2025-07-31T08:17:57.337065",
         "created": 1706037777,
         "owned_by": "system"
       },
@@ -334,7 +334,7 @@
           "output": 1500.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400124",
+        "last_price_check": "2025-07-31T08:17:57.337089",
         "created": 1706048358,
         "owned_by": "system"
       },
@@ -362,7 +362,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400136",
+        "last_price_check": "2025-07-31T08:17:57.337111",
         "created": 1712361441,
         "owned_by": "system"
       },
@@ -390,7 +390,7 @@
           "output": 30000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400146",
+        "last_price_check": "2025-07-31T08:17:57.337138",
         "created": 1712601677,
         "owned_by": "system"
       },
@@ -398,8 +398,8 @@
         "id": "gpt-4o",
         "provider": "openai",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 5.0,
+          "output": 20.0
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -414,11 +414,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 5000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400158",
+        "last_price_check": "2025-07-31T08:17:57.337159",
         "created": 1715367049,
         "owned_by": "system"
       },
@@ -426,8 +426,8 @@
         "id": "gpt-4o-2024-05-13",
         "provider": "openai",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 5.0,
+          "output": 20.0
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -442,11 +442,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 5000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400168",
+        "last_price_check": "2025-07-31T08:17:57.337286",
         "created": 1715368132,
         "owned_by": "system"
       },
@@ -474,7 +474,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400180",
+        "last_price_check": "2025-07-31T08:17:57.337335",
         "created": 1721172717,
         "owned_by": "system"
       },
@@ -502,7 +502,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400190",
+        "last_price_check": "2025-07-31T08:17:57.337361",
         "created": 1721172741,
         "owned_by": "system"
       },
@@ -510,8 +510,8 @@
         "id": "gpt-4o-2024-08-06",
         "provider": "openai",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 5.0,
+          "output": 20.0
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -526,11 +526,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 5000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400201",
+        "last_price_check": "2025-07-31T08:17:57.337384",
         "created": 1722814719,
         "owned_by": "system"
       },
@@ -538,8 +538,8 @@
         "id": "chatgpt-4o-latest",
         "provider": "openai",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 5.0,
+          "output": 20.0
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -554,11 +554,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 5000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400212",
+        "last_price_check": "2025-07-31T08:17:57.337409",
         "created": 1723515131,
         "owned_by": "system"
       },
@@ -586,7 +586,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400224",
+        "last_price_check": "2025-07-31T08:17:57.337436",
         "created": 1725648979,
         "owned_by": "system"
       },
@@ -614,7 +614,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400236",
+        "last_price_check": "2025-07-31T08:17:57.337461",
         "created": 1725649008,
         "owned_by": "system"
       },
@@ -642,7 +642,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400247",
+        "last_price_check": "2025-07-31T08:17:57.337486",
         "created": 1727131766,
         "owned_by": "system"
       },
@@ -670,7 +670,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400258",
+        "last_price_check": "2025-07-31T08:17:57.337509",
         "created": 1727389042,
         "owned_by": "system"
       },
@@ -698,7 +698,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400269",
+        "last_price_check": "2025-07-31T08:17:57.337532",
         "created": 1727460443,
         "owned_by": "system"
       },
@@ -726,7 +726,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400280",
+        "last_price_check": "2025-07-31T08:17:57.337554",
         "created": 1727659998,
         "owned_by": "system"
       },
@@ -754,7 +754,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400292",
+        "last_price_check": "2025-07-31T08:17:57.337578",
         "created": 1733945430,
         "owned_by": "system"
       },
@@ -782,7 +782,7 @@
           "output": 24000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400302",
+        "last_price_check": "2025-07-31T08:17:57.337600",
         "created": 1734034239,
         "owned_by": "system"
       },
@@ -810,7 +810,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400314",
+        "last_price_check": "2025-07-31T08:17:57.337622",
         "created": 1734112601,
         "owned_by": "system"
       },
@@ -838,7 +838,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400325",
+        "last_price_check": "2025-07-31T08:17:57.337645",
         "created": 1734115920,
         "owned_by": "system"
       },
@@ -866,7 +866,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400340",
+        "last_price_check": "2025-07-31T08:17:57.337669",
         "created": 1734326976,
         "owned_by": "system"
       },
@@ -894,7 +894,7 @@
           "output": 60000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400352",
+        "last_price_check": "2025-07-31T08:17:57.337691",
         "created": 1734375816,
         "owned_by": "system"
       },
@@ -922,7 +922,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400363",
+        "last_price_check": "2025-07-31T08:17:57.337725",
         "created": 1734387380,
         "owned_by": "system"
       },
@@ -950,7 +950,7 @@
           "output": 2400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400373",
+        "last_price_check": "2025-07-31T08:17:57.337748",
         "created": 1734387424,
         "owned_by": "system"
       },
@@ -958,8 +958,8 @@
         "id": "gpt-4o-2024-11-20",
         "provider": "openai",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 5.0,
+          "output": 20.0
         },
         "context_window": 128000,
         "strengths": "Latest multimodal model, excellent for complex reasoning",
@@ -974,11 +974,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 5000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400385",
+        "last_price_check": "2025-07-31T08:17:57.337773",
         "created": 1739331543,
         "owned_by": "system"
       },
@@ -1006,7 +1006,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400397",
+        "last_price_check": "2025-07-31T08:17:57.337796",
         "created": 1741388170,
         "owned_by": "system"
       },
@@ -1034,7 +1034,7 @@
           "output": 12000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400409",
+        "last_price_check": "2025-07-31T08:17:57.337817",
         "created": 1741388720,
         "owned_by": "system"
       },
@@ -1062,7 +1062,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400421",
+        "last_price_check": "2025-07-31T08:17:57.337846",
         "created": 1741390858,
         "owned_by": "system"
       },
@@ -1090,7 +1090,7 @@
           "output": 800.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400432",
+        "last_price_check": "2025-07-31T08:17:57.337885",
         "created": 1741391161,
         "owned_by": "system"
       },
@@ -1118,7 +1118,7 @@
           "output": 8000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400444",
+        "last_price_check": "2025-07-31T08:17:57.337908",
         "created": 1742068463,
         "owned_by": "system"
       },
@@ -1146,7 +1146,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400456",
+        "last_price_check": "2025-07-31T08:17:57.337929",
         "created": 1742068596,
         "owned_by": "system"
       },
@@ -1174,7 +1174,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400467",
+        "last_price_check": "2025-07-31T08:17:57.337952",
         "created": 1742251504,
         "owned_by": "system"
       },
@@ -1202,7 +1202,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400478",
+        "last_price_check": "2025-07-31T08:17:57.337975",
         "created": 1742251791,
         "owned_by": "system"
       },
@@ -1230,7 +1230,7 @@
           "output": 600.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400490",
+        "last_price_check": "2025-07-31T08:17:57.337997",
         "created": 1742403959,
         "owned_by": "system"
       },
@@ -1258,7 +1258,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400503",
+        "last_price_check": "2025-07-31T08:17:57.338019",
         "created": 1744315746,
         "owned_by": "system"
       },
@@ -1286,7 +1286,7 @@
           "output": 45000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400514",
+        "last_price_check": "2025-07-31T08:17:57.338040",
         "created": 1744316542,
         "owned_by": "system"
       },
@@ -1314,7 +1314,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400527",
+        "last_price_check": "2025-07-31T08:17:57.338063",
         "created": 1744317547,
         "owned_by": "system"
       },
@@ -1342,7 +1342,7 @@
           "output": 1200.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400538",
+        "last_price_check": "2025-07-31T08:17:57.338083",
         "created": 1744318173,
         "owned_by": "system"
       },
@@ -1370,7 +1370,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400548",
+        "last_price_check": "2025-07-31T08:17:57.338104",
         "created": 1744321025,
         "owned_by": "system"
       },
@@ -1398,7 +1398,7 @@
           "output": 400.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400559",
+        "last_price_check": "2025-07-31T08:17:57.338231",
         "created": 1744321707,
         "owned_by": "system"
       },
@@ -1426,7 +1426,7 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.400570",
+        "last_price_check": "2025-07-31T08:17:57.338269",
         "created": 1683758102,
         "owned_by": "openai-internal"
       }
@@ -1456,7 +1456,7 @@
           "output": 0.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:48.858091",
+        "last_price_check": "2025-07-31T08:17:57.605289",
         "created": null,
         "owned_by": null
       },
@@ -1484,7 +1484,7 @@
           "output": 0.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.047957",
+        "last_price_check": "2025-07-31T08:17:57.785030",
         "created": null,
         "owned_by": null
       },
@@ -1512,7 +1512,7 @@
           "output": 0.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.262135",
+        "last_price_check": "2025-07-31T08:17:58.034639",
         "created": null,
         "owned_by": null
       },
@@ -1540,7 +1540,7 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.262167",
+        "last_price_check": "2025-07-31T08:17:58.034669",
         "created": null,
         "owned_by": null
       },
@@ -1568,7 +1568,7 @@
           "output": 0.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.551961",
+        "last_price_check": "2025-07-31T08:17:58.252334",
         "created": null,
         "owned_by": null
       },
@@ -1596,7 +1596,7 @@
           "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.551990",
+        "last_price_check": "2025-07-31T08:17:58.252388",
         "created": null,
         "owned_by": null
       },
@@ -1624,7 +1624,7 @@
           "output": 1250.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.552005",
+        "last_price_check": "2025-07-31T08:17:58.252417",
         "created": null,
         "owned_by": null
       },
@@ -1652,7 +1652,7 @@
           "output": 75000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.552017",
+        "last_price_check": "2025-07-31T08:17:58.252442",
         "created": null,
         "owned_by": null
       }
@@ -1682,7 +1682,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733456",
+        "last_price_check": "2025-07-31T08:17:58.380428",
         "created": 1737331200,
         "owned_by": "xai"
       },
@@ -1710,7 +1710,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733492",
+        "last_price_check": "2025-07-31T08:17:58.380476",
         "created": 1733961600,
         "owned_by": "xai"
       },
@@ -1718,8 +1718,8 @@
         "id": "grok-3",
         "provider": "xai",
         "pricing": {
-          "input": 12.0,
-          "output": 30.0
+          "input": 3.0,
+          "output": 15.0
         },
         "context_window": 128000,
         "strengths": "Advanced reasoning capabilities",
@@ -1734,11 +1734,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 12000.0,
-          "output": 30000.0
+          "input": 3000.0,
+          "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733510",
+        "last_price_check": "2025-07-31T08:17:58.380503",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1746,8 +1746,8 @@
         "id": "grok-3-fast",
         "provider": "xai",
         "pricing": {
-          "input": 8.0,
-          "output": 20.0
+          "input": 3.0,
+          "output": 15.0
         },
         "context_window": 128000,
         "strengths": "Optimized for speed and quick responses",
@@ -1762,11 +1762,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 8000.0,
-          "output": 20000.0
+          "input": 3000.0,
+          "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733525",
+        "last_price_check": "2025-07-31T08:17:58.380528",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1794,7 +1794,7 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733537",
+        "last_price_check": "2025-07-31T08:17:58.380552",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1822,7 +1822,7 @@
           "output": 2000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733550",
+        "last_price_check": "2025-07-31T08:17:58.380578",
         "created": 1743724800,
         "owned_by": "xai"
       },
@@ -1830,8 +1830,8 @@
         "id": "grok-4-0709",
         "provider": "xai",
         "pricing": {
-          "input": 8.0,
-          "output": 20.0
+          "input": 3.0,
+          "output": 15.0
         },
         "context_window": 128000,
         "strengths": "Stem and science focused, strong reasoning",
@@ -1846,11 +1846,11 @@
           "coding": true
         },
         "cost_per_1m_tokens": {
-          "input": 8000.0,
-          "output": 20000.0
+          "input": 3000.0,
+          "output": 15000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733591",
+        "last_price_check": "2025-07-31T08:17:58.380602",
         "created": 1752019200,
         "owned_by": "xai"
       },
@@ -1878,7 +1878,7 @@
           "output": 10000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733645",
+        "last_price_check": "2025-07-31T08:17:58.380627",
         "created": 1736726400,
         "owned_by": "xai"
       }
@@ -1888,8 +1888,8 @@
         "id": "gemini-2.5-pro",
         "provider": "google",
         "pricing": {
-          "input": 2.5,
-          "output": 10.0
+          "input": 4.0,
+          "output": 20.0
         },
         "context_window": 1000000,
         "strengths": "Long context up to 1m+ tokens, multimodal, grounded responses",
@@ -1904,19 +1904,19 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 2500.0,
-          "output": 10000.0
+          "input": 4000.0,
+          "output": 20000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733684",
+        "last_price_check": "2025-07-31T08:17:58.380679",
         "release_date": "2024-12-11"
       },
       "gemini-2.5-flash": {
         "id": "gemini-2.5-flash",
         "provider": "google",
         "pricing": {
-          "input": 0.5,
-          "output": 2.0
+          "input": 1.0,
+          "output": 5.0
         },
         "context_window": 1000000,
         "strengths": "Fast version optimized for speed",
@@ -1931,11 +1931,11 @@
           "coding": false
         },
         "cost_per_1m_tokens": {
-          "input": 500.0,
-          "output": 2000.0
+          "input": 1000.0,
+          "output": 5000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733700",
+        "last_price_check": "2025-07-31T08:17:58.380710",
         "release_date": "2024-12-11"
       },
       "gemini-pro": {
@@ -1962,7 +1962,7 @@
           "output": 3000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733711",
+        "last_price_check": "2025-07-31T08:17:58.380745",
         "release_date": "2023-12-06"
       },
       "gemini-pro-vision": {
@@ -1989,12 +1989,485 @@
           "output": 4000.0
         },
         "pricing_source": "real-time",
-        "last_price_check": "2025-07-30T15:20:49.733724",
+        "last_price_check": "2025-07-31T08:17:58.380770",
         "release_date": "2023-12-06"
       }
     }
   },
   "local_models": {
+    "codellama-34b": {
+      "id": "codellama-34b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "codellama:34b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Reliable general-purpose model optimized for Apple Silicon",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": true,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 17.74360340554267,
+      "speed_rating": 3,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "21.3 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:54:08.011686756-05:00"
+    },
+    "qwen2-5-coder-32b": {
+      "id": "qwen2-5-coder-32b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "qwen2.5-coder:32b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Specialized for code generation and programming tasks",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 18.488010296598077,
+      "speed_rating": 3,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "22.2 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:51:06.560717137-05:00"
+    },
+    "mixtral-8x7b": {
+      "id": "mixtral-8x7b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "mixtral:8x7b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "General-purpose language model",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": false
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 24.627523977309465,
+      "speed_rating": 2,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "29.6 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:47:55.370033085-05:00"
+    },
+    "deepseek-r1-32b": {
+      "id": "deepseek-r1-32b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "deepseek-r1:32b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 131072,
+      "strengths": "Advanced reasoning and chain-of-thought capabilities",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": true,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 18.487999037839472,
+      "speed_rating": 3,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "22.2 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2025-01-20",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:43:35.955320118-05:00"
+    },
+    "qwen2-5-32b": {
+      "id": "qwen2-5-32b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "qwen2.5:32b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "General-purpose language model",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": false
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 18.488010083325207,
+      "speed_rating": 3,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "22.2 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:40:27.826185136-05:00"
+    },
+    "llama3-3-70b": {
+      "id": "llama3-3-70b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "llama3.3:70b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Reliable general-purpose model optimized for Apple Silicon",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": false
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 39.60022136196494,
+      "speed_rating": 2,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "47.5 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:37:21.165825614-05:00"
+    },
+    "qwen2-5-coder-1-5b": {
+      "id": "qwen2-5-coder-1-5b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "qwen2.5-coder:1.5b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Specialized for code generation and programming tasks",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 0.9183418834581971,
+      "speed_rating": 5,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "1.1 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:28:26.933409267-05:00"
+    },
+    "gemma2-9b": {
+      "id": "gemma2-9b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "gemma2:9b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Google's safe and efficient language model",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": false
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 5.069330723024905,
+      "speed_rating": 4,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "6.1 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:28:14.546624819-05:00"
+    },
+    "qwen2-5-7b": {
+      "id": "qwen2-5-7b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "qwen2.5:7b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "General-purpose language model",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": false
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 4.361464951187372,
+      "speed_rating": 4,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "5.2 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:27:11.998913787-05:00"
+    },
+    "qwen2-5-coder-7b": {
+      "id": "qwen2-5-coder-7b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "qwen2.5-coder:7b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 32768,
+      "strengths": "Specialized for code generation and programming tasks",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": false,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 4.361465164460242,
+      "speed_rating": 4,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "5.2 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2024-01-01",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:26:17.903632646-05:00"
+    },
+    "deepseek-r1-8b": {
+      "id": "deepseek-r1-8b",
+      "provider": "local",
+      "type": "local",
+      "ollama_name": "deepseek-r1:8b",
+      "pricing": {
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context_window": 131072,
+      "strengths": "Advanced reasoning and chain-of-thought capabilities",
+      "capabilities": {
+        "text_generation": true,
+        "multimodal": false,
+        "vision": false,
+        "audio": false,
+        "pdf_processing": false,
+        "search": false,
+        "reasoning": true,
+        "coding": true
+      },
+      "cost_per_1m_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "size_gb": 4.866510673426092,
+      "speed_rating": 4,
+      "format": "GGUF (Q4_K_M)",
+      "tools_available": {
+        "llama-cpp-python": true,
+        "mlc-llm": false,
+        "ctransformers": true,
+        "transformers": true
+      },
+      "llama_cpp_available": false,
+      "estimated_ram_usage": "5.8 GB",
+      "local_files_found": 1,
+      "file_paths": [],
+      "installation_status": "ready",
+      "release_date": "2025-01-20",
+      "discovery_method": "dynamic_ollama",
+      "last_modified": "2025-07-30T15:25:26.865089302-05:00"
+    },
     "phi3-mini": {
       "id": "phi3-mini",
       "provider": "local",
@@ -2167,92 +2640,6 @@
       "discovery_method": "dynamic_ollama",
       "last_modified": "2025-07-29T16:12:52.12194391-05:00"
     },
-    "llama3-3-70b": {
-      "id": "llama3-3-70b",
-      "provider": "local",
-      "type": "local",
-      "ollama_name": "llama3.3:70b",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 32768,
-      "strengths": "Reliable general-purpose model optimized for Apple Silicon; GPT-4 class performance",
-      "capabilities": {
-        "text_generation": true,
-        "multimodal": false,
-        "vision": false,
-        "audio": false,
-        "pdf_processing": false,
-        "search": false,
-        "reasoning": false,
-        "coding": false
-      },
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 43.0,
-      "speed_rating": 2,
-      "format": "GGUF (Q4_K_M)",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "51.6 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "available",
-      "release_date": "2024-01-01",
-      "discovery_method": "dynamic_ollama",
-      "last_modified": "Unknown"
-    },
-    "deepseek-r1-8b": {
-      "id": "deepseek-r1-8b",
-      "provider": "local",
-      "type": "local",
-      "ollama_name": "deepseek-r1:8b",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 131072,
-      "strengths": "Advanced reasoning and chain-of-thought capabilities; Advanced reasoning model",
-      "capabilities": {
-        "text_generation": true,
-        "multimodal": false,
-        "vision": false,
-        "audio": false,
-        "pdf_processing": false,
-        "search": false,
-        "reasoning": true,
-        "coding": true
-      },
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 5.0,
-      "speed_rating": 4,
-      "format": "GGUF (Q4_K_M)",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "6.0 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "available",
-      "release_date": "2025-01-20",
-      "discovery_method": "dynamic_ollama",
-      "last_modified": "Unknown"
-    },
     "qwen3-8b": {
       "id": "qwen3-8b",
       "provider": "local",
@@ -2293,49 +2680,6 @@
       "file_paths": [],
       "installation_status": "available",
       "release_date": "2025-01-20",
-      "discovery_method": "dynamic_ollama",
-      "last_modified": "Unknown"
-    },
-    "qwen2-5-coder-7b": {
-      "id": "qwen2-5-coder-7b",
-      "provider": "local",
-      "type": "local",
-      "ollama_name": "qwen2.5-coder:7b",
-      "pricing": {
-        "input": 0.0,
-        "output": 0.0
-      },
-      "context_window": 32768,
-      "strengths": "Specialized for code generation and programming tasks; Specialized coding model",
-      "capabilities": {
-        "text_generation": true,
-        "multimodal": false,
-        "vision": false,
-        "audio": false,
-        "pdf_processing": false,
-        "search": false,
-        "reasoning": false,
-        "coding": true
-      },
-      "cost_per_1m_tokens": {
-        "input": 0,
-        "output": 0
-      },
-      "size_gb": 4.7,
-      "speed_rating": 4,
-      "format": "GGUF (Q4_K_M)",
-      "tools_available": {
-        "llama-cpp-python": true,
-        "mlc-llm": false,
-        "ctransformers": true,
-        "transformers": true
-      },
-      "llama_cpp_available": false,
-      "estimated_ram_usage": "5.6 GB",
-      "local_files_found": 0,
-      "file_paths": [],
-      "installation_status": "available",
-      "release_date": "2024-01-01",
       "discovery_method": "dynamic_ollama",
       "last_modified": "Unknown"
     },
@@ -3210,7 +3554,7 @@
     }
   },
   "pricing_info": {
-    "last_updated": "2025-07-30T15:20:48.122513",
+    "last_updated": "2025-07-31T08:17:56.881350",
     "cache_duration_seconds": 300,
     "pricing_sources": [
       "real-time-api",
@@ -3225,7 +3569,7 @@
       "anthropic": 8,
       "xai": 8,
       "google": 0,
-      "ollama": 9
+      "ollama": 17
     }
   }
 }

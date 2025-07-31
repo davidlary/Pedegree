@@ -29,6 +29,13 @@
             font-style: italic;
             margin-bottom: 20px;
         }
+        .summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -103,8 +110,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>🤖 AI Models Comparison</h1>
-        <div class="updated">Last updated: 2025-07-30 15:20:50</div>
+        <h1>🤖 AI Models Comparison - All Available Models</h1>
+        <div class="updated">Last updated: 2025-07-31 08:17:59</div>
+        
+        <div class="summary">
+            <h3>📊 Complete Model Database: 106 Models</h3>
+            <p><strong>📡 Hosted Models:</strong> 71 (from 4 providers)</p>
+            <p><strong>💻 Local Models:</strong> 35 (available for installation)</p>
+            <p><em>This table shows all known AI models including those requiring API keys or local installation.</em></p>
+        </div>
         
         <div class="legend">
             <strong>Color Legend:</strong>
@@ -128,10 +142,120 @@
             </thead>
             <tbody>
                 <tr class="local">
+                    <td class="model-name">codellama-34b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-coder-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Specialized for code generation and programming tasks</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">mixtral-8x7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">📝 Text</td>
+                    <td class="strengths">General-purpose language model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">deepseek-r1-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-20</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning and chain-of-thought capabilities</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-32b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">📝 Text</td>
+                    <td class="strengths">General-purpose language model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">llama3-3-70b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">📝 Text</td>
+                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-coder-1-5b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Specialized for code generation and programming tasks</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">gemma2-9b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">📝 Text</td>
+                    <td class="strengths">Google's safe and efficient language model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">📝 Text</td>
+                    <td class="strengths">General-purpose language model</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">qwen2-5-coder-7b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">32,768</td>
+                    <td class="release-date">2024-01-01</td>
+                    <td class="capabilities">💻 Code</td>
+                    <td class="strengths">Specialized for code generation and programming tasks</td>
+                </tr>
+                <tr class="local">
+                    <td class="model-name">deepseek-r1-8b</td>
+                    <td>local</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
+                    <td class="context">131,072</td>
+                    <td class="release-date">2025-01-20</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning and chain-of-thought capabilities</td>
+                </tr>
+                <tr class="local">
                     <td class="model-name">phi3-mini</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">32,768</td>
                     <td class="release-date">2024-01-01</td>
                     <td class="capabilities">📝 Text</td>
@@ -140,8 +264,8 @@
                 <tr class="local">
                     <td class="model-name">codellama-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">32,768</td>
                     <td class="release-date">2024-01-01</td>
                     <td class="capabilities">💻 Code</td>
@@ -150,8 +274,8 @@
                 <tr class="local">
                     <td class="model-name">mistral-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">32,768</td>
                     <td class="release-date">2024-01-01</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -160,58 +284,28 @@
                 <tr class="local">
                     <td class="model-name">llama3-1-8b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">32,768</td>
                     <td class="release-date">2024-01-01</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Reliable general-purpose model optimized for Apple Silicon</td>
                 </tr>
                 <tr class="local">
-                    <td class="model-name">llama3-3-70b</td>
-                    <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
-                    <td class="context">32,768</td>
-                    <td class="release-date">2024-01-01</td>
-                    <td class="capabilities">📝 Text</td>
-                    <td class="strengths">Reliable general-purpose model optimized for Apple Silicon; GPT-4 class performance</td>
-                </tr>
-                <tr class="local">
-                    <td class="model-name">deepseek-r1-8b</td>
-                    <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
-                    <td class="context">131,072</td>
-                    <td class="release-date">2025-01-20</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Advanced reasoning and chain-of-thought capabilities; Advanced reasoning model</td>
-                </tr>
-                <tr class="local">
                     <td class="model-name">qwen3-8b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2025-01-20</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest generation multilingual model with excellent performance; Latest Qwen generation</td>
                 </tr>
                 <tr class="local">
-                    <td class="model-name">qwen2-5-coder-7b</td>
-                    <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
-                    <td class="context">32,768</td>
-                    <td class="release-date">2024-01-01</td>
-                    <td class="capabilities">💻 Code</td>
-                    <td class="strengths">Specialized for code generation and programming tasks; Specialized coding model</td>
-                </tr>
-                <tr class="local">
                     <td class="model-name">qwen2-5vl-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">65,536</td>
                     <td class="release-date">2024-01-01</td>
                     <td class="capabilities">🖼️ Vision</td>
@@ -220,8 +314,8 @@
                 <tr class="local">
                     <td class="model-name">llama-3.3-70b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-12-06</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -230,8 +324,8 @@
                 <tr class="local">
                     <td class="model-name">deepseek-r1-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">65,536</td>
                     <td class="release-date">2025-01-20</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -240,8 +334,8 @@
                 <tr class="local">
                     <td class="model-name">qwen3-14b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2025-01-13</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -250,8 +344,8 @@
                 <tr class="local">
                     <td class="model-name">qwen3-32b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2025-01-13</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -260,8 +354,8 @@
                 <tr class="local">
                     <td class="model-name">qwen2.5-coder-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-11-11</td>
                     <td class="capabilities">💻 Code</td>
@@ -270,8 +364,8 @@
                 <tr class="local">
                     <td class="model-name">qwen2.5-coder-14b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-11-11</td>
                     <td class="capabilities">💻 Code</td>
@@ -280,8 +374,8 @@
                 <tr class="local">
                     <td class="model-name">qwen2.5-coder-32b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-11-11</td>
                     <td class="capabilities">💻 Code</td>
@@ -290,8 +384,8 @@
                 <tr class="local">
                     <td class="model-name">qwen2.5-vl-7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">65,536</td>
                     <td class="release-date">2024-12-28</td>
                     <td class="capabilities">🖼️ Vision, 💻 Code</td>
@@ -300,8 +394,8 @@
                 <tr class="local">
                     <td class="model-name">qwen2.5-vl-32b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">65,536</td>
                     <td class="release-date">2024-12-28</td>
                     <td class="capabilities">🖼️ Vision, 💻 Code</td>
@@ -310,8 +404,8 @@
                 <tr class="local">
                     <td class="model-name">llava-13b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">32,768</td>
                     <td class="release-date">2024-07-15</td>
                     <td class="capabilities">🖼️ Vision</td>
@@ -320,8 +414,8 @@
                 <tr class="local">
                     <td class="model-name">qwq-32b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-11-27</td>
                     <td class="capabilities">🧠 Reasoning</td>
@@ -330,8 +424,8 @@
                 <tr class="local">
                     <td class="model-name">llama-3.1-8b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-07-23</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -340,8 +434,8 @@
                 <tr class="local">
                     <td class="model-name">llama-3.1-70b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-07-23</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -350,8 +444,8 @@
                 <tr class="local">
                     <td class="model-name">gemma3-9b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🧠 Reasoning</td>
@@ -360,8 +454,8 @@
                 <tr class="local">
                     <td class="model-name">phi4-14b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -370,8 +464,8 @@
                 <tr class="local">
                     <td class="model-name">qwen3-1.7b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2025-01-13</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -380,8 +474,8 @@
                 <tr class="local">
                     <td class="model-name">gemma3-4b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🧠 Reasoning</td>
@@ -390,8 +484,8 @@
                 <tr class="local">
                     <td class="model-name">mistral-nemo-12b</td>
                     <td>local</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">131,072</td>
                     <td class="release-date">2024-07-18</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -400,8 +494,8 @@
                 <tr class="budget">
                     <td class="model-name">claude-opus-4-20250514</td>
                     <td>anthropic</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">128,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">📝 Text</td>
@@ -410,8 +504,8 @@
                 <tr class="budget">
                     <td class="model-name">claude-sonnet-4-20250514</td>
                     <td>anthropic</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">128,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">📝 Text</td>
@@ -420,8 +514,8 @@
                 <tr class="budget">
                     <td class="model-name">claude-3-7-sonnet-20250219</td>
                     <td>anthropic</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -430,8 +524,8 @@
                 <tr class="budget">
                     <td class="model-name">claude-3-5-haiku-20241022</td>
                     <td>anthropic</td>
-                    <td class="cost">$0.00</td>
-                    <td class="cost">$0.00</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -440,8 +534,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-transcribe</td>
                     <td>openai</td>
-                    <td class="cost">$0.10</td>
-                    <td class="cost">$0.40</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-15</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -450,8 +544,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4.1-nano-2025-04-14</td>
                     <td>openai</td>
-                    <td class="cost">$0.10</td>
-                    <td class="cost">$0.40</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -460,8 +554,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4.1-nano</td>
                     <td>openai</td>
-                    <td class="cost">$0.10</td>
-                    <td class="cost">$0.40</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.000</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -470,8 +564,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-2024-07-18</td>
                     <td>openai</td>
-                    <td class="cost">$0.15</td>
-                    <td class="cost">$0.60</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-07-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -480,8 +574,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini</td>
                     <td>openai</td>
-                    <td class="cost">$0.15</td>
-                    <td class="cost">$0.60</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-07-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -490,8 +584,8 @@
                 <tr class="budget">
                     <td class="model-name">o1-pro-2025-03-19</td>
                     <td>openai</td>
-                    <td class="cost">$0.15</td>
-                    <td class="cost">$0.60</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2025-03-17</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -500,8 +594,8 @@
                 <tr class="budget">
                     <td class="model-name">o1-pro</td>
                     <td>openai</td>
-                    <td class="cost">$0.15</td>
-                    <td class="cost">$0.60</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2025-03-17</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -510,8 +604,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-tts</td>
                     <td>openai</td>
-                    <td class="cost">$0.15</td>
-                    <td class="cost">$0.60</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-19</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -520,8 +614,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-search-preview-2025-03-11</td>
                     <td>openai</td>
-                    <td class="cost">$0.20</td>
-                    <td class="cost">$0.80</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -530,8 +624,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-search-preview</td>
                     <td>openai</td>
-                    <td class="cost">$0.20</td>
-                    <td class="cost">$0.80</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -540,8 +634,8 @@
                 <tr class="budget">
                     <td class="model-name">claude-3-haiku-20240307</td>
                     <td>anthropic</td>
-                    <td class="cost">$0.25</td>
-                    <td class="cost">$1.25</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -550,8 +644,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4.1-mini-2025-04-14</td>
                     <td>openai</td>
-                    <td class="cost">$0.30</td>
-                    <td class="cost">$1.20</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -560,8 +654,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4.1-mini</td>
                     <td>openai</td>
-                    <td class="cost">$0.30</td>
-                    <td class="cost">$1.20</td>
+                    <td class="cost">$0.000</td>
+                    <td class="cost">$0.001</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
@@ -570,8 +664,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo</td>
                     <td>openai</td>
-                    <td class="cost">$0.50</td>
-                    <td class="cost">$1.50</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">16,385</td>
                     <td class="release-date">2023-02-28</td>
                     <td class="capabilities">📝 Text</td>
@@ -580,8 +674,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo-1106</td>
                     <td>openai</td>
-                    <td class="cost">$0.50</td>
-                    <td class="cost">$1.50</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">16,385</td>
                     <td class="release-date">2023-11-02</td>
                     <td class="capabilities">📝 Text</td>
@@ -590,8 +684,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo-0125</td>
                     <td>openai</td>
-                    <td class="cost">$0.50</td>
-                    <td class="cost">$1.50</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">16,385</td>
                     <td class="release-date">2024-01-23</td>
                     <td class="capabilities">📝 Text</td>
@@ -600,28 +694,18 @@
                 <tr class="budget">
                     <td class="model-name">grok-3-mini-fast</td>
                     <td>xai</td>
-                    <td class="cost">$0.50</td>
-                    <td class="cost">$2.00</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Compact model for efficient processing</td>
                 </tr>
                 <tr class="budget">
-                    <td class="model-name">gemini-2.5-flash</td>
-                    <td>google</td>
-                    <td class="cost">$0.50</td>
-                    <td class="cost">$2.00</td>
-                    <td class="context">1,000,000</td>
-                    <td class="release-date">2024-12-11</td>
-                    <td class="capabilities">🧠 Reasoning</td>
-                    <td class="strengths">Fast version optimized for speed</td>
-                </tr>
-                <tr class="budget">
                     <td class="model-name">gpt-4o-mini-realtime-preview-2024-12-17</td>
                     <td>openai</td>
-                    <td class="cost">$0.60</td>
-                    <td class="cost">$2.40</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-12-13</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -630,8 +714,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-audio-preview-2024-12-17</td>
                     <td>openai</td>
-                    <td class="cost">$0.60</td>
-                    <td class="cost">$2.40</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-12-13</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -640,8 +724,8 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-realtime-preview</td>
                     <td>openai</td>
-                    <td class="cost">$0.60</td>
-                    <td class="cost">$2.40</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
@@ -650,458 +734,468 @@
                 <tr class="budget">
                     <td class="model-name">gpt-4o-mini-audio-preview</td>
                     <td>openai</td>
-                    <td class="cost">$0.60</td>
-                    <td class="cost">$2.40</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">grok-3-mini</td>
                     <td>xai</td>
-                    <td class="cost">$1.00</td>
-                    <td class="cost">$4.00</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.004</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Compact model for efficient processing</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
+                    <td class="model-name">gemini-2.5-flash</td>
+                    <td>google</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.005</td>
+                    <td class="context">1,000,000</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🧠 Reasoning</td>
+                    <td class="strengths">Fast version optimized for speed</td>
+                </tr>
+                <tr class="budget">
                     <td class="model-name">gemini-pro</td>
                     <td>google</td>
-                    <td class="cost">$1.00</td>
-                    <td class="cost">$3.00</td>
+                    <td class="cost">$0.001</td>
+                    <td class="cost">$0.003</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2023-12-06</td>
                     <td class="capabilities">🧠 Reasoning</td>
                     <td class="strengths">General purpose model with strong capabilities</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo-instruct</td>
                     <td>openai</td>
-                    <td class="cost">$1.50</td>
-                    <td class="cost">$2.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">16,385</td>
                     <td class="release-date">2023-08-24</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo-instruct-0914</td>
                     <td>openai</td>
-                    <td class="cost">$1.50</td>
-                    <td class="cost">$2.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.002</td>
                     <td class="context">16,385</td>
                     <td class="release-date">2023-09-07</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gemini-pro-vision</td>
                     <td>google</td>
-                    <td class="cost">$1.50</td>
-                    <td class="cost">$4.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.004</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2023-12-06</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning</td>
                     <td class="strengths">Multimodal vision capabilities, multimodal version with vision capabilities</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-4o-transcribe</td>
                     <td>openai</td>
-                    <td class="cost">$2.00</td>
-                    <td class="cost">$8.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.008</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-15</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Audio transcription, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">grok-2-1212</td>
                     <td>xai</td>
-                    <td class="cost">$2.00</td>
-                    <td class="cost">$10.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.010</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-01-19</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Balanced reasoning and performance</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">grok-2-vision-1212</td>
                     <td>xai</td>
-                    <td class="cost">$2.00</td>
-                    <td class="cost">$10.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.010</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2024-12-11</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Multimodal vision capabilities, balanced reasoning and performance</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">grok-2-image-1212</td>
                     <td>xai</td>
-                    <td class="cost">$2.00</td>
-                    <td class="cost">$10.00</td>
+                    <td class="cost">$0.002</td>
+                    <td class="cost">$0.010</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-01-12</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Multimodal vision capabilities, balanced reasoning and performance</td>
                 </tr>
-                <tr class="">
-                    <td class="model-name">gpt-4o</td>
-                    <td>openai</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-05-10</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">gpt-4o-2024-05-13</td>
-                    <td>openai</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-05-10</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">gpt-4o-2024-08-06</td>
-                    <td>openai</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-08-04</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">chatgpt-4o-latest</td>
-                    <td>openai</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-08-12</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">gpt-4o-2024-11-20</td>
-                    <td>openai</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2025-02-11</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="">
-                    <td class="model-name">gemini-2.5-pro</td>
-                    <td>google</td>
-                    <td class="cost">$2.50</td>
-                    <td class="cost">$10.00</td>
-                    <td class="context">1,000,000</td>
-                    <td class="release-date">2024-12-11</td>
-                    <td class="capabilities">🧠 Reasoning</td>
-                    <td class="strengths">Long context up to 1m+ tokens, multimodal, grounded responses</td>
-                </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">o1-mini-2024-09-12</td>
                     <td>openai</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$12.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.012</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2024-09-06</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Reasoning-focused model optimized for coding and math</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">o1-mini</td>
                     <td>openai</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$12.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.012</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2024-09-06</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Reasoning-focused model optimized for coding and math</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-4o-search-preview-2025-03-11</td>
                     <td>openai</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$12.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.012</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-4o-search-preview</td>
                     <td>openai</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$12.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.012</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-03-07</td>
                     <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Web search integration, latest multimodal model, excellent for complex reasoning</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">gpt-3.5-turbo-16k</td>
                     <td>openai</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$4.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.004</td>
                     <td class="context">16,384</td>
                     <td class="release-date">2023-05-10</td>
                     <td class="capabilities">📝 Text</td>
                     <td class="strengths">Fast and cost-effective for simpler tasks</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">claude-3-5-sonnet-20241022</td>
                     <td>anthropic</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$15.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.015</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest claude with excellent coding and analysis capabilities</td>
                 </tr>
-                <tr class="">
+                <tr class="budget">
                     <td class="model-name">claude-3-5-sonnet-20240620</td>
                     <td>anthropic</td>
-                    <td class="cost">$3.00</td>
-                    <td class="cost">$15.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.015</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Latest claude with excellent coding and analysis capabilities</td>
                 </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-realtime-preview-2025-06-03</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2025-06-02</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-audio-preview-2025-06-03</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2025-06-02</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-realtime-preview-2024-10-01</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-09-23</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-audio-preview-2024-10-01</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-09-26</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-audio-preview</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-09-27</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-realtime-preview</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-09-29</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-realtime-preview-2024-12-17</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-12-11</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4o-audio-preview-2024-12-17</td>
-                    <td>openai</td>
-                    <td class="cost">$6.00</td>
-                    <td class="cost">$24.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-12-12</td>
-                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">grok-3-fast</td>
-                    <td>xai</td>
-                    <td class="cost">$8.00</td>
-                    <td class="cost">$20.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2025-04-03</td>
-                    <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Optimized for speed and quick responses</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">grok-4-0709</td>
-                    <td>xai</td>
-                    <td class="cost">$8.00</td>
-                    <td class="cost">$20.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2025-07-08</td>
-                    <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Stem and science focused, strong reasoning</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4-1106-preview</td>
-                    <td>openai</td>
-                    <td class="cost">$10.00</td>
-                    <td class="cost">$30.00</td>
-                    <td class="context">8,192</td>
-                    <td class="release-date">2023-11-02</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Strong reasoning and creative tasks</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4-0125-preview</td>
-                    <td>openai</td>
-                    <td class="cost">$10.00</td>
-                    <td class="cost">$30.00</td>
-                    <td class="context">8,192</td>
-                    <td class="release-date">2024-01-23</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Strong reasoning and creative tasks</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4-turbo-preview</td>
-                    <td>openai</td>
-                    <td class="cost">$10.00</td>
-                    <td class="cost">$30.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-01-23</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Advanced reasoning with large context window</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4-turbo</td>
-                    <td>openai</td>
-                    <td class="cost">$10.00</td>
-                    <td class="cost">$30.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-04-05</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Advanced reasoning with large context window</td>
-                </tr>
-                <tr class="premium">
-                    <td class="model-name">gpt-4-turbo-2024-04-09</td>
-                    <td>openai</td>
-                    <td class="cost">$10.00</td>
-                    <td class="cost">$30.00</td>
-                    <td class="context">128,000</td>
-                    <td class="release-date">2024-04-08</td>
-                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
-                    <td class="strengths">Advanced reasoning with large context window</td>
-                </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">grok-3</td>
                     <td>xai</td>
-                    <td class="cost">$12.00</td>
-                    <td class="cost">$30.00</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.015</td>
                     <td class="context">128,000</td>
                     <td class="release-date">2025-04-03</td>
                     <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Advanced reasoning capabilities</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
+                    <td class="model-name">grok-3-fast</td>
+                    <td>xai</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.015</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2025-04-03</td>
+                    <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Optimized for speed and quick responses</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">grok-4-0709</td>
+                    <td>xai</td>
+                    <td class="cost">$0.003</td>
+                    <td class="cost">$0.015</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2025-07-08</td>
+                    <td class="capabilities">🔍 Search, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Stem and science focused, strong reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gemini-2.5-pro</td>
+                    <td>google</td>
+                    <td class="cost">$0.004</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">1,000,000</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🧠 Reasoning</td>
+                    <td class="strengths">Long context up to 1m+ tokens, multimodal, grounded responses</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o</td>
+                    <td>openai</td>
+                    <td class="cost">$0.005</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-05-10</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-2024-05-13</td>
+                    <td>openai</td>
+                    <td class="cost">$0.005</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-05-10</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-2024-08-06</td>
+                    <td>openai</td>
+                    <td class="cost">$0.005</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-08-04</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">chatgpt-4o-latest</td>
+                    <td>openai</td>
+                    <td class="cost">$0.005</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-08-12</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-2024-11-20</td>
+                    <td>openai</td>
+                    <td class="cost">$0.005</td>
+                    <td class="cost">$0.020</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2025-02-11</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-realtime-preview-2025-06-03</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2025-06-02</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-audio-preview-2025-06-03</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2025-06-02</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-realtime-preview-2024-10-01</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-09-23</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-audio-preview-2024-10-01</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-09-26</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-audio-preview</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-09-27</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-realtime-preview</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-09-29</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-realtime-preview-2024-12-17</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-12-11</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4o-audio-preview-2024-12-17</td>
+                    <td>openai</td>
+                    <td class="cost">$0.006</td>
+                    <td class="cost">$0.024</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-12-12</td>
+                    <td class="capabilities">🖼️ Vision, 🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Audio processing and real-time interaction, latest multimodal model, excellent for complex reasoning</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4-1106-preview</td>
+                    <td>openai</td>
+                    <td class="cost">$0.010</td>
+                    <td class="cost">$0.030</td>
+                    <td class="context">8,192</td>
+                    <td class="release-date">2023-11-02</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Strong reasoning and creative tasks</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4-0125-preview</td>
+                    <td>openai</td>
+                    <td class="cost">$0.010</td>
+                    <td class="cost">$0.030</td>
+                    <td class="context">8,192</td>
+                    <td class="release-date">2024-01-23</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Strong reasoning and creative tasks</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4-turbo-preview</td>
+                    <td>openai</td>
+                    <td class="cost">$0.010</td>
+                    <td class="cost">$0.030</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-01-23</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning with large context window</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4-turbo</td>
+                    <td>openai</td>
+                    <td class="cost">$0.010</td>
+                    <td class="cost">$0.030</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-04-05</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning with large context window</td>
+                </tr>
+                <tr class="budget">
+                    <td class="model-name">gpt-4-turbo-2024-04-09</td>
+                    <td>openai</td>
+                    <td class="cost">$0.010</td>
+                    <td class="cost">$0.030</td>
+                    <td class="context">128,000</td>
+                    <td class="release-date">2024-04-08</td>
+                    <td class="capabilities">🧠 Reasoning, 💻 Code</td>
+                    <td class="strengths">Advanced reasoning with large context window</td>
+                </tr>
+                <tr class="budget">
                     <td class="model-name">o1-2024-12-17</td>
                     <td>openai</td>
-                    <td class="cost">$15.00</td>
-                    <td class="cost">$60.00</td>
+                    <td class="cost">$0.015</td>
+                    <td class="cost">$0.060</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2024-12-15</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Sophisticated reasoning capabilities</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">o1</td>
                     <td>openai</td>
-                    <td class="cost">$15.00</td>
-                    <td class="cost">$60.00</td>
+                    <td class="cost">$0.015</td>
+                    <td class="cost">$0.060</td>
                     <td class="context">200,000</td>
                     <td class="release-date">2024-12-16</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Sophisticated reasoning capabilities</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">gpt-4.1-2025-04-14</td>
                     <td>openai</td>
-                    <td class="cost">$15.00</td>
-                    <td class="cost">$45.00</td>
+                    <td class="cost">$0.015</td>
+                    <td class="cost">$0.045</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">gpt-4.1</td>
                     <td>openai</td>
-                    <td class="cost">$15.00</td>
-                    <td class="cost">$45.00</td>
+                    <td class="cost">$0.015</td>
+                    <td class="cost">$0.045</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2025-04-10</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">claude-3-opus-20240229</td>
                     <td>anthropic</td>
-                    <td class="cost">$15.00</td>
-                    <td class="cost">$75.00</td>
+                    <td class="cost">$0.015</td>
+                    <td class="cost">$0.075</td>
                     <td class="context">200,000</td>
                     <td class="release-date">Unknown</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Most capable claude model for complex reasoning tasks</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">gpt-4-0613</td>
                     <td>openai</td>
-                    <td class="cost">$30.00</td>
-                    <td class="cost">$60.00</td>
+                    <td class="cost">$0.030</td>
+                    <td class="cost">$0.060</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2023-06-12</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
                     <td class="strengths">Strong reasoning and creative tasks</td>
                 </tr>
-                <tr class="premium">
+                <tr class="budget">
                     <td class="model-name">gpt-4</td>
                     <td>openai</td>
-                    <td class="cost">$30.00</td>
-                    <td class="cost">$60.00</td>
+                    <td class="cost">$0.030</td>
+                    <td class="cost">$0.060</td>
                     <td class="context">8,192</td>
                     <td class="release-date">2023-06-27</td>
                     <td class="capabilities">🧠 Reasoning, 💻 Code</td>
