@@ -26,11 +26,13 @@ class ConfigManager:
             config_dir: Path to configuration directory
         """
         self.config_dir = Path(config_dir)
+        self.data_dir = self.config_dir.parent / "data"  # Add data_dir attribute
         self.config_cache = {}
         self.last_loaded = {}
         
-        # Ensure config directory exists
+        # Ensure config and data directories exist
         self.config_dir.mkdir(exist_ok=True)
+        self.data_dir.mkdir(exist_ok=True)
         
         # Setup logging
         self.logger = logging.getLogger(__name__)

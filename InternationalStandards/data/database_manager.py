@@ -331,6 +331,14 @@ class DatabaseManager:
         
         return self.execute_query(query)
     
+    def get_disciplines(self) -> List[Dict[str, Any]]:
+        """Alias for get_all_disciplines for compatibility
+        
+        Returns:
+            List of discipline records
+        """
+        return self.get_all_disciplines()
+    
     # ==============================================================================
     # STANDARDS SOURCE MANAGEMENT
     # ==============================================================================
