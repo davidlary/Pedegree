@@ -1,0 +1,374 @@
+{
+  "test_timestamp": "2025-07-31T13:47:30.952525",
+  "streamlit_tests": {
+    "app_initialization": {
+      "test_name": "Application_Initialization",
+      "status": "PASS",
+      "details": "Application initializes successfully"
+    },
+    "server_health": {
+      "test_name": "Server_Health_Check",
+      "status": "PASS",
+      "details": "Server responds to health check"
+    }
+  },
+  "page_tests": {
+    "\ud83c\udfe0 Dashboard": {
+      "page_name": "\ud83c\udfe0 Dashboard",
+      "tests": [
+        {
+          "test_name": "dashboard_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_dashboard found"
+        },
+        {
+          "test_name": "\ud83c\udfe0 Dashboard_components_analysis",
+          "status": "PASS",
+          "details": "Found 2 Streamlit components, 0 buttons"
+        },
+        {
+          "test_name": "st.metric_functionality",
+          "status": "PASS",
+          "details": "Page implements st.metric functionality"
+        },
+        {
+          "test_name": "system_stats_functionality",
+          "status": "PASS",
+          "details": "Page implements system_stats functionality"
+        },
+        {
+          "test_name": "real_time_functionality",
+          "status": "PASS",
+          "details": "Page implements real_time functionality"
+        }
+      ],
+      "buttons_found": [],
+      "status": "PASS",
+      "components_found": [
+        "st.columns",
+        "st.metric"
+      ]
+    },
+    "\ud83d\udd2c Discipline Explorer": {
+      "page_name": "\ud83d\udd2c Discipline Explorer",
+      "tests": [
+        {
+          "test_name": "discipline_explorer_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_discipline_explorer found"
+        },
+        {
+          "test_name": "\ud83d\udd2c Discipline Explorer_components_analysis",
+          "status": "PASS",
+          "details": "Found 0 Streamlit components, 0 buttons"
+        },
+        {
+          "test_name": "disciplines_functionality",
+          "status": "FAIL",
+          "error": "Page missing disciplines functionality"
+        },
+        {
+          "test_name": "selectbox_functionality",
+          "status": "FAIL",
+          "error": "Page missing selectbox functionality"
+        },
+        {
+          "test_name": "multiselect_functionality",
+          "status": "FAIL",
+          "error": "Page missing multiselect functionality"
+        }
+      ],
+      "buttons_found": [],
+      "status": "FAIL",
+      "components_found": []
+    },
+    "\ud83d\udcd6 Standards Browser": {
+      "page_name": "\ud83d\udcd6 Standards Browser",
+      "tests": [
+        {
+          "test_name": "standards_browser_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_standards_browser found"
+        },
+        {
+          "test_name": "\ud83d\udcd6 Standards Browser_components_analysis",
+          "status": "PASS",
+          "details": "Found 0 Streamlit components, 0 buttons"
+        },
+        {
+          "test_name": "standards_functionality",
+          "status": "PASS",
+          "details": "Page implements standards functionality"
+        },
+        {
+          "test_name": "browser_functionality",
+          "status": "PASS",
+          "details": "Page implements browser functionality"
+        },
+        {
+          "test_name": "filtering_functionality",
+          "status": "FAIL",
+          "error": "Page missing filtering functionality"
+        }
+      ],
+      "buttons_found": [],
+      "status": "FAIL",
+      "components_found": []
+    },
+    "\ud83e\udd16 Agent Monitor": {
+      "page_name": "\ud83e\udd16 Agent Monitor",
+      "tests": [
+        {
+          "test_name": "agent_monitor_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_agent_monitor found"
+        },
+        {
+          "test_name": "\ud83e\udd16 Agent Monitor_components_analysis",
+          "status": "PASS",
+          "details": "Found 0 Streamlit components, 0 buttons"
+        },
+        {
+          "test_name": "agent_functionality",
+          "status": "PASS",
+          "details": "Page implements agent functionality"
+        },
+        {
+          "test_name": "monitor_functionality",
+          "status": "PASS",
+          "details": "Page implements monitor functionality"
+        },
+        {
+          "test_name": "status_functionality",
+          "status": "FAIL",
+          "error": "Page missing status functionality"
+        }
+      ],
+      "buttons_found": [],
+      "status": "FAIL",
+      "components_found": []
+    },
+    "\ud83e\udde0 LLM Optimization": {
+      "page_name": "\ud83e\udde0 LLM Optimization",
+      "tests": [
+        {
+          "test_name": "llm_optimization_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_llm_optimization found"
+        },
+        {
+          "test_name": "\ud83e\udde0 LLM Optimization_components_analysis",
+          "status": "PASS",
+          "details": "Found 2 Streamlit components, 1 buttons"
+        },
+        {
+          "test_name": "llm_functionality",
+          "status": "PASS",
+          "details": "Page implements llm functionality"
+        },
+        {
+          "test_name": "optimization_functionality",
+          "status": "PASS",
+          "details": "Page implements optimization functionality"
+        },
+        {
+          "test_name": "router_functionality",
+          "status": "PASS",
+          "details": "Page implements router functionality"
+        }
+      ],
+      "buttons_found": [
+        {
+          "button_text": "\ud83e\uddea Test Router",
+          "line_number": 16,
+          "full_line": "if st.button(\"\ud83e\uddea Test Router\"):"
+        }
+      ],
+      "status": "PASS",
+      "components_found": [
+        "st.button",
+        "st.expander"
+      ]
+    },
+    "\ud83d\udd17 Data APIs": {
+      "page_name": "\ud83d\udd17 Data APIs",
+      "tests": [
+        {
+          "test_name": "data_apis_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_data_apis found"
+        },
+        {
+          "test_name": "\ud83d\udd17 Data APIs_components_analysis",
+          "status": "PASS",
+          "details": "Found 0 Streamlit components, 0 buttons"
+        },
+        {
+          "test_name": "api_functionality",
+          "status": "PASS",
+          "details": "Page implements api functionality"
+        },
+        {
+          "test_name": "data_functionality",
+          "status": "PASS",
+          "details": "Page implements data functionality"
+        },
+        {
+          "test_name": "endpoints_functionality",
+          "status": "FAIL",
+          "error": "Page missing endpoints functionality"
+        }
+      ],
+      "buttons_found": [],
+      "status": "FAIL",
+      "components_found": []
+    },
+    "\ud83d\udd04 Recovery Center": {
+      "page_name": "\ud83d\udd04 Recovery Center",
+      "tests": [
+        {
+          "test_name": "recovery_center_method_exists",
+          "status": "PASS",
+          "details": "Page render method _render_recovery_center found"
+        },
+        {
+          "test_name": "\ud83d\udd04 Recovery Center_components_analysis",
+          "status": "PASS",
+          "details": "Found 3 Streamlit components, 3 buttons"
+        },
+        {
+          "test_name": "recovery_functionality",
+          "status": "PASS",
+          "details": "Page implements recovery functionality"
+        },
+        {
+          "test_name": "checkpoint_functionality",
+          "status": "PASS",
+          "details": "Page implements checkpoint functionality"
+        },
+        {
+          "test_name": "state_functionality",
+          "status": "PASS",
+          "details": "Page implements state functionality"
+        }
+      ],
+      "buttons_found": [
+        {
+          "button_text": "\ud83d\udcbe Create Checkpoint Now",
+          "line_number": 28,
+          "full_line": "if st.button(\"\ud83d\udcbe Create Checkpoint Now\"):"
+        },
+        {
+          "button_text": "\ud83d\udd0d Validate System State",
+          "line_number": 32,
+          "full_line": "if st.button(\"\ud83d\udd0d Validate System State\"):"
+        },
+        {
+          "button_text": "\ud83d\udd27 Force State Save",
+          "line_number": 36,
+          "full_line": "if st.button(\"\ud83d\udd27 Force State Save\"):"
+        }
+      ],
+      "status": "PASS",
+      "components_found": [
+        "st.button",
+        "st.columns",
+        "st.metric"
+      ]
+    }
+  },
+  "button_tests": {
+    "\ud83e\udde0 LLM Optimization_\ud83e\uddea Test Router": {
+      "button_text": "\ud83e\uddea Test Router",
+      "page": "\ud83e\udde0 LLM Optimization",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83e\uddea Test Router\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udcbe Create Checkpoint Now": {
+      "button_text": "\ud83d\udcbe Create Checkpoint Now",
+      "page": "\ud83d\udd04 Recovery Center",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udcbe Create Checkpoint Now\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udd0d Validate System State": {
+      "button_text": "\ud83d\udd0d Validate System State",
+      "page": "\ud83d\udd04 Recovery Center",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udd0d Validate System State\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udd27 Force State Save": {
+      "button_text": "\ud83d\udd27 Force State Save",
+      "page": "\ud83d\udd04 Recovery Center",
+      "tests": [
+        {
+          "test_name": "button_text_extraction",
+          "status": "PASS",
+          "details": "Button text \"\ud83d\udd27 Force State Save\" extracted successfully"
+        },
+        {
+          "test_name": "button_handler_exists",
+          "status": "PASS",
+          "details": "Button has associated handler logic"
+        },
+        {
+          "test_name": "button_accessibility",
+          "status": "PASS",
+          "details": "Button has meaningful text"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_pages": 7,
+    "tested_pages": 7,
+    "total_buttons": 4,
+    "tested_buttons": 4,
+    "passed_tests": 7,
+    "failed_tests": 4
+  }
+}
