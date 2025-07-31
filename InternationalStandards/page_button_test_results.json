@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-07-31T14:54:07.205061",
+  "pages_tested": {
+    "\ud83c\udfe0 Dashboard": {
+      "status": "PASS",
+      "details": "Page method _render_dashboard exists and is callable",
+      "method_name": "_render_dashboard"
+    },
+    "\ud83d\udd2c Discipline Explorer": {
+      "status": "PASS",
+      "details": "Page method _render_discipline_explorer exists and is callable",
+      "method_name": "_render_discipline_explorer"
+    },
+    "\ud83d\udcd6 Standards Browser": {
+      "status": "PASS",
+      "details": "Page method _render_standards_browser exists and is callable",
+      "method_name": "_render_standards_browser"
+    },
+    "\ud83e\udd16 Agent Monitor": {
+      "status": "PASS",
+      "details": "Page method _render_agent_monitor exists and is callable",
+      "method_name": "_render_agent_monitor"
+    },
+    "\ud83e\udde0 LLM Optimization": {
+      "status": "PASS",
+      "details": "Page method _render_llm_optimization exists and is callable",
+      "method_name": "_render_llm_optimization"
+    },
+    "\ud83d\udd17 Data APIs": {
+      "status": "PASS",
+      "details": "Page method _render_data_apis exists and is callable",
+      "method_name": "_render_data_apis"
+    },
+    "\ud83d\udd04 Recovery Center": {
+      "status": "PASS",
+      "details": "Page method _render_recovery_center exists and is callable",
+      "method_name": "_render_recovery_center"
+    }
+  },
+  "buttons_tested": {
+    "\ud83d\udcd6 Standards Browser_\ud83d\udd04 Refresh Cache": {
+      "status": "PASS",
+      "details": "Button \ud83d\udd04 Refresh Cache has associated cache functionality"
+    },
+    "\ud83e\udd16 Agent Monitor_\ud83d\udd04 Refresh Agent Cache": {
+      "status": "PASS",
+      "details": "Button \ud83d\udd04 Refresh Agent Cache has associated cache functionality"
+    },
+    "\ud83e\udd16 Agent Monitor_\ud83d\uddd1\ufe0f Clear All Cache": {
+      "status": "PASS",
+      "details": "Button \ud83d\uddd1\ufe0f Clear All Cache has associated cache functionality"
+    },
+    "\ud83e\udde0 LLM Optimization_\ud83e\uddea Test Router": {
+      "status": "PASS",
+      "details": "LLM integration available for router testing"
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\ude80 Test API Endpoint": {
+      "status": "PASS",
+      "details": "Button structure verified"
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udcca Export as CSV": {
+      "status": "PASS",
+      "details": "Export functionality available - 5 standards to export"
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udccb Export as JSON": {
+      "status": "PASS",
+      "details": "Export functionality available - 5 standards to export"
+    },
+    "\ud83d\udd17 Data APIs_\ud83d\udcc4 Export as XML": {
+      "status": "PASS",
+      "details": "Export functionality available - 5 standards to export"
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udcbe Create Checkpoint Now": {
+      "status": "PASS",
+      "details": "Recovery manager available for state operations"
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udd0d Validate System State": {
+      "status": "PASS",
+      "details": "Recovery manager available for state operations"
+    },
+    "\ud83d\udd04 Recovery Center_\ud83d\udd27 Force State Save": {
+      "status": "PASS",
+      "details": "Recovery manager available for state operations"
+    }
+  },
+  "summary": {
+    "total_pages": 7,
+    "passed_pages": 7,
+    "page_success_rate": 100.0,
+    "total_buttons": 11,
+    "passed_buttons": 11,
+    "button_success_rate": 100.0,
+    "overall_success_rate": 100.0,
+    "status": "PASS"
+  }
+}
