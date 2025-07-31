@@ -240,9 +240,6 @@ class InternationalStandardsApp:
         # Initialize orchestrator - CRITICAL MISSING COMPONENT
         self.orchestrator = self._initialize_orchestrator()
         
-        # Initialize orchestrator (when available)
-        self.orchestrator = None
-        
     def _initialize_session_state(self):
         """Initialize Streamlit session state with default values"""
         default_state = {
@@ -389,14 +386,17 @@ class InternationalStandardsApp:
                 )
                 
                 # Initialize all 59 agents (add this method if missing)
-                orchestrator.initialize_all_agents()
+                if hasattr(orchestrator, 'initialize_all_agents'):
+                    orchestrator.initialize_all_agents()
                 
+                st.success("✅ Orchestrator initialized successfully")
                 return orchestrator
             else:
-                st.error("StandardsOrchestrator not available - core functionality disabled")
+                st.error("❌ StandardsOrchestrator not available - core functionality disabled")
                 return None
         except Exception as e:
-            st.error(f"Failed to initialize orchestrator: {e}")
+            st.error(f"❌ Failed to initialize orchestrator: {e}")
+            st.error(f"Error details: {traceback.format_exc()}")
             return None
     
     def run(self):
@@ -1552,6 +1552,12 @@ class InternationalStandardsApp:
     def _start_system(self):
         """Start the ONE-BUTTON autonomous standards retrieval system across ALL 19 disciplines"""
         try:
+            # Check if orchestrator is properly initialized
+            if not self.orchestrator:
+                st.error("❌ Orchestrator not initialized - cannot start system")
+                st.error("Please check system initialization errors above.")
+                return
+            
             st.session_state['orchestrator_running'] = True
             st.session_state['system_initialized'] = True
             
