@@ -241,6 +241,9 @@ class InternationalStandardsApp:
         # Initialize LLM integration
         self.llm_integration = self._initialize_llm_integration()
         
+        # Initialize database manager
+        self.database_manager = self._initialize_database_manager()
+        
         # Initialize orchestrator - CRITICAL MISSING COMPONENT
         self.orchestrator = self._initialize_orchestrator()
         
@@ -383,6 +386,90 @@ class InternationalStandardsApp:
                 return {'available': False, 'error': str(e)}
         else:
             return {'available': False, 'error': 'LLM Router not available'}
+    
+    def _initialize_database_manager(self):
+        """Initialize the Database Manager"""
+        try:
+            from data.database_manager import DatabaseManager, DatabaseConfig
+            
+            # Create proper DatabaseConfig object
+            db_config_dict = self.config.get('database', {})
+            db_config = DatabaseConfig(
+                database_type=db_config_dict.get('database_type', 'sqlite'),
+                sqlite_path=str(self.data_dir / 'international_standards.db')
+            )
+            
+            return DatabaseManager(db_config)
+        except ImportError as e:
+            st.warning(f"DatabaseManager not available: {e}")
+            # Create a temporary database manager
+            return self._create_temporary_database_manager()
+        except Exception as e:
+            st.error(f"Error initializing Database Manager: {e}")
+            return self._create_temporary_database_manager()
+    
+    def _create_temporary_database_manager(self):
+        """Create temporary database manager for basic functionality"""
+        config_dir = self.config_dir
+        
+        class TemporaryDatabaseManager:
+            def __init__(self):
+                self.disciplines_data = self._load_default_disciplines()
+                self.standards_data = []
+                
+            def _load_default_disciplines(self):
+                """Load default disciplines from OpenAlex configuration"""
+                try:
+                    # Load from OpenAlex disciplines configuration
+                    openalex_config_path = config_dir / "openalex_disciplines.yaml"
+                    if openalex_config_path.exists():
+                        with open(openalex_config_path, 'r') as f:
+                            config = yaml.safe_load(f)
+                            disciplines = config.get('disciplines', {})
+                            return {name: {'id': i+1, 'name': info.get('display_name', name)} 
+                                   for i, (name, info) in enumerate(disciplines.items())}
+                    else:
+                        # Fallback to hardcoded only if no config file
+                        return {
+                            'Computer_Science': {'id': 1, 'name': 'Computer Science'},
+                            'Mathematics': {'id': 2, 'name': 'Mathematics'},
+                            'Physical_Sciences': {'id': 3, 'name': 'Physical Sciences'}
+                        }
+                except Exception:
+                    return {
+                        'Computer_Science': {'id': 1, 'name': 'Computer Science'},
+                        'Mathematics': {'id': 2, 'name': 'Mathematics'},
+                        'Physical_Sciences': {'id': 3, 'name': 'Physical Sciences'}
+                    }
+                
+            def get_disciplines(self):
+                """Return dynamically loaded disciplines"""
+                return self.disciplines_data
+                
+            def get_standards(self):
+                """Return empty standards list"""
+                return []
+                
+            def get_all_standards(self):
+                """Return empty standards list"""
+                return []
+                
+            def get_standards_documents(self, discipline_id=None, repository_name=None, 
+                                      education_level=None, language='english'):
+                """Return empty standards documents list"""
+                return []
+                
+        return TemporaryDatabaseManager()
+    
+    def _clear_cache(self):
+        """Clear all caches"""
+        if hasattr(self, 'cache') and self.cache:
+            self.cache.clear_cache()
+        
+        # Clear Streamlit cache
+        st.cache_data.clear()
+        
+        return True
     
     def _initialize_orchestrator(self):
         """Initialize the Standards Orchestrator - THE CORE ENGINE"""
@@ -1440,14 +1527,21 @@ class InternationalStandardsApp:
                     "timestamp": datetime.now().isoformat()
                 }
             elif "standards" in endpoint_path:
-                mock_response = {
-                    "standards": [
-                        {"id": 1, "title": "Common Core Mathematics", "organization": "CCSSO", "quality": 9.1},
-                        {"id": 2, "title": "NGSS Science Standards", "organization": "NGSS", "quality": 8.8}
-                    ],
-                    "total": 2,
-                    "discipline": "Mathematics"
-                }
+                # Get real standards data from database
+                try:
+                    real_standards = self.database_manager.get_all_standards() if self.database_manager else []
+                    mock_response = {
+                        "standards": real_standards[:10],  # First 10 for display
+                        "total": len(real_standards),
+                        "discipline": "All"
+                    }
+                except Exception as e:
+                    mock_response = {
+                        "standards": [],
+                        "total": 0,
+                        "discipline": "All",
+                        "error": f"Unable to load standards: {e}"
+                    }
             else:
                 mock_response = {
                     "message": "API endpoint response",
@@ -1466,23 +1560,60 @@ class InternationalStandardsApp:
         with col_export1:
             if st.button("📊 Export as CSV"):
                 st.success("CSV export initiated")
-                st.download_button(
-                    label="Download standards.csv",
-                    data="discipline,title,organization,quality_score\nMathematics,Common Core Math,CCSSO,9.1\n",
-                    file_name="standards.csv",
-                    mime="text/csv"
-                )
+                try:
+                    # Get real standards data for CSV export
+                    standards_data = self.database_manager.get_all_standards() if self.database_manager else []
+                    
+                    # Convert to CSV format
+                    csv_data = "discipline,title,organization,quality_score\n"
+                    for standard in standards_data:
+                        discipline = standard.get('discipline', 'Unknown')
+                        title = standard.get('title', 'Unknown')
+                        organization = standard.get('organization', 'Unknown')
+                        quality = standard.get('quality_score', 0.0)
+                        csv_data += f"{discipline},{title},{organization},{quality}\n"
+                    
+                    if not csv_data.strip().endswith('\n'):
+                        csv_data = "discipline,title,organization,quality_score\nNo data available\n"
+                    
+                    st.download_button(
+                        label="Download standards.csv",
+                        data=csv_data,
+                        file_name="standards.csv",
+                        mime="text/csv"
+                    )
+                except Exception as e:
+                    st.error(f"Error generating CSV: {e}")
+                    st.download_button(
+                        label="Download standards.csv", 
+                        data="discipline,title,organization,quality_score\nError loading data\n",
+                        file_name="standards.csv",
+                        mime="text/csv"
+                    )
         
         with col_export2:
             if st.button("📋 Export as JSON"):
                 st.success("JSON export initiated")
-                export_data = '{"standards": [{"discipline": "Mathematics", "title": "Common Core Math"}]}'
-                st.download_button(
-                    label="Download standards.json",
-                    data=export_data,
-                    file_name="standards.json",
-                    mime="application/json"
-                )
+                try:
+                    # Get real standards data for JSON export
+                    standards_data = self.database_manager.get_all_standards() if self.database_manager else []
+                    export_data = json.dumps({"standards": standards_data}, indent=2)
+                    
+                    st.download_button(
+                        label="Download standards.json",
+                        data=export_data,
+                        file_name="standards.json",
+                        mime="application/json"
+                    )
+                except Exception as e:
+                    st.error(f"Error generating JSON: {e}")
+                    error_data = json.dumps({"error": f"Unable to load standards: {e}", "standards": []}, indent=2)
+                    st.download_button(
+                        label="Download standards.json",
+                        data=error_data,
+                        file_name="standards.json",
+                        mime="application/json"
+                    )
         
         with col_export3:
             if st.button("📜 Export as XML"):

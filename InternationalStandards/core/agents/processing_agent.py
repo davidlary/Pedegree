@@ -109,7 +109,8 @@ class ProcessingAgent(BaseAgent):
         task_type = task.get('type', 'process_documents')
         
         try:
-            if task_type == 'process_documents':
+            # Handle main processing task type from orchestrator
+            if task_type == 'processing' or task_type == 'process_documents':
                 return self._process_documents(task)
             elif task_type == 'extract_standards':
                 return self._extract_standards_from_document(task)

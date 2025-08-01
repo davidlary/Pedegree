@@ -107,7 +107,8 @@ class ValidationAgent(BaseAgent):
         task_type = task.get('type', 'validate_standards')
         
         try:
-            if task_type == 'validate_standards':
+            # Handle main validation task type from orchestrator
+            if task_type == 'validation' or task_type == 'validate_standards':
                 return self._validate_processed_standards(task)
             elif task_type == 'quality_assessment':
                 return self._perform_quality_assessment(task)

@@ -421,7 +421,14 @@ class DatabaseManager:
                        document_title: Optional[str] = None, document_type: str = "unknown",
                        file_path: Optional[str] = None, file_size: Optional[int] = None,
                        content_hash: Optional[str] = None,
-                       metadata: Optional[Dict[str, Any]] = None) -> int:
+                       metadata: Optional[Dict[str, Any]] = None,
+                       standards_classification: Optional[str] = None,
+                       repository_name: Optional[str] = None,
+                       education_level: Optional[str] = None,
+                       language: Optional[str] = None,
+                       openbooks_subject: Optional[str] = None,
+                       standards_path: Optional[str] = None,
+                       json_path: Optional[str] = None) -> int:
         """Insert retrieved document record
         
         Args:
@@ -445,17 +452,28 @@ class DatabaseManager:
         query = """
         INSERT INTO retrieved_documents 
         (source_id, discipline_id, document_url, document_title, document_type,
-         file_path, file_size, content_hash, metadata)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+         file_path, file_size, content_hash, metadata, standards_classification,
+         repository_name, education_level, language, openbooks_subject, 
+         standards_path, json_path)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON CONFLICT (content_hash) DO UPDATE SET
         document_title = EXCLUDED.document_title,
-        file_path = EXCLUDED.file_path
+        file_path = EXCLUDED.file_path,
+        standards_classification = EXCLUDED.standards_classification,
+        repository_name = EXCLUDED.repository_name,
+        education_level = EXCLUDED.education_level,
+        language = EXCLUDED.language,
+        openbooks_subject = EXCLUDED.openbooks_subject,
+        standards_path = EXCLUDED.standards_path,
+        json_path = EXCLUDED.json_path
         RETURNING document_id
         """
         
         params = (
             source_id, discipline_id, document_url, document_title, document_type,
-            file_path, file_size, content_hash, Json(metadata) if metadata else None
+            file_path, file_size, content_hash, Json(metadata) if metadata else None,
+            standards_classification, repository_name, education_level, language,
+            openbooks_subject, standards_path, json_path
         )
         
         result = self.execute_query(query, params)
@@ -501,6 +519,55 @@ class DatabaseManager:
         base_query += " ORDER BY rd.download_timestamp DESC"
         
         return self.execute_query(base_query, tuple(params))
+    
+    def get_standards_documents(self, discipline_id: Optional[int] = None,
+                               repository_name: Optional[str] = None,
+                               education_level: Optional[str] = None,
+                               language: str = 'english') -> List[Dict[str, Any]]:
+        """Get standards documents with filtering options
+        
+        Args:
+            discipline_id: Optional discipline filter
+            repository_name: Optional repository filter
+            education_level: Optional education level filter 
+            language: Language filter (default: english)
+            
+        Returns:
+            List of standards document records
+        """
+        query = """
+        SELECT rd.document_id, rd.document_url, rd.document_title, rd.document_type,
+               rd.file_path, rd.standards_path, rd.json_path, rd.standards_classification,
+               rd.repository_name, rd.education_level, rd.language, rd.openbooks_subject,
+               rd.download_timestamp, ss.source_title, ss.quality_score,
+               d.discipline_name, d.display_name
+        FROM retrieved_documents rd
+        JOIN standards_sources ss ON rd.source_id = ss.source_id
+        JOIN disciplines d ON rd.discipline_id = d.discipline_id
+        WHERE rd.standards_classification IS NOT NULL
+        """
+        
+        params = []
+        
+        if discipline_id:
+            query += " AND rd.discipline_id = %s"
+            params.append(discipline_id)
+        
+        if repository_name:
+            query += " AND rd.repository_name = %s"
+            params.append(repository_name)
+        
+        if education_level:
+            query += " AND rd.education_level = %s"
+            params.append(education_level)
+        
+        if language:
+            query += " AND rd.language = %s"
+            params.append(language)
+        
+        query += " ORDER BY rd.download_timestamp DESC"
+        
+        return self.execute_query(query, tuple(params))
     
     # ==============================================================================
     # STANDARDS MANAGEMENT
@@ -949,6 +1016,6 @@ class DatabaseManager:
     
     def __del__(self):
         """Cleanup database connections"""
-        if self.connection_pool:
+        if hasattr(self, 'connection_pool') and self.connection_pool:
             self.connection_pool.closeall()
             self.logger.info("Database connection pool closed")

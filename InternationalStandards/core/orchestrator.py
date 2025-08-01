@@ -249,6 +249,21 @@ class StandardsOrchestrator:
                 self.logger.error("Failed to initialize agents")
                 return False
             
+            # Start all agents
+            self.logger.info(f"Starting {len(self.agents)} agents...")
+            started_agents = 0
+            for agent_id, agent in self.agents.items():
+                try:
+                    if agent.start():
+                        started_agents += 1
+                        self.logger.debug(f"Started agent {agent_id}")
+                    else:
+                        self.logger.warning(f"Failed to start agent {agent_id}")
+                except Exception as e:
+                    self.logger.error(f"Error starting agent {agent_id}: {e}")
+            
+            self.logger.info(f"Successfully started {started_agents}/{len(self.agents)} agents")
+            
             # Start orchestrator thread
             self.is_running = True
             self.stop_event.clear()

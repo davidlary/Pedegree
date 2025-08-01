@@ -1,10 +1,5 @@
 {
   "session_state": {
-    "current_page": "\ud83c\udfe0 Dashboard",
-    "system_initialized": false,
-    "agent_status": {},
-    "llm_usage": {},
-    "recovery_active": false,
     "selected_disciplines": [
       "Physical_Sciences",
       "Life_Sciences",
@@ -26,6 +21,15 @@
       "Education",
       "Law"
     ],
+    "session_id": "session_20250731_153601",
+    "autonomous_decisions": [],
+    "system_initialized": false,
+    "agent_status": {},
+    "orchestrator_running": false,
+    "last_update": "2025-07-31 15:36:01.277963",
+    "recovery_active": false,
+    "current_page": "\ud83c\udfe0 Dashboard",
+    "llm_usage": {},
     "system_stats": {
       "total_standards": 0,
       "active_agents": 0,
@@ -33,17 +37,13 @@
       "total_cost": 0.0,
       "quality_score": 0.0
     },
-    "orchestrator_running": false,
-    "last_update": "2025-07-31 15:43:26.355299",
-    "session_id": "session_20250731_154326",
-    "autonomous_decisions": [],
     "recovery_checkpoints": []
   },
-  "timestamp": "2025-07-31T15:43:26.526773",
+  "timestamp": "2025-07-31T15:36:01.449048",
   "forced_save": true,
   "recovery_metadata": {
     "auto_save": false,
-    "state_hash": "b5225e4a40f1718845f6ecb5ef369f11a3eb2cc5cc2373dd89a84b05ca4818b2",
+    "state_hash": "997cdbf1f3cad3ec789c3199ac7b0f7a1ec248cf90a391407ad59afba6b02c05",
     "recovery_version": "1.0.0"
   }
 }

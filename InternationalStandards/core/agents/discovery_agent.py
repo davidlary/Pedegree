@@ -88,7 +88,8 @@ class DiscoveryAgent(BaseAgent):
         task_type = task.get('type', 'discover_sources')
         
         try:
-            if task_type == 'discover_sources':
+            # Handle main discovery task type from orchestrator
+            if task_type == 'discovery' or task_type == 'discover_sources':
                 return self._discover_standards_sources(task)
             elif task_type == 'validate_source':
                 return self._validate_standards_source(task)

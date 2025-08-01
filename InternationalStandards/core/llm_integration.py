@@ -41,6 +41,17 @@ class TaskRequest:
     context_length_estimate: Optional[int] = None
     quality_requirement: str = "standard"  # standard, high, critical
     priority: str = "normal"  # low, normal, high, urgent
+    
+    @property
+    def quality_requirement_numeric(self) -> float:
+        """Convert quality requirement to numeric value"""
+        quality_map = {
+            "low": 0.3,
+            "standard": 0.6,
+            "high": 0.8,
+            "critical": 0.95
+        }
+        return quality_map.get(self.quality_requirement, 0.6)
 
 @dataclass
 class TaskResult:
@@ -532,13 +543,9 @@ class LLMIntegration:
         
         try:
             # Use the LLM Router to execute the task
-            if self.llm_router and hasattr(self.llm_router, 'route_request'):
-                router_result = self.llm_router.route_request(
-                    task_request.prompt,
-                    max_cost_per_1k=routing_result.get('estimated_cost_per_1k_tokens', 5.0),
-                    min_quality=task_request.quality_requirement_numeric,
-                    preferred_models=[model]
-                )
+            if self.router and hasattr(self.router, 'route_request'):
+                # Simple router call with just the prompt
+                router_result = self.router.route_request(task_request.prompt)
                 
                 # Extract actual results from router
                 if router_result and 'response' in router_result:

@@ -41,6 +41,7 @@ except ImportError:
 
 from .base_agent import BaseAgent, AgentStatus
 from ..llm_integration import TaskResult
+import shutil
 
 class RetrievalAgent(BaseAgent):
     """Agent specialized for standards document retrieval and parsing"""
@@ -75,6 +76,33 @@ class RetrievalAgent(BaseAgent):
         self.retrieved_documents = {}
         self.failed_retrievals = {}
         self.processing_queue = []
+        
+        # Standards-specific configuration
+        self.standards_base_dir = Path(config.get('data_directory', 'data')) / 'Standards'
+        self.standards_base_dir.mkdir(parents=True, exist_ok=True)
+        
+        # OpenAlex to OpenBooks discipline mapping
+        self.discipline_mapping = {
+            'Computer_Science': 'Computer science',
+            'Physical_Sciences': 'Physics', 
+            'Life_Sciences': 'Biology',
+            'Health_Sciences': 'Medicine',
+            'Mathematics': 'Mathematics',
+            'Engineering': 'Engineering',
+            'Economics': 'Economics',
+            'Business': 'Business',
+            'Education': 'Education',
+            'Social_Sciences': 'Sociology',
+            'Art': 'Art',
+            'History': 'History',
+            'Philosophy': 'Philosophy',
+            'Law': 'Law',
+            'Literature': 'Literature',
+            'Geography': 'Geography',
+            'Environmental_Science': 'Environmental Science',
+            'Earth_Sciences': 'Earth Sciences',
+            'Agricultural_Sciences': 'Agriculture'
+        }
         
         # Document format handlers
         self.format_handlers = self._initialize_format_handlers()
@@ -113,7 +141,8 @@ class RetrievalAgent(BaseAgent):
         task_type = task.get('type', 'retrieve_documents')
         
         try:
-            if task_type == 'retrieve_documents':
+            # Handle main retrieval task type from orchestrator
+            if task_type == 'retrieval' or task_type == 'retrieve_documents':
                 return self._retrieve_documents(task)
             elif task_type == 'process_document':
                 return self._process_single_document(task)
@@ -162,6 +191,9 @@ class RetrievalAgent(BaseAgent):
             # Analyze retrieved documents using LLM
             analyzed_documents = self._analyze_retrieved_documents(retrieval_results)
             
+            # Process academic standards documents
+            standards_documents = self._process_standards_documents(analyzed_documents)
+            
             result = {
                 'success': True,
                 'task_id': task.get('task_id'),
@@ -170,6 +202,7 @@ class RetrievalAgent(BaseAgent):
                 'documents_retrieved': len([r for r in retrieval_results if r.get('success')]),
                 'documents_failed': len([r for r in retrieval_results if not r.get('success')]),
                 'retrieved_documents': analyzed_documents,
+                'standards_documents': standards_documents,
                 'retrieval_summary': self._create_retrieval_summary(retrieval_results),
                 'retrieval_timestamp': datetime.now().isoformat()
             }
@@ -788,6 +821,475 @@ class RetrievalAgent(BaseAgent):
             'total_retrieval_tasks': self.performance_stats.get('tasks_completed', 0)
         }
     
+    # ==============================================================================
+    # STANDARDS PROCESSING METHODS  
+    # ==============================================================================
+    
+    def _process_standards_documents(self, analyzed_documents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Process documents as academic standards with dual storage"""
+        standards_documents = []
+        
+        for doc in analyzed_documents:
+            try:
+                # Classify as academic standard
+                classification = self._classify_academic_standard(doc)
+                
+                if classification.get('is_academic_standard'):
+                    # Store in Standards hierarchy + create JSON
+                    standards_storage = self._store_standards_document(doc, classification)
+                    
+                    # Combine original document info with standards processing
+                    standards_doc = {
+                        **doc,
+                        'standards_classification': classification,
+                        'standards_storage': standards_storage
+                    }
+                    
+                    standards_documents.append(standards_doc)
+                    
+            except Exception as e:
+                self.logger.error(f"Error processing standards document: {e}")
+                
+        self.logger.info(f"Processed {len(standards_documents)} academic standards documents")
+        return standards_documents
+    
+    def _classify_academic_standard(self, doc: Dict[str, Any]) -> Dict[str, Any]:
+        """Classify document as academic standard with OpenBooks mapping"""
+        
+        doc_info = doc.get('document_info', {})
+        content_info = doc.get('content_info', {})
+        llm_analysis = doc.get('llm_analysis', {})
+        
+        # Get OpenBooks subject mapping
+        openbooks_subject = self.discipline_mapping.get(self.discipline, self.discipline)
+        
+        # Detect if this is an academic standard
+        is_academic_standard = self._is_academic_standard(content_info, llm_analysis)
+        
+        if not is_academic_standard:
+            return {'is_academic_standard': False}
+        
+        # Classify standard components
+        standard_type = self._get_standard_type(content_info, llm_analysis)
+        repository = self._detect_repository(doc_info, content_info, llm_analysis)
+        education_level = self._classify_education_level(content_info, llm_analysis)
+        language = self._detect_language(content_info)
+        
+        return {
+            'is_academic_standard': True,
+            'standard_type': standard_type,
+            'repository': repository,
+            'education_level': education_level,
+            'language': language,
+            'openbooks_subject': openbooks_subject,
+            'original_discipline': self.discipline
+        }
+    
+    def _is_academic_standard(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> bool:
+        """Determine if document is an academic standard"""
+        
+        content = content_info.get('text_content', '').lower()
+        analysis = llm_analysis.get('analysis', {})
+        
+        # Check for academic standards indicators
+        standards_keywords = [
+            'standard', 'curriculum', 'learning objective', 'competency',
+            'assessment', 'accreditation', 'guideline', 'framework',
+            'common core', 'ngss', 'abet', 'mcat', 'educational standard'
+        ]
+        
+        keyword_matches = sum(1 for keyword in standards_keywords if keyword in content)
+        
+        # LLM analysis relevance check
+        relevance_score = analysis.get('relevance_score', 0.0)
+        
+        # Classification from LLM
+        doc_classification = analysis.get('document_classification', '').lower()
+        is_standards_classified = any(term in doc_classification for term in ['standard', 'curriculum', 'accreditation'])
+        
+        # Decision logic
+        return (keyword_matches >= 2 or 
+                relevance_score >= 0.7 or 
+                is_standards_classified)
+    
+    def _get_standard_type(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> str:
+        """Classify the type of academic standard"""
+        
+        content = content_info.get('text_content', '').lower()
+        analysis = llm_analysis.get('analysis', {})
+        
+        # Check for curriculum standards
+        if any(term in content for term in ['curriculum', 'learning objective', 'common core', 'ngss']):
+            return 'curriculum'
+        
+        # Check for accreditation standards
+        elif any(term in content for term in ['accreditation', 'abet', 'aacsb', 'accredited']):
+            return 'accreditation'
+        
+        # Check for assessment standards
+        elif any(term in content for term in ['assessment', 'test', 'exam', 'mcat', 'gre', 'evaluation']):
+            return 'assessment'
+        
+        # Use LLM classification
+        llm_classification = analysis.get('document_classification', '').lower()
+        if 'curriculum' in llm_classification:
+            return 'curriculum'
+        elif 'accreditation' in llm_classification:
+            return 'accreditation'
+        elif 'assessment' in llm_classification:
+            return 'assessment'
+        
+        return 'curriculum'  # Default
+    
+    def _detect_repository(self, doc_info: Dict[str, Any], content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> str:
+        """Detect standards repository from document"""
+        
+        url = doc_info.get('url', '').lower()
+        title = doc_info.get('title', '').lower()
+        content = content_info.get('text_content', '').lower()
+        
+        # Curriculum repositories
+        if any(term in url + title + content for term in ['common core', 'commoncore']):
+            return 'CommonCore'
+        elif any(term in url + title + content for term in ['ngss', 'next generation science']):
+            return 'NGSS'
+        elif 'csta' in url + title + content:
+            return 'CSTA_Standards'
+        elif 'state' in url + title and 'standard' in url + title:
+            return 'State_Standards'
+        
+        # Accreditation repositories  
+        elif 'abet' in url + title + content:
+            return 'ABET'
+        elif 'aacsb' in url + title + content:
+            return 'AACSB'
+        elif 'lcme' in url + title + content:
+            return 'LCME'
+        elif any(term in url + title for term in ['accreditat', 'regional']):
+            return 'Regional_Accreditors'
+        
+        # Assessment repositories
+        elif 'mcat' in url + title + content:
+            return 'MCAT'
+        elif 'gre' in url + title + content:
+            return 'GRE'
+        elif any(term in url + title for term in ['ap ', 'advanced placement']):
+            return 'AP_Exams'
+        elif 'ib ' in url + title + content or 'international baccalaureate' in url + title + content:
+            return 'IB_Standards'
+        elif any(term in url + title for term in ['professional', 'certification', 'license']):
+            return 'Professional_Certs'
+        
+        # Default by standard type
+        standard_type = self._get_standard_type(content_info, llm_analysis)
+        if standard_type == 'curriculum':
+            return 'Curriculum_Standards'
+        elif standard_type == 'accreditation':
+            return 'Accreditation_Standards'  
+        elif standard_type == 'assessment':
+            return 'Assessment_Standards'
+        
+        return 'General_Standards'
+    
+    def _classify_education_level(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> str:
+        """Classify education level with OpenBooks levels"""
+        
+        content = content_info.get('text_content', '').lower()
+        analysis = llm_analysis.get('analysis', {})
+        
+        # Graduate level indicators
+        if any(term in content for term in ['graduate', 'phd', 'doctoral', 'master', 'residency', 'fellowship']):
+            return 'Graduate'
+        
+        # University level indicators  
+        elif any(term in content for term in ['university', 'college', 'undergraduate', 'bachelor', 'baccalaureate']):
+            return 'University'
+        
+        # High school indicators
+        elif any(term in content for term in ['high school', 'secondary', 'grades 9-12', 'ap ', 'advanced placement', 'ib ']):
+            return 'HighSchool'
+        
+        # K-12 indicators (broader elementary/middle/high)
+        elif any(term in content for term in ['k-12', 'elementary', 'middle school', 'grades k', 'kindergarten']):
+            return 'K-12'
+        
+        # LLM analysis target audience
+        target_audience = analysis.get('target_audience', '').lower()
+        if 'higher ed' in target_audience or 'university' in target_audience:
+            return 'University'
+        elif 'k-12' in target_audience:
+            return 'K-12'
+        elif 'professional' in target_audience:
+            return 'Graduate'
+        
+        # Default based on discipline patterns
+        if self.discipline in ['Health_Sciences'] and any(term in content for term in ['mcat', 'medical school']):
+            return 'Graduate'
+        elif any(term in content for term in ['curriculum', 'standard']):
+            return 'K-12'  # Most curriculum standards target K-12
+        
+        return 'University'  # Default fallback
+    
+    def _detect_language(self, content_info: Dict[str, Any]) -> str:
+        """Detect document language (simple heuristic)"""
+        
+        content = content_info.get('text_content', '')
+        
+        # Simple language detection based on common words
+        spanish_indicators = ['el ', 'la ', 'de ', 'que ', 'y ', 'en ', 'un ', 'es ', 'se ', 'no ']
+        french_indicators = ['le ', 'de ', 'et ', 'à ', 'un ', 'il ', 'être ', 'et ', 'en ', 'avoir ']
+        
+        if any(indicator in content.lower() for indicator in spanish_indicators):
+            spanish_count = sum(1 for indicator in spanish_indicators if indicator in content.lower())
+            if spanish_count >= 3:
+                return 'spanish'
+        
+        if any(indicator in content.lower() for indicator in french_indicators):
+            french_count = sum(1 for indicator in french_indicators if indicator in content.lower())
+            if french_count >= 3:
+                return 'french'
+        
+        return 'english'  # Default
+    
+    def _store_standards_document(self, doc: Dict[str, Any], classification: Dict[str, Any]) -> Dict[str, Any]:
+        """Store document in Standards hierarchy with dual storage"""
+        
+        doc_info = doc.get('document_info', {})
+        current_path = doc.get('file_path')
+        
+        if not current_path or not Path(current_path).exists():
+            return {'error': 'Source file not found'}
+        
+        try:
+            # Build Standards hierarchy path
+            standards_path = self._build_standards_path(classification)
+            standards_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Copy file to Standards location
+            shutil.copy2(current_path, standards_path)
+            
+            # Generate machine-readable JSON
+            json_path = self._create_json_extraction(doc, classification, standards_path)
+            
+            return {
+                'original_path': current_path,
+                'standards_path': str(standards_path),
+                'json_path': str(json_path),
+                'classification': classification
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Error storing standards document: {e}")
+            return {'error': str(e)}
+    
+    def _build_standards_path(self, classification: Dict[str, Any]) -> Path:
+        """Build Standards directory path with OpenBooks structure"""
+        
+        # Language → Subject → Level → Repository → filename
+        path = (self.standards_base_dir / 
+                classification['language'] /
+                classification['openbooks_subject'] /
+                classification['education_level'] /
+                classification['repository'])
+        
+        # Generate filename with metadata
+        filename = self._generate_standards_filename(classification)
+        
+        return path / filename
+    
+    def _generate_standards_filename(self, classification: Dict[str, Any]) -> str:
+        """Generate descriptive filename for standards document"""
+        
+        timestamp = datetime.now().strftime('%Y%m%d')
+        
+        # Create readable filename: Repository_Subject_Level_timestamp.pdf
+        filename = f"{classification['repository']}_{classification['openbooks_subject'].replace(' ', '_')}_{classification['education_level']}_{timestamp}.pdf"
+        
+        return filename
+    
+    def _create_json_extraction(self, doc: Dict[str, Any], classification: Dict[str, Any], standards_path: Path) -> Path:
+        """Create structured JSON in extracted/ hierarchy"""
+        
+        # Mirror the standards path in extracted/
+        extracted_base = self.standards_base_dir / 'extracted'
+        
+        json_path = (extracted_base /
+                     classification['language'] /
+                     classification['openbooks_subject'] /
+                     classification['education_level'] /
+                     f"{classification['repository']}.json")
+        
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Extract structured content
+        structured_content = self._extract_to_machine_readable(doc, classification)
+        
+        # Save JSON
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(structured_content, f, indent=2, ensure_ascii=False)
+        
+        return json_path
+    
+    def _extract_to_machine_readable(self, doc: Dict[str, Any], classification: Dict[str, Any]) -> Dict[str, Any]:
+        """Create comprehensive JSON structure for API consumption"""
+        
+        content_info = doc.get('content_info', {})
+        llm_analysis = doc.get('llm_analysis', {})
+        doc_info = doc.get('document_info', {})
+        
+        return {
+            'metadata': {
+                'repository': classification['repository'],
+                'subject': classification['openbooks_subject'],
+                'education_level': classification['education_level'],
+                'language': classification['language'],
+                'standard_type': classification['standard_type'],
+                'extraction_timestamp': datetime.now().isoformat(),
+                'source_document': str(classification.get('original_path', '')),
+                'source_url': doc_info.get('url', ''),
+                'document_title': doc_info.get('title', '')
+            },
+            'standards_content': {
+                'learning_objectives': self._extract_learning_objectives(content_info, llm_analysis),
+                'competencies': self._extract_competencies(content_info, llm_analysis),  
+                'assessment_criteria': self._extract_assessment_criteria(content_info, llm_analysis),
+                'grade_levels': self._extract_grade_levels(content_info, llm_analysis),
+                'subject_areas': self._extract_subject_areas(content_info, llm_analysis),
+                'key_concepts': self._extract_key_concepts(content_info, llm_analysis)
+            },
+            'full_text_content': content_info.get('text_content', ''),
+            'document_structure': {
+                'page_count': content_info.get('page_count', 0),
+                'extraction_method': content_info.get('extraction_method', 'unknown'),
+                'content_quality': llm_analysis.get('quality_score', 0.0)
+            },
+            'api_ready': {
+                'searchable_text': self._create_searchable_text(content_info),
+                'structured_standards': self._structure_standards_for_api(llm_analysis),
+                'tags': self._generate_content_tags(content_info, llm_analysis, classification)
+            }
+        }
+    
+    def _extract_learning_objectives(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract learning objectives from content"""
+        content = content_info.get('text_content', '')
+        
+        # Simple pattern matching for learning objectives
+        objectives = []
+        for line in content.split('\n'):
+            line = line.strip()
+            if any(starter in line.lower() for starter in ['students will', 'learners will', 'objective:', 'goal:']):
+                if len(line) > 10 and len(line) < 200:  # Reasonable length
+                    objectives.append(line)
+        
+        return objectives[:10]  # Limit to first 10
+    
+    def _extract_competencies(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract competencies from content"""
+        content = content_info.get('text_content', '')
+        
+        competencies = []
+        for line in content.split('\n'):
+            line = line.strip()
+            if any(term in line.lower() for term in ['competency', 'skill', 'ability', 'demonstrate']):
+                if len(line) > 10 and len(line) < 200:
+                    competencies.append(line)
+        
+        return competencies[:10]
+    
+    def _extract_assessment_criteria(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract assessment criteria from content"""
+        content = content_info.get('text_content', '')
+        
+        criteria = []
+        for line in content.split('\n'):
+            line = line.strip()
+            if any(term in line.lower() for term in ['assess', 'evaluate', 'measure', 'criteria']):
+                if len(line) > 10 and len(line) < 200:
+                    criteria.append(line)
+        
+        return criteria[:10]
+    
+    def _extract_grade_levels(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract grade levels from content"""
+        content = content_info.get('text_content', '').lower()
+        
+        grades = []
+        grade_patterns = ['grade ', 'k-', 'kindergarten', 'elementary', 'middle', 'high school', 'university', 'graduate']
+        
+        for pattern in grade_patterns:
+            if pattern in content:
+                grades.append(pattern.replace(' ', '').title())
+        
+        return list(set(grades))
+    
+    def _extract_subject_areas(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract subject areas from content"""
+        return [self.discipline_mapping.get(self.discipline, self.discipline)]
+    
+    def _extract_key_concepts(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any]) -> List[str]:
+        """Extract key concepts from content"""
+        analysis = llm_analysis.get('analysis', {})
+        key_topics = analysis.get('key_topics', [])
+        
+        if not key_topics:
+            # Simple keyword extraction
+            content = content_info.get('text_content', '').lower()
+            common_concepts = ['concept', 'principle', 'theory', 'method', 'approach', 'framework']
+            
+            concepts = []
+            for line in content.split('\n'):
+                if any(concept in line for concept in common_concepts):
+                    concepts.append(line.strip()[:100])  # Limit length
+            
+            return concepts[:5]
+        
+        return key_topics if isinstance(key_topics, list) else []
+    
+    def _create_searchable_text(self, content_info: Dict[str, Any]) -> str:
+        """Create searchable text optimized for API queries"""
+        content = content_info.get('text_content', '')
+        
+        # Clean and normalize text for searching
+        lines = content.split('\n')
+        clean_lines = [line.strip() for line in lines if line.strip() and len(line.strip()) > 5]
+        
+        return ' '.join(clean_lines[:1000])  # Limit for API efficiency
+    
+    def _structure_standards_for_api(self, llm_analysis: Dict[str, Any]) -> Dict[str, Any]:
+        """Structure standards data for API consumption"""
+        analysis = llm_analysis.get('analysis', {})
+        
+        return {
+            'relevance_score': analysis.get('relevance_score', 0.0),
+            'quality_score': analysis.get('quality_score', 0.0),
+            'document_classification': analysis.get('document_classification', ''),
+            'target_audience': analysis.get('target_audience', ''),
+            'key_frameworks': analysis.get('key_frameworks', []),
+            'summary': analysis.get('summary', '')
+        }
+    
+    def _generate_content_tags(self, content_info: Dict[str, Any], llm_analysis: Dict[str, Any], classification: Dict[str, Any]) -> List[str]:
+        """Generate tags for content categorization"""
+        tags = [
+            classification['standard_type'],
+            classification['education_level'],
+            classification['repository'],
+            classification['openbooks_subject'],
+            self.discipline
+        ]
+        
+        # Add quality indicators
+        quality_score = llm_analysis.get('quality_score', 0.0)
+        if quality_score >= 0.8:
+            tags.append('high_quality')
+        elif quality_score >= 0.6:
+            tags.append('medium_quality')
+        else:
+            tags.append('needs_review')
+        
+        return list(set(tags))
+
     def __del__(self):
         """Cleanup when retrieval agent is destroyed"""
         if hasattr(self, 'session'):
