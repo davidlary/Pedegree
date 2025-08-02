@@ -1,0 +1,524 @@
+{
+  "generation_time": "2025-08-02T18:30:22.759445",
+  "system_info": {
+    "version": "2.0.0 - Comprehensive Curriculum Standards Engine",
+    "approach": "International Curriculum Frameworks and Assessment Standards",
+    "total_processing_time_seconds": 0,
+    "system_ready": true
+  },
+  "comprehensive_statistics": {
+    "disciplines_processed": 19,
+    "total_curriculum_standards_retrieved": 16,
+    "by_level": {
+      "High_School": 12,
+      "Undergraduate": 4
+    },
+    "by_framework_type": {
+      "curriculum_framework": 13,
+      "accreditation_standard": 3
+    },
+    "by_region": {
+      "US": 13,
+      "Global": 2,
+      "Europe": 1
+    },
+    "download_stats": {
+      "total_downloaded": 16,
+      "successful_downloads": 16,
+      "failed_downloads": 0,
+      "total_size_mb": 73.60280513763428,
+      "by_discipline": {
+        "Physical_Sciences": 3,
+        "Computer_Science": 2,
+        "Mathematics": 2,
+        "Life_Sciences": 1,
+        "Health_Sciences": 1,
+        "Engineering": 1,
+        "Earth_Sciences": 0,
+        "Environmental_Science": 1,
+        "Agricultural_Sciences": 0,
+        "Economics": 0,
+        "Business": 1,
+        "Social_Sciences": 1,
+        "Geography": 1,
+        "History": 1,
+        "Art": 0,
+        "Literature": 1,
+        "Philosophy": 0,
+        "Law": 0,
+        "Education": 0
+      },
+      "by_level": {
+        "High_School": 12,
+        "Undergraduate": 4
+      },
+      "by_framework_type": {
+        "curriculum_framework": 13,
+        "accreditation_standard": 3
+      }
+    }
+  },
+  "discipline_summary": {
+    "total_disciplines": 19,
+    "processed": 19,
+    "successful": 12,
+    "failed": 7,
+    "success_rate": 0.631578947368421
+  },
+  "detailed_results": {
+    "Physical_Sciences": {
+      "standards_retrieved": 3,
+      "organizations": [
+        "College Board (US)",
+        "Next Generation Science Standards (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 17.874845504760742,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Physics 1 Course and Exam Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Physics/High_School/College_Board_US/AP Physics 1 Course and Exam Description.pdf",
+          "file_size_mb": 5.864392280578613
+        },
+        {
+          "title": "AP Physics C Mechanics Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Physics/High_School/College_Board_US/AP Physics C Mechanics Course Description.pdf",
+          "file_size_mb": 8.29172420501709
+        },
+        {
+          "title": "NGSS High School Physics Performance Expectations",
+          "organization": "Next Generation Science Standards (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Physics/High_School/Next_Generation_Science_Standards_US/NGSS High School Physics Performance Expectations.pdf",
+          "file_size_mb": 3.718729019165039
+        }
+      ]
+    },
+    "Computer_Science": {
+      "standards_retrieved": 2,
+      "organizations": [
+        "Association for Computing Machinery",
+        "College Board (US)"
+      ],
+      "levels": [
+        "Undergraduate",
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global",
+        "US"
+      ],
+      "total_size_mb": 12.36887264251709,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Computer Science A Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Computer_Science/High_School/College_Board_US/AP Computer Science A Course Description.pdf",
+          "file_size_mb": 4.00986385345459
+        },
+        {
+          "title": "Computing Curricula 2020 (CC2020)",
+          "organization": "Association for Computing Machinery",
+          "level": "Undergraduate",
+          "framework_type": "curriculum_framework",
+          "region": "Global",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Computer_Science/Undergraduate/Association_for_Computing_Machinery/Computing Curricula 2020 (CC2020).pdf",
+          "file_size_mb": 8.3590087890625
+        }
+      ]
+    },
+    "Mathematics": {
+      "standards_retrieved": 2,
+      "organizations": [
+        "College Board (US)",
+        "Common Core State Standards (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 5.282252311706543,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Calculus Course and Exam Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Mathematics/High_School/College_Board_US/AP Calculus Course and Exam Description.pdf",
+          "file_size_mb": 5.237236022949219
+        },
+        {
+          "title": "Common Core Mathematics Standards",
+          "organization": "Common Core State Standards (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Mathematics/High_School/Common_Core_State_Standards_US/Common Core Mathematics Standards.html",
+          "file_size_mb": 0.04501628875732422
+        }
+      ]
+    },
+    "Life_Sciences": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 5.277188301086426,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Biology Course and Exam Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Biology/High_School/College_Board_US/AP Biology Course and Exam Description.pdf",
+          "file_size_mb": 5.277188301086426
+        }
+      ]
+    },
+    "Health_Sciences": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "Liaison Committee on Medical Education"
+      ],
+      "levels": [
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "accreditation_standard"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 0.074676513671875,
+      "success": true,
+      "standards": [
+        {
+          "title": "LCME Standards for Accreditation",
+          "organization": "Liaison Committee on Medical Education",
+          "level": "Undergraduate",
+          "framework_type": "accreditation_standard",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Medicine/Undergraduate/Liaison_Committee_on_Medical_Education/LCME Standards for Accreditation.html",
+          "file_size_mb": 0.074676513671875
+        }
+      ]
+    },
+    "Engineering": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "European Network for Accreditation of Engineering Education"
+      ],
+      "levels": [
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "accreditation_standard"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "total_size_mb": 0.13955307006835938,
+      "success": true,
+      "standards": [
+        {
+          "title": "EUR-ACE Framework Standards",
+          "organization": "European Network for Accreditation of Engineering Education",
+          "level": "Undergraduate",
+          "framework_type": "accreditation_standard",
+          "region": "Europe",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Engineering/Undergraduate/European_Network_for_Accreditation_of_Engineering_Education/EUR-ACE Framework Standards.html",
+          "file_size_mb": 0.13955307006835938
+        }
+      ]
+    },
+    "Earth_Sciences": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Environmental_Science": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 10.260783195495605,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Environmental Science Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Environmental_Science/High_School/College_Board_US/AP Environmental Science Course Description.pdf",
+          "file_size_mb": 10.260783195495605
+        }
+      ]
+    },
+    "Agricultural_Sciences": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Economics": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Business": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "Association to Advance Collegiate Schools of Business"
+      ],
+      "levels": [
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "accreditation_standard"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "total_size_mb": 0.06923294067382812,
+      "success": true,
+      "standards": [
+        {
+          "title": "AACSB Business Accreditation Standards",
+          "organization": "Association to Advance Collegiate Schools of Business",
+          "level": "Undergraduate",
+          "framework_type": "accreditation_standard",
+          "region": "Global",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Business/Undergraduate/Association_to_Advance_Collegiate_Schools_of_Business/AACSB Business Accreditation Standards.pdf",
+          "file_size_mb": 0.06923294067382812
+        }
+      ]
+    },
+    "Social_Sciences": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 2.5413694381713867,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Psychology Course and Exam Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Social_Sciences/High_School/College_Board_US/AP Psychology Course and Exam Description.pdf",
+          "file_size_mb": 2.5413694381713867
+        }
+      ]
+    },
+    "Geography": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 7.5318145751953125,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP Human Geography Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Geography/High_School/College_Board_US/AP Human Geography Course Description.pdf",
+          "file_size_mb": 7.5318145751953125
+        }
+      ]
+    },
+    "History": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 7.707658767700195,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP World History Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/History/High_School/College_Board_US/AP World History Course Description.pdf",
+          "file_size_mb": 7.707658767700195
+        }
+      ]
+    },
+    "Art": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Literature": {
+      "standards_retrieved": 1,
+      "organizations": [
+        "College Board (US)"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ],
+      "total_size_mb": 4.474557876586914,
+      "success": true,
+      "standards": [
+        {
+          "title": "AP English Literature Course Description",
+          "organization": "College Board (US)",
+          "level": "High_School",
+          "framework_type": "curriculum_framework",
+          "region": "US",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english/Literature/High_School/College_Board_US/AP English Literature Course Description.pdf",
+          "file_size_mb": 4.474557876586914
+        }
+      ]
+    },
+    "Philosophy": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Law": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    },
+    "Education": {
+      "standards_retrieved": 0,
+      "organizations": [],
+      "levels": [],
+      "framework_types": [],
+      "regions": [],
+      "total_size_mb": 0.0,
+      "success": false,
+      "standards": []
+    }
+  },
+  "comparison_with_previous_approach": {
+    "previous_basic_approach": "Searched for standards organizations only",
+    "previous_documents_retrieved": 26,
+    "comprehensive_approach": "International curriculum frameworks and assessment standards",
+    "comprehensive_documents_retrieved": 16,
+    "improvement_factor": 0.6153846153846154
+  }
+}

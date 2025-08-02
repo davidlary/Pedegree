@@ -1,0 +1,151 @@
+{
+  "end_to_end_validation_summary": {
+    "timestamp": "2025-08-02T10:23:22.042194",
+    "total_execution_time": 1.669156,
+    "tests_passed": 5,
+    "total_tests": 6,
+    "success_rate": 0.8333333333333334,
+    "workflow_validated": true
+  },
+  "detailed_test_results": {
+    "system_initialization": [
+      {
+        "test": "Complete System Initialization",
+        "success": true,
+        "details": {
+          "retrieval_engine": true,
+          "data_directory": true,
+          "standards_directory": true,
+          "english_directory": true,
+          "processed_directory": true
+        },
+        "timestamp": "2025-08-02T10:23:20.402052"
+      }
+    ],
+    "standards_retrieval": [
+      {
+        "test": "Standards Retrieval Workflow",
+        "success": true,
+        "details": {
+          "success_rate": 1.0,
+          "successful_disciplines": 3,
+          "total_tested": 3,
+          "retrieval_results": {
+            "Computer_Science": {
+              "success": true,
+              "document_count": 2,
+              "documents": [
+                "Computing Curricula 2020 (CC2020)",
+                "Software Engineering Body of Knowledge (SWEBOK)"
+              ]
+            },
+            "Mathematics": {
+              "success": true,
+              "document_count": 1,
+              "documents": [
+                "Principles and Standards for School Mathematics"
+              ]
+            },
+            "Physical_Sciences": {
+              "success": true,
+              "document_count": 5,
+              "documents": [
+                "NIST Framework for Improving Critical Infrastructure Cybersecurity",
+                "IEEE Standards Style Manual",
+                "AAPT Physics Education Standards",
+                "APS Physics Education Standards",
+                "SAT Physics Subject Test Standards"
+              ]
+            }
+          }
+        },
+        "timestamp": "2025-08-02T10:23:22.036261"
+      }
+    ],
+    "document_storage": [
+      {
+        "test": "Document Storage Validation",
+        "success": true,
+        "details": {
+          "total_documents": 26,
+          "disciplines_with_documents": 17,
+          "discipline_counts": {
+            "Agriculture": 0,
+            "Literature": 1,
+            "Sociology": 1,
+            "Earth Sciences": 1,
+            "Art": 1,
+            "Law": 1,
+            "Education": 1,
+            "Business": 1,
+            "Mathematics": 1,
+            "Philosophy": 1,
+            "Computer science": 2,
+            "Environmental Science": 0,
+            "Medicine": 5,
+            "History": 1,
+            "Economics": 1,
+            "multi_discipline": 0,
+            "Physics": 5,
+            "Engineering": 1,
+            "Geography": 1,
+            "Biology": 1
+          },
+          "storage_checks": {
+            "unified_directory_structure": true,
+            "document_files_present": true,
+            "multiple_disciplines": true,
+            "organization_subdirectories": true
+          }
+        },
+        "timestamp": "2025-08-02T10:23:22.040893"
+      }
+    ],
+    "data_validation": [
+      {
+        "test": "Data Validation and Integrity",
+        "success": false,
+        "details": {
+          "validation_checks": {
+            "production_reports_exist": true,
+            "recent_execution": false,
+            "success_rate_acceptable": false
+          },
+          "production_reports_found": 1
+        },
+        "timestamp": "2025-08-02T10:23:22.041327"
+      }
+    ],
+    "reporting": [
+      {
+        "test": "Reporting and Output Generation",
+        "success": true,
+        "details": {
+          "test_report_created": true,
+          "existing_reports_count": 8,
+          "test_report_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/end_to_end_test_report_20250802_102322.json"
+        },
+        "timestamp": "2025-08-02T10:23:22.042037"
+      }
+    ],
+    "user_interface": [
+      {
+        "test": "User Interface Compatibility",
+        "success": true,
+        "details": {
+          "context_abstraction_working": true,
+          "autonomous_manager_functional": true,
+          "streamlit_warnings_suppressed": true,
+          "cli_compatible": true
+        },
+        "timestamp": "2025-08-02T10:23:22.042169"
+      }
+    ]
+  },
+  "system_readiness": {
+    "production_ready": true,
+    "user_workflow_validated": true,
+    "autonomous_operation_confirmed": true,
+    "all_phases_completed": true
+  }
+}

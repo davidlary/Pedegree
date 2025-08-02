@@ -67,9 +67,31 @@ class RetrievalAgent(BaseAgent):
         self.max_file_size = config.get('max_file_size', 100 * 1024 * 1024)  # 100MB
         self.retry_attempts = config.get('retry_attempts', 3)
         
-        # Storage configuration
+        # Storage configuration - Use consistent Books-format directory structure
         self.data_dir = Path(config.get('data_directory', 'data'))
-        self.documents_dir = self.data_dir / 'documents' / discipline
+        subject_mapping = {
+            'Physical_Sciences': 'Physics',
+            'Computer_Science': 'Computer science', 
+            'Life_Sciences': 'Biology',
+            'Health_Sciences': 'Medicine',
+            'Engineering': 'Engineering',
+            'Mathematics': 'Mathematics',
+            'Earth_Sciences': 'Earth Sciences',
+            'Environmental_Science': 'Environmental Science',
+            'Agricultural_Sciences': 'Agriculture',
+            'Economics': 'Economics',
+            'Business': 'Business',  
+            'Social_Sciences': 'Sociology',
+            'Geography': 'Geography',
+            'History': 'History',
+            'Art': 'Art',
+            'Literature': 'Literature',
+            'Philosophy': 'Philosophy',
+            'Law': 'Law',
+            'Education': 'Education'
+        }
+        subject_name = subject_mapping.get(discipline, discipline)
+        self.documents_dir = self.data_dir / 'Standards' / 'english' / subject_name / 'University'
         self.documents_dir.mkdir(parents=True, exist_ok=True)
         
         # Retrieved documents tracking

@@ -1,0 +1,183 @@
+{
+  "system_info": {
+    "version": "1.0.0",
+    "execution_time": "2025-08-02T09:43:59.831740",
+    "total_processing_time_seconds": 14.451576948165894,
+    "system_ready": true
+  },
+  "discipline_summary": {
+    "total_disciplines": 19,
+    "processed": 19,
+    "successful": 4,
+    "failed": 15,
+    "success_rate": 0.21052631578947367
+  },
+  "document_summary": {
+    "total_documents_retrieved": 6,
+    "total_size_mb": 11.350258827209473,
+    "average_documents_per_discipline": 0.3157894736842105
+  },
+  "detailed_results": {
+    "Physical_Sciences": {
+      "documents_retrieved": 2,
+      "processing_time_seconds": 0.008263826370239258,
+      "success": true,
+      "documents": [
+        {
+          "title": "NIST Framework for Improving Critical Infrastructure Cybersecurity",
+          "organization": "NIST",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Physical_Sciences/NIST/NIST Framework for Improving Critical Infrastructure Cybersecurity.pdf",
+          "file_size_mb": 1.0135860443115234
+        },
+        {
+          "title": "IEEE Standards Style Manual",
+          "organization": "IEEE",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Physical_Sciences/IEEE/IEEE Standards Style Manual.pdf",
+          "file_size_mb": 1.242238998413086
+        }
+      ]
+    },
+    "Life_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 1.2093591690063477,
+      "success": false,
+      "documents": []
+    },
+    "Health_Sciences": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.7616491317749023,
+      "success": true,
+      "documents": [
+        {
+          "title": "Standards for Accreditation of Medical Education Programs",
+          "organization": "LCME",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Health_Sciences/LCME/Standards for Accreditation of Medical Education Programs.html",
+          "file_size_mb": 0.07464408874511719
+        }
+      ]
+    },
+    "Computer_Science": {
+      "documents_retrieved": 2,
+      "processing_time_seconds": 1.2459590435028076,
+      "success": true,
+      "documents": [
+        {
+          "title": "Computing Curricula 2020 (CC2020)",
+          "organization": "ACM",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Computer_Science/ACM/Computing Curricula 2020 (CC2020).pdf",
+          "file_size_mb": 8.3590087890625
+        },
+        {
+          "title": "Software Engineering Body of Knowledge (SWEBOK)",
+          "organization": "IEEE_CS",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Computer_Science/IEEE_CS/Software Engineering Body of Knowledge (SWEBOK).html",
+          "file_size_mb": 0.4636707305908203
+        }
+      ]
+    },
+    "Engineering": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.6963977813720703,
+      "success": false,
+      "documents": []
+    },
+    "Mathematics": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 10.474425792694092,
+      "success": true,
+      "documents": [
+        {
+          "title": "Principles and Standards for School Mathematics",
+          "organization": "NCTM",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/documents/Mathematics/NCTM/Principles and Standards for School Mathematics.html",
+          "file_size_mb": 0.19711017608642578
+        }
+      ]
+    },
+    "Earth_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.0001480579376220703,
+      "success": false,
+      "documents": []
+    },
+    "Environmental_Science": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.00010895729064941406,
+      "success": false,
+      "documents": []
+    },
+    "Agricultural_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.00010204315185546875,
+      "success": false,
+      "documents": []
+    },
+    "Economics": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.0001010894775390625,
+      "success": false,
+      "documents": []
+    },
+    "Business": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.00012683868408203125,
+      "success": false,
+      "documents": []
+    },
+    "Social_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.703636169433594e-05,
+      "success": false,
+      "documents": []
+    },
+    "Geography": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 8.893013000488281e-05,
+      "success": false,
+      "documents": []
+    },
+    "History": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.608268737792969e-05,
+      "success": false,
+      "documents": []
+    },
+    "Art": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.703636169433594e-05,
+      "success": false,
+      "documents": []
+    },
+    "Literature": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.608268737792969e-05,
+      "success": false,
+      "documents": []
+    },
+    "Philosophy": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.489059448242188e-05,
+      "success": false,
+      "documents": []
+    },
+    "Law": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.703636169433594e-05,
+      "success": false,
+      "documents": []
+    },
+    "Education": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 9.703636169433594e-05,
+      "success": false,
+      "documents": []
+    }
+  },
+  "errors": [],
+  "production_readiness": {
+    "meets_requirements": false,
+    "documents_retrieved": true,
+    "file_storage_working": true,
+    "all_disciplines_attempted": true
+  }
+}

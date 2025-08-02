@@ -1,0 +1,55 @@
+{
+  "discovery_analysis": {
+    "timestamp": "2025-08-02T18:23:49.107914",
+    "current_approach_problems": [
+      "Searched for \"standards organizations\" instead of \"curriculum frameworks\"",
+      "Missed international assessment standards (IB, A-Level, AP, etc.)",
+      "Ignored national curriculum frameworks (NGSS, CBSE, Gaokao, etc.)",
+      "No coverage of accreditation standards (ABET, Bologna, etc.)",
+      "Missing graduate admission standards (GRE Subject Tests, etc.)",
+      "Failed to capture university curriculum benchmarks",
+      "No international assessment benchmarks (TIMSS, PISA domains)"
+    ],
+    "comprehensive_approach_needed": [
+      "Use curriculum-focused discovery prompts for each discipline",
+      "Search for international curriculum frameworks by level",
+      "Include national education ministry standards",
+      "Cover accreditation and professional certification standards",
+      "Include university curriculum benchmarks as global standards",
+      "Add international assessment and comparison frameworks"
+    ]
+  },
+  "example_physics_comprehensive_coverage": {
+    "high_school_frameworks": [
+      "IB_Physics",
+      "A_Level_Physics_UK",
+      "AP_Physics_US",
+      "NGSS_Physics_US",
+      "Cambridge_IGCSE_Physics",
+      "CBSE_Physics_India",
+      "ISC_Physics_India",
+      "Chinese_Gaokao_Physics",
+      "French_Baccalaureat_Physics"
+    ],
+    "undergraduate_standards": [
+      "ABET_Physics_Accreditation",
+      "Bologna_Process_Physics",
+      "MIT_Physics_Curriculum",
+      "Oxford_Physics_Tripos",
+      "Cambridge_Physics_Tripos"
+    ],
+    "graduate_standards": [
+      "GRE_Physics_Subject_Test",
+      "US_PhD_Physics_Standards",
+      "European_PhD_Physics_Standards"
+    ],
+    "total_comprehensive_sources": 18
+  },
+  "discovery_prompts_by_discipline": {
+    "Physical_Sciences": "What are the main international curriculum frameworks, assessment standards, and educational benchmarks for physics from high school to graduate level? Include:\n\nHIGH SCHOOL LEVEL:\n- International curriculum frameworks (IB, A-Level, AP, IGCSE, etc.)\n- National curriculum standards (NGSS, CBSE, Gaokao, Baccalaur\u00e9at, etc.)\n- International assessment benchmarks (TIMSS, PISA domain-specific, etc.)\n\nUNDERGRADUATE LEVEL:  \n- Accreditation standards (ABET, Bologna Process, etc.)\n- University curriculum benchmarks (MIT, Oxford, Cambridge, etc.)\n- Professional certification standards\n- Degree framework standards (ECTS, credit systems, etc.)\n\nGRADUATE LEVEL:\n- Graduate admission standards (GRE Subject Tests, etc.)\n- PhD program frameworks (US model, European model, etc.)\n- Research methodology standards\n- Professional doctoral standards\n\nPlease provide specific names, organizations, assessment levels, and brief descriptions for each standard/framework.",
+    "Computer_Science": "What are the main international curriculum frameworks, assessment standards, and educational benchmarks for computer science from high school to graduate level? Include:\n\nHIGH SCHOOL LEVEL:\n- International curriculum frameworks (IB, A-Level, AP, IGCSE, etc.)\n- National curriculum standards (NGSS, CBSE, Gaokao, Baccalaur\u00e9at, etc.)\n- International assessment benchmarks (TIMSS, PISA domain-specific, etc.)\n\nUNDERGRADUATE LEVEL:  \n- Accreditation standards (ABET, Bologna Process, etc.)\n- University curriculum benchmarks (MIT, Oxford, Cambridge, etc.)\n- Professional certification standards\n- Degree framework standards (ECTS, credit systems, etc.)\n\nGRADUATE LEVEL:\n- Graduate admission standards (GRE Subject Tests, etc.)\n- PhD program frameworks (US model, European model, etc.)\n- Research methodology standards\n- Professional doctoral standards\n\nPlease provide specific names, organizations, assessment levels, and brief descriptions for each standard/framework.",
+    "Life_Sciences": "What are the main international curriculum frameworks, assessment standards, and educational benchmarks for biology and life sciences from high school to graduate level? Include:\n\nHIGH SCHOOL LEVEL:\n- International curriculum frameworks (IB, A-Level, AP, IGCSE, etc.)\n- National curriculum standards (NGSS, CBSE, Gaokao, Baccalaur\u00e9at, etc.)\n- International assessment benchmarks (TIMSS, PISA domain-specific, etc.)\n\nUNDERGRADUATE LEVEL:  \n- Accreditation standards (ABET, Bologna Process, etc.)\n- University curriculum benchmarks (MIT, Oxford, Cambridge, etc.)\n- Professional certification standards\n- Degree framework standards (ECTS, credit systems, etc.)\n\nGRADUATE LEVEL:\n- Graduate admission standards (GRE Subject Tests, etc.)\n- PhD program frameworks (US model, European model, etc.)\n- Research methodology standards\n- Professional doctoral standards\n\nPlease provide specific names, organizations, assessment levels, and brief descriptions for each standard/framework.",
+    "Mathematics": "What are the main international curriculum frameworks, assessment standards, and educational benchmarks for mathematics from high school to graduate level? Include:\n\nHIGH SCHOOL LEVEL:\n- International curriculum frameworks (IB, A-Level, AP, IGCSE, etc.)\n- National curriculum standards (NGSS, CBSE, Gaokao, Baccalaur\u00e9at, etc.)\n- International assessment benchmarks (TIMSS, PISA domain-specific, etc.)\n\nUNDERGRADUATE LEVEL:  \n- Accreditation standards (ABET, Bologna Process, etc.)\n- University curriculum benchmarks (MIT, Oxford, Cambridge, etc.)\n- Professional certification standards\n- Degree framework standards (ECTS, credit systems, etc.)\n\nGRADUATE LEVEL:\n- Graduate admission standards (GRE Subject Tests, etc.)\n- PhD program frameworks (US model, European model, etc.)\n- Research methodology standards\n- Professional doctoral standards\n\nPlease provide specific names, organizations, assessment levels, and brief descriptions for each standard/framework.",
+    "Engineering": "What are the main international curriculum frameworks, assessment standards, and educational benchmarks for engineering from high school to graduate level? Include:\n\nHIGH SCHOOL LEVEL:\n- International curriculum frameworks (IB, A-Level, AP, IGCSE, etc.)\n- National curriculum standards (NGSS, CBSE, Gaokao, Baccalaur\u00e9at, etc.)\n- International assessment benchmarks (TIMSS, PISA domain-specific, etc.)\n\nUNDERGRADUATE LEVEL:  \n- Accreditation standards (ABET, Bologna Process, etc.)\n- University curriculum benchmarks (MIT, Oxford, Cambridge, etc.)\n- Professional certification standards\n- Degree framework standards (ECTS, credit systems, etc.)\n\nGRADUATE LEVEL:\n- Graduate admission standards (GRE Subject Tests, etc.)\n- PhD program frameworks (US model, European model, etc.)\n- Research methodology standards\n- Professional doctoral standards\n\nPlease provide specific names, organizations, assessment levels, and brief descriptions for each standard/framework."
+  }
+}

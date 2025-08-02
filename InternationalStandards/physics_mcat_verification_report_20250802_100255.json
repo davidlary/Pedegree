@@ -1,0 +1,132 @@
+{
+  "verification_summary": {
+    "timestamp": "2025-08-02T10:02:55.285396",
+    "overall_pass": true,
+    "directory_structure": {
+      "physics_base_exists": true,
+      "medicine_base_exists": true,
+      "physics_levels_found": [
+        "University"
+      ],
+      "medicine_levels_found": [
+        "University"
+      ],
+      "total_physics_files": 5,
+      "total_medicine_files": 5
+    },
+    "physics_verification": true,
+    "mcat_verification": true,
+    "api_integration": {
+      "physics_accessible": true,
+      "health_accessible": true,
+      "mcat_accessible": true,
+      "total_physics_docs": 5,
+      "total_health_docs": 5
+    }
+  },
+  "detailed_results": {
+    "verification_time": "2025-08-02T10:02:52.157508",
+    "physics_levels": {
+      "k12": {
+        "found": [],
+        "missing": [],
+        "organizations": []
+      },
+      "high_school": {
+        "found": [],
+        "missing": [],
+        "organizations": []
+      },
+      "university": {
+        "found": [
+          {
+            "name": "SAT Physics Subject Test Standards.html",
+            "organization": "College_Board",
+            "size_kb": 24.05078125,
+            "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/College_Board/SAT Physics Subject Test Standards.html"
+          },
+          {
+            "name": "NIST Framework for Improving Critical Infrastructure Cybersecurity.pdf",
+            "organization": "NIST",
+            "size_kb": 1037.912109375,
+            "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/NIST/NIST Framework for Improving Critical Infrastructure Cybersecurity.pdf"
+          },
+          {
+            "name": "AAPT Physics Education Standards.html",
+            "organization": "AAPT",
+            "size_kb": 8.9453125,
+            "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/AAPT/AAPT Physics Education Standards.html"
+          },
+          {
+            "name": "APS Physics Education Standards.html",
+            "organization": "APS",
+            "size_kb": 287.3173828125,
+            "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/APS/APS Physics Education Standards.html"
+          },
+          {
+            "name": "IEEE Standards Style Manual.pdf",
+            "organization": "IEEE",
+            "size_kb": 1272.052734375,
+            "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/IEEE/IEEE Standards Style Manual.pdf"
+          }
+        ],
+        "organizations": [
+          "Physics_Olympiad",
+          "College_Board",
+          "NIST",
+          "AAPT",
+          "APS",
+          "IEEE"
+        ],
+        "missing": []
+      },
+      "graduate": {
+        "found": [],
+        "missing": [],
+        "organizations": []
+      }
+    },
+    "mcat_medical": {
+      "found": [
+        {
+          "name": "MCAT Exam Content and Specifications.pdf",
+          "size_kb": 39.3564453125,
+          "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/MCAT Exam Content and Specifications.pdf",
+          "type": ".pdf"
+        }
+      ],
+      "other_aamc": [
+        {
+          "name": "Medical School Admission Requirements Guide.html",
+          "size_kb": 119.791015625,
+          "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/Medical School Admission Requirements Guide.html",
+          "type": ".html"
+        },
+        {
+          "name": "Core Competencies for Entering Medical Students.pdf",
+          "size_kb": 39.3525390625,
+          "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/Core Competencies for Entering Medical Students.pdf",
+          "type": ".pdf"
+        }
+      ],
+      "organizations": [
+        "AAMC"
+      ],
+      "integrity_check": true
+    },
+    "directory_structure_analysis": {
+      "physics_base_exists": true,
+      "medicine_base_exists": true,
+      "physics_levels_found": [
+        "University"
+      ],
+      "medicine_levels_found": [
+        "University"
+      ],
+      "total_physics_files": 5,
+      "total_medicine_files": 5
+    },
+    "file_integrity_check": {},
+    "standards_coverage_analysis": {}
+  }
+}

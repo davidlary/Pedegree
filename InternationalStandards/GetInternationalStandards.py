@@ -37,6 +37,104 @@ import pickle
 import random
 from functools import wraps, lru_cache
 
+# Import comprehensive context abstraction layer
+sys.path.append(str(Path(__file__).parent))
+from core.context_abstraction import (
+    context_manager, streamlit_wrapper, autonomous_manager,
+    get_session_state, set_session_state, safe_streamlit_operation,
+    suppress_streamlit_warnings
+)
+
+# Suppress context warnings for autonomous operation
+suppress_streamlit_warnings()
+
+# Context-aware wrapper for Streamlit functions
+class StreamlitContext:
+    """Context-aware wrapper that works both inside and outside Streamlit"""
+    
+    def __init__(self):
+        self.in_streamlit_context = self._check_streamlit_context()
+        self.session_state = {} if not self.in_streamlit_context else st.session_state
+        
+    def _check_streamlit_context(self):
+        """Check if we're running in Streamlit context"""
+        try:
+            from streamlit.runtime.scriptrunner import get_script_run_ctx
+            return get_script_run_ctx() is not None
+        except:
+            return False
+    
+    def get(self, key, default=None):
+        """Get session state value"""
+        if self.in_streamlit_context:
+            return st.session_state.get(key, default)
+        else:
+            return self.session_state.get(key, default)
+    
+    def set(self, key, value):
+        """Set session state value"""
+        if self.in_streamlit_context:
+            st.session_state[key] = value
+        else:
+            self.session_state[key] = value
+    
+    def success(self, message):
+        """Display success message"""
+        if self.in_streamlit_context:
+            st.success(message)
+        else:
+            print(f"✅ {message}")
+    
+    def error(self, message):
+        """Display error message"""
+        if self.in_streamlit_context:
+            st.error(message)
+        else:
+            print(f"❌ {message}")
+    
+    def warning(self, message):
+        """Display warning message"""
+        if self.in_streamlit_context:
+            st.warning(message)
+        else:
+            print(f"⚠️ {message}")
+    
+    def info(self, message):
+        """Display info message"""
+        if self.in_streamlit_context:
+            st.info(message)
+        else:
+            print(f"ℹ️ {message}")
+    
+    def rerun(self):
+        """Trigger rerun if in Streamlit context"""
+        if self.in_streamlit_context:
+            st.rerun()
+    
+    def cache_data(self, func=None, ttl=3600, show_spinner=False):
+        """Cache data decorator that works in both contexts"""
+        if self.in_streamlit_context:
+            return st.cache_data(ttl=ttl, show_spinner=show_spinner)
+        else:
+            # Simple memory cache for non-Streamlit context
+            cache = {}
+            def decorator(func):
+                @wraps(func)
+                def wrapper(*args, **kwargs):
+                    key = f"{func.__name__}_{str(args)}_{str(sorted(kwargs.items()))}"
+                    if key in cache:
+                        cache_time, result = cache[key]
+                        if time.time() - cache_time < ttl:
+                            return result
+                    result = func(*args, **kwargs)
+                    cache[key] = (time.time(), result)
+                    return result
+                return wrapper
+            return decorator(func) if func else decorator
+
+# Global context instance
+streamlit_ctx = StreamlitContext()
+
 # Add project root and LLM-Comparisons to path for imports
 project_root = Path(__file__).parent
 llm_comparisons_path = project_root.parent / "LLM-Comparisons"
@@ -61,7 +159,7 @@ try:
     from IntelligentLLMRouter import IntelligentLLMRouter
     LLM_ROUTER_AVAILABLE = True
 except ImportError as e:
-    st.warning(f"LLM Router not available: {e}")
+    streamlit_ctx.warning(f"LLM Router not available: {e}")
     IntelligentLLMRouter = None
     LLM_ROUTER_AVAILABLE = False
 
@@ -88,7 +186,7 @@ class StandardsCache:
         age = time.time() - cache_file.stat().st_mtime
         return age < timeout
     
-    @st.cache_data(ttl=3600, show_spinner=False)
+    @streamlit_ctx.cache_data(ttl=3600, show_spinner=False)
     def get_all_standards(_self, force_refresh: bool = False):
         """Get all standards with caching"""
         cache_key = "all_standards"
@@ -389,7 +487,7 @@ class InternationalStandardsApp:
             return {'available': False, 'error': 'LLM Router not available'}
     
     def _initialize_database_manager(self):
-        """Initialize the Database Manager"""
+        """Initialize the Database Manager with proper fallback"""
         try:
             from data.database_manager import DatabaseManager, DatabaseConfig
             
@@ -400,13 +498,32 @@ class InternationalStandardsApp:
                 sqlite_path=str(self.data_dir / 'international_standards.db')
             )
             
-            return DatabaseManager(db_config)
+            db_manager = DatabaseManager(db_config)
+            
+            # TEST if the database actually works
+            try:
+                disciplines = db_manager.get_disciplines()
+                if not disciplines or len(disciplines) == 0:
+                    print("⚠️  Real DatabaseManager returned no disciplines, falling back to temporary")
+                    return self._create_temporary_database_manager()
+                
+                # Verify data quality  
+                if all(d.get('name') in [None, 'Unknown', ''] for d in disciplines):
+                    print("⚠️  Real DatabaseManager returned invalid discipline data, falling back to temporary")
+                    return self._create_temporary_database_manager()
+                    
+                print(f"✅ Real DatabaseManager working with {len(disciplines)} disciplines")
+                return db_manager
+                
+            except Exception as test_e:
+                print(f"⚠️  Real DatabaseManager test failed: {test_e}, falling back to temporary")
+                return self._create_temporary_database_manager()
+                
         except ImportError as e:
-            st.warning(f"DatabaseManager not available: {e}")
-            # Create a temporary database manager
+            print(f"⚠️  DatabaseManager import failed: {e}, using temporary")
             return self._create_temporary_database_manager()
         except Exception as e:
-            st.error(f"Error initializing Database Manager: {e}")
+            print(f"⚠️  DatabaseManager initialization failed: {e}, using temporary")
             return self._create_temporary_database_manager()
     
     def _create_temporary_database_manager(self):
@@ -427,21 +544,32 @@ class InternationalStandardsApp:
                         with open(openalex_config_path, 'r') as f:
                             config = yaml.safe_load(f)
                             disciplines = config.get('disciplines', {})
-                            return {name: {'id': i+1, 'name': info.get('display_name', name)} 
-                                   for i, (name, info) in enumerate(disciplines.items())}
+                            formatted_disciplines = []
+                            for i, (key, info) in enumerate(disciplines.items()):
+                                discipline = {
+                                    'id': i + 1,
+                                    'name': info.get('display_name', key.replace('_', ' ')),
+                                    'key': key,
+                                    'display_name': info.get('display_name', key.replace('_', ' ')),
+                                    'description': info.get('description', ''),
+                                    'subdisciplines': info.get('subdisciplines', []),
+                                    'priority': info.get('priority', i + 1)
+                                }
+                                formatted_disciplines.append(discipline)
+                            return formatted_disciplines
                     else:
                         # Fallback to hardcoded only if no config file
-                        return {
-                            'Computer_Science': {'id': 1, 'name': 'Computer Science'},
-                            'Mathematics': {'id': 2, 'name': 'Mathematics'},
-                            'Physical_Sciences': {'id': 3, 'name': 'Physical Sciences'}
-                        }
+                        return [
+                            {'id': 1, 'name': 'Computer Science', 'key': 'Computer_Science', 'display_name': 'Computer Science'},
+                            {'id': 2, 'name': 'Mathematics', 'key': 'Mathematics', 'display_name': 'Mathematics'},
+                            {'id': 3, 'name': 'Physical Sciences', 'key': 'Physical_Sciences', 'display_name': 'Physical Sciences'}
+                        ]
                 except Exception:
-                    return {
-                        'Computer_Science': {'id': 1, 'name': 'Computer Science'},
-                        'Mathematics': {'id': 2, 'name': 'Mathematics'},
-                        'Physical_Sciences': {'id': 3, 'name': 'Physical Sciences'}
-                    }
+                    return [
+                        {'id': 1, 'name': 'Computer Science', 'key': 'Computer_Science', 'display_name': 'Computer Science'},
+                        {'id': 2, 'name': 'Mathematics', 'key': 'Mathematics', 'display_name': 'Mathematics'},
+                        {'id': 3, 'name': 'Physical Sciences', 'key': 'Physical_Sciences', 'display_name': 'Physical Sciences'}
+                    ]
                 
             def get_disciplines(self):
                 """Return dynamically loaded disciplines"""
@@ -498,36 +626,36 @@ class InternationalStandardsApp:
     def _handle_realtime_updates(self):
         """Handle real-time status updates and auto-refresh"""
         # Check if system is running
-        system_running = st.session_state.get('orchestrator_running', False)
-        system_shutdown = st.session_state.get('system_shutdown', False)
+        system_running = streamlit_ctx.get('orchestrator_running', False)
+        system_shutdown = streamlit_ctx.get('system_shutdown', False)
         
         # Auto-refresh interval based on system state
         if system_running and not system_shutdown:
             # Faster updates when system is active
             refresh_interval = 2  # 2 seconds
-            if 'last_refresh' not in st.session_state:
-                st.session_state['last_refresh'] = time.time()
+            if streamlit_ctx.get('last_refresh') is None:
+                streamlit_ctx.set('last_refresh', time.time())
             
             # Check if it's time to refresh
             current_time = time.time()
-            if current_time - st.session_state['last_refresh'] >= refresh_interval:
-                st.session_state['last_refresh'] = current_time
+            if current_time - streamlit_ctx.get('last_refresh', 0) >= refresh_interval:
+                streamlit_ctx.set('last_refresh', current_time)
                 # Update agent progress before refresh
                 self._update_agent_progress()
                 self._start_random_agents()
                 self._stop_random_agents()
                 self._update_system_stats()
-                st.rerun()
+                streamlit_ctx.rerun()
         elif system_running:
             # Slower updates when system is idle but available
             refresh_interval = 5  # 5 seconds
-            if 'last_refresh' not in st.session_state:
-                st.session_state['last_refresh'] = time.time()
+            if streamlit_ctx.get('last_refresh') is None:
+                streamlit_ctx.set('last_refresh', time.time())
             
             current_time = time.time()
-            if current_time - st.session_state['last_refresh'] >= refresh_interval:
-                st.session_state['last_refresh'] = current_time
-                st.rerun()
+            if current_time - streamlit_ctx.get('last_refresh', 0) >= refresh_interval:
+                streamlit_ctx.set('last_refresh', current_time)
+                streamlit_ctx.rerun()
     
     def _initialize_orchestrator(self):
         """Initialize the Standards Orchestrator - THE CORE ENGINE"""
@@ -549,25 +677,26 @@ class InternationalStandardsApp:
                 if hasattr(orchestrator, 'initialize_all_agents'):
                     orchestrator.initialize_all_agents()
                 
-                st.success("✅ Orchestrator initialized successfully")
+                streamlit_ctx.success("✅ Orchestrator initialized successfully")
                 return orchestrator
             else:
-                st.error("❌ StandardsOrchestrator not available - core functionality disabled")
+                streamlit_ctx.error("❌ StandardsOrchestrator not available - core functionality disabled")
                 return None
         except Exception as e:
-            st.error(f"❌ Failed to initialize orchestrator: {e}")
-            st.error(f"Error details: {traceback.format_exc()}")
+            streamlit_ctx.error(f"❌ Failed to initialize orchestrator: {e}")
+            streamlit_ctx.error(f"Error details: {traceback.format_exc()}")
             return None
     
     def run(self):
         """Main application entry point"""
-        # Set page configuration
-        st.set_page_config(
-            page_title="International Standards Retrieval System",
-            page_icon="🌍",
-            layout="wide",
-            initial_sidebar_state="expanded"
-        )
+        # Set page configuration - only in Streamlit context
+        if streamlit_ctx.in_streamlit_context:
+            st.set_page_config(
+                page_title="International Standards Retrieval System",
+                page_icon="🌍",
+                layout="wide",
+                initial_sidebar_state="expanded"
+            )
         
         # Custom CSS for better visualization
         self._apply_custom_css()
@@ -595,7 +724,8 @@ class InternationalStandardsApp:
     
     def _apply_custom_css(self):
         """Apply custom CSS for better visualization"""
-        st.markdown("""
+        if streamlit_ctx.in_streamlit_context:
+            st.markdown("""
         <style>
         .main-header {
             background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
@@ -646,7 +776,8 @@ class InternationalStandardsApp:
     
     def _render_header(self):
         """Render application header"""
-        st.markdown("""
+        if streamlit_ctx.in_streamlit_context:
+            st.markdown("""
         <div class="main-header">
             <h1>🌍 International Educational Standards Retrieval System</h1>
             <p>Autonomous discovery and cataloging of educational standards across 19 OpenAlex disciplines</p>
@@ -1042,13 +1173,14 @@ class InternationalStandardsApp:
     
     def _update_agent_progress(self):
         """Update agent progress with realistic simulation"""
-        if not st.session_state.get('orchestrator_running', False):
+        if not streamlit_ctx.get('orchestrator_running', False):
             return
         
         current_time = datetime.now()
         
         # Simulate agent activity
-        for agent_key, agent_data in st.session_state.get('agent_status', {}).items():
+        agent_status = streamlit_ctx.get('agent_status', {})
+        for agent_key, agent_data in agent_status.items():
             if agent_data['status'] == 'running':
                 # Update based on agent type
                 if agent_data['type'] == 'discovery':
@@ -1083,65 +1215,73 @@ class InternationalStandardsApp:
     
     def _start_random_agents(self):
         """Start some agents randomly for realistic simulation"""
-        if not st.session_state.get('orchestrator_running', False):
+        if not streamlit_ctx.get('orchestrator_running', False):
             return
             
         import random
         
         # Randomly activate some idle agents
-        idle_agents = [k for k, v in st.session_state.get('agent_status', {}).items() 
-                      if v['status'] == 'idle']
+        agent_status = streamlit_ctx.get('agent_status', {})
+        idle_agents = [k for k, v in agent_status.items() if v['status'] == 'idle']
         
         # Start 2-5 random agents
         agents_to_start = random.sample(idle_agents, min(random.randint(2, 5), len(idle_agents)))
         
         for agent_key in agents_to_start:
-            st.session_state['agent_status'][agent_key]['status'] = 'running'
-            st.session_state['agent_status'][agent_key]['task'] = 'Starting up...'
-            st.session_state['agent_status'][agent_key]['last_update'] = datetime.now().isoformat()
+            agent_status[agent_key]['status'] = 'running'
+            agent_status[agent_key]['task'] = 'Starting up...'
+            agent_status[agent_key]['last_update'] = datetime.now().isoformat()
+        
+        # Update the session state
+        streamlit_ctx.set('agent_status', agent_status)
     
     def _stop_random_agents(self):
         """Stop some agents randomly for realistic simulation"""
-        if not st.session_state.get('orchestrator_running', False):
+        if not streamlit_ctx.get('orchestrator_running', False):
             return
             
         import random
         
         # Randomly stop some running agents
-        running_agents = [k for k, v in st.session_state.get('agent_status', {}).items() 
-                         if v['status'] == 'running']
+        agent_status = streamlit_ctx.get('agent_status', {})
+        running_agents = [k for k, v in agent_status.items() if v['status'] == 'running']
         
         # Stop 1-3 random agents occasionally
         if len(running_agents) > 10 and random.random() < 0.3:
             agents_to_stop = random.sample(running_agents, min(random.randint(1, 3), len(running_agents)))
             
             for agent_key in agents_to_stop:
-                st.session_state['agent_status'][agent_key]['status'] = 'idle'
-                st.session_state['agent_status'][agent_key]['task'] = 'Task completed - Ready'
-                st.session_state['agent_status'][agent_key]['last_update'] = datetime.now().isoformat()
+                agent_status[agent_key]['status'] = 'idle'
+                agent_status[agent_key]['task'] = 'Task completed - Ready'
+                agent_status[agent_key]['last_update'] = datetime.now().isoformat()
+            
+            # Update the session state
+            streamlit_ctx.set('agent_status', agent_status)
     
     def _update_system_stats(self):
         """Update system statistics dynamically"""
-        if 'system_stats' not in st.session_state:
-            st.session_state['system_stats'] = {
+        if streamlit_ctx.get('system_stats') is None:
+            streamlit_ctx.set('system_stats', {
                 'total_standards': 5,
                 'processing_rate': 0,
                 'total_cost': 0.0,
                 'last_updated': datetime.now().isoformat()
-            }
+            })
         
         # Update stats if system is running
-        if st.session_state.get('orchestrator_running', False):
+        if streamlit_ctx.get('orchestrator_running', False):
             # Increment standards found based on agent activity
-            running_agents = sum(1 for v in st.session_state.get('agent_status', {}).values() 
-                               if v['status'] == 'running')
+            agent_status = streamlit_ctx.get('agent_status', {})
+            running_agents = sum(1 for v in agent_status.values() if v['status'] == 'running')
             
             if running_agents > 0:
                 # Add 1-3 standards per active agent cycle
-                st.session_state['system_stats']['total_standards'] += random.randint(0, min(3, running_agents))
-                st.session_state['system_stats']['processing_rate'] = running_agents * 25  # rough rate
-                st.session_state['system_stats']['total_cost'] += random.uniform(0.01, 0.05)
-                st.session_state['system_stats']['last_updated'] = datetime.now().isoformat()
+                system_stats = streamlit_ctx.get('system_stats', {})
+                system_stats['total_standards'] += random.randint(0, min(3, running_agents))
+                system_stats['processing_rate'] = running_agents * 25  # rough rate
+                system_stats['total_cost'] += random.uniform(0.01, 0.05)
+                system_stats['last_updated'] = datetime.now().isoformat()
+                streamlit_ctx.set('system_stats', system_stats)
     
     def _show_all_disciplines_overview(self):
         """Show overview of all 19 disciplines that will be processed"""
@@ -1883,20 +2023,20 @@ class InternationalStandardsApp:
         try:
             # Check if orchestrator is properly initialized
             if not self.orchestrator:
-                st.error("❌ Orchestrator not initialized - cannot start system")
-                st.error("Please check system initialization errors above.")
-                return
+                streamlit_ctx.error("❌ Orchestrator not initialized - cannot start system")
+                streamlit_ctx.error("Please check system initialization errors above.")
+                return False
             
-            st.session_state['orchestrator_running'] = True
-            st.session_state['system_initialized'] = True
+            streamlit_ctx.set('orchestrator_running', True)
+            streamlit_ctx.set('system_initialized', True)
             
             # Ensure all 19 disciplines are selected (ONE-BUTTON requirement)
             all_disciplines = list(self.config.get('openalex_disciplines', {}).get('disciplines', {}).keys())
-            st.session_state['selected_disciplines'] = all_disciplines
+            streamlit_ctx.set('selected_disciplines', all_disciplines)
             
             # Initialize agent status for all 59 agents
-            if 'agent_status' not in st.session_state:
-                st.session_state['agent_status'] = self._initialize_all_agents()
+            if streamlit_ctx.get('agent_status') is None:
+                streamlit_ctx.set('agent_status', self._initialize_all_agents())
             
             # Start all agents across all disciplines
             self._activate_all_agents_for_all_disciplines()

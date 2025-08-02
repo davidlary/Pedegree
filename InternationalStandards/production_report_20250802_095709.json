@@ -1,0 +1,281 @@
+{
+  "system_info": {
+    "version": "1.0.0",
+    "execution_time": "2025-08-02T09:56:06.885875",
+    "total_processing_time_seconds": 62.194983959198,
+    "system_ready": true
+  },
+  "discipline_summary": {
+    "total_disciplines": 19,
+    "processed": 19,
+    "successful": 12,
+    "failed": 7,
+    "success_rate": 0.631578947368421
+  },
+  "document_summary": {
+    "total_documents_retrieved": 21,
+    "total_size_mb": 12.94862174987793,
+    "average_documents_per_discipline": 1.105263157894737
+  },
+  "detailed_results": {
+    "Physical_Sciences": {
+      "documents_retrieved": 5,
+      "processing_time_seconds": 5.203325986862183,
+      "success": true,
+      "documents": [
+        {
+          "title": "NIST Framework for Improving Critical Infrastructure Cybersecurity",
+          "organization": "NIST",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/NIST/NIST Framework for Improving Critical Infrastructure Cybersecurity.pdf",
+          "file_size_mb": 1.0135860443115234
+        },
+        {
+          "title": "IEEE Standards Style Manual",
+          "organization": "IEEE",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/IEEE/IEEE Standards Style Manual.pdf",
+          "file_size_mb": 1.242238998413086
+        },
+        {
+          "title": "AAPT Physics Education Standards",
+          "organization": "AAPT",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/AAPT/AAPT Physics Education Standards.html",
+          "file_size_mb": 0.00873565673828125
+        },
+        {
+          "title": "APS Physics Education Standards",
+          "organization": "APS",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/APS/APS Physics Education Standards.html",
+          "file_size_mb": 0.28058338165283203
+        },
+        {
+          "title": "SAT Physics Subject Test Standards",
+          "organization": "College_Board",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Physics/University/College_Board/SAT Physics Subject Test Standards.html",
+          "file_size_mb": 0.023487091064453125
+        }
+      ]
+    },
+    "Life_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.20956182479858398,
+      "success": false,
+      "documents": []
+    },
+    "Health_Sciences": {
+      "documents_retrieved": 5,
+      "processing_time_seconds": 5.470845937728882,
+      "success": true,
+      "documents": [
+        {
+          "title": "Standards for Accreditation of Medical Education Programs",
+          "organization": "LCME",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/LCME/Standards for Accreditation of Medical Education Programs.html",
+          "file_size_mb": 0.074676513671875
+        },
+        {
+          "title": "MCAT Exam Content and Specifications",
+          "organization": "AAMC",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/MCAT Exam Content and Specifications.pdf",
+          "file_size_mb": 0.03843402862548828
+        },
+        {
+          "title": "Core Competencies for Entering Medical Students",
+          "organization": "AAMC",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/Core Competencies for Entering Medical Students.pdf",
+          "file_size_mb": 0.038430213928222656
+        },
+        {
+          "title": "Medical School Admission Requirements Guide",
+          "organization": "AAMC",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/AAMC/Medical School Admission Requirements Guide.html",
+          "file_size_mb": 0.11698341369628906
+        },
+        {
+          "title": "WHO Standards for Health Professional Education",
+          "organization": "WHO",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Medicine/University/WHO/WHO Standards for Health Professional Education.html",
+          "file_size_mb": 0.08475303649902344
+        }
+      ]
+    },
+    "Computer_Science": {
+      "documents_retrieved": 2,
+      "processing_time_seconds": 0.9375932216644287,
+      "success": true,
+      "documents": [
+        {
+          "title": "Computing Curricula 2020 (CC2020)",
+          "organization": "ACM",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Computer science/University/ACM/Computing Curricula 2020 (CC2020).pdf",
+          "file_size_mb": 8.3590087890625
+        },
+        {
+          "title": "Software Engineering Body of Knowledge (SWEBOK)",
+          "organization": "IEEE_CS",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Computer science/University/IEEE_CS/Software Engineering Body of Knowledge (SWEBOK).html",
+          "file_size_mb": 0.4636707305908203
+        }
+      ]
+    },
+    "Engineering": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.7970280647277832,
+      "success": false,
+      "documents": []
+    },
+    "Mathematics": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 10.393821001052856,
+      "success": true,
+      "documents": [
+        {
+          "title": "Principles and Standards for School Mathematics",
+          "organization": "NCTM",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Mathematics/University/NCTM/Principles and Standards for School Mathematics.html",
+          "file_size_mb": 0.19711017608642578
+        }
+      ]
+    },
+    "Earth_Sciences": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.495255708694458,
+      "success": true,
+      "documents": [
+        {
+          "title": "Earth Science Education Standards",
+          "organization": "AGI",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Earth Sciences/University/AGI/Earth Science Education Standards.html",
+          "file_size_mb": 0.020977020263671875
+        }
+      ]
+    },
+    "Environmental_Science": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.20312714576721191,
+      "success": false,
+      "documents": []
+    },
+    "Agricultural_Sciences": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 30.052568912506104,
+      "success": false,
+      "documents": []
+    },
+    "Economics": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.40119504928588867,
+      "success": true,
+      "documents": [
+        {
+          "title": "Economics Education Standards",
+          "organization": "AEA",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Economics/University/AEA/Economics Education Standards.html",
+          "file_size_mb": 0.02829265594482422
+        }
+      ]
+    },
+    "Business": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.9633500576019287,
+      "success": true,
+      "documents": [
+        {
+          "title": "AACSB Business Accreditation Standards",
+          "organization": "AACSB",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Business/University/AACSB/AACSB Business Accreditation Standards.html",
+          "file_size_mb": 0.11104202270507812
+        }
+      ]
+    },
+    "Social_Sciences": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.2389969825744629,
+      "success": true,
+      "documents": [
+        {
+          "title": "National Social Studies Standards",
+          "organization": "NCSS",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Sociology/University/NCSS/National Social Studies Standards.html",
+          "file_size_mb": 0.05779075622558594
+        }
+      ]
+    },
+    "Geography": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 1.4731509685516357,
+      "success": false,
+      "documents": []
+    },
+    "History": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.08523416519165039,
+      "success": false,
+      "documents": []
+    },
+    "Art": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.47445225715637207,
+      "success": true,
+      "documents": [
+        {
+          "title": "National Visual Arts Standards",
+          "organization": "NAEA",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Art/University/NAEA/National Visual Arts Standards.html",
+          "file_size_mb": 0.15349483489990234
+        }
+      ]
+    },
+    "Literature": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 2.8499090671539307,
+      "success": true,
+      "documents": [
+        {
+          "title": "English Language Arts Standards",
+          "organization": "NCTE",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Literature/University/NCTE/English Language Arts Standards.html",
+          "file_size_mb": 0.1148233413696289
+        }
+      ]
+    },
+    "Philosophy": {
+      "documents_retrieved": 0,
+      "processing_time_seconds": 0.23108506202697754,
+      "success": false,
+      "documents": []
+    },
+    "Law": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 0.4125680923461914,
+      "success": true,
+      "documents": [
+        {
+          "title": "ABA Law School Accreditation Standards",
+          "organization": "ABA",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Law/University/ABA/ABA Law School Accreditation Standards.html",
+          "file_size_mb": 0.11163043975830078
+        }
+      ]
+    },
+    "Education": {
+      "documents_retrieved": 1,
+      "processing_time_seconds": 1.2490460872650146,
+      "success": true,
+      "documents": [
+        {
+          "title": "CAEP Accreditation Standards",
+          "organization": "CAEP",
+          "file_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/english/Education/University/CAEP/CAEP Accreditation Standards.html",
+          "file_size_mb": 0.4088726043701172
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "production_readiness": {
+    "meets_requirements": false,
+    "documents_retrieved": true,
+    "file_storage_working": true,
+    "all_disciplines_attempted": true
+  }
+}
