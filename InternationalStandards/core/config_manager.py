@@ -19,12 +19,15 @@ from datetime import datetime
 class ConfigManager:
     """Comprehensive configuration management system"""
     
-    def __init__(self, config_dir: Path):
+    def __init__(self, config_dir: Optional[Path] = None):
         """Initialize configuration manager
         
         Args:
-            config_dir: Path to configuration directory
+            config_dir: Path to configuration directory (defaults to current dir/config)
         """
+        if config_dir is None:
+            config_dir = Path(__file__).parent.parent / "config"
+            
         self.config_dir = Path(config_dir)
         self.data_dir = self.config_dir.parent / "data"  # Add data_dir attribute
         self.config_cache = {}
@@ -36,6 +39,9 @@ class ConfigManager:
         
         # Setup logging
         self.logger = logging.getLogger(__name__)
+        
+        # Initialize disciplines attribute for compatibility
+        self.disciplines = {}
         
         # Load all configurations
         self._load_all_configurations()

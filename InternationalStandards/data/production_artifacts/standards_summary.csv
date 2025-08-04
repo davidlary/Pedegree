@@ -1,0 +1,47 @@
+Discipline,Level,Organization,Framework_Type,Region,Document_Count,Total_Size_Bytes,Average_Size_Bytes
+Agricultural_Sciences,High_School,NAAE,curriculum_framework,US,1,72084,72084.0
+Art,High_School,NAEA,curriculum_framework,US,1,160951,160951.0
+Art,University,Unknown,curriculum_framework,Global,1,160951,160951.0
+Biology,High_School,College Board US,curriculum_framework,Global,1,5533533,5533533.0
+Business,High_School,College_Board_US,curriculum_framework,US,1,36842,36842.0
+Business,University,Unknown,curriculum_framework,Global,1,116436,116436.0
+Computer science,University,IEEE CS,curriculum_framework,Global,1,486194,486194.0
+Computer science,Unknown,.DS Store,curriculum_framework,Global,1,6148,6148.0
+Computer_Science,High_School,College Board US,curriculum_framework,Global,1,4204647,4204647.0
+Computer_Science,Undergraduate,ABET,accreditation_standard,US,1,81297,81297.0
+Computer_Science,Undergraduate,Association_for_Computing_Machinery,curriculum_framework,Global,1,8765056,8765056.0
+Computer_Science,Undergraduate,IEEE_CS,curriculum_framework,Global,1,486194,486194.0
+Earth Sciences,University,Unknown,curriculum_framework,Global,1,21996,21996.0
+Economics,University,Unknown,curriculum_framework,Global,1,29667,29667.0
+Education,University,Unknown,curriculum_framework,Global,1,428734,428734.0
+Engineering,Undergraduate,ASEE,curriculum_framework,US,1,137937,137937.0
+Engineering,Undergraduate,European Network for Accreditation of Engineering Education,curriculum_framework,Global,1,146332,146332.0
+Engineering,University,IEEE Engineering,curriculum_framework,Global,1,169500,169500.0
+Environmental_Science,High_School,College Board US,curriculum_framework,Global,1,10759211,10759211.0
+Geography,High_School,College Board US,curriculum_framework,Global,1,7897680,7897680.0
+Geography,High_School,National_Geography,curriculum_framework,US,1,474788,474788.0
+History,High_School,College_Board_US,curriculum_framework,US,1,8082066,8082066.0
+History,High_School,NCHS,curriculum_framework,US,1,102865,102865.0
+History,University,NCSS History,curriculum_framework,Global,1,89299,89299.0
+Law,Graduate,LSAC,assessment_standard,US,1,120915,120915.0
+Law,University,Unknown,curriculum_framework,Global,1,117053,117053.0
+Literature,High_School,College Board US,curriculum_framework,Global,1,4691914,4691914.0
+Literature,High_School,NCTE,curriculum_framework,US,1,118501,118501.0
+Literature,University,Unknown,curriculum_framework,Global,1,120401,120401.0
+Mathematics,High_School,College Board US,curriculum_framework,Global,1,5491640,5491640.0
+Mathematics,High_School,Common_Core_State_Standards_US,curriculum_framework,US,1,1242082,1242082.0
+Mathematics,High_School,NCTM,curriculum_framework,US,1,210557,210557.0
+Mathematics,University,Unknown,curriculum_framework,Global,1,206685,206685.0
+Medicine,University,Unknown,curriculum_framework,Global,5,370438,74087.6
+Philosophy,Undergraduate,APA,curriculum_framework,US,1,102662,102662.0
+Philosophy,University,Philosophy Teaching,curriculum_framework,Global,1,212,212.0
+Physical_Sciences,High_School,College_Board_US,curriculum_framework,US,1,4944459,4944459.0
+Physics,High_School,Cambridge_International,curriculum_framework,Global,1,543277,543277.0
+Physics,High_School,College Board US,curriculum_framework,Global,2,14843764,7421882.0
+Physics,High_School,Next_Generation_Science_Standards_US,curriculum_framework,US,1,3899370,3899370.0
+Physics,Undergraduate,AAPT,curriculum_framework,US,1,56709,56709.0
+Physics,University,College Board,curriculum_framework,Global,1,24628,24628.0
+Physics,University,Unknown,curriculum_framework,Global,4,2668777,667194.25
+Physics,Unknown,.DS Store,curriculum_framework,Global,1,6148,6148.0
+Social_Sciences,High_School,College Board US,curriculum_framework,Global,1,2664819,2664819.0
+Sociology,University,Unknown,curriculum_framework,Global,1,60598,60598.0

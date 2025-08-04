@@ -1,0 +1,16 @@
+{
+  "database_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/international_standards.db",
+  "standards_directory": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english",
+  "processing_options": {
+    "batch_size": 100,
+    "parallel_processing": true,
+    "content_validation": true,
+    "duplicate_detection": true
+  },
+  "output_formats": [
+    "json",
+    "csv",
+    "xml"
+  ],
+  "last_updated": "2025-08-04T08:41:46.881135"
+}

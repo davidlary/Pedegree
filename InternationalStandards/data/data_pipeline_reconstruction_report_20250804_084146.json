@@ -1,0 +1,439 @@
+{
+  "reconstruction_summary": {
+    "timestamp": "2025-08-04T08:41:46.881659",
+    "total_processing_time": "N/A",
+    "phase_completed": "PHASE 2: DATA PIPELINE RECONSTRUCTION",
+    "reconstruction_successful": true
+  },
+  "statistics": {
+    "total_documents": 54,
+    "total_size_mb": 86.74,
+    "disciplines_covered": 22,
+    "directories_consolidated": 0,
+    "files_moved": 0,
+    "documents_catalogued": 54,
+    "database_records_created": 54,
+    "duplicate_files_resolved": 19
+  },
+  "discipline_breakdown": {
+    "Physics": {
+      "documents": 11,
+      "size_mb": 21.02,
+      "organizations": [
+        ".DS Store",
+        "Cambridge_International",
+        "Next_Generation_Science_Standards_US",
+        "College Board US",
+        "College Board",
+        "Unknown",
+        "AAPT"
+      ],
+      "levels": [
+        "Unknown",
+        "High_School",
+        "University",
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global",
+        "US"
+      ]
+    },
+    "Medicine": {
+      "documents": 5,
+      "size_mb": 0.35,
+      "organizations": [
+        "Unknown"
+      ],
+      "levels": [
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Computer_Science": {
+      "documents": 4,
+      "size_mb": 12.91,
+      "organizations": [
+        "College Board US",
+        "IEEE_CS",
+        "ABET",
+        "Association_for_Computing_Machinery"
+      ],
+      "levels": [
+        "High_School",
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "curriculum_framework",
+        "accreditation_standard"
+      ],
+      "regions": [
+        "Global",
+        "US"
+      ]
+    },
+    "Mathematics": {
+      "documents": 4,
+      "size_mb": 6.82,
+      "organizations": [
+        "Common_Core_State_Standards_US",
+        "NCTM",
+        "College Board US",
+        "Unknown"
+      ],
+      "levels": [
+        "High_School",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Engineering": {
+      "documents": 3,
+      "size_mb": 0.43,
+      "organizations": [
+        "IEEE Engineering",
+        "ASEE",
+        "European Network for Accreditation of Engineering Education"
+      ],
+      "levels": [
+        "University",
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global",
+        "US"
+      ]
+    },
+    "History": {
+      "documents": 3,
+      "size_mb": 7.89,
+      "organizations": [
+        "NCHS",
+        "College_Board_US",
+        "NCSS History"
+      ],
+      "levels": [
+        "High_School",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Literature": {
+      "documents": 3,
+      "size_mb": 4.7,
+      "organizations": [
+        "NCTE",
+        "College Board US",
+        "Unknown"
+      ],
+      "levels": [
+        "High_School",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Art": {
+      "documents": 2,
+      "size_mb": 0.31,
+      "organizations": [
+        "NAEA",
+        "Unknown"
+      ],
+      "levels": [
+        "High_School",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Business": {
+      "documents": 2,
+      "size_mb": 0.15,
+      "organizations": [
+        "College_Board_US",
+        "Unknown"
+      ],
+      "levels": [
+        "High_School",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Computer science": {
+      "documents": 2,
+      "size_mb": 0.47,
+      "organizations": [
+        ".DS Store",
+        "IEEE CS"
+      ],
+      "levels": [
+        "Unknown",
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Geography": {
+      "documents": 2,
+      "size_mb": 7.98,
+      "organizations": [
+        "National_Geography",
+        "College Board US"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Law": {
+      "documents": 2,
+      "size_mb": 0.23,
+      "organizations": [
+        "LSAC",
+        "Unknown"
+      ],
+      "levels": [
+        "Graduate",
+        "University"
+      ],
+      "framework_types": [
+        "assessment_standard",
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US",
+        "Global"
+      ]
+    },
+    "Philosophy": {
+      "documents": 2,
+      "size_mb": 0.1,
+      "organizations": [
+        "Philosophy Teaching",
+        "APA"
+      ],
+      "levels": [
+        "University",
+        "Undergraduate"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global",
+        "US"
+      ]
+    },
+    "Agricultural_Sciences": {
+      "documents": 1,
+      "size_mb": 0.07,
+      "organizations": [
+        "NAAE"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ]
+    },
+    "Biology": {
+      "documents": 1,
+      "size_mb": 5.28,
+      "organizations": [
+        "College Board US"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Earth Sciences": {
+      "documents": 1,
+      "size_mb": 0.02,
+      "organizations": [
+        "Unknown"
+      ],
+      "levels": [
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Economics": {
+      "documents": 1,
+      "size_mb": 0.03,
+      "organizations": [
+        "Unknown"
+      ],
+      "levels": [
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Education": {
+      "documents": 1,
+      "size_mb": 0.41,
+      "organizations": [
+        "Unknown"
+      ],
+      "levels": [
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Environmental_Science": {
+      "documents": 1,
+      "size_mb": 10.26,
+      "organizations": [
+        "College Board US"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Physical_Sciences": {
+      "documents": 1,
+      "size_mb": 4.72,
+      "organizations": [
+        "College_Board_US"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "US"
+      ]
+    },
+    "Social_Sciences": {
+      "documents": 1,
+      "size_mb": 2.54,
+      "organizations": [
+        "College Board US"
+      ],
+      "levels": [
+        "High_School"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    },
+    "Sociology": {
+      "documents": 1,
+      "size_mb": 0.06,
+      "organizations": [
+        "Unknown"
+      ],
+      "levels": [
+        "University"
+      ],
+      "framework_types": [
+        "curriculum_framework"
+      ],
+      "regions": [
+        "Global"
+      ]
+    }
+  },
+  "processing_pipeline": {
+    "database_initialized": true,
+    "directory_structure_unified": true,
+    "documents_catalogued": true,
+    "processing_optimized": true,
+    "ready_for_phase_3": true
+  },
+  "database_info": {
+    "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/international_standards.db",
+    "tables": [
+      "documents",
+      "processing_log",
+      "discipline_summary"
+    ],
+    "indexes_optimized": true,
+    "query_performance": "Optimized"
+  }
+}

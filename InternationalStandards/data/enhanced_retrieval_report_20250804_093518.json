@@ -1,0 +1,337 @@
+{
+  "timestamp": "2025-08-04T09:32:55.089208",
+  "operation": "enhanced_document_retrieval",
+  "total_sources": 21,
+  "successful_downloads": 12,
+  "failed_downloads": 9,
+  "already_existed": 0,
+  "total_size_bytes": 43193410,
+  "results": [
+    {
+      "success": true,
+      "title": "NGSS Physical Science Standards",
+      "file_size": 3899370,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "NGSS Physical Science Standards",
+        "url": "https://www.nextgenscience.org/sites/default/files/NGSS%20DCI%20Combined%2011.6.13.pdf",
+        "discipline": "Physics",
+        "organization": "NGSS",
+        "level": "High_School",
+        "expected_size": 1000000
+      }
+    },
+    {
+      "success": false,
+      "title": "Cambridge IGCSE Physics Syllabus 2023",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "Cambridge IGCSE Physics Syllabus 2023",
+        "url": "https://www.cambridgeinternational.org/Images/414413-2020-2022-syllabus.pdf",
+        "discipline": "Physics",
+        "organization": "Cambridge_International",
+        "level": "High_School",
+        "expected_size": 500000
+      }
+    },
+    {
+      "success": false,
+      "title": "IB Physics Guide",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden",
+      "attempts": 3,
+      "source": {
+        "title": "IB Physics Guide",
+        "url": "https://xmltwo.ibo.org/publications/DP/Group4/d_4_physi_gui_1408_2_e.pdf",
+        "discipline": "Physics",
+        "organization": "International_Baccalaureate",
+        "level": "High_School",
+        "expected_size": 800000
+      }
+    },
+    {
+      "success": true,
+      "title": "ACM Computing Curricula 2020",
+      "file_size": 8765056,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "ACM Computing Curricula 2020",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "discipline": "Computer_Science",
+        "organization": "ACM",
+        "level": "University",
+        "expected_size": 8000000
+      }
+    },
+    {
+      "success": true,
+      "title": "IEEE Software Engineering Body of Knowledge v3.0",
+      "file_size": 471720,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "IEEE Software Engineering Body of Knowledge v3.0",
+        "url": "https://www.computer.org/education/bodies-of-knowledge/software-engineering/v3",
+        "discipline": "Computer_Science",
+        "organization": "IEEE",
+        "level": "University",
+        "expected_size": 400000
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Computer Science A Framework",
+      "file_size": 4204647,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "AP Computer Science A Framework",
+        "url": "https://apcentral.collegeboard.org/pdf/ap-computer-science-a-course-and-exam-description.pdf",
+        "discipline": "Computer_Science",
+        "organization": "College_Board_US",
+        "level": "High_School",
+        "expected_size": 2000000
+      }
+    },
+    {
+      "success": false,
+      "title": "Common Core Mathematics Standards",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "Common Core Mathematics Standards",
+        "url": "http://www.corestandards.org/wp-content/uploads/Math_Standards1.pdf",
+        "discipline": "Mathematics",
+        "organization": "Common_Core_State_Standards",
+        "level": "High_School",
+        "expected_size": 1200000
+      }
+    },
+    {
+      "success": true,
+      "title": "NCTM Principles and Standards",
+      "file_size": 742284,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "NCTM Principles and Standards",
+        "url": "https://www.nctm.org/uploadedFiles/Standards_and_Positions/PSSM_ExecutiveSummary.pdf",
+        "discipline": "Mathematics",
+        "organization": "NCTM",
+        "level": "High_School",
+        "expected_size": 200000
+      }
+    },
+    {
+      "success": false,
+      "title": "Cambridge A Level Mathematics Syllabus",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "Cambridge A Level Mathematics Syllabus",
+        "url": "https://www.cambridgeinternational.org/Images/414336-2020-2022-syllabus.pdf",
+        "discipline": "Mathematics",
+        "organization": "Cambridge_International",
+        "level": "High_School",
+        "expected_size": 600000
+      }
+    },
+    {
+      "success": true,
+      "title": "NGSS Life Science Standards",
+      "file_size": 3899370,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "NGSS Life Science Standards",
+        "url": "https://www.nextgenscience.org/sites/default/files/NGSS%20DCI%20Combined%2011.6.13.pdf",
+        "discipline": "Life_Sciences",
+        "organization": "NGSS",
+        "level": "High_School",
+        "expected_size": 3800000
+      }
+    },
+    {
+      "success": false,
+      "title": "Cambridge IGCSE Biology Syllabus",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "Cambridge IGCSE Biology Syllabus",
+        "url": "https://www.cambridgeinternational.org/Images/414390-2020-2022-syllabus.pdf",
+        "discipline": "Life_Sciences",
+        "organization": "Cambridge_International",
+        "level": "High_School",
+        "expected_size": 500000
+      }
+    },
+    {
+      "success": false,
+      "title": "ABET Engineering Criteria 2023-2024",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "ABET Engineering Criteria 2023-2024",
+        "url": "https://www.abet.org/wp-content/uploads/2022/11/2023-24-EAC-Criteria.pdf",
+        "discipline": "Engineering",
+        "organization": "ABET",
+        "level": "University",
+        "expected_size": 100000
+      }
+    },
+    {
+      "success": true,
+      "title": "ASEE Engineering Education Guidelines",
+      "file_size": 137937,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "ASEE Engineering Education Guidelines",
+        "url": "https://www.asee.org/documents/papers-and-publications/papers/college-profiles/Engineering-by-Numbers-2018.pdf",
+        "discipline": "Engineering",
+        "organization": "ASEE",
+        "level": "University",
+        "expected_size": 150000
+      }
+    },
+    {
+      "success": true,
+      "title": "AACSB Business Accreditation Standards",
+      "file_size": 72596,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "AACSB Business Accreditation Standards",
+        "url": "https://www.aacsb.edu/-/media/aacsb/docs/accreditation/standards/business-standards.ashx",
+        "discipline": "Business",
+        "organization": "AACSB",
+        "level": "University",
+        "expected_size": 80000
+      }
+    },
+    {
+      "success": false,
+      "title": "Cambridge IGCSE Chemistry Syllabus",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "Cambridge IGCSE Chemistry Syllabus",
+        "url": "https://www.cambridgeinternational.org/Images/414378-2020-2022-syllabus.pdf",
+        "discipline": "Physical_Sciences",
+        "organization": "Cambridge_International",
+        "level": "High_School",
+        "expected_size": 500000
+      }
+    },
+    {
+      "success": true,
+      "title": "AP World History Course Description",
+      "file_size": 8082066,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "AP World History Course Description",
+        "url": "https://apcentral.collegeboard.org/pdf/ap-world-history-course-and-exam-description.pdf",
+        "discipline": "History",
+        "organization": "College_Board_US",
+        "level": "High_School",
+        "expected_size": 8000000
+      }
+    },
+    {
+      "success": true,
+      "title": "AP English Literature Course Description",
+      "file_size": 4691914,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "AP English Literature Course Description",
+        "url": "https://apcentral.collegeboard.org/pdf/ap-english-literature-and-composition-course-and-exam-description.pdf",
+        "discipline": "Literature",
+        "organization": "College_Board_US",
+        "level": "High_School",
+        "expected_size": 3000000
+      }
+    },
+    {
+      "success": true,
+      "title": "National Visual Arts Standards",
+      "file_size": 328770,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "National Visual Arts Standards",
+        "url": "https://www.nationalartsstandards.org/sites/default/files/Visual%20Arts%20at%20a%20Glance%20-%20new%20copyright%20info.pdf",
+        "discipline": "Art",
+        "organization": "NAEA",
+        "level": "High_School",
+        "expected_size": 200000
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Human Geography Course Description",
+      "file_size": 7897680,
+      "status": "downloaded",
+      "attempts": 1,
+      "source": {
+        "title": "AP Human Geography Course Description",
+        "url": "https://apcentral.collegeboard.org/pdf/ap-human-geography-course-and-exam-description.pdf",
+        "discipline": "Geography",
+        "organization": "College_Board_US",
+        "level": "High_School",
+        "expected_size": 6000000
+      }
+    },
+    {
+      "success": false,
+      "title": "UNESCO Education Framework",
+      "file_size": 0,
+      "status": "failed",
+      "error": "Downloaded content too small: 1000 bytes",
+      "attempts": 3,
+      "source": {
+        "title": "UNESCO Education Framework",
+        "url": "https://unesdoc.unesco.org/ark:/48223/pf0000245656.pdf",
+        "discipline": "Education",
+        "organization": "UNESCO",
+        "level": "University",
+        "expected_size": 1000000
+      }
+    },
+    {
+      "success": false,
+      "title": "OECD Education Standards Framework",
+      "file_size": 0,
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "attempts": 3,
+      "source": {
+        "title": "OECD Education Standards Framework",
+        "url": "https://www.oecd.org/education/2030-project/teaching-and-learning/learning/core-foundations/Core_Foundations_for_2030_concept_note.pdf",
+        "discipline": "Education",
+        "organization": "OECD",
+        "level": "International",
+        "expected_size": 500000
+      }
+    }
+  ],
+  "success_rate": 57.14285714285714,
+  "total_size_mb": 41.19244575500488
+}

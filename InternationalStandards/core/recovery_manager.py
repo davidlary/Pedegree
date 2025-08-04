@@ -24,13 +24,23 @@ import time
 class RecoveryManager:
     """Comprehensive recovery and continuation system"""
     
-    def __init__(self, recovery_dir: Path, config: Dict[str, Any]):
+    def __init__(self, recovery_dir: Optional[Path] = None, config: Optional[Dict[str, Any]] = None):
         """Initialize recovery manager
         
         Args:
-            recovery_dir: Directory for recovery files
-            config: Recovery configuration dictionary
+            recovery_dir: Directory for recovery files (defaults to current/recovery)
+            config: Recovery configuration dictionary (defaults to basic config)
         """
+        if recovery_dir is None:
+            recovery_dir = Path(__file__).parent.parent / "recovery"
+        if config is None:
+            config = {
+                'checkpoint_interval': 300,  # 5 minutes
+                'max_checkpoints': 10,
+                'compression_enabled': True,
+                'integrity_checks': True
+            }
+            
         self.recovery_dir = Path(recovery_dir)
         self.config = config
         

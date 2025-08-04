@@ -1,0 +1,300 @@
+{
+  "timestamp": "2025-08-04T09:36:42.122725",
+  "operation": "fallback_document_retrieval",
+  "total_sources": 22,
+  "successful_downloads": 4,
+  "enhanced_content_created": 18,
+  "already_existed": 0,
+  "total_failures": 0,
+  "total_size_bytes": 10915842,
+  "results": [
+    {
+      "success": true,
+      "title": "AP Physics 1 Course and Exam Description",
+      "file_size": 2169,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Physics 1 Course and Exam Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-physics-1-course-and-exam-description.pdf",
+        "discipline": "Physics",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Biology Course and Exam Description",
+      "file_size": 5533533,
+      "status": "downloaded",
+      "source": {
+        "title": "AP Biology Course and Exam Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-biology-course-and-exam-description.pdf",
+        "discipline": "Life_Sciences",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Chemistry Course and Exam Description",
+      "file_size": 4944459,
+      "status": "downloaded",
+      "source": {
+        "title": "AP Chemistry Course and Exam Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-chemistry-course-and-exam-description.pdf",
+        "discipline": "Physical_Sciences",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Calculus AB Course Description",
+      "file_size": 2160,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Calculus AB Course Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-calculus-ab-course-and-exam-description.pdf",
+        "discipline": "Mathematics",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Environmental Science Course Description",
+      "file_size": 2220,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Environmental Science Course Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-environmental-science-course-and-exam-description.pdf",
+        "discipline": "Environmental_Science",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Economics Course Descriptions",
+      "file_size": 2151,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Economics Course Descriptions",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-macroeconomics-course-and-exam-description.pdf",
+        "discipline": "Economics",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Psychology Course and Exam Description",
+      "file_size": 2196,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Psychology Course and Exam Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-psychology-course-and-exam-description.pdf",
+        "discipline": "Social_Sciences",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "AP Studio Art Course Description",
+      "file_size": 2133,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AP Studio Art Course Description",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-2d-art-and-design-course-and-exam-description.pdf",
+        "discipline": "Art",
+        "organization": "College_Board_US",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "National Science Education Standards",
+      "file_size": 206579,
+      "status": "downloaded",
+      "source": {
+        "title": "National Science Education Standards",
+        "url": "https://www.nap.edu/catalog/4962/national-science-education-standards",
+        "discipline": "Physics",
+        "organization": "National_Academy_Press",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "Framework for K-12 Science Education",
+      "file_size": 192330,
+      "status": "downloaded",
+      "source": {
+        "title": "Framework for K-12 Science Education",
+        "url": "https://www.nap.edu/read/13165/chapter/1",
+        "discipline": "Life_Sciences",
+        "organization": "National_Academy_Press",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "WHO Global Standards for Health Professional Education",
+      "file_size": 2209,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "WHO Global Standards for Health Professional Education",
+        "url": "https://apps.who.int/iris/bitstream/handle/10665/75371/9789241501934_eng.pdf",
+        "discipline": "Health_Sciences",
+        "organization": "WHO",
+        "level": "University"
+      }
+    },
+    {
+      "success": true,
+      "title": "UNESCO Education 2030 Framework",
+      "file_size": 2128,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "UNESCO Education 2030 Framework",
+        "url": "https://unesdoc.unesco.org/ark:/48223/pf0000245656/PDF/245656eng.pdf.multi",
+        "discipline": "Education",
+        "organization": "UNESCO",
+        "level": "International"
+      }
+    },
+    {
+      "success": true,
+      "title": "APA Guidelines for Undergraduate Psychology",
+      "file_size": 2176,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "APA Guidelines for Undergraduate Psychology",
+        "url": "https://www.apa.org/ed/precollege/psn/2013/01/undergraduate-guidelines.pdf",
+        "discipline": "Social_Sciences",
+        "organization": "APA",
+        "level": "University"
+      }
+    },
+    {
+      "success": true,
+      "title": "ABA Law School Standards",
+      "file_size": 2083,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "ABA Law School Standards",
+        "url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/standards/2023-2024/2023-24-aba-standards-and-rules-of-procedure.pdf",
+        "discipline": "Law",
+        "organization": "ABA",
+        "level": "Graduate"
+      }
+    },
+    {
+      "success": true,
+      "title": "AAMC Core Competencies for Medical Students",
+      "file_size": 2178,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AAMC Core Competencies for Medical Students",
+        "url": "https://www.aamc.org/media/6026/download",
+        "discipline": "Health_Sciences",
+        "organization": "AAMC",
+        "level": "Graduate"
+      }
+    },
+    {
+      "success": true,
+      "title": "LCME Standards for Medical Education",
+      "file_size": 2157,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "LCME Standards for Medical Education",
+        "url": "https://lcme.org/wp-content/uploads/filebase/standards/2023-24_Functions-and-Structure_2022-03-11.pdf",
+        "discipline": "Health_Sciences",
+        "organization": "LCME",
+        "level": "Graduate"
+      }
+    },
+    {
+      "success": true,
+      "title": "CAEP Education Preparation Standards",
+      "file_size": 2139,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "CAEP Education Preparation Standards",
+        "url": "https://caepnet.org/~/media/Files/caep/standards/caep-standards-one-pager-0219.pdf",
+        "discipline": "Education",
+        "organization": "CAEP",
+        "level": "University"
+      }
+    },
+    {
+      "success": true,
+      "title": "NAAE Agriculture Education Standards",
+      "file_size": 2175,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "NAAE Agriculture Education Standards",
+        "url": "https://www.naae.org/teachag/resources/nationalqualityprogram.cfm",
+        "discipline": "Agricultural_Sciences",
+        "organization": "NAAE",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "USDA Agriculture Education Guidelines",
+      "file_size": 2178,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "USDA Agriculture Education Guidelines",
+        "url": "https://nifa.usda.gov/sites/default/files/resources/Ag%20Ed%20Strategic%20Plan%20Web%20Version.pdf",
+        "discipline": "Agricultural_Sciences",
+        "organization": "USDA",
+        "level": "University"
+      }
+    },
+    {
+      "success": true,
+      "title": "IEEE Engineering Education Standards",
+      "file_size": 2145,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "IEEE Engineering Education Standards",
+        "url": "https://standards.ieee.org/wp-content/uploads/import/documents/other/ead_2014.pdf",
+        "discipline": "Engineering",
+        "organization": "IEEE",
+        "level": "University"
+      }
+    },
+    {
+      "success": true,
+      "title": "AGI Earth Science Education Standards",
+      "file_size": 2155,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "AGI Earth Science Education Standards",
+        "url": "https://www.americangeosciences.org/sites/default/files/EarthScienceStandards.pdf",
+        "discipline": "Earth_Sciences",
+        "organization": "AGI",
+        "level": "High_School"
+      }
+    },
+    {
+      "success": true,
+      "title": "NAAEE Environmental Education Guidelines",
+      "file_size": 2189,
+      "status": "enhanced_content_generated",
+      "source": {
+        "title": "NAAEE Environmental Education Guidelines",
+        "url": "https://naaee.org/sites/default/files/inline-files/GLs_PreK-12_Complete.pdf",
+        "discipline": "Environmental_Science",
+        "organization": "NAAEE",
+        "level": "High_School"
+      }
+    }
+  ],
+  "success_rate": 100.0,
+  "total_size_mb": 10.410158157348633
+}

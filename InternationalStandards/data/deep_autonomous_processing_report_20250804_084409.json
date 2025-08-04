@@ -1,0 +1,477 @@
+{
+  "processing_summary": {
+    "timestamp": "2025-08-04T08:44:09.160740",
+    "phase_completed": "PHASE 3: DEEP AUTONOMOUS FIXING - Real Processing",
+    "total_processing_time": 0.0020530223846435547,
+    "autonomous_processing_successful": false
+  },
+  "statistics": {
+    "workflow_executions": 54,
+    "successful_completions": 0,
+    "autonomous_fixes": 0,
+    "performance_improvements": 0,
+    "errors_recovered": 0,
+    "quality_enhancements": 0,
+    "processing_details": [
+      {
+        "document_id": "Agricultural_Sciences_c8a54b47e77da401",
+        "title": "NAAE Agriculture Education Standards",
+        "success": false,
+        "processing_time": 0.00010919570922851562,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Art_d8510029dd408ad7",
+        "title": "NAEA Visual Arts Standards",
+        "success": false,
+        "processing_time": 3.886222839355469e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Art_8805faa35108d811",
+        "title": "National Visual Arts Standards",
+        "success": false,
+        "processing_time": 2.7894973754882812e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Biology_6e5892e6c9049354",
+        "title": "AP Biology Course and Exam Description",
+        "success": false,
+        "processing_time": 2.288818359375e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Business_2a7c2a2d261734e1",
+        "title": "AP Business Course Descriptions",
+        "success": false,
+        "processing_time": 2.09808349609375e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Business_8c68064f2dcf4bab",
+        "title": "AACSB Business Accreditation Standards",
+        "success": false,
+        "processing_time": 2.002716064453125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer science_0201c58f232a6b22",
+        "title": "Software Engineering Body of Knowledge (SWEBOK)",
+        "success": false,
+        "processing_time": 1.8835067749023438e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer science_dca3931ed613c751",
+        "title": ".DS_Store",
+        "success": false,
+        "processing_time": 1.8835067749023438e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer_Science_c81501ad5a022c83",
+        "title": "AP Computer Science A Course Description",
+        "success": false,
+        "processing_time": 1.7881393432617188e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer_Science_9d421e6dc998d550",
+        "title": "IEEE Software Engineering Body of Knowledge",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer_Science_63cd6b0ae16d69fc",
+        "title": "ABET Computing Accreditation Criteria 2023-24",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Computer_Science_e43a5e3d2b914bd3",
+        "title": "ACM Computing Curricula 2020",
+        "success": false,
+        "processing_time": 2.3126602172851562e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Earth Sciences_3874f0ee2174e31e",
+        "title": "Earth Science Education Standards",
+        "success": false,
+        "processing_time": 1.811981201171875e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Economics_a823c273b9e5da2d",
+        "title": "Economics Education Standards",
+        "success": false,
+        "processing_time": 1.7881393432617188e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Education_214e4027dcf54335",
+        "title": "CAEP Accreditation Standards",
+        "success": false,
+        "processing_time": 1.811981201171875e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Engineering_7f0014d40359f7cc",
+        "title": "ASEE Engineering Education Guidelines",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Engineering_333dee30b6a7ba30",
+        "title": "EUR-ACE Framework Standards",
+        "success": false,
+        "processing_time": 1.7881393432617188e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Engineering_190d7c3234c116ad",
+        "title": "IEEE Engineering Education Standards",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Environmental_Science_f4d2afefb783661d",
+        "title": "AP Environmental Science Course Description",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Geography_d06dae18661c80fa",
+        "title": "National Geography Standards",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Geography_b0803e997a5b4e57",
+        "title": "AP Human Geography Course Description",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "History_9a6c3e5f7df3d09c",
+        "title": "NCHS Historical Thinking Standards",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "History_d24ff8ec00619a5a",
+        "title": "AP World History Course Description",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "History_f77d65e789d311e7",
+        "title": "NCSS Thematic Standards for History",
+        "success": false,
+        "processing_time": 1.6689300537109375e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Law_2f972dd8a62bca3b",
+        "title": "Law School Admission Test Information",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Law_aa052430d4f15059",
+        "title": "ABA Law School Accreditation Standards",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Literature_8edc7c3532c72f3c",
+        "title": "NCTE English Language Arts Standards",
+        "success": false,
+        "processing_time": 1.9311904907226562e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Literature_63f2e868f9a32236",
+        "title": "AP English Literature Course Description",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Literature_d379878f413f9b84",
+        "title": "English Language Arts Standards",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Mathematics_2d28ded26c7394f5",
+        "title": "Common Core Mathematics Standards",
+        "success": false,
+        "processing_time": 1.7881393432617188e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Mathematics_35aaf16539588aed",
+        "title": "NCTM Principles and Standards for School Mathematics",
+        "success": false,
+        "processing_time": 1.811981201171875e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Mathematics_babddd2cfd0b2f7a",
+        "title": "AP Calculus Course and Exam Description",
+        "success": false,
+        "processing_time": 2.4080276489257812e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Mathematics_f8bfd0fd397ee1d6",
+        "title": "Principles and Standards for School Mathematics",
+        "success": false,
+        "processing_time": 2.193450927734375e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Medicine_f42621d9a5e045f2",
+        "title": "Standards for Accreditation of Medical Education Programs",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Medicine_3fb4ca385e0a6326",
+        "title": "Medical School Admission Requirements Guide",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Medicine_a0dc77820088e00c",
+        "title": "MCAT Exam Content and Specifications",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Medicine_a44c78e653be9921",
+        "title": "Core Competencies for Entering Medical Students",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Medicine_1fd6e5e9cf235d1a",
+        "title": "WHO Standards for Health Professional Education",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Philosophy_01b2401c6daae4bb",
+        "title": "APA Philosophy Teaching Guidelines",
+        "success": false,
+        "processing_time": 1.811981201171875e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Philosophy_d02032286070b4dd",
+        "title": "Teaching Philosophy Standards",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physical_Sciences_b7cee3eea553b81b",
+        "title": "AP Chemistry Course Description",
+        "success": false,
+        "processing_time": 1.6689300537109375e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_11694e37d665ebce",
+        "title": "Cambridge IGCSE Physics Syllabus",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_891f97b44a1fa9a7",
+        "title": "NGSS High School Physics Standards",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_6af5bd1051f2cd4f",
+        "title": "AP Physics 1 Course and Exam Description",
+        "success": false,
+        "processing_time": 1.6927719116210938e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_1831cee67d27cfb7",
+        "title": "AP Physics C Mechanics Course Description",
+        "success": false,
+        "processing_time": 1.7881393432617188e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_e8865355e8154cb9",
+        "title": "AAPT Undergraduate Physics Program Guidelines",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_c0ae873de8d362ab",
+        "title": "SAT Physics Subject Test Standards",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_0f3ca796610ab024",
+        "title": "NIST Framework for Improving Critical Infrastructure Cybersecurity",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_6ec1276e5b0e4838",
+        "title": "AAPT Physics Education Standards",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_7caaa5ac9ef69bcf",
+        "title": "APS Physics Education Standards",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_467bb548d025d371",
+        "title": "IEEE Standards Style Manual",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Physics_13426bdc16b5f7cd",
+        "title": ".DS_Store",
+        "success": false,
+        "processing_time": 1.5974044799804688e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Social_Sciences_82d5ae394d3c679c",
+        "title": "AP Psychology Course and Exam Description",
+        "success": false,
+        "processing_time": 1.621246337890625e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      },
+      {
+        "document_id": "Sociology_9f8f12aa1fbd5b2d",
+        "title": "National Social Studies Standards",
+        "success": false,
+        "processing_time": 1.71661376953125e-05,
+        "quality_score": 0.0,
+        "error_message": "Critical step 'document_validation' failed: Missing required inputs: ['file_path']"
+      }
+    ],
+    "success_rate": 0.0,
+    "total_processing_time": 0.0020530223846435547,
+    "documents_processed": 54,
+    "processing_errors": 0,
+    "autonomous_fixes_applied": 0,
+    "quality_improvements": 0,
+    "workflow_completions": 0,
+    "performance_optimizations": 0
+  },
+  "autonomous_capabilities": {
+    "error_recovery_active": true,
+    "autonomous_fixes_available": true,
+    "workflow_optimization": true,
+    "performance_monitoring": true,
+    "quality_assessment": true
+  },
+  "workflow_analysis": {
+    "steps_defined": 6,
+    "critical_steps": 4,
+    "average_step_time": 0.00034217039744059247,
+    "workflow_robustness": "Medium"
+  },
+  "readiness_assessment": {
+    "ready_for_phase_4": false,
+    "error_handling_verified": true,
+    "performance_acceptable": true,
+    "quality_standards_met": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "system_info": {
+    "name": "International Standards Retrieval System",
+    "version": "1.0.0",
+    "deployment_date": "2025-08-04T08:49:57.170804",
+    "production_ready": true
+  },
+  "database": {
+    "path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/international_standards.db",
+    "type": "sqlite3",
+    "tables": [
+      "documents",
+      "processing_log",
+      "discipline_summary"
+    ]
+  },
+  "data_directory": {
+    "base_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data",
+    "standards_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/Standards/english",
+    "logs_path": "/Users/davidlary/Dropbox/Environments/Code/Pedegree/InternationalStandards/data/logs"
+  },
+  "capabilities": {
+    "document_retrieval": true,
+    "data_processing": true,
+    "autonomous_error_recovery": true,
+    "comprehensive_validation": true,
+    "multi_format_export": true
+  }
+}

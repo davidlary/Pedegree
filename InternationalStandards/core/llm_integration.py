@@ -67,13 +67,20 @@ class TaskResult:
 class LLMIntegration:
     """Comprehensive LLM integration with intelligent routing and optimization"""
     
-    def __init__(self, config: Dict[str, Any], models_data_path: Optional[str] = None):
+    def __init__(self, config: Optional[Dict[str, Any]] = None, models_data_path: Optional[str] = None):
         """Initialize LLM integration
         
         Args:
-            config: LLM optimization configuration
+            config: LLM optimization configuration (defaults to basic config)
             models_data_path: Path to models data file
         """
+        if config is None:
+            config = {
+                'model_selection': 'cost_optimized',
+                'max_cost_per_1k_tokens': 0.01,
+                'timeout_seconds': 30,
+                'retry_attempts': 3
+            }
         self.config = config
         # Set default models path if not provided
         if models_data_path is None:

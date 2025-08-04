@@ -1,0 +1,474 @@
+{
+  "retrieval_summary": {
+    "start_time": "2025-08-04T08:34:43.455391",
+    "total_time_seconds": 108.047511,
+    "total_sources": 50,
+    "successful_downloads": 22,
+    "failed_downloads": 27,
+    "success_rate": 44.0,
+    "total_size_mb": 37.331210136413574
+  },
+  "statistics": {
+    "total_attempts": 52,
+    "successful_downloads": 22,
+    "failed_downloads": 27,
+    "total_size_bytes": 39144611,
+    "ssl_fixes_applied": 0,
+    "url_corrections_made": 0,
+    "fallback_uses": 0
+  },
+  "discipline_breakdown": {
+    "Physics": {
+      "attempted": 5,
+      "successful": 3,
+      "failed": 2
+    },
+    "Computer_Science": {
+      "attempted": 4,
+      "successful": 3,
+      "failed": 1
+    },
+    "Mathematics": {
+      "attempted": 4,
+      "successful": 2,
+      "failed": 2
+    },
+    "Life_Sciences": {
+      "attempted": 3,
+      "successful": 2,
+      "failed": 1
+    },
+    "Physical_Sciences": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "Engineering": {
+      "attempted": 3,
+      "successful": 1,
+      "failed": 2
+    },
+    "Health_Sciences": {
+      "attempted": 3,
+      "successful": 0,
+      "failed": 3
+    },
+    "Earth_Sciences": {
+      "attempted": 2,
+      "successful": 0,
+      "failed": 2
+    },
+    "Environmental_Science": {
+      "attempted": 2,
+      "successful": 0,
+      "failed": 2
+    },
+    "Business": {
+      "attempted": 2,
+      "successful": 2,
+      "failed": 0
+    },
+    "Economics": {
+      "attempted": 2,
+      "successful": 0,
+      "failed": 2
+    },
+    "Social_Sciences": {
+      "attempted": 2,
+      "successful": 0,
+      "failed": 2
+    },
+    "Geography": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "History": {
+      "attempted": 2,
+      "successful": 2,
+      "failed": 0
+    },
+    "Art": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "Literature": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "Philosophy": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "Law": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    },
+    "Education": {
+      "attempted": 2,
+      "successful": 0,
+      "failed": 2
+    },
+    "Agricultural_Sciences": {
+      "attempted": 2,
+      "successful": 1,
+      "failed": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "title": "AP Physics 1 Course Description",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Physics C Mechanics Course Description",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NGSS Physical Science Standards",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 3899370,
+      "error": null
+    },
+    {
+      "title": "Cambridge IGCSE Physics Syllabus",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 543277,
+      "error": null
+    },
+    {
+      "title": "AAPT Undergraduate Physics Program Guidelines",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 56709,
+      "error": null
+    },
+    {
+      "title": "AP Computer Science A Course Description",
+      "discipline": "Computer_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "ACM Computing Curricula 2020",
+      "discipline": "Computer_Science",
+      "success": true,
+      "file_size": 8765056,
+      "error": null
+    },
+    {
+      "title": "IEEE Software Engineering Body of Knowledge",
+      "discipline": "Computer_Science",
+      "success": true,
+      "file_size": 486194,
+      "error": null
+    },
+    {
+      "title": "ABET Computing Accreditation Criteria 2023-24",
+      "discipline": "Computer_Science",
+      "success": true,
+      "file_size": 81297,
+      "error": null
+    },
+    {
+      "title": "Common Core Mathematics Standards",
+      "discipline": "Mathematics",
+      "success": true,
+      "file_size": 1242082,
+      "error": null
+    },
+    {
+      "title": "AP Calculus AB Course Description",
+      "discipline": "Mathematics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NCTM Principles and Standards for School Mathematics",
+      "discipline": "Mathematics",
+      "success": true,
+      "file_size": 210557,
+      "error": null
+    },
+    {
+      "title": "MAA Mathematical Association Guidelines",
+      "discipline": "Mathematics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Biology Course Description",
+      "discipline": "Life_Sciences",
+      "success": true,
+      "file_size": 5533533,
+      "error": null
+    },
+    {
+      "title": "NGSS Life Science Standards",
+      "discipline": "Life_Sciences",
+      "success": true,
+      "file_size": 3899370,
+      "error": null
+    },
+    {
+      "title": "AIBS Core Competencies for Biological Literacy",
+      "discipline": "Life_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Chemistry Course Description",
+      "discipline": "Physical_Sciences",
+      "success": true,
+      "file_size": 4944459,
+      "error": null
+    },
+    {
+      "title": "ACS Guidelines for Chemistry Programs",
+      "discipline": "Physical_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "ABET Engineering Criteria 2023-24",
+      "discipline": "Engineering",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "IEEE Standards Style Manual",
+      "discipline": "Engineering",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "ASEE Engineering Education Guidelines",
+      "discipline": "Engineering",
+      "success": true,
+      "file_size": 137937,
+      "error": null
+    },
+    {
+      "title": "LCME Standards for Medical Education",
+      "discipline": "Health_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AAMC Core Competencies for Medical Students",
+      "discipline": "Health_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "MCAT Exam Content and Specifications",
+      "discipline": "Health_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Environmental Science Course Description",
+      "discipline": "Earth_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AGI Earth Science Education Standards",
+      "discipline": "Earth_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NAAEE Guidelines for Environmental Education",
+      "discipline": "Environmental_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "EPA Environmental Education Guidelines",
+      "discipline": "Environmental_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AACSB Business Accreditation Standards",
+      "discipline": "Business",
+      "success": true,
+      "file_size": 73092,
+      "error": null
+    },
+    {
+      "title": "AP Business Course Descriptions",
+      "discipline": "Business",
+      "success": true,
+      "file_size": 36842,
+      "error": null
+    },
+    {
+      "title": "AP Economics Course Descriptions",
+      "discipline": "Economics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AEA Economics Education Standards",
+      "discipline": "Economics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Psychology Course Description",
+      "discipline": "Social_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NCSS Social Studies Standards",
+      "discipline": "Social_Sciences",
+      "success": false,
+      "file_size": 8551,
+      "error": "File too small (8551 bytes, minimum 10000)"
+    },
+    {
+      "title": "AP Human Geography Course Description",
+      "discipline": "Geography",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "National Geography Standards",
+      "discipline": "Geography",
+      "success": true,
+      "file_size": 474790,
+      "error": null
+    },
+    {
+      "title": "AP World History Course Description",
+      "discipline": "History",
+      "success": true,
+      "file_size": 8082066,
+      "error": null
+    },
+    {
+      "title": "NCHS Historical Thinking Standards",
+      "discipline": "History",
+      "success": true,
+      "file_size": 102865,
+      "error": null
+    },
+    {
+      "title": "NAEA Visual Arts Standards",
+      "discipline": "Art",
+      "success": true,
+      "file_size": 160951,
+      "error": null
+    },
+    {
+      "title": "AP Studio Art Course Description",
+      "discipline": "Art",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP English Literature Course Description",
+      "discipline": "Literature",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NCTE English Language Arts Standards",
+      "discipline": "Literature",
+      "success": true,
+      "file_size": 118501,
+      "error": null
+    },
+    {
+      "title": "APA Philosophy Teaching Guidelines",
+      "discipline": "Philosophy",
+      "success": true,
+      "file_size": 102664,
+      "error": null
+    },
+    {
+      "title": "Philosophy Learning Goals and Assessment",
+      "discipline": "Philosophy",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "ABA Law School Accreditation Standards",
+      "discipline": "Law",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "Law School Admission Test Information",
+      "discipline": "Law",
+      "success": true,
+      "file_size": 120915,
+      "error": null
+    },
+    {
+      "title": "CAEP Education Preparation Standards",
+      "discipline": "Education",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "InTASC Model Core Teaching Standards",
+      "discipline": "Education",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "NAAE Agriculture Education Standards",
+      "discipline": "Agricultural_Sciences",
+      "success": true,
+      "file_size": 72084,
+      "error": null
+    },
+    {
+      "title": "USDA Agriculture Education Guidelines",
+      "discipline": "Agricultural_Sciences",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    }
+  ]
+}

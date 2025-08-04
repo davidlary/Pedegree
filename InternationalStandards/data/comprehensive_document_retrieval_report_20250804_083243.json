@@ -1,0 +1,151 @@
+{
+  "retrieval_summary": {
+    "start_time": "2025-08-04T08:32:05.618054",
+    "total_time_seconds": 38.114734,
+    "total_sources": 16,
+    "successful_downloads": 6,
+    "failed_downloads": 10,
+    "success_rate": 37.5,
+    "total_size_mb": 23.65464496612549
+  },
+  "statistics": {
+    "total_attempts": 22,
+    "successful_downloads": 6,
+    "failed_downloads": 10,
+    "total_size_bytes": 24803693,
+    "ssl_fixes_applied": 0,
+    "url_corrections_made": 2,
+    "fallback_uses": 0
+  },
+  "discipline_breakdown": {
+    "Physics": {
+      "attempted": 7,
+      "successful": 3,
+      "failed": 4
+    },
+    "Computer_Science": {
+      "attempted": 5,
+      "successful": 2,
+      "failed": 3
+    },
+    "Mathematics": {
+      "attempted": 4,
+      "successful": 1,
+      "failed": 3
+    }
+  },
+  "detailed_results": [
+    {
+      "title": "IB Physics Subject Guide 2024",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 3 download attempts failed"
+    },
+    {
+      "title": "AP Physics 1 Course Framework",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 6149261,
+      "error": null
+    },
+    {
+      "title": "A-Level Physics Specification AQA",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 3 download attempts failed"
+    },
+    {
+      "title": "Cambridge IGCSE Physics Syllabus",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 543277,
+      "error": null
+    },
+    {
+      "title": "NGSS High School Physics Standards",
+      "discipline": "Physics",
+      "success": true,
+      "file_size": 3899370,
+      "error": null
+    },
+    {
+      "title": "ABET Physics Program Criteria",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "GRE Physics Subject Test Content",
+      "discipline": "Physics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "IB Computer Science Subject Guide",
+      "discipline": "Computer_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 2 download attempts failed"
+    },
+    {
+      "title": "AP Computer Science A Framework",
+      "discipline": "Computer_Science",
+      "success": true,
+      "file_size": 4204647,
+      "error": null
+    },
+    {
+      "title": "A-Level Computer Science AQA",
+      "discipline": "Computer_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "ACM Computing Curricula 2020",
+      "discipline": "Computer_Science",
+      "success": true,
+      "file_size": 8765056,
+      "error": null
+    },
+    {
+      "title": "ABET Computing Accreditation Criteria",
+      "discipline": "Computer_Science",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "IB Mathematics Analysis & Approaches Guide",
+      "discipline": "Mathematics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "AP Calculus Course Framework",
+      "discipline": "Mathematics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    },
+    {
+      "title": "Common Core Mathematics Standards",
+      "discipline": "Mathematics",
+      "success": true,
+      "file_size": 1242082,
+      "error": null
+    },
+    {
+      "title": "MAA Mathematical Association Curriculum Guidelines",
+      "discipline": "Mathematics",
+      "success": false,
+      "file_size": 0,
+      "error": "All 1 download attempts failed"
+    }
+  ]
+}

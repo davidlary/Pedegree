@@ -73,15 +73,24 @@ class Task:
 class StandardsOrchestrator:
     """Central orchestrator for the multi-agent standards retrieval system"""
     
-    def __init__(self, config_manager: ConfigManager, recovery_manager: RecoveryManager, 
-                 llm_integration: LLMIntegration):
+    def __init__(self, config_manager: Optional[ConfigManager] = None, 
+                 recovery_manager: Optional[RecoveryManager] = None, 
+                 llm_integration: Optional[LLMIntegration] = None):
         """Initialize the orchestrator
         
         Args:
-            config_manager: Configuration manager instance
-            recovery_manager: Recovery manager instance
-            llm_integration: LLM integration instance
+            config_manager: Configuration manager instance (creates default if None)
+            recovery_manager: Recovery manager instance (creates default if None)
+            llm_integration: LLM integration instance (creates default if None)
         """
+        # Create default instances if not provided
+        if config_manager is None:
+            config_manager = ConfigManager()
+        if recovery_manager is None:
+            recovery_manager = RecoveryManager()
+        if llm_integration is None:
+            llm_integration = LLMIntegration()
+            
         self.config_manager = config_manager
         self.recovery_manager = recovery_manager
         self.llm_integration = llm_integration
